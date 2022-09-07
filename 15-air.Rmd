@@ -1,0 +1,192 @@
+# Aéraulique {#air}
+
+La première partie du livre ne porte pas seulement sur les transferts de chaleur, mais aussi les transferts de masse. Parmi ceux-ci, on décrit ici l'aéraulique des bâtiments, et on verra les transferts d'humidité dans le chapitre \@ref(humidite).
+
+Les transferts d'air dans un bâtiment sont l'effet combiné de la ventilation mécanique et de la ventilation naturelle. Cette dernière désigne les écoulements non contrôlés sous l'effet du vent et du tirage thermique, qui peuvent traverser de petites ouvertures (infiltrations dans les défauts d'étanchéité de l'enveloppe et les entrées d'air) ou de grandes ouvertures (portes et fenêtres ouvertes).
+
+```{r airflow1, echo=FALSE, out.width="100%", fig.cap="Trois modes de modélisation aéraulique"}
+knitr::include_graphics(rep("figures/airflow1.png"))
+```
+
+* La méthode nodale, ou *airflow network*, où on considère les variables (température, pression, masse volumique) comme uniformes dans chaque zone.
+* La méthode zonale, où une zone peut être divisée en sous-volumes pour représenter l'hétérogénéité de ces variables dans une même pièce.
+* La mécanique des fluides numérique qui modélise les écoulements par les équations de Navier-Stokes sur un maillage fin des volumes.
+
+## Méthode nodale
+
+La méthode nodale peut être comparée à l'analogie électrique utilisée pour les transferts thermiques : chaque zone est représentée par un noeud de pression. Ceux-ci sont reliés par des résistances représentant les chemins que peuvent prendre les écoulements d'air : entrées d'air, fenêtres, fissures... Un ventilateur crée une différence de pression qui mettra l'air en mouvement dans le reste du réseau.
+
+```{r airflow2, echo=FALSE, out.width="70%", fig.cap="Principe de la méthode nodale : les chemins de l'air sont des résistances qui relient les noeuds de pression"}
+knitr::include_graphics(rep("figures/airflow2.png"))
+```
+
+### Rappels de mécanique des fluides
+
+Le plus souvent, le calcul des transferts aérauliques dans un bâtiment se fait sous les hypothèses qui permettent d'utiliser le **théorème de Bernoulli** : fluide parfait incompressible en régime stationnaire et isotherme. Ce théorème énonce la conservation de la quantité suivante en tous points le long d'une ligne de courant :
+\begin{equation}
+\frac{1}{2}\, \rho \, v^2+P+\rho \, g \, z = \mathrm{constant}
+(\#eq:air1)
+\end{equation}
+où $P$ est la pression, $\rho$ la masse volumique, $v$ la vitesse de l'air et $z$ la hauteur.
+
+Le deuxième théorème principal est la **loi des gaz parfaits** qui relie la pression, la masse volumique et la température :
+\begin{equation}
+P = \rho \, R_a \, T
+(\#eq:air2)
+\end{equation}
+où $R_a \approx 287$ J.kg$^{-1}$.K$^{-1}$ est la constante spécifique de l'air, soit le rapport entre la constante universelle des gaz parfaits et la masse molaire de l'air.
+
+### Débit dans les ouvertures
+
+Le premier type d'équations nécessaires pour appliquer la méthode nodale est la relation entre la pression de part et d'autre d'une ouverture et le débit d'air qui la traverse. Sur un schéma comme la figure \@ref(fig:airflow2), ce serait le rapport entre les intensités (débit d'air) et les potentiels (pressions).
+
+L'écoulement à travers une très petite ouverture (infiltrations dans des fissures) peut être décrit par :
+\begin{equation}
+Q = K \cdot \left|\Delta P\right|^n
+(\#eq:flowrate4)
+\end{equation}
+où $Q$ est le débit volumique, le coefficient $K$ caractérise l'ouverture, $n$ est un exposant proche de $1/2$, et $\Delta P$ est l'écart de pression de part et d'autre de l'ouverture.
+
+L'écoulement $Q$ à travers une ouverture un peu plus importante (entrées d'air, détalonnage d'une porte) se décrit par :
+\begin{equation}
+Q = A^* \sqrt{\frac{2\cdot|\Delta P|}{\rho}}
+(\#eq:flowrate1)
+\end{equation}
+où $A^*$ est la surface effective de l'ouverture, qui dépend de son ouverture $A$ et d'un coefficient de décharge $C_d$ :
+\begin{equation}
+A^*=A\cdot C_d
+(\#eq:flowrate2)
+\end{equation}
+
+Le coefficient de décharge $C_d$ peut être proche de 1 pour une ouverture importante et un écoulement laminaire, mais est inférieur à 1 la plupart du temps. Lorsque l'air circule de part et d'autre d'une pièce à travers deux ouvertures, alors la surface effective de ce "parcours" de l'air peut s'exprimer en fonction des propriétés de chacune des deux ouvertures :
+\begin{equation}
+A^* = \frac{1}{\sqrt{ \left(\frac{1}{C_{d1}\cdot A_1}\right)^2 +\left(\frac{1}{C_{d2}\cdot A_2}\right)^2   }}
+(\#eq:flowrate3)
+\end{equation}
+
+## Ventilation naturelle
+
+La ventilation naturelle est le déplacement d'air qui n'est pas dû à une ventilation mécanique contrôlée. Elle provient de deux forces principales qui génèrent des variations locales de pression, qui ensuite résultent en un déplacement d'air des zones de pression élevée vers les pressions faibles : le vent et le tirage thermique.
+
+### Vent
+
+Le vent entraîne une hausse ou une baisse de la pression en façade d'un bâtiment. Cette variation $\Delta P$ dépend d'un coefficient de pression $C_p$ et de la vitesse du vent $V_\mathit{vent}$ :
+
+\begin{equation}
+\Delta P = \frac{1}{2} \, \rho \, C_p \, V_\mathit{vent}^2
+(\#eq:air4)
+\end{equation}
+
+Le coefficient de pression est une valeur empirique déterminée par la géométrie du bâtiment et son orientation par rapport à la direction du vent. Sa valeur sera positive sur une façade exposée au vent : la pression de l'air au contact du mur est plus élevée que la pression atmosphérique. Au contraire, $C_p$ est négatif sur une façade sous le vent, en dépression.
+
+```{r vent, echo=FALSE, out.width="65%", fig.cap="Coefficients de pression pour l'expression de l'influence du vent"}
+knitr::include_graphics(rep("figures/vent.png"))
+```
+
+On peut appliquer la méthode nodale pour calculer le débit d'air induit par le vent dans un bâtiment, à partir des équations \@ref(eq:flowrate4) et \@ref(eq:air4). Si on suppose un local doté de deux ouvertures, chacune avec un coefficient de pression $C_{p1}$ et $C_{p2}$ respectivement :
+
+```{r vent2, echo=FALSE, out.width="50%", fig.cap="Débit d'air induit par le vent, calculé par la méthode nodale"}
+knitr::include_graphics(rep("figures/vent2.png"))
+```
+
+On peut alors démontrer (une démonstration complète est donnée dans la vidéo plus bas) que le débit d'air traversant le bâtiment sous l'effet d'un vent de vitesse $V_\mathit{vent}$ (m/s) est :
+
+\begin{equation}
+Q = A^* V_\mathit{vent} \sqrt{\Delta C_p}
+(\#eq:air5)
+\end{equation}
+
+où $A^*$ est la surface effective des ouvertures définie par l'équation \@ref(eq:flowrate3). Le débit d'air est d'autant plus fort que la différence entre les deux coefficients de pression est importante : c'est le cas par exemple d'une ventilation traversante dans l'axe du vent. Au contraire, deux ouvertures situées sur la même façade auront des $C_p$ très proches donc une ventilation naturelle par le vent plus faible.
+
+### Tirage thermique
+
+Le tirage thermique est la conséquence d'une différence de température entre l'air intérieur et extérieur. Celle-ci entraîne un écart de leur masse volumique du fait de la loi des gaz parfaits (équation \@ref(eq:air2)) : $\rho \propto 1/T$
+
+Le théorème de Bernoulli (équation \@ref(eq:air1)) indique que la pression de l'air décroît avec l'altitude, proportionnellement à la masse volumique. La pression à une hauteur $z$ est inférieure à celle au niveau 0 (on suppose ici l'absence de vent) :
+
+\begin{equation}
+P(z) = P(0) - \rho g z
+(\#eq:air6)
+\end{equation}
+
+La décroissance de pression $\rho g z$ est proportionnelle à $\rho$, donc inversement proportionnelle à la température : dans un milieu froid, la pression décroît plus vite avec l'altitude que dans un milieu chaud.
+
+```{r stackeffect, echo=FALSE, out.width="75%", fig.cap="Tirage thermique"}
+knitr::include_graphics(rep("figures/stackeffect.png"))
+```
+
+On se place dans l'exemple montré sur la figure \@ref(fig:stackeffect) de deux milieux séparés, aux températures $T_e$ et $T_i$, avec par exemple $T_e < T_i$. A une altitude fixée $z$, la différence de pression entre l'extérieur et l'intérieur est :
+
+\begin{align}
+P_e(z) - P_i(z) & = \left( P_e(0)-\rho_e \, g \, z\right) - \left( P_i(0)-\rho_i \, g \, z \right) \\
+& = \left[ P_e(0)-P_i(0) \right] -\rho_e \, g \, z \, \frac{T_i-T_e}{T_i}
+(\#eq:air7)
+\end{align}
+
+Si $P_e(0)>P_i(0)$ il existe donc une coordonnée à laquelle le rapport des pressions s'inverse. On appelle axe neutre $z_n$ cette hauteur où les pressions intérieure et extérieure sont égales :
+\begin{equation}
+z_n = \frac{P_e(0)-P_i(0)}{g(\rho_i-\rho_e)}
+(\#eq:air8)
+\end{equation}
+
+Donc dans l'exemple d'une température extérieure inférieure à la température intérieure, l'effet du tirage thermique est que
+* en dessous de l'axe neutre $z_n$, $P_e > P_i$ donc l'air rentre dans le bâtiment,
+* au dessus de l'axe neutre, $P_e < P_i donc l'air sort du bâtiment.
+
+Cette variation de l'écart de pression entraîne un déplacement d'air de haut en bas dans le bâtiment, d'où le nom de tirage thermique.
+
+```{r stackeffect2, echo=FALSE, out.width="50%", fig.cap="Débit induit par le tirage thermique à travers deux ouvertures"}
+knitr::include_graphics(rep("figures/stackeffect2.png"))
+```
+
+Lorsqu'un bâtiment possède deux ouvertures séparées par une hauteur $H$, on peut démontrer (une démonstration complète est donnée dans la vidéo plus bas) que le débit d'air traversant le bâtiment sous l'effet du tirage thermique est :
+
+\begin{equation}
+Q = A^* \sqrt{2 \, g \, H\frac{T_i-T_e}{T_i}}
+(\#eq:air9)
+\end{equation}
+
+### Bilan
+
+Si on inclut l'effet du vent et du tirage thermique dans les équations du modèle aéraulique nodal, on peut exprimer le débit d'air traversant un bâtiment sous l'effet de la ventilation naturelle. Deux exemples sont donnés dans cette vidéo :
+
+```{r video5, echo=FALSE}
+shiny::includeHTML("figures/video5.html")
+```
+
+Dans les deux paragraphes ci-dessus, on a donné les formules des débits d'air traversant un bâtiment possédant deux ouvertures, sous l'effet soit du vent, soit du tirage thermique. Ces deux effets peuvent cependant se cumuler ou s'opposer. La somme des équations \@ref(eq:air5) et \@ref(eq:air9) est alors :
+\begin{equation}
+Q=A^* \left( \sqrt{\left|\Delta C_p\right|\cdot U_\mathit{wind}^2  } \pm \sqrt{2\cdot g\cdot H \left(\frac{|\Delta T|}{\bar{T}}}\right) } \right)
+(\#eq:flowrate5)
+\end{equation}
+où $\bar{T}$ est la moyenne de température entre intérieur et extérieur en Kelvin. Le signe $\pm$ de cette formule vient du faire que l'effet du vent et du tirage thermique sont soit dans le même sens et s'additionnent, soit de sens opposés.
+
+## Exercices
+
+### Exercice 1 : vent et tirage thermique
+
+Le bâtiment montré sur la figure \@ref(fig:exowind) a deux ouvertures opposées, en partie basse et en partie haute, séparées par une différence d'altitude $\Delta z$. Le vent souffle dans la direction montrée sur la figure. La température intérieure est 20°C, température extérieure 0°C. Les coefficients de pression des deux ouvertures sont 0,6 et -0,4 respectivement.
+
+```{r exowind, echo=FALSE, out.width="30%", fig.cap="Wind and stack effect in a building"}
+knitr::include_graphics(rep("figures/exowind.png"))
+```
+
+1. Quelle est la direction du débit d'air induit par le tirage thermique ? Cette force est-elle opposée au vent ?
+2. La vitesse du vent est 5 m/s et la hauteur $\Delta z$ est 10 m. En utilisant l'équation \@ref(eq:flowrate5), trouver quelle force l'emporte sur l'autre et dans quel sens l'air circule dans le bâtiment.
+3. Pour quelle valeur de la vitesse du vent les deux forces s'annulent-elles ?
+
+### Exercice 2 : cheminée solaire
+
+On étudie la cheminée solaire montrée sur la figure \@ref(fig:chimney). L'air est chauffé dans la cheminée, créant un effet de tirage thermique vers le haut. L'air est mis en dépression dans le bâtiment, ce qui attire l'air extérieur à travers un puits canadien. On cherche à calculer la température intérieure du bâtiment sous l'effet de cet apport d'air frais.
+
+```{r chimney, echo=FALSE, out.width="40%", fig.cap="Solar chimney"}
+knitr::include_graphics(rep("figures/chimney.png"))
+```
+
+Dans la cheminée, l'air circule entre une paroi de verre et un mur de béton. On ne donne pas ici de valeur numérique pour chaque variable, mais elles pourront être prises de manière réaliste pour voir la conséquence sur les résultats du calcul.
+
+Pour résoudre le problème, on a besoin de trois équations :
+
+1. Ecrire le bilan thermique de la maison en fonction de son coefficient global de déperditions $D=100$ W/K et du débit d'air $\dot{m}$.
+2. Formuler le débit d'air $\dot{m}$ en fonction de la température de l'air en entrée $T_\mathrm{in}=13$°C et à la sortie de la cheminée $T_\mathrm{out}$, et de la différence d'élévation $z$ entre ces deux points.
+3. Ecrire un bilan thermique à l'intérieur de la cheminée pour estimer la température maximale de l'air qui en sort.

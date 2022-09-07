@@ -1,0 +1,6 @@
+book_filename: "manuel"
+language:
+  ui:
+    chapter_name: "Chapitre "
+delete_merged_file: true
+output_dir: "docs"

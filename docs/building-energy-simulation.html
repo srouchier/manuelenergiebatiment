@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapitre 14 Building energy simulation | Manuel de performance énergétique des bâtiments</title>
+  <meta name="description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapitre 14 Building energy simulation | Manuel de performance énergétique des bâtiments" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  <meta name="github-repo" content="srouchier/beh" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapitre 14 Building energy simulation | Manuel de performance énergétique des bâtiments" />
+  
+  <meta name="twitter:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  
+
+<meta name="author" content="Simon Rouchier" />
+
+
+<meta name="date" content="2022-09-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="bioclimatic-architecture.html"/>
+<link rel="next" href="numerical-methods.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Manuel énergie bâtiments</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Préface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-propos"><i class="fa fa-check"></i>A propos</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#quelques-chiffres"><i class="fa fa-check"></i><b>1.1</b> Quelques chiffres</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#réglementation"><i class="fa fa-check"></i><b>1.2</b> Réglementation</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#re2020"><i class="fa fa-check"></i><b>1.2.1</b> Bâtiments neufs : la RE 2020</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#bâtiments-existants"><i class="fa fa-check"></i><b>1.2.2</b> Bâtiments existants</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#plan-du-livre"><i class="fa fa-check"></i><b>1.3</b> Plan du livre</a></li>
+</ul></li>
+<li class="part"><span><b>I Transferts de chaleur et de masse</b></span></li>
+<li class="chapter" data-level="2" data-path="apercu.html"><a href="apercu.html"><i class="fa fa-check"></i><b>2</b> Aperçu</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="apercu.html"><a href="apercu.html#apercu1"><i class="fa fa-check"></i><b>2.1</b> Bilan thermique global</a></li>
+<li class="chapter" data-level="2.2" data-path="apercu.html"><a href="apercu.html#apercu2"><i class="fa fa-check"></i><b>2.2</b> Calcul réglementaire</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="apercu.html"><a href="apercu.html#hypothèses"><i class="fa fa-check"></i><b>2.2.1</b> Hypothèses</a></li>
+<li class="chapter" data-level="2.2.2" data-path="apercu.html"><a href="apercu.html#besoins-de-chauffage-et-refroidissement"><i class="fa fa-check"></i><b>2.2.2</b> Besoins de chauffage et refroidissement</a></li>
+<li class="chapter" data-level="2.2.3" data-path="apercu.html"><a href="apercu.html#les-règles-th-bat"><i class="fa fa-check"></i><b>2.2.3</b> Les règles Th-bat</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="apercu.html"><a href="apercu.html#apercu3"><i class="fa fa-check"></i><b>2.3</b> Détail des transferts thermiques</a></li>
+<li class="chapter" data-level="2.4" data-path="apercu.html"><a href="apercu.html#exercice"><i class="fa fa-check"></i><b>2.4</b> Exercice</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="steady.html"><a href="steady.html"><i class="fa fa-check"></i><b>3</b> Conduction et convection stationnaire</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="steady.html"><a href="steady.html#conduction"><i class="fa fa-check"></i><b>3.1</b> Conduction dans un mur</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="steady.html"><a href="steady.html#conduction-1d-et-analogie-électrique"><i class="fa fa-check"></i><b>3.1.1</b> Conduction 1D et analogie électrique</a></li>
+<li class="chapter" data-level="3.1.2" data-path="steady.html"><a href="steady.html#assemblage-de-résistances"><i class="fa fa-check"></i><b>3.1.2</b> Assemblage de résistances</a></li>
+<li class="chapter" data-level="3.1.3" data-path="steady.html"><a href="steady.html#surfacique"><i class="fa fa-check"></i><b>3.1.3</b> Transferts surfaciques</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="steady.html"><a href="steady.html#ponts-thermiques"><i class="fa fa-check"></i><b>3.2</b> Ponts thermiques</a></li>
+<li class="chapter" data-level="3.3" data-path="steady.html"><a href="steady.html#echanges-convectifs"><i class="fa fa-check"></i><b>3.3</b> Echanges convectifs</a></li>
+<li class="chapter" data-level="3.4" data-path="steady.html"><a href="steady.html#bilan-des-déperditions"><i class="fa fa-check"></i><b>3.4</b> Bilan des déperditions</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="steady.html"><a href="steady.html#locaux-non-chauffés"><i class="fa fa-check"></i><b>3.4.1</b> Locaux non chauffés</a></li>
+<li class="chapter" data-level="3.4.2" data-path="steady.html"><a href="steady.html#bilan-dune-zone"><i class="fa fa-check"></i><b>3.4.2</b> Bilan d’une zone</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="steady.html"><a href="steady.html#exercices"><i class="fa fa-check"></i><b>3.5</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="steady.html"><a href="steady.html#ex-1-déperditions-dune-pièce"><i class="fa fa-check"></i><b>3.5.1</b> Ex 1 : déperditions d’une pièce</a></li>
+<li class="chapter" data-level="3.5.2" data-path="steady.html"><a href="steady.html#ex-2-bilan-thermique-de-deux-pièces"><i class="fa fa-check"></i><b>3.5.2</b> Ex 2: bilan thermique de deux pièces</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="rayonnement.html"><a href="rayonnement.html"><i class="fa fa-check"></i><b>4</b> Rayonnement</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="rayonnement.html"><a href="rayonnement.html#principes-de-rayonnement"><i class="fa fa-check"></i><b>4.1</b> Principes de rayonnement</a></li>
+<li class="chapter" data-level="4.2" data-path="rayonnement.html"><a href="rayonnement.html#apports-solaires"><i class="fa fa-check"></i><b>4.2</b> Apports solaires</a></li>
+<li class="chapter" data-level="4.3" data-path="rayonnement.html"><a href="rayonnement.html#echanges-radiatifs-glo"><i class="fa fa-check"></i><b>4.3</b> Echanges radiatifs GLO</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="rayonnement.html"><a href="rayonnement.html#définitions"><i class="fa fa-check"></i><b>4.3.1</b> Définitions</a></li>
+<li class="chapter" data-level="4.3.2" data-path="rayonnement.html"><a href="rayonnement.html#résolution-des-bilans-radiatifs"><i class="fa fa-check"></i><b>4.3.2</b> Résolution des bilans radiatifs</a></li>
+<li class="chapter" data-level="4.3.3" data-path="rayonnement.html"><a href="rayonnement.html#facteurs-de-forme"><i class="fa fa-check"></i><b>4.3.3</b> Facteurs de forme</a></li>
+<li class="chapter" data-level="4.3.4" data-path="rayonnement.html"><a href="rayonnement.html#température-radiative-et-opérative"><i class="fa fa-check"></i><b>4.3.4</b> Température radiative et opérative</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="rayonnement.html"><a href="rayonnement.html#exercices-1"><i class="fa fa-check"></i><b>4.4</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="rayonnement.html"><a href="rayonnement.html#exercice-1-serre"><i class="fa fa-check"></i><b>4.4.1</b> Exercice 1 : serre</a></li>
+<li class="chapter" data-level="4.4.2" data-path="rayonnement.html"><a href="rayonnement.html#tutorial-2-radiateur"><i class="fa fa-check"></i><b>4.4.2</b> Tutorial 2: radiateur</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="transient.html"><a href="transient.html"><i class="fa fa-check"></i><b>5</b> Régime transitoire</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="transient.html"><a href="transient.html#conduction-dans-un-mur"><i class="fa fa-check"></i><b>5.1</b> Conduction dans un mur</a></li>
+<li class="chapter" data-level="5.2" data-path="transient.html"><a href="transient.html#modèles-rc"><i class="fa fa-check"></i><b>5.2</b> Modèles RC</a></li>
+<li class="chapter" data-level="5.3" data-path="transient.html"><a href="transient.html#exercices-inertie-thermique"><i class="fa fa-check"></i><b>5.3</b> Exercices : inertie thermique</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="transient.html"><a href="transient.html#exercice-1-bâtiment-lourd-ou-léger"><i class="fa fa-check"></i><b>5.3.1</b> Exercice 1 : bâtiment lourd ou léger</a></li>
+<li class="chapter" data-level="5.3.2" data-path="transient.html"><a href="transient.html#exercice-2-isolation-intérieure-ou-extérieure"><i class="fa fa-check"></i><b>5.3.2</b> Exercice 2 : isolation intérieure ou extérieure</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="air.html"><a href="air.html"><i class="fa fa-check"></i><b>6</b> Aéraulique</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="air.html"><a href="air.html#méthode-nodale"><i class="fa fa-check"></i><b>6.1</b> Méthode nodale</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="air.html"><a href="air.html#rappels-de-mécanique-des-fluides"><i class="fa fa-check"></i><b>6.1.1</b> Rappels de mécanique des fluides</a></li>
+<li class="chapter" data-level="6.1.2" data-path="air.html"><a href="air.html#débit-dans-les-ouvertures"><i class="fa fa-check"></i><b>6.1.2</b> Débit dans les ouvertures</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="air.html"><a href="air.html#ventilation-naturelle"><i class="fa fa-check"></i><b>6.2</b> Ventilation naturelle</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="air.html"><a href="air.html#vent"><i class="fa fa-check"></i><b>6.2.1</b> Vent</a></li>
+<li class="chapter" data-level="6.2.2" data-path="air.html"><a href="air.html#tirage-thermique"><i class="fa fa-check"></i><b>6.2.2</b> Tirage thermique</a></li>
+<li class="chapter" data-level="6.2.3" data-path="air.html"><a href="air.html#bilan"><i class="fa fa-check"></i><b>6.2.3</b> Bilan</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="air.html"><a href="air.html#exercices-2"><i class="fa fa-check"></i><b>6.3</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="air.html"><a href="air.html#exercice-1-vent-et-tirage-thermique"><i class="fa fa-check"></i><b>6.3.1</b> Exercice 1 : vent et tirage thermique</a></li>
+<li class="chapter" data-level="6.3.2" data-path="air.html"><a href="air.html#exercice-2-cheminée-solaire"><i class="fa fa-check"></i><b>6.3.2</b> Exercice 2 : cheminée solaire</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="humidite.html"><a href="humidite.html"><i class="fa fa-check"></i><b>7</b> Humidité</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="humidite.html"><a href="humidite.html#air-humide"><i class="fa fa-check"></i><b>7.1</b> Air humide</a></li>
+<li class="chapter" data-level="7.2" data-path="humidite.html"><a href="humidite.html#humidité-dans-les-matériaux"><i class="fa fa-check"></i><b>7.2</b> Humidité dans les matériaux</a></li>
+<li class="chapter" data-level="7.3" data-path="humidite.html"><a href="humidite.html#bilans-dhumidité"><i class="fa fa-check"></i><b>7.3</b> Bilans d’humidité</a></li>
+<li class="chapter" data-level="7.4" data-path="humidite.html"><a href="humidite.html#exercice-1"><i class="fa fa-check"></i><b>7.4</b> Exercice</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="humidite.html"><a href="humidite.html#exercice-1-condensation"><i class="fa fa-check"></i><b>7.4.1</b> Exercice 1 : condensation</a></li>
+<li class="chapter" data-level="7.4.2" data-path="humidite.html"><a href="humidite.html#exercice-2-point-de-rosée"><i class="fa fa-check"></i><b>7.4.2</b> Exercice 2 : point de rosée</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II HVAC systems</b></span></li>
+<li class="chapter" data-level="8" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html"><i class="fa fa-check"></i><b>8</b> Aperçu des systèmes</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html#des-besoins-aux-consommations"><i class="fa fa-check"></i><b>8.1</b> Des besoins aux consommations</a></li>
+<li class="chapter" data-level="8.2" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html#types-de-systèmes"><i class="fa fa-check"></i><b>8.2</b> Types de systèmes</a></li>
+<li class="chapter" data-level="8.3" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html#dimensionnement"><i class="fa fa-check"></i><b>8.3</b> Dimensionnement</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="hydronic-heating.html"><a href="hydronic-heating.html"><i class="fa fa-check"></i><b>9</b> Hydronic heating</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="hydronic-heating.html"><a href="hydronic-heating.html#généralités"><i class="fa fa-check"></i><b>9.1</b> Généralités</a></li>
+<li class="chapter" data-level="9.2" data-path="hydronic-heating.html"><a href="hydronic-heating.html#emission-de-chaleur"><i class="fa fa-check"></i><b>9.2</b> Emission de chaleur</a></li>
+<li class="chapter" data-level="9.3" data-path="hydronic-heating.html"><a href="hydronic-heating.html#distribution"><i class="fa fa-check"></i><b>9.3</b> Distribution</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="hydronic-heating.html"><a href="hydronic-heating.html#réglage-de-la-température-et-du-débit-dans-les-émetteurs"><i class="fa fa-check"></i><b>9.3.1</b> Réglage de la température et du débit dans les émetteurs</a></li>
+<li class="chapter" data-level="9.3.2" data-path="hydronic-heating.html"><a href="hydronic-heating.html#circuits-primaires-et-secondaires"><i class="fa fa-check"></i><b>9.3.2</b> Circuits primaires et secondaires</a></li>
+<li class="chapter" data-level="9.3.3" data-path="hydronic-heating.html"><a href="hydronic-heating.html#equilibrage-hydraulique"><i class="fa fa-check"></i><b>9.3.3</b> Equilibrage hydraulique</a></li>
+<li class="chapter" data-level="9.3.4" data-path="hydronic-heating.html"><a href="hydronic-heating.html#circulateurs"><i class="fa fa-check"></i><b>9.3.4</b> Circulateurs</a></li>
+<li class="chapter" data-level="9.3.5" data-path="hydronic-heating.html"><a href="hydronic-heating.html#pertes-thermiques"><i class="fa fa-check"></i><b>9.3.5</b> Pertes thermiques</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="hydronic-heating.html"><a href="hydronic-heating.html#génération"><i class="fa fa-check"></i><b>9.4</b> Génération</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="hydronic-heating.html"><a href="hydronic-heating.html#chaudières"><i class="fa fa-check"></i><b>9.4.1</b> Chaudières</a></li>
+<li class="chapter" data-level="9.4.2" data-path="hydronic-heating.html"><a href="hydronic-heating.html#pompes-à-chaleur"><i class="fa fa-check"></i><b>9.4.2</b> Pompes à chaleur</a></li>
+<li class="chapter" data-level="9.4.3" data-path="hydronic-heating.html"><a href="hydronic-heating.html#autres-générateurs-de-chaleur"><i class="fa fa-check"></i><b>9.4.3</b> Autres générateurs de chaleur</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ecs.html"><a href="ecs.html"><i class="fa fa-check"></i><b>10</b> Domestic hot water</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="ecs.html"><a href="ecs.html#calcul-des-besoins-et-consommations"><i class="fa fa-check"></i><b>10.1</b> Calcul des besoins et consommations</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="ecs.html"><a href="ecs.html#calcul-des-besoins-decs"><i class="fa fa-check"></i><b>10.1.1</b> Calcul des besoins d’ECS</a></li>
+<li class="chapter" data-level="10.1.2" data-path="ecs.html"><a href="ecs.html#calcul-des-pertes-de-distribution-stockage-et-génération"><i class="fa fa-check"></i><b>10.1.2</b> Calcul des pertes de distribution, stockage et génération}</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="ecs.html"><a href="ecs.html#modes-de-production"><i class="fa fa-check"></i><b>10.2</b> Modes de production</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="ecs.html"><a href="ecs.html#instantané"><i class="fa fa-check"></i><b>10.2.1</b> Instantané</a></li>
+<li class="chapter" data-level="10.2.2" data-path="ecs.html"><a href="ecs.html#accumulation"><i class="fa fa-check"></i><b>10.2.2</b> Accumulation</a></li>
+<li class="chapter" data-level="10.2.3" data-path="ecs.html"><a href="ecs.html#semi-instantané-ou-semi-accumulation"><i class="fa fa-check"></i><b>10.2.3</b> Semi-instantané ou semi-accumulation</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="ecs.html"><a href="ecs.html#systèmes-de-production-decs"><i class="fa fa-check"></i><b>10.3</b> Systèmes de production d’ECS</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="ecs.html"><a href="ecs.html#cumulus-électrique"><i class="fa fa-check"></i><b>10.3.1</b> Cumulus électrique</a></li>
+<li class="chapter" data-level="10.3.2" data-path="ecs.html"><a href="ecs.html#chaudière-double-service"><i class="fa fa-check"></i><b>10.3.2</b> Chaudière double service}</a></li>
+<li class="chapter" data-level="10.3.3" data-path="ecs.html"><a href="ecs.html#chauffe-eau-solaire-individuel"><i class="fa fa-check"></i><b>10.3.3</b> Chauffe-eau solaire individuel}</a></li>
+<li class="chapter" data-level="10.3.4" data-path="ecs.html"><a href="ecs.html#système-solaire-combiné"><i class="fa fa-check"></i><b>10.3.4</b> Système solaire combiné</a></li>
+<li class="chapter" data-level="10.3.5" data-path="ecs.html"><a href="ecs.html#pompe-à-chaleur"><i class="fa fa-check"></i><b>10.3.5</b> Pompe à chaleur</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="ecs.html"><a href="ecs.html#dimensionnement-des-systèmes-solaires-solaire"><i class="fa fa-check"></i><b>10.4</b> Dimensionnement des systèmes solaires {solaire}</a></li>
+<li class="chapter" data-level="10.5" data-path="ecs.html"><a href="ecs.html#exercice-2"><i class="fa fa-check"></i><b>10.5</b> Exercice</a></li>
+<li class="chapter" data-level="10.6" data-path="ecs.html"><a href="ecs.html#estimating-the-consumption"><i class="fa fa-check"></i><b>10.6</b> Estimating the consumption</a></li>
+<li class="chapter" data-level="10.7" data-path="ecs.html"><a href="ecs.html#sizing-the-system"><i class="fa fa-check"></i><b>10.7</b> Sizing the system</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="ecs.html"><a href="ecs.html#solar-coverage"><i class="fa fa-check"></i><b>10.7.1</b> Solar coverage</a></li>
+<li class="chapter" data-level="10.7.2" data-path="ecs.html"><a href="ecs.html#temperatures"><i class="fa fa-check"></i><b>10.7.2</b> Temperatures</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ventilation.html"><a href="ventilation.html"><i class="fa fa-check"></i><b>11</b> Ventilation</a></li>
+<li class="chapter" data-level="12" data-path="air-conditioning.html"><a href="air-conditioning.html"><i class="fa fa-check"></i><b>12</b> Air conditioning</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="air-conditioning.html"><a href="air-conditioning.html#evaluating-air-conditioning-needs"><i class="fa fa-check"></i><b>12.1</b> Evaluating air conditioning needs</a></li>
+<li class="chapter" data-level="12.2" data-path="air-conditioning.html"><a href="air-conditioning.html#tutorials"><i class="fa fa-check"></i><b>12.2</b> Tutorials</a></li>
+</ul></li>
+<li class="part"><span><b>III Designing energy performant buildings</b></span></li>
+<li class="chapter" data-level="13" data-path="bioclimatic-architecture.html"><a href="bioclimatic-architecture.html"><i class="fa fa-check"></i><b>13</b> Bioclimatic architecture</a></li>
+<li class="chapter" data-level="14" data-path="building-energy-simulation.html"><a href="building-energy-simulation.html"><i class="fa fa-check"></i><b>14</b> Building energy simulation</a></li>
+<li class="chapter" data-level="15" data-path="numerical-methods.html"><a href="numerical-methods.html"><i class="fa fa-check"></i><b>15</b> Numerical methods</a></li>
+<li class="divider"></li>
+<li><a href="https://srouchier.github.io/" target="blank">Un livre de Simon Rouchier</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Manuel de performance énergétique des bâtiments</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="building-energy-simulation" class="section level1 hasAnchor" number="14">
+<h1><span class="header-section-number">Chapitre 14</span> Building energy simulation<a href="building-energy-simulation.html#building-energy-simulation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="bioclimatic-architecture.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="numerical-methods.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/srouchier/beh32-simulation.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["manuel.pdf", "manuel.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

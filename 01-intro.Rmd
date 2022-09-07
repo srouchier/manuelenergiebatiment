@@ -1,0 +1,98 @@
+# Introduction
+
+## Quelques chiffres
+
+En France, le secteur du bâtiment représente 44 \% de la consommation d'énergie primaire et près de 25 \% des émissions de gaz à effet de serre (GES). Dans le monde, ces proportions sont de 36 \% et 39 \% respectivement.
+
+```{r, conso1, echo=FALSE, out.width="100%", fig.cap="Part des bâtiments dans la consommation globale d'énergie primaire (à gauche) et dans les émissions de GES (à droite), 2018"}
+knitr::include_graphics(rep("figures/conso1.png"))
+```
+
+Cette consommation d'énergie est en grande partie d'origine fossile, comme montré sur la figure \@ref(fig:conso2), ou bien de l'électricité elle même d'origine fossile ou non renouvelable.
+
+```{r, conso2, echo=FALSE, out.width="100%", fig.cap="En haut : type d'énergie finale utilisée dans les bâtiments dans le monde entre 2010 et 2018. En bas : répartition des consommations par poste de consommation."}
+knitr::include_graphics(rep("figures/conso2.png"))
+```
+
+Les postes de consommation de ces énergies sont également montrés par la figure \@ref(fig:conso2) : le chauffage, la climatisation et la production d'eau chaude sanitaire (ECS) en sont plus de la moitié. Ils représentent environ les deux tiers de la facture d'énergie des ménages. Les autres postes de consommation sont l'éclairage, la cuisine et les autres équipements (électroménager, ordinateurs, etc.).
+
+Les écarts de consommations sont très importants entre les bâtiments anciens, mal isolés et équipés de systèmes vétustes, et les nouveaux bâtiments conçs avec un objectif chiffré de besoins bioclimatiques et de consommations.
+
+## Réglementation
+
+Afin de répondre à l'urgence climatique, des objectifs de réduction de la consommation du parc de bâtiments ont été établis dans la plupart des pays du monde. La directive européenne de 2002 sur la performance énergétique des bâtiments, ou *Energy Performance of Buildings Directive* (EPBD), est une réponse de l'UE à ses engagement dans le cadre du protocole de Kyoto. Elle a donné des objectifs chiffrés de réduction des émissions de GES, d'économies d'énergie primaire et finale, et d'utilisation d'énergies renouvelables, à différents horizons temporels. La directive EPBD est revue régulièrement pour adapter ces objectifs et les moyens proposés pour les atteindre.
+
+En France, une série de lois et de décrets a traduit et adapté ces objectifs : loi Grenelle (2009), loi de transition énergétique (2015), stratégie nationale bas carbone (2015), plan de rénovation énergétique des bâtiments (2018), etc. Ces lois chiffrent les objectifs de réduction de consommation et d'émissions de GES de l'ensemble des secteurs, dont celui du bâtiment.
+
+Pour plus d'informations: [Chiffres clé climat air et énergie – ADEME 2018](https://expertises.ademe.fr/batiment/chiffres-cles-observations/chiffres-cles)
+
+L'EPBD inclut également une méthodologie commune de calcul de la performance énergétique intégrée des bâtiments, dont s'inspire la réglementation française et une partie des calculs présentés dans la suite de ce livre.
+
+### Bâtiments neufs : la RE 2020 {#re2020}
+
+La RE 2020 est la réglementation énergétique et environnementale des bâtiments, entrée en vigueur à partir du 1$^\mathrm{er}$ janvier 2022, et qui s'appliquera progressivement à l'ensemble de la construction neuve. Elle poursuit trois objectifs majeurs pour les bâtiments:
+
+* la sobriété énergétique: baisse des besoins énergétiques, en améliorant la conception bioclimatique des bâtiments ;
+* la diminution de l'impact carbone en favorisant le recours aux énergies renouvelables et peu carbonées et aux matériaux à faible emprunte carbone ;
+* la garantie de confort en cas de forte chaleur.
+
+```{r indicateurs, echo=FALSE, out.width="90%", fig.cap="Indicateurs de performance de la RE 2020."}
+knitr::include_graphics(rep("figures/indicateurs.png"))
+```
+
+Elle est basée sur l'évaluation de 6 indicateurs, montrés sur la figure \@ref(fig:indicateurs), répondant à des exigences minimales. Ces indicateurs sont calculés en phase de conception du bâtiment neuf et ne doivent pas excéder une valeur seuil dépendant du type de bâtiment et de son emplacement.
+
+Le calcul de la performance énergétique et environnementale est décomposé en deux étapes complémentaires affichées sur la figure \@ref(fig:etapes):
+
+1. La simulation énergétique et le calcul des indicateurs énergétiques;
+2. L'analyse de cycle de vie, et le calcul des indicateurs environnementaux en utilisant certaines données de sortie de la simulation énergétique.
+
+```{r, etapes, echo=FALSE, out.width="100%", fig.cap="Deux étapes de calcul de la RE 2020."}
+knitr::include_graphics(rep("figures/etapes.png"))
+```
+
+Les indicateurs présentés ici sont de type énergétique (Bbio, Cep, Cepnr et DH) ou environnemental (Ic).
+
+Le coefficient **Bbio** exprimé en points caractérise l'efficacité énergétique du bâti. Il permet d'apprécier celui-ci par rapport aux besoins de chauffage, de refroidissement et de consommations futures d'éclairage artificiel. Il s'appuie sur la prise en compte des éléments suivants :
+
+* La conception architecturale du bâti (implantation, forme, aires et orientation des baies, accès à l'éclairage naturel des locaux...),
+* Les caractéristiques de l'enveloppe en termes d'isolation, de transmission solaire, de transmission lumineuse, d'ouverture des baies et d'étanchéité à l'air,
+* Les caractéristiques d'inertie du bâti.
+
+Le Bbio caractérise la capacité de la conception d’un bâtiment à réduire passivement les besoins de chauffage en hiver, de refroidissement en été et d’éclairage artificiel. Un Bbio performant s’obtient en optimisant le bâti indépendamment des systèmes énergétiques mis en oeuvre.
+
+Le coefficient **Cep** exprimé en kWh/m$^2$ d’énergie primaire représente les consommations d’énergie de chauffage, de refroidissement, d’eau chaude sanitaire, d’auxiliaires et d’éclairage des bâtiments. Ce coefficient Cep ajoute au coefficient Bbio l'impact des systèmes énergétiques suivants : systèmes de chauffage et de refroidissement ; systèmes d'eau chaude sanitaire ; auxiliaires de ventilation ; systèmes d'éclairage ; systèmes de production locale d'énergie. Au Cep s'ajoute le coefficient **Cep,nr** qui mesure les consommations d'énergie primaire non renouvelable.
+
+L'indicateur de confort d'été **DH** mesure le niveau d'inconfort perçu par les occupants sur l'ensemble de la saison chaude, en degré-heures. Il s'agit de la somme de l'écart entre la température de l'habitation et la température de confort. L'indicateur DH est calculé heure par heure sur l'année.
+
+Les indices d'impact sur le changement climatique **Ic** en [kg eq. CO$_2$/m$^2$] mesurent les émissions de gaz à effet de serre des produits de construction et équipements et leur mise en oeuvre (Ic$_\mathrm{construction}$), et des énergies consommées pendant le fonctionnement du bâtiment (Ic$_\mathrm{energie}$). Ces indicateurs sont calculés dans l'étape 2 du calcul réglementaire : l'analyse de cycle de vie du bâtiment. 
+
+Pour être réglementaire, la valeur de chacun de ces indicateurs ne doit pas dépasser les seuils définis par la RE 2020, qui dépendent du type et de l'usage de la construction, de sa surface, son emplacement géographique...
+
+### Bâtiments existants
+
+Les bâtiments existants constituent 99% du parc immobilier français et la grande majorité des consommations du secteur. Pour ces bâtiments, les principaux objectifs fixés par les lois et décrets en France sont:
+
+* Objectif de rénovation de l'ensemble du parc de bâtiments au niveau Bâtiment Basse Consommation (BBC) d'ici 2050;
+* Baisse de la précarité énergétique, rénovation de logements sociaux;
+* Neutralité carbone en 2050;
+* Obligation d'isolation thermique en cas de travaux de ravalement importants;
+* Obligation de rénovation énergétique avant 2025 pour les bâtiments privés résidentiels dont la consommation en énergie primaire est supérieure à 330 kWh/m$^2$/an...
+
+Les bâtiments non résidentiels sont concernés par le [décret tertiaire](http://www.rt-batiment.fr/eco-energie-tertiaire-r328.html) qui fixe des obligations de réduction de leur consommation d'énergie de 40% d'ici 2030 (50% d'ici 2040, etc.) par rapport à une année de référence définie comme la plus consommatrice sur la période 2010-2019.
+Par ce dispositif, les entreprises sont incitées à réaliser un audit énergétique pour identifier les postes de surconsommation et les actions d'économies d'énergie les plus efficaces.
+
+## Plan du livre
+
+La structure du livre se base en partie sur l'étape de calcul énergétique de la RE 2020 (figure \@ref(fig:etapes)). Le calcul des indicateurs environnementaux ne sera pas abordé ici. Cette étape de calcul énergétique contient elle-même deux étapes, qui correspondent aux deux parties principales du livre.
+
+```{r, etape1, echo=FALSE, out.width="40%", fig.cap="Calcul des indicateurs énergétiques : d'abord les besoins, puis les consommations"}
+knitr::include_graphics(rep("figures/etape1.png"))
+```
+
+**La première partie** est une description des principaux phénomènes physiques qui définissent la performance énergétique d'un bâtiment, avant que des systèmes de chauffage ventilation et climatisation y soient installés. On y revient sur les principales formes de transfert thermique, décrites avec les hypothèses de la modélisation des bâtiments, et sur les transferts hygriques et aérauliques.
+
+Cette partie inclut les éléments de calcul du coefficient Bbio de la réglementation. Ce calcul dépend des caractéristiques de la construction elle-même, dans laquelle les équipements énergétiques sont absents, et des hypothèses faites sur l'usage du bâtiment : scénarios de présence, ventilation, éclairage, et apports de chaleurs internes ou dûs à l'ensoleillement.
+
+**La deuxième partie** s'intéresse aux équipements visant à satisfaire les besoins en chauffage, ventilation et climatisation précédemment calculés. On y fait un inventaire des solutions existantes et on y décrit comment les dimensionner et estimer leur consommation. Il s'agira de calculer les consommations (Cep et Cepnr) et émissions de gaz à effet de serre (Ic) relatives à l'usage des équipements.
+

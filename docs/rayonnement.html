@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapitre 4 Rayonnement | Manuel de performance énergétique des bâtiments</title>
+  <meta name="description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapitre 4 Rayonnement | Manuel de performance énergétique des bâtiments" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  <meta name="github-repo" content="srouchier/beh" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapitre 4 Rayonnement | Manuel de performance énergétique des bâtiments" />
+  
+  <meta name="twitter:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  
+
+<meta name="author" content="Simon Rouchier" />
+
+
+<meta name="date" content="2022-09-07" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="steady.html"/>
+<link rel="next" href="transient.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Manuel énergie bâtiments</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Préface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-propos"><i class="fa fa-check"></i>A propos</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#quelques-chiffres"><i class="fa fa-check"></i><b>1.1</b> Quelques chiffres</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#réglementation"><i class="fa fa-check"></i><b>1.2</b> Réglementation</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#re2020"><i class="fa fa-check"></i><b>1.2.1</b> Bâtiments neufs : la RE 2020</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#bâtiments-existants"><i class="fa fa-check"></i><b>1.2.2</b> Bâtiments existants</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#plan-du-livre"><i class="fa fa-check"></i><b>1.3</b> Plan du livre</a></li>
+</ul></li>
+<li class="part"><span><b>I Transferts de chaleur et de masse</b></span></li>
+<li class="chapter" data-level="2" data-path="apercu.html"><a href="apercu.html"><i class="fa fa-check"></i><b>2</b> Aperçu</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="apercu.html"><a href="apercu.html#apercu1"><i class="fa fa-check"></i><b>2.1</b> Bilan thermique global</a></li>
+<li class="chapter" data-level="2.2" data-path="apercu.html"><a href="apercu.html#apercu2"><i class="fa fa-check"></i><b>2.2</b> Calcul réglementaire</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="apercu.html"><a href="apercu.html#hypothèses"><i class="fa fa-check"></i><b>2.2.1</b> Hypothèses</a></li>
+<li class="chapter" data-level="2.2.2" data-path="apercu.html"><a href="apercu.html#besoins-de-chauffage-et-refroidissement"><i class="fa fa-check"></i><b>2.2.2</b> Besoins de chauffage et refroidissement</a></li>
+<li class="chapter" data-level="2.2.3" data-path="apercu.html"><a href="apercu.html#les-règles-th-bat"><i class="fa fa-check"></i><b>2.2.3</b> Les règles Th-bat</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="apercu.html"><a href="apercu.html#apercu3"><i class="fa fa-check"></i><b>2.3</b> Détail des transferts thermiques</a></li>
+<li class="chapter" data-level="2.4" data-path="apercu.html"><a href="apercu.html#exercice"><i class="fa fa-check"></i><b>2.4</b> Exercice</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="steady.html"><a href="steady.html"><i class="fa fa-check"></i><b>3</b> Conduction et convection stationnaire</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="steady.html"><a href="steady.html#conduction"><i class="fa fa-check"></i><b>3.1</b> Conduction dans un mur</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="steady.html"><a href="steady.html#conduction-1d-et-analogie-électrique"><i class="fa fa-check"></i><b>3.1.1</b> Conduction 1D et analogie électrique</a></li>
+<li class="chapter" data-level="3.1.2" data-path="steady.html"><a href="steady.html#assemblage-de-résistances"><i class="fa fa-check"></i><b>3.1.2</b> Assemblage de résistances</a></li>
+<li class="chapter" data-level="3.1.3" data-path="steady.html"><a href="steady.html#surfacique"><i class="fa fa-check"></i><b>3.1.3</b> Transferts surfaciques</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="steady.html"><a href="steady.html#ponts-thermiques"><i class="fa fa-check"></i><b>3.2</b> Ponts thermiques</a></li>
+<li class="chapter" data-level="3.3" data-path="steady.html"><a href="steady.html#echanges-convectifs"><i class="fa fa-check"></i><b>3.3</b> Echanges convectifs</a></li>
+<li class="chapter" data-level="3.4" data-path="steady.html"><a href="steady.html#bilan-des-déperditions"><i class="fa fa-check"></i><b>3.4</b> Bilan des déperditions</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="steady.html"><a href="steady.html#locaux-non-chauffés"><i class="fa fa-check"></i><b>3.4.1</b> Locaux non chauffés</a></li>
+<li class="chapter" data-level="3.4.2" data-path="steady.html"><a href="steady.html#bilan-dune-zone"><i class="fa fa-check"></i><b>3.4.2</b> Bilan d’une zone</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="steady.html"><a href="steady.html#exercices"><i class="fa fa-check"></i><b>3.5</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="steady.html"><a href="steady.html#ex-1-déperditions-dune-pièce"><i class="fa fa-check"></i><b>3.5.1</b> Ex 1 : déperditions d’une pièce</a></li>
+<li class="chapter" data-level="3.5.2" data-path="steady.html"><a href="steady.html#ex-2-bilan-thermique-de-deux-pièces"><i class="fa fa-check"></i><b>3.5.2</b> Ex 2: bilan thermique de deux pièces</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="rayonnement.html"><a href="rayonnement.html"><i class="fa fa-check"></i><b>4</b> Rayonnement</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="rayonnement.html"><a href="rayonnement.html#principes-de-rayonnement"><i class="fa fa-check"></i><b>4.1</b> Principes de rayonnement</a></li>
+<li class="chapter" data-level="4.2" data-path="rayonnement.html"><a href="rayonnement.html#apports-solaires"><i class="fa fa-check"></i><b>4.2</b> Apports solaires</a></li>
+<li class="chapter" data-level="4.3" data-path="rayonnement.html"><a href="rayonnement.html#echanges-radiatifs-glo"><i class="fa fa-check"></i><b>4.3</b> Echanges radiatifs GLO</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="rayonnement.html"><a href="rayonnement.html#définitions"><i class="fa fa-check"></i><b>4.3.1</b> Définitions</a></li>
+<li class="chapter" data-level="4.3.2" data-path="rayonnement.html"><a href="rayonnement.html#résolution-des-bilans-radiatifs"><i class="fa fa-check"></i><b>4.3.2</b> Résolution des bilans radiatifs</a></li>
+<li class="chapter" data-level="4.3.3" data-path="rayonnement.html"><a href="rayonnement.html#facteurs-de-forme"><i class="fa fa-check"></i><b>4.3.3</b> Facteurs de forme</a></li>
+<li class="chapter" data-level="4.3.4" data-path="rayonnement.html"><a href="rayonnement.html#température-radiative-et-opérative"><i class="fa fa-check"></i><b>4.3.4</b> Température radiative et opérative</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="rayonnement.html"><a href="rayonnement.html#exercices-1"><i class="fa fa-check"></i><b>4.4</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="rayonnement.html"><a href="rayonnement.html#exercice-1-serre"><i class="fa fa-check"></i><b>4.4.1</b> Exercice 1 : serre</a></li>
+<li class="chapter" data-level="4.4.2" data-path="rayonnement.html"><a href="rayonnement.html#tutorial-2-radiateur"><i class="fa fa-check"></i><b>4.4.2</b> Tutorial 2: radiateur</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="transient.html"><a href="transient.html"><i class="fa fa-check"></i><b>5</b> Régime transitoire</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="transient.html"><a href="transient.html#conduction-dans-un-mur"><i class="fa fa-check"></i><b>5.1</b> Conduction dans un mur</a></li>
+<li class="chapter" data-level="5.2" data-path="transient.html"><a href="transient.html#modèles-rc"><i class="fa fa-check"></i><b>5.2</b> Modèles RC</a></li>
+<li class="chapter" data-level="5.3" data-path="transient.html"><a href="transient.html#exercices-inertie-thermique"><i class="fa fa-check"></i><b>5.3</b> Exercices : inertie thermique</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="transient.html"><a href="transient.html#exercice-1-bâtiment-lourd-ou-léger"><i class="fa fa-check"></i><b>5.3.1</b> Exercice 1 : bâtiment lourd ou léger</a></li>
+<li class="chapter" data-level="5.3.2" data-path="transient.html"><a href="transient.html#exercice-2-isolation-intérieure-ou-extérieure"><i class="fa fa-check"></i><b>5.3.2</b> Exercice 2 : isolation intérieure ou extérieure</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="air.html"><a href="air.html"><i class="fa fa-check"></i><b>6</b> Aéraulique</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="air.html"><a href="air.html#méthode-nodale"><i class="fa fa-check"></i><b>6.1</b> Méthode nodale</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="air.html"><a href="air.html#rappels-de-mécanique-des-fluides"><i class="fa fa-check"></i><b>6.1.1</b> Rappels de mécanique des fluides</a></li>
+<li class="chapter" data-level="6.1.2" data-path="air.html"><a href="air.html#débit-dans-les-ouvertures"><i class="fa fa-check"></i><b>6.1.2</b> Débit dans les ouvertures</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="air.html"><a href="air.html#ventilation-naturelle"><i class="fa fa-check"></i><b>6.2</b> Ventilation naturelle</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="air.html"><a href="air.html#vent"><i class="fa fa-check"></i><b>6.2.1</b> Vent</a></li>
+<li class="chapter" data-level="6.2.2" data-path="air.html"><a href="air.html#tirage-thermique"><i class="fa fa-check"></i><b>6.2.2</b> Tirage thermique</a></li>
+<li class="chapter" data-level="6.2.3" data-path="air.html"><a href="air.html#bilan"><i class="fa fa-check"></i><b>6.2.3</b> Bilan</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="air.html"><a href="air.html#exercices-2"><i class="fa fa-check"></i><b>6.3</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="air.html"><a href="air.html#exercice-1-vent-et-tirage-thermique"><i class="fa fa-check"></i><b>6.3.1</b> Exercice 1 : vent et tirage thermique</a></li>
+<li class="chapter" data-level="6.3.2" data-path="air.html"><a href="air.html#exercice-2-cheminée-solaire"><i class="fa fa-check"></i><b>6.3.2</b> Exercice 2 : cheminée solaire</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="humidite.html"><a href="humidite.html"><i class="fa fa-check"></i><b>7</b> Humidité</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="humidite.html"><a href="humidite.html#air-humide"><i class="fa fa-check"></i><b>7.1</b> Air humide</a></li>
+<li class="chapter" data-level="7.2" data-path="humidite.html"><a href="humidite.html#humidité-dans-les-matériaux"><i class="fa fa-check"></i><b>7.2</b> Humidité dans les matériaux</a></li>
+<li class="chapter" data-level="7.3" data-path="humidite.html"><a href="humidite.html#bilans-dhumidité"><i class="fa fa-check"></i><b>7.3</b> Bilans d’humidité</a></li>
+<li class="chapter" data-level="7.4" data-path="humidite.html"><a href="humidite.html#exercice-1"><i class="fa fa-check"></i><b>7.4</b> Exercice</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="humidite.html"><a href="humidite.html#exercice-1-condensation"><i class="fa fa-check"></i><b>7.4.1</b> Exercice 1 : condensation</a></li>
+<li class="chapter" data-level="7.4.2" data-path="humidite.html"><a href="humidite.html#exercice-2-point-de-rosée"><i class="fa fa-check"></i><b>7.4.2</b> Exercice 2 : point de rosée</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II HVAC systems</b></span></li>
+<li class="chapter" data-level="8" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html"><i class="fa fa-check"></i><b>8</b> Aperçu des systèmes</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html#des-besoins-aux-consommations"><i class="fa fa-check"></i><b>8.1</b> Des besoins aux consommations</a></li>
+<li class="chapter" data-level="8.2" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html#types-de-systèmes"><i class="fa fa-check"></i><b>8.2</b> Types de systèmes</a></li>
+<li class="chapter" data-level="8.3" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html#dimensionnement"><i class="fa fa-check"></i><b>8.3</b> Dimensionnement</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="hydronic-heating.html"><a href="hydronic-heating.html"><i class="fa fa-check"></i><b>9</b> Hydronic heating</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="hydronic-heating.html"><a href="hydronic-heating.html#généralités"><i class="fa fa-check"></i><b>9.1</b> Généralités</a></li>
+<li class="chapter" data-level="9.2" data-path="hydronic-heating.html"><a href="hydronic-heating.html#emission-de-chaleur"><i class="fa fa-check"></i><b>9.2</b> Emission de chaleur</a></li>
+<li class="chapter" data-level="9.3" data-path="hydronic-heating.html"><a href="hydronic-heating.html#distribution"><i class="fa fa-check"></i><b>9.3</b> Distribution</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="hydronic-heating.html"><a href="hydronic-heating.html#réglage-de-la-température-et-du-débit-dans-les-émetteurs"><i class="fa fa-check"></i><b>9.3.1</b> Réglage de la température et du débit dans les émetteurs</a></li>
+<li class="chapter" data-level="9.3.2" data-path="hydronic-heating.html"><a href="hydronic-heating.html#circuits-primaires-et-secondaires"><i class="fa fa-check"></i><b>9.3.2</b> Circuits primaires et secondaires</a></li>
+<li class="chapter" data-level="9.3.3" data-path="hydronic-heating.html"><a href="hydronic-heating.html#equilibrage-hydraulique"><i class="fa fa-check"></i><b>9.3.3</b> Equilibrage hydraulique</a></li>
+<li class="chapter" data-level="9.3.4" data-path="hydronic-heating.html"><a href="hydronic-heating.html#circulateurs"><i class="fa fa-check"></i><b>9.3.4</b> Circulateurs</a></li>
+<li class="chapter" data-level="9.3.5" data-path="hydronic-heating.html"><a href="hydronic-heating.html#pertes-thermiques"><i class="fa fa-check"></i><b>9.3.5</b> Pertes thermiques</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="hydronic-heating.html"><a href="hydronic-heating.html#génération"><i class="fa fa-check"></i><b>9.4</b> Génération</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="hydronic-heating.html"><a href="hydronic-heating.html#chaudières"><i class="fa fa-check"></i><b>9.4.1</b> Chaudières</a></li>
+<li class="chapter" data-level="9.4.2" data-path="hydronic-heating.html"><a href="hydronic-heating.html#pompes-à-chaleur"><i class="fa fa-check"></i><b>9.4.2</b> Pompes à chaleur</a></li>
+<li class="chapter" data-level="9.4.3" data-path="hydronic-heating.html"><a href="hydronic-heating.html#autres-générateurs-de-chaleur"><i class="fa fa-check"></i><b>9.4.3</b> Autres générateurs de chaleur</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ecs.html"><a href="ecs.html"><i class="fa fa-check"></i><b>10</b> Domestic hot water</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="ecs.html"><a href="ecs.html#calcul-des-besoins-et-consommations"><i class="fa fa-check"></i><b>10.1</b> Calcul des besoins et consommations</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="ecs.html"><a href="ecs.html#calcul-des-besoins-decs"><i class="fa fa-check"></i><b>10.1.1</b> Calcul des besoins d’ECS</a></li>
+<li class="chapter" data-level="10.1.2" data-path="ecs.html"><a href="ecs.html#calcul-des-pertes-de-distribution-stockage-et-génération"><i class="fa fa-check"></i><b>10.1.2</b> Calcul des pertes de distribution, stockage et génération}</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="ecs.html"><a href="ecs.html#modes-de-production"><i class="fa fa-check"></i><b>10.2</b> Modes de production</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="ecs.html"><a href="ecs.html#instantané"><i class="fa fa-check"></i><b>10.2.1</b> Instantané</a></li>
+<li class="chapter" data-level="10.2.2" data-path="ecs.html"><a href="ecs.html#accumulation"><i class="fa fa-check"></i><b>10.2.2</b> Accumulation</a></li>
+<li class="chapter" data-level="10.2.3" data-path="ecs.html"><a href="ecs.html#semi-instantané-ou-semi-accumulation"><i class="fa fa-check"></i><b>10.2.3</b> Semi-instantané ou semi-accumulation</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="ecs.html"><a href="ecs.html#systèmes-de-production-decs"><i class="fa fa-check"></i><b>10.3</b> Systèmes de production d’ECS</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="ecs.html"><a href="ecs.html#cumulus-électrique"><i class="fa fa-check"></i><b>10.3.1</b> Cumulus électrique</a></li>
+<li class="chapter" data-level="10.3.2" data-path="ecs.html"><a href="ecs.html#chaudière-double-service"><i class="fa fa-check"></i><b>10.3.2</b> Chaudière double service}</a></li>
+<li class="chapter" data-level="10.3.3" data-path="ecs.html"><a href="ecs.html#chauffe-eau-solaire-individuel"><i class="fa fa-check"></i><b>10.3.3</b> Chauffe-eau solaire individuel}</a></li>
+<li class="chapter" data-level="10.3.4" data-path="ecs.html"><a href="ecs.html#système-solaire-combiné"><i class="fa fa-check"></i><b>10.3.4</b> Système solaire combiné</a></li>
+<li class="chapter" data-level="10.3.5" data-path="ecs.html"><a href="ecs.html#pompe-à-chaleur"><i class="fa fa-check"></i><b>10.3.5</b> Pompe à chaleur</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="ecs.html"><a href="ecs.html#dimensionnement-des-systèmes-solaires-solaire"><i class="fa fa-check"></i><b>10.4</b> Dimensionnement des systèmes solaires {solaire}</a></li>
+<li class="chapter" data-level="10.5" data-path="ecs.html"><a href="ecs.html#exercice-2"><i class="fa fa-check"></i><b>10.5</b> Exercice</a></li>
+<li class="chapter" data-level="10.6" data-path="ecs.html"><a href="ecs.html#estimating-the-consumption"><i class="fa fa-check"></i><b>10.6</b> Estimating the consumption</a></li>
+<li class="chapter" data-level="10.7" data-path="ecs.html"><a href="ecs.html#sizing-the-system"><i class="fa fa-check"></i><b>10.7</b> Sizing the system</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="ecs.html"><a href="ecs.html#solar-coverage"><i class="fa fa-check"></i><b>10.7.1</b> Solar coverage</a></li>
+<li class="chapter" data-level="10.7.2" data-path="ecs.html"><a href="ecs.html#temperatures"><i class="fa fa-check"></i><b>10.7.2</b> Temperatures</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ventilation.html"><a href="ventilation.html"><i class="fa fa-check"></i><b>11</b> Ventilation</a></li>
+<li class="chapter" data-level="12" data-path="air-conditioning.html"><a href="air-conditioning.html"><i class="fa fa-check"></i><b>12</b> Air conditioning</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="air-conditioning.html"><a href="air-conditioning.html#evaluating-air-conditioning-needs"><i class="fa fa-check"></i><b>12.1</b> Evaluating air conditioning needs</a></li>
+<li class="chapter" data-level="12.2" data-path="air-conditioning.html"><a href="air-conditioning.html#tutorials"><i class="fa fa-check"></i><b>12.2</b> Tutorials</a></li>
+</ul></li>
+<li class="part"><span><b>III Designing energy performant buildings</b></span></li>
+<li class="chapter" data-level="13" data-path="bioclimatic-architecture.html"><a href="bioclimatic-architecture.html"><i class="fa fa-check"></i><b>13</b> Bioclimatic architecture</a></li>
+<li class="chapter" data-level="14" data-path="building-energy-simulation.html"><a href="building-energy-simulation.html"><i class="fa fa-check"></i><b>14</b> Building energy simulation</a></li>
+<li class="chapter" data-level="15" data-path="numerical-methods.html"><a href="numerical-methods.html"><i class="fa fa-check"></i><b>15</b> Numerical methods</a></li>
+<li class="divider"></li>
+<li><a href="https://srouchier.github.io/" target="blank">Un livre de Simon Rouchier</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Manuel de performance énergétique des bâtiments</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="rayonnement" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapitre 4</span> Rayonnement<a href="rayonnement.html#rayonnement" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="principes-de-rayonnement" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Principes de rayonnement<a href="rayonnement.html#principes-de-rayonnement" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Le chapitre <a href="steady.html#steady">3</a> a traité les transferts thermiques à travers les parois, entre les parois et l’air, et entre les différents volumes d’air. Un dernier type de transfert doit être abordé : les échanges radiatifs entre les parois.</p>
+<div class="figure"><span style="display:block;" id="fig:rayonnement0"></span>
+<img src="figures/rayonnement0.png" alt="Interactions entre les températures des surfaces" width="45%" />
+<p class="caption">
+Figure 4.1: Interactions entre les températures des surfaces
+</p>
+</div>
+<p>La température de surface des murs, à l’intérieur ou à l’extérieur, est généralement différente de la température de l’air du fait de la résistance surfacique. En plus d’échanger de la chaleur par convection avec l’air, les parois en échangent entre elles par rayonnement, et en reçoivent d’autres sources : soleil, appareils de chauffage, occupants.</p>
+<div class="figure"><span style="display:block;" id="fig:rayonnement1"></span>
+<img src="figures/rayonnement1.PNG" alt="Rapport entre la température d'un corps noir et son spectre d'émission" width="100%" />
+<p class="caption">
+Figure 4.2: Rapport entre la température d’un corps noir et son spectre d’émission
+</p>
+</div>
+<p>La loi de Planck représentée sur la figure <a href="rayonnement.html#fig:rayonnement1">4.2</a> décrit le spectre du rayonnement thermique émis par un corps noir en fonction de sa température. La longueur d’onde du maximum d’émission est inversement proportionnelle à la température. En thermique du bâtiment, on distingue donc deux types de rayonnement :</p>
+<ul>
+<li>le rayonnement solaire, principalement compris entre 300 et 2000 nm, qu’on appelle les courtes longueurs d’onde (CLO) ;</li>
+<li>le rayonnement émis par les bâtiments eux-mêmes et leur environnement, à des températures bien plus faibles donc de plus grandes longueurs d’onde (GLO) de plusieurs <span class="math inline">\(\mu\)</span>m.</li>
+</ul>
+</div>
+<div id="apports-solaires" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Apports solaires<a href="rayonnement.html#apports-solaires" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Résumé en vidéo</p>
+<!DOCTYPE html>
+<html>
+<body>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N-b8z9apKpQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+</html>
+<p>La puissance radiative <span class="math inline">\(\Phi_\mathit{sol}\)</span> (W) reçue par une surface d’absorptivité <span class="math inline">\(\alpha\)</span> est la somme de l’ensoleillement direct <span class="math inline">\(E_\mathit{dir}\)</span> (W.m<span class="math inline">\(^{-2}\)</span>), l’ensoleillement diffus <span class="math inline">\(E_\mathit{dif}\)</span> et celui réfléchi sur les surfaces voisines <span class="math inline">\(E_\mathit{ref}\)</span> :</p>
+<p><span class="math display" id="eq:rayon1">\[\begin{equation}
+\Phi_\mathit{sol} = \alpha \, S \, \left( E_\mathit{dir} + E_\mathit{dif} + E_\mathit{ref} \right)
+\tag{4.1}
+\end{equation}\]</span></p>
+<p>Chacun de ces termes se calcule avec un peu de trigonométrie en fonction de la position du soleil par rapport à la paroi. Les variables nécessaires pour</p>
+<ul>
+<li>les données météorologiques mesurables : l’ensoleillement global et diffus horizontal, et la position du soleil (hauteur et azimut) ;</li>
+<li>l’orientation de la paroi : angle par rapport au sol, et azimut.</li>
+</ul>
+<p>L’ensoleillement agit comme un apport thermique qui chauffe les surfaces exposées à l’intérieur ou à l’extérieur du bâtiment. Dans un calcul détaillé des transferts thermiques, il faut tenir compte de la position du soleil et de l’intensité du rayonnement à chaque heure de la journée. Dans le calcul réglementaire (très) simplifié, on utilise souvent des valeurs tabulées moyennes en fonction de la surface de vitrage sur chaque façade pour calculer les apports internes (voir l’exemple de l’exercice du chapitre <a href="apercu.html#apercu">2</a>).</p>
+<p>Les apports thermiques dus au soleil dépendent en grande partie des <a href="https://energieplus-lesite.be/donnees/enveloppe44/enveloppe2/recapitulatif-des-caracteristiques-des-vitrages/">caractéristiques des vitrages</a> présents :</p>
+<ul>
+<li>la transmission lumineuse, la part de la lumière visible transmise par la vitre (environ 90% pour du vitrage simple, 70% pour du double vitrage à basse émissivité) ;</li>
+<li>le facteur solaire, le facteur de transmission de la partie infrarouge du rayonnement solaire, qui peut être diminué par le choix d’un <a href="https://energieplus-lesite.be/techniques/enveloppe7/composants-de-l-enveloppe/vitrages/vitrage-permettant-le-controle-solaire/">vitrage sélectif</a> pour limiter la surchauffe estivale ;</li>
+<li>le coefficient <span class="math inline">\(U\)</span> de conductivité thermique, qui ne joue pas directement sur les transferts radiatifs.</li>
+</ul>
+</div>
+<div id="echanges-radiatifs-glo" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Echanges radiatifs GLO<a href="rayonnement.html#echanges-radiatifs-glo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Le deuxième type de transfert radiatif de chaleur dans les bâtiments est celui à “grandes longueurs d’onde”, c’est-à-dire les échanges entre surfaces proches de la température ambiante. Ces transferts sont importants pour comprendre les apports de certains équipements de chauffage et la notion de confort thermique.</p>
+<!DOCTYPE html>
+<html>
+<body>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OCiBJY5daiM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+</html>
+<div id="définitions" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Définitions<a href="rayonnement.html#définitions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Lorsqu’une surface reçoit un <strong>éclairement</strong> <span class="math inline">\(E\)</span> (W.m<span class="math inline">\(^{-2}\)</span>), ou densité de flux énergétique incident, cet éclairement est en partie absorbé, réfléchi et transmis. Les proportions de ces trois parties sont notées <span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\rho\)</span> et <span class="math inline">\(\tau\)</span> respectivement, de sorte que</p>
+<p><span class="math display" id="eq:rayon15">\[\begin{equation}
+\alpha + \rho + \tau = 1
+\tag{4.2}
+\end{equation}\]</span></p>
+<div class="figure"><span style="display:block;" id="fig:rayon1"></span>
+<img src="figures/rayon1.png" alt="Répartition de l'éclairement reçu par une surface" width="28%" />
+<p class="caption">
+Figure 4.3: Répartition de l’éclairement reçu par une surface
+</p>
+</div>
+<p>D’autre part, une surface à la température <span class="math inline">\(T\)</span> (K) émet un flux radiatif appelé <strong>émittance</strong> <span class="math inline">\(M\)</span> par unité de surface (W.m<span class="math inline">\(^{-2}\)</span>). Sous l’hypothèse d’un corps gris, sa valeur est liée à la température</p>
+<p><span class="math display" id="eq:rayon2">\[\begin{equation}
+M = \varepsilon M^0 = \varepsilon \sigma T^4
+\tag{4.3}
+\end{equation}\]</span></p>
+<p>où <span class="math inline">\(\varepsilon\)</span> est l’émissivité de la surface et <span class="math inline">\(\sigma = 5.67 \times 10^{-8}\)</span> W.m<span class="math inline">\(^{-2}\)</span>.K<span class="math inline">\(^{-4}\)</span> est la constante de Stefan-Boltzmann. <span class="math inline">\(M^0\)</span> est l’émittance de corps noir, uniquement fonction de la température.</p>
+<p>Le rayonnement thermique total émis par notre surface est donc la somme de deux termes: la part réfléchie de l’éclairement incident <span class="math inline">\(\rho E\)</span>, et son émissivité propre <span class="math inline">\(M\)</span></p>
+<div class="figure"><span style="display:block;" id="fig:rayon2"></span>
+<img src="figures/rayon2.png" alt="Flux total radiatif émis par une surface à une température donnée" width="42%" />
+<p class="caption">
+Figure 4.4: Flux total radiatif émis par une surface à une température donnée
+</p>
+</div>
+<p>On appelle <strong>radiosité</strong> <span class="math inline">\(J\)</span> (W.m<span class="math inline">\(^{-2}\)</span>) la somme de ces deux termes, c’est-à-dire le flux énergétique total quittant la surface par rayonnement.</p>
+<p><span class="math display" id="eq:rayon3">\[\begin{equation}
+J = M + \rho \, E
+\tag{4.4}
+\end{equation}\]</span></p>
+<p>Enfin, la dernière grandeur qu’on définit ici pour le calcul des bilans radiatifs est le <strong>flux net</strong> <span class="math inline">\(\Phi\)</span> (W), qui est la différence entre le flux total incident et le flux total émis par la surface. Ce flux net peut être positif ou négatif, selon que la surface cède plus ou moins de chaleur qu’elle n’en reçoit de son environnement.</p>
+</div>
+<div id="résolution-des-bilans-radiatifs" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Résolution des bilans radiatifs<a href="rayonnement.html#résolution-des-bilans-radiatifs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>On considère maintenant l’échange radiatif entre plusieurs surfaces en vis-à-vis, par exemple les parois d’une pièce ou les façades de plusieurs bâtiments proches. Résoudre le bilan radiatif de ces surfaces revient à calculer leurs températures et leurs flux nets de chaleur sous l’effet du rayonnement thermique.</p>
+<div class="figure"><span style="display:block;" id="fig:rayon3"></span>
+<img src="figures/rayon3.png" alt="Echanges radiatifs entre plusieurs surfaces" width="40%" />
+<p class="caption">
+Figure 4.5: Echanges radiatifs entre plusieurs surfaces
+</p>
+</div>
+<p>Comme on a vu plus haut, le flux total (radiosité) émis par chaque surface dépend de son éclairement incident, issu des radiosités des autres surfaces avec lesquelles elle échange. Toutes les radiosités dépendent les unes des autres et il va falloir résoudre un système couplé.</p>
+<p>Le système peut être résolu si chaque paroi a soit une température connue, soit un flux net de chaleur connu (par exemple une paroi adiabatique a un flux net nul). Pour chaque surface <span class="math inline">\(i\)</span> du problème, on note <span class="math inline">\(T_i\)</span>, <span class="math inline">\(S_i\)</span>, <span class="math inline">\(J_i\)</span> et <span class="math inline">\(\Phi_i\)</span>, sa température, surface, radiosité et flux net, et on écrit une des deux équations suivantes:</p>
+<ul>
+<li>Si sa température <span class="math inline">\(T_i\)</span> est connue:</li>
+</ul>
+<p><span class="math display" id="eq:rayon4">\[\begin{equation}
+J_i = \varepsilon_i \sigma T_i^4 + \rho_i \sum_{j=1}^n J_j F_{ij}
+\tag{4.5}
+\end{equation}\]</span></p>
+<ul>
+<li>Si son flux net <span class="math inline">\(\Phi_i\)</span> est connu:</li>
+</ul>
+<p><span class="math display" id="eq:rayon5">\[\begin{equation}
+\frac{\Phi_i}{S_i} = J_i -  \sum_{j=1}^n J_j F_{ij}
+\tag{4.6}
+\end{equation}\]</span></p>
+<p>En écrivant une équation pour chacune des <span class="math inline">\(n\)</span> surfaces du problème, on obtient alors un système linéaire à <span class="math inline">\(n\)</span> équations qui se résoud facilement pour déterminer toutes les radiosités. Une fois celles-ci connues, on peut en déduire les températures et flux nets inconnus des surfaces à partir de cette équation, qui est issue des deux précédentes:</p>
+<p><span class="math display" id="eq:rayon6">\[\begin{equation}
+\frac{\Phi_i}{S_i} = \frac{\varepsilon_i}{1-\varepsilon_i} \left(\sigma T_i^4 - J_i\right)
+\tag{4.7}
+\end{equation}\]</span></p>
+<p>On peut remarquer que les équations <a href="rayonnement.html#eq:rayon4">(4.5)</a> et <a href="rayonnement.html#eq:rayon5">(4.6)</a> contiennent des termes <span class="math inline">\(F_{ij}\)</span> qu’on n’a pas encore spécifiés. Il s’agit des facteurs de forme entre les surfaces, qui seront expliqués dans la section suivante.</p>
+<p>Pour finir, on peut évoquer un moyen <strong>simplifié</strong> de calculer l’échange radiatif <span class="math inline">\(\Phi_\mathit{rad}\)</span> entre deux surfaces de températures connues <span class="math inline">\(T_1\)</span> et <span class="math inline">\(T_2\)</span> : la définition d’un coefficient de transfert radiatif <span class="math inline">\(h_r\)</span>.</p>
+<p><span class="math display" id="eq:rayon8" id="eq:rayon7">\[\begin{align}
+\Phi_\mathit{rad} &amp; = h_r \, S_1 \left(T_1 - T_2\right) \tag{4.8} \\
+h_r &amp; = \varepsilon \, F_{12} \sigma \left(T_1^2 + T_2^2\right)(T_1+T_2) \tag{4.9}
+\end{align}\]</span></p>
+</div>
+<div id="facteurs-de-forme" class="section level3 hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Facteurs de forme<a href="rayonnement.html#facteurs-de-forme" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Le facteur de forme <span class="math inline">\(F_{ij}\)</span> est la part du rayonnement thermique émis par la surface <span class="math inline">\(i\)</span>, reçu par la surface <span class="math inline">\(j\)</span>. C’est une donnée purement géométrique. Il correspond en quelque sorte à la question: “si un observateur se tient sur la surface <span class="math inline">\(i\)</span>, quelle est la part occupée par la surface <span class="math inline">\(j\)</span> dans son champ de vision ?”</p>
+<p>Tous les facteurs de forme sont des valeurs sans dimension comprises entre 0 et 1. On les détermine soit par des abaques, soit par des formules un peu compliquées comme dans cet exemple:</p>
+<div class="figure"><span style="display:block;" id="fig:tuto3"></span>
+<img src="figures/tuto3.png" alt="Facteurs de forme dans deux situations typiques" width="100%" />
+<p class="caption">
+Figure 4.6: Facteurs de forme dans deux situations typiques
+</p>
+</div>
+<p>Une fois que certains facteurs de formes sont connus entre plusieurs surfaces, on peut généralement déduire les autres facilement avec les propriétés suivantes :</p>
+<ul>
+<li>Le principe de réciprocité :</li>
+</ul>
+<p><span class="math display" id="eq:rayonff1">\[\begin{equation}
+S_i F_{ij} = S_j F_{ji}
+\tag{4.10}
+\end{equation}\]</span></p>
+<ul>
+<li>La somme des facteurs de forme depuis une surface vaut 1 :</li>
+</ul>
+<p><span class="math display" id="eq:rayonff2">\[\begin{equation}
+\sum_{j=1}^n F_{ij} = 1
+\tag{4.11}
+\end{equation}\]</span></p>
+</div>
+<div id="température-radiative-et-opérative" class="section level3 hasAnchor" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Température radiative et opérative<a href="rayonnement.html#température-radiative-et-opérative" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La <strong>température radiative</strong> dans une pièce est la température d’un objet qui n’échangerait de la chaleur que par transfert radiatif avec les surfaces environnante, sans effets de conduction et de convection.</p>
+<p><span class="math display" id="eq:rayon9">\[\begin{equation}
+T_r = \left(\sum_i F_i \varepsilon_i T_i^4 \right)^{1/4}
+\tag{4.12}
+\end{equation}\]</span></p>
+<p>où <span class="math inline">\(F_i\)</span> est le facteur de forme entre l’objet étudié et chacune des parois environnantes.</p>
+<p>La <strong>température opérative</strong> décrit les effets combinés des transferts convectifs avec l’air, et des transferts radiatifs. Cette notion est utilisée pour la description du confort thermique.</p>
+<p><span class="math display" id="eq:rayon10">\[\begin{equation}
+T_{op} = \frac{h_c T_a + h_r T_r}{h_c + h_r}
+\tag{4.13}
+\end{equation}\]</span>
+où <span class="math inline">\(T_a\)</span> est la température de l’air, <span class="math inline">\(h_c\)</span> et <span class="math inline">\(h_r\)</span> sont les coefficients d’échange convectif et radiatif.</p>
+</div>
+</div>
+<div id="exercices-1" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Exercices<a href="rayonnement.html#exercices-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exercice-1-serre" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Exercice 1 : serre<a href="rayonnement.html#exercice-1-serre" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure"><span style="display:block;" id="fig:tuto4"></span>
+<img src="figures/tuto4.png" alt="Exercice 1" width="40%" />
+<p class="caption">
+Figure 4.7: Exercice 1
+</p>
+</div>
+<p>Une serre est représentée par une demi-sphère montrée en figure <a href="rayonnement.html#fig:tuto4">4.7</a>. On suppose les hypothèses suivantes:</p>
+<ul>
+<li>Le diamètre de la serre est de 6 m.</li>
+<li>La température extérieure <span class="math inline">\(T_e\)</span> est 24°C et l’ensoleillement <span class="math inline">\(E_\mathit{sol}\)</span> est de 1000 W/m<span class="math inline">\(^2\)</span>. L’angle entre le soleil et le sol est de 60°.</li>
+<li>La couverture en verre est à la température <span class="math inline">\(T_c\)</span>. Elle a un coefficient de transmission solaire <span class="math inline">\(\tau_d = 0,8\)</span> et une émissivité <span class="math inline">\(\varepsilon=0,95\)</span> dans l’infrarouge. La résistance thermique du verre est très faible et peu être négligée.</li>
+<li>Les coefficients de transfert surfaciques sont: <span class="math inline">\(h_{gi}=2,6\)</span> W/(m<span class="math inline">\(^2\)</span>.K) entre le sol et l’air intérieur ; <span class="math inline">\(h_{ci}=6,1\)</span> W/(m<span class="math inline">\(^2\)</span>.K) entre la couverture et l’air intérieur ; <span class="math inline">\(h_{ce}=16\)</span> W/(m<span class="math inline">\(^2\)</span>.K) entre la couverture et l’air extérieur.</li>
+<li>Le sol a une émissivité de 0.9. Il est considéré comme adiabatique : il n’y a pas de perte de chaleur vers le sous-sol.</li>
+</ul>
+<p><strong>Questions :</strong></p>
+<ol style="list-style-type: decimal">
+<li>Calculer le facteur de forme <span class="math inline">\(F_{cg}\)</span> entre la couverture et le sol. Grâce à la formulation simplifiée des échanges radiatifs (équations <a href="rayonnement.html#eq:rayon7">(4.8)</a> et <a href="rayonnement.html#eq:rayon8">(4.9)</a>), donner l’expression du coefficient de transfert radiatif <span class="math inline">\(h_r\)</span> entre le sol et la couverture.</li>
+<li>Dessiner le schéma des résistances thermiques entre toutes les températures : <span class="math inline">\(T_e\)</span>, <span class="math inline">\(T_c\)</span>, <span class="math inline">\(T_i\)</span> et <span class="math inline">\(T_g\)</span>.</li>
+<li>Ecrire le système de 3 équations dont les 3 inconnues sont : <span class="math inline">\(T_c\)</span>, <span class="math inline">\(T_i\)</span> et <span class="math inline">\(T_g\)</span>.</li>
+<li>Proposer une méthode de résolution du système, et évaluer ces trois températures.</li>
+</ol>
+</div>
+<div id="tutorial-2-radiateur" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Tutorial 2: radiateur<a href="rayonnement.html#tutorial-2-radiateur" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure"><span style="display:block;" id="fig:tuto2"></span>
+<img src="figures/tuto2.png" alt="Exercice 2" width="40%" />
+<p class="caption">
+Figure 4.8: Exercice 2
+</p>
+</div>
+<p>On considère une pièce parallélépipédique aux dimensions montrées sur la figure <a href="rayonnement.html#fig:tuto2">4.8</a>.</p>
+<ul>
+<li>La surface <span class="math inline">\(S_5\)</span> (mur vertical gauche) est une baie vitrée à la température <span class="math inline">\(T_5 = 8\)</span>°C.</li>
+<li>La surface <span class="math inline">\(S_0\)</span> est un radiateur couvrant la moitié de la hauteur du mur de droite, à la température <span class="math inline">\(T_0 = 60\)</span>°C.</li>
+<li>La surface <span class="math inline">\(S_2\)</span> (le sol) est adiabatique.</li>
+<li>Toutes les autres parois sont à la température <span class="math inline">\(T = 20°C\)</span>.</li>
+</ul>
+<p>Calculer les pertes radiatives de la pièce par la fenêtre, le flux net radiatif cédé par le radiateur et la température du sol. L’émissivité de chaque surface est <span class="math inline">\(\varepsilon=0,85\)</span> et la réflectivité est <span class="math inline">\(\rho=0,15\)</span>.</p>
+<p><strong>Solution</strong></p>
+<p>Toutes les parois à la température <span class="math inline">\(T = 20\)</span>°C peuvent être considérées comme une seule surface, qu’on désignera avec l’indice 3. Le problème revient donc à un échange radiatif entre 4 surfaces: il faut écrire 4 équations.</p>
+<p>Il faut d’abord trouver tous les facteurs de forme. On a besoin d’utiliser les formules de la figure <a href="rayonnement.html#fig:tuto3">4.6</a> 3 fois en tout, pour trouver les valeurs suivantes :</p>
+<p><span class="math inline">\(F_{25}=0,1174 \: ; \: F_{20}=0,081 \: ; \: F_{50}= 0,0477\)</span></p>
+<p>Tous les autres facteurs de forme peuvent être déduits des formules simples: <span class="math inline">\(S_iF_{ij}=S_jF_{ji}\)</span> et <span class="math inline">\(\sum_j F_{ij}=1\)</span>.</p>
+<p>On écrit ensuite les 4 équations qui correspondant à chaque surface. Sur la surface 0 (le radiateur), la température est connue, ce qui donne :</p>
+<p><span class="math inline">\(J_0 =\varepsilon_0 \sigma T_0^4 + \rho_i\sum_{j=1}^n J_j F_{0j}\)</span></p>
+<p>Sur la surface 2 (le sol), le flux net est connu : la surface est adiabatique donc <span class="math inline">\(\Phi_2=0\)</span>. On peut donc écrire l’équation:</p>
+<p><span class="math inline">\(0 = J_2 - \sum_{j=1}^n J_j F_{2j}\)</span></p>
+<p>Les surfaces 3 et 5 ont le même type de condition aux limites que la surface 0 (température connue) donc leur équation est similaire. On aboutit finalement au système linéaire suivant dont la solution est un vecteur contenant les radiosités:</p>
+<p><span class="math display">\[\begin{bmatrix} 1-\rho_0F_{00} &amp; -\rho_0F_{02} &amp; -\rho_0F_{03} &amp; -\rho_0F_{05} \\ -F_{20} &amp; 1-F_{22} &amp; -F_{23} &amp; -F_{25}  \\
+-\rho_3F_{30} &amp; -\rho_3F_{32} &amp; 1-\rho_3F_{33} &amp; -\rho_3F_{35} \\ -\rho_5F_{50} &amp; -\rho_5F_{52} &amp; \rho_5F_{53} &amp; 1-\rho_5F_{55}
+\end{bmatrix}
+\begin{bmatrix} J_0 \\ J_2 \\ J_3 \\ J_5 \end{bmatrix} =
+\begin{bmatrix} \varepsilon_0\sigma T_0^4 \\ 0 \\ \varepsilon_3\sigma T_3^4 \\ \varepsilon_5\sigma T_5^4 \end{bmatrix}
+\]</span></p>
+<p>En résolvant ce système, on obtient les valeurs suivantes en W/m<span class="math inline">\(^2\)</span> pour les radiosités:</p>
+<p><span class="math inline">\(J_0= 656,61 \: ; \: J_2=433,23 \: ; \: J_3 = 420,45 \: ; \: J_5=366,34\)</span></p>
+<p>La dernière étape est d’utiliser la formule <a href="rayonnement.html#eq:rayon6">(4.7)</a> pour trouver les valeurs demandées dans l’énoncé : la température du sol <span class="math inline">\(T_2\)</span>, le flux net du radiateur <span class="math inline">\(\Phi_0\)</span> et le flux net sur la vitre <span class="math inline">\(\Phi_5\)</span>:</p>
+<p><span class="math inline">\(T_2= 22,5°C \: ; \: \Phi_0=711,53 W \: ; \: \Phi_5=-410,27 W\)</span></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="steady.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="transient.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/srouchier/beh13-rayonnement.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["manuel.pdf", "manuel.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

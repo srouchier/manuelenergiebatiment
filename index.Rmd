@@ -1,0 +1,41 @@
+--- 
+title: "Manuel de performance énergétique des bâtiments"
+author: "Simon Rouchier"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: srouchier/beh
+description: "Eléments de calcul et de réduction de la consommation énergétique des bâtiments"
+---
+
+# Préface {-}
+
+Ce livre vise à être un manuel générique de calcul de la performance énergétique des bâtiments, pour assister les personnes souhaitant comprendre les phénomènes en jeu et réduire leur consommation. La réglementation française y sert de base à un certain nombre de définitions, mais les formules présentées ne se limitent pas au calcul réglementaire.
+
+* La première partie est une description des principaux phénomènes physiques qui définissent la performance énergétique d'un bâtiment, avant que des systèmes de chauffage ventilation et climatisation y soient installés. On y revient sur les principales formes de transfert thermique, décrites avec les hypothèses de la modélisation des bâtiments, et sur les transferts hygriques et aérauliques. Cette partie inclut les éléments de calcul du coefficient Bbio de la réglementation.
+* La deuxième partie présente les équipements servant à satisfaire les besoins bioclimatiques estimés en première partie: chauffage, ventilation, refroidissement, eau chaude sanitaire. On y fait un inventaire des solutions existantes et on y décrit comment les dimensionner et estimer leur consommation. Cete partie correspond environ au calcul des indicateurs de consommation et d'impact sur le changement climatique de la réglementation.
+* Dans une troisième partie, on aborde quelques notions de conception de bâtiments à haute efficacité énergétique : éléments d'architecture bioclimatique et méthodes numériques d'appui à la simulation énergétique des bâtiments.
+
+Ce site est prévu initialement comme support de travail et de révisions pour les étudiants de la filière bâtiment écoconstruction de l'école Polytech Annecy-Chambéry. De fil en aiguille, le contenu s'est étoffé jusqu'à devenir un livre complet utilisable en dehors de l'école.
+
+## A propos {-}
+
+Ce livre est écrit par [Simon Rouchier](https://srouchier.github.io/), enseignant chercheur à l'[Université Savoie Mont Blanc](https://www.univ-smb.fr/), Chambéry.
+
+J'écris et mets à jour le livre avec l'outil [bookdown](https://bookdown.org/home/). J'ai aussi écrit un livre avec le même outil sur l'analyse statistique des données de mesure dans les bâtiments pour la réduction de leur consommation énergétique : [buildingenergygeeks](https://buildingenergygeeks.org/).
+
+Le site n'est pas monétisé : pas de pub, pas de cookies, pas de pistage. Uniquement le contenu.
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />Ce(tte) œuvre est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons Attribution - Pas d’Utilisation Commerciale - Partage dans les Mêmes Conditions 4.0 International</a>.
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+

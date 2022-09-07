@@ -1,0 +1,69 @@
+# (PART) HVAC systems {-}
+
+# Aperçu des systèmes
+
+les 5 postes de consommation
+
+des besoins aux consommations
+
+les systèmes pour chaque poste
+
+
+## Des besoins aux consommations
+
+Un aperçu des étapes de ce calcul est montré sur la figure \@ref(fig:etape1).
+
+```{r, besoinsconsos, echo=FALSE, out.width="70%", fig.cap="Des besoins aux consommations d'énergie importée"}
+knitr::include_graphics(rep("figures/besoinsconsos.png"))
+```
+
+Une fois les besoins estimés, on calcule les consommations d'énergie à importer dans le bâtiment pour les satisfaire (gaz, électricité, fioul, bois). Cette énergie **finale** est la quantité d'énergie directement consommée par l'utilisateur. Comme montré par la figure \@ref(fig:besoinsconsos), la différence entre les besoins de chauffage (en kWh) et la consommation d'énergie finale provient des déperditions de chaleur de l'ensemble des équipements : pertes de génération, de stockage, de distribution et de régulation. Le calcul de la consommation à partir des besoins constituera l'essentiel du cours et des exercices décrits plus loin.
+
+L'indicateur Cep est la somme des consommations d'énergie primaire du bâtiment pour les différents postes de consommation : chauffage, refroidissement, ECS, éclairage, auxiliaires de ventilation et distribution. L'énergie primaire est la consommation d'énergie nécessaire à la production d'énergie finale. Pour chaque poste, la consommation en énergie primaire Cep est calculée à partir des consommations d’énergie finale Cef, multipliée par le coefficient de conversion en énergie primaire propre à chaque énergie. L'indicateur Cepnr de consommation d'énergie primaire non renouvelable est calculé de la même façon :
+\begin{align}
+    \mathrm{Cep} & = \sum_\mathrm{energie} \mathrm{Cef}(\mathrm{energie}) \times \mathrm{CoefEP}(\mathrm{energie}) (\#eq:cep)\\
+    \mathrm{Cepnr} & = \sum_\mathrm{energie} \mathrm{Cef}(\mathrm{energie}) \times \mathrm{CoefEPnr}(\mathrm{energie}) (\#eq:cepnr)
+\end{align}
+Où CoeffEP et CoeffEPnr sont les coefficients de transformation de l'énergie entrant dans le bâtiment en énergie primaire, renouvelable ou non. Pour les réseaux urbains, la valeur du coefficient CoefEPnr pour les réseaux de chauffage/ECS est fonction du ratio d’énergie renouvelable du réseau.
+
+Table: (\#tab:coeffcep) Coefficients de conversion d'énergie entrant dans le bâtiment en énergie primaire
+
+Type d'énergie    CoeffEP    CoeffEPnr
+---------------   --------   ----------
+Gaz naturel           1          1
+Fioul                 1          1
+Bois                  1          0
+Electricité         2.3         2.3 
+Réseau urbain         1      1 - ratio d'ENR
+
+Enfin, une fois les consommations d'énergie primaire calculées, on s'intéressera à leur impact environnemental. L'indicateur Ic$_\mathrm{energie}$ mesure l'impact sur le changement climatique des consommations pendant l'exploitation du bâtiment. Il est obtenu en multipliant les consommations d'énergie finale par les coefficients de conversion d'énergie en quantité de gaz à effet de serre montrés dans le tableau \@ref(tab:coeffco2).
+
+Table: (\#tab:coeffco2) Coefficients de conversion de l'énergie entrant dans le bâtiment en quantité de gaz à effet de serre émis
+
+Type d'énergie finale               kg équivalent CO$_2$ par kWh en PCI
+----------------------              ------------------------------------
+Bois                                  0,024 à 0,03 
+Electricité                             0,064 à 0,079
+Gaz                                     0,227 à 0,272
+Autres combustibles fossiles          0,324
+
+
+
+
+
+## Types de systèmes
+
+## Dimensionnement {#dimensionnement}
+
+peut-être à enlever
+
+Le dimensionnement consiste à chercher la **puissance** maximale de chauffage que le système doit pouvoir fournir pour couvrir les besoins même au point le plus froid de l'année. On parle de puissance **nominale** et de conditions nominales. On utilise dans l'équation \@ref(eq:thermique2) une **température extérieure de base**, qui est la température minimale à l'année. Elle dépend de l'emplacement géographique du bâtiment, et est corrigée en fonction de l'altitude. La puissance à installer est calculée de sorte à satisfaire les besoins instantanés pour cette température de base :
+\begin{equation}
+    \Phi_\textit{chauffage} =  D \left(T_i - T_\mathit{e,base} \right) - \Phi_\mathit{sol} - \Phi_\mathit{in}
+    (\#eq:dimensionnement)
+\end{equation}
+
+L'unité des termes de l'équation \@ref(eq:dimensionnement) est le [W] ou le [kW], car il s'agit de calculer une puissance instantanée.
+
+Pour le dimensionnement, on pourra supposer que les apports solaires $\Phi_\mathit{sol}$ et internes $\Phi_\mathit{in}$ sont nuls, afin que la puissance calculée $\Phi_\textit{chauffage}$ soit suffisante quelles que soient les conditions d'utilisation.
+

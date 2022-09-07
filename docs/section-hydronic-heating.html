@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapitre 9 Hydronic heating | Manuel de performance énergétique des bâtiments</title>
+  <meta name="description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapitre 9 Hydronic heating | Manuel de performance énergétique des bâtiments" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  <meta name="github-repo" content="srouchier/beh" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapitre 9 Hydronic heating | Manuel de performance énergétique des bâtiments" />
+  
+  <meta name="twitter:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  
+
+<meta name="author" content="Simon Rouchier" />
+
+
+<meta name="date" content="2022-07-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="section-aperçu-des-systèmes.html"/>
+<link rel="next" href="section-ecs.html"/>
+<!-- HEAD_CONTENT -->
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Building Energy Handbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Préface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#section-a-propos"><i class="fa fa-check"></i>A propos</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="section-introduction.html"><a href="section-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="section-introduction.html"><a href="section-introduction.html#section-quelques-chiffres"><i class="fa fa-check"></i><b>1.1</b> Quelques chiffres</a></li>
+<li class="chapter" data-level="1.2" data-path="section-introduction.html"><a href="section-introduction.html#section-réglementation"><i class="fa fa-check"></i><b>1.2</b> Réglementation</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="section-introduction.html"><a href="section-introduction.html#section-re2020"><i class="fa fa-check"></i><b>1.2.1</b> Bâtiments neufs : la RE 2020</a></li>
+<li class="chapter" data-level="1.2.2" data-path="section-introduction.html"><a href="section-introduction.html#section-bâtiments-existants"><i class="fa fa-check"></i><b>1.2.2</b> Bâtiments existants</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="section-introduction.html"><a href="section-introduction.html#section-plan-du-livre"><i class="fa fa-check"></i><b>1.3</b> Plan du livre</a></li>
+</ul></li>
+<li class="part"><span><b>I Transferts de chaleur et de masse</b></span></li>
+<li class="chapter" data-level="2" data-path="section-apercu.html"><a href="section-apercu.html"><i class="fa fa-check"></i><b>2</b> Aperçu</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="section-apercu.html"><a href="section-apercu.html#section-apercu1"><i class="fa fa-check"></i><b>2.1</b> Bilan thermique global</a></li>
+<li class="chapter" data-level="2.2" data-path="section-apercu.html"><a href="section-apercu.html#section-apercu2"><i class="fa fa-check"></i><b>2.2</b> Calcul réglementaire</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="section-apercu.html"><a href="section-apercu.html#section-hypothèses"><i class="fa fa-check"></i><b>2.2.1</b> Hypothèses</a></li>
+<li class="chapter" data-level="2.2.2" data-path="section-apercu.html"><a href="section-apercu.html#section-besoins-de-chauffage-et-refroidissement"><i class="fa fa-check"></i><b>2.2.2</b> Besoins de chauffage et refroidissement</a></li>
+<li class="chapter" data-level="2.2.3" data-path="section-apercu.html"><a href="section-apercu.html#section-les-règles-th-bat"><i class="fa fa-check"></i><b>2.2.3</b> Les règles Th-bat</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="section-apercu.html"><a href="section-apercu.html#section-apercu3"><i class="fa fa-check"></i><b>2.3</b> Détail des transferts thermiques</a></li>
+<li class="chapter" data-level="2.4" data-path="section-apercu.html"><a href="section-apercu.html#section-exercice"><i class="fa fa-check"></i><b>2.4</b> Exercice</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="section-steady.html"><a href="section-steady.html"><i class="fa fa-check"></i><b>3</b> Conduction et convection stationnaire</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="section-steady.html"><a href="section-steady.html#section-conduction-dans-un-mur"><i class="fa fa-check"></i><b>3.1</b> Conduction dans un mur</a></li>
+<li class="chapter" data-level="3.2" data-path="section-steady.html"><a href="section-steady.html#section-ponts-thermiques"><i class="fa fa-check"></i><b>3.2</b> Ponts thermiques</a></li>
+<li class="chapter" data-level="3.3" data-path="section-steady.html"><a href="section-steady.html#section-convection-entre-pièces"><i class="fa fa-check"></i><b>3.3</b> Convection entre pièces</a></li>
+<li class="chapter" data-level="3.4" data-path="section-steady.html"><a href="section-steady.html#section-exercices"><i class="fa fa-check"></i><b>3.4</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="section-steady.html"><a href="section-steady.html#section-exo-1-déperditions-dune-pièce"><i class="fa fa-check"></i><b>3.4.1</b> Exo 1 : déperditions d’une pièce</a></li>
+<li class="chapter" data-level="3.4.2" data-path="section-steady.html"><a href="section-steady.html#section-exo-2-bilan-thermique-de-deux-pièces"><i class="fa fa-check"></i><b>3.4.2</b> Exo 2: bilan thermique de deux pièces</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="section-rayonnement.html"><a href="section-rayonnement.html"><i class="fa fa-check"></i><b>4</b> Radiative heat transfer</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-principles-of-radiative-transfer"><i class="fa fa-check"></i><b>4.1</b> Principles of radiative transfer</a></li>
+<li class="chapter" data-level="4.2" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-solar-heat-gain"><i class="fa fa-check"></i><b>4.2</b> Solar heat gain</a></li>
+<li class="chapter" data-level="4.3" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-radiative-heat-exchange"><i class="fa fa-check"></i><b>4.3</b> Radiative heat exchange</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-radiant-and-operative-temperatures"><i class="fa fa-check"></i><b>4.3.1</b> Radiant and operative temperatures</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-tutorials"><i class="fa fa-check"></i><b>4.4</b> Tutorials</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-tutorial-1-greenhouse"><i class="fa fa-check"></i><b>4.4.1</b> Tutorial 1: greenhouse</a></li>
+<li class="chapter" data-level="4.4.2" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-tutorial-2-radiator"><i class="fa fa-check"></i><b>4.4.2</b> Tutorial 2: radiator</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="section-transient.html"><a href="section-transient.html"><i class="fa fa-check"></i><b>5</b> Transient heat transfer</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="section-transient.html"><a href="section-transient.html#section-heat-capacity"><i class="fa fa-check"></i><b>5.1</b> Heat capacity</a></li>
+<li class="chapter" data-level="5.2" data-path="section-transient.html"><a href="section-transient.html#section-lumped-capacitance-models"><i class="fa fa-check"></i><b>5.2</b> Lumped capacitance models</a></li>
+<li class="chapter" data-level="5.3" data-path="section-transient.html"><a href="section-transient.html#section-tutorial-thermal-inertia"><i class="fa fa-check"></i><b>5.3</b> Tutorial: thermal inertia</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="section-transient.html"><a href="section-transient.html#section-question-1-winter-conditions"><i class="fa fa-check"></i><b>5.3.1</b> Question 1: winter conditions</a></li>
+<li class="chapter" data-level="5.3.2" data-path="section-transient.html"><a href="section-transient.html#section-question-2-summer-conditions"><i class="fa fa-check"></i><b>5.3.2</b> Question 2: summer conditions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="section-air.html"><a href="section-air.html"><i class="fa fa-check"></i><b>6</b> Air transfer</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="section-air.html"><a href="section-air.html#section-principles"><i class="fa fa-check"></i><b>6.1</b> Principles</a></li>
+<li class="chapter" data-level="6.2" data-path="section-air.html"><a href="section-air.html#section-air-flow-network"><i class="fa fa-check"></i><b>6.2</b> Air flow network</a></li>
+<li class="chapter" data-level="6.3" data-path="section-air.html"><a href="section-air.html#section-tutorials-1"><i class="fa fa-check"></i><b>6.3</b> Tutorials</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="section-air.html"><a href="section-air.html#section-tutorial-1-air-flow-through-a-door"><i class="fa fa-check"></i><b>6.3.1</b> Tutorial 1: air flow through a door</a></li>
+<li class="chapter" data-level="6.3.2" data-path="section-air.html"><a href="section-air.html#section-tutorial-2"><i class="fa fa-check"></i><b>6.3.2</b> Tutorial 2</a></li>
+<li class="chapter" data-level="6.3.3" data-path="section-air.html"><a href="section-air.html#section-tutorial-3-solar-chimney-and-evaporative-cooling"><i class="fa fa-check"></i><b>6.3.3</b> Tutorial 3: solar chimney and evaporative cooling</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="section-humidite.html"><a href="section-humidite.html"><i class="fa fa-check"></i><b>7</b> Moisture transfer</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="section-humidite.html"><a href="section-humidite.html#section-moisture-transfer-in-materials"><i class="fa fa-check"></i><b>7.1</b> Moisture transfer in materials</a></li>
+<li class="chapter" data-level="7.2" data-path="section-humidite.html"><a href="section-humidite.html#section-tutorials-2"><i class="fa fa-check"></i><b>7.2</b> Tutorials</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="section-humidite.html"><a href="section-humidite.html#section-tutorial-1-condensation"><i class="fa fa-check"></i><b>7.2.1</b> Tutorial 1: condensation</a></li>
+<li class="chapter" data-level="7.2.2" data-path="section-humidite.html"><a href="section-humidite.html#section-tutorial-2-dew-point"><i class="fa fa-check"></i><b>7.2.2</b> Tutorial 2: dew point</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II HVAC systems</b></span></li>
+<li class="chapter" data-level="8" data-path="section-aperçu-des-systèmes.html"><a href="section-aperçu-des-systèmes.html"><i class="fa fa-check"></i><b>8</b> Aperçu des systèmes</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="section-aperçu-des-systèmes.html"><a href="section-aperçu-des-systèmes.html#section-des-besoins-aux-consommations"><i class="fa fa-check"></i><b>8.1</b> Des besoins aux consommations</a></li>
+<li class="chapter" data-level="8.2" data-path="section-aperçu-des-systèmes.html"><a href="section-aperçu-des-systèmes.html#section-types-de-systèmes"><i class="fa fa-check"></i><b>8.2</b> Types de systèmes</a></li>
+<li class="chapter" data-level="8.3" data-path="section-aperçu-des-systèmes.html"><a href="section-aperçu-des-systèmes.html#section-dimensionnement"><i class="fa fa-check"></i><b>8.3</b> Dimensionnement</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html"><i class="fa fa-check"></i><b>9</b> Hydronic heating</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-généralités"><i class="fa fa-check"></i><b>9.1</b> Généralités</a></li>
+<li class="chapter" data-level="9.2" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-emission-de-chaleur"><i class="fa fa-check"></i><b>9.2</b> Emission de chaleur</a></li>
+<li class="chapter" data-level="9.3" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-distribution"><i class="fa fa-check"></i><b>9.3</b> Distribution</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-réglage-de-la-température-et-du-débit-dans-les-émetteurs"><i class="fa fa-check"></i><b>9.3.1</b> Réglage de la température et du débit dans les émetteurs</a></li>
+<li class="chapter" data-level="9.3.2" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-circuits-primaires-et-secondaires"><i class="fa fa-check"></i><b>9.3.2</b> Circuits primaires et secondaires</a></li>
+<li class="chapter" data-level="9.3.3" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-equilibrage-hydraulique"><i class="fa fa-check"></i><b>9.3.3</b> Equilibrage hydraulique</a></li>
+<li class="chapter" data-level="9.3.4" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-circulateurs"><i class="fa fa-check"></i><b>9.3.4</b> Circulateurs</a></li>
+<li class="chapter" data-level="9.3.5" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-pertes-thermiques"><i class="fa fa-check"></i><b>9.3.5</b> Pertes thermiques</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-génération"><i class="fa fa-check"></i><b>9.4</b> Génération</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-chaudières"><i class="fa fa-check"></i><b>9.4.1</b> Chaudières</a></li>
+<li class="chapter" data-level="9.4.2" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-pompes-à-chaleur"><i class="fa fa-check"></i><b>9.4.2</b> Pompes à chaleur</a></li>
+<li class="chapter" data-level="9.4.3" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-autres-générateurs-de-chaleur"><i class="fa fa-check"></i><b>9.4.3</b> Autres générateurs de chaleur</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="section-ecs.html"><a href="section-ecs.html"><i class="fa fa-check"></i><b>10</b> Domestic hot water</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="section-ecs.html"><a href="section-ecs.html#section-calcul-des-besoins-et-consommations"><i class="fa fa-check"></i><b>10.1</b> Calcul des besoins et consommations</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="section-ecs.html"><a href="section-ecs.html#section-calcul-des-besoins-decs"><i class="fa fa-check"></i><b>10.1.1</b> Calcul des besoins d’ECS</a></li>
+<li class="chapter" data-level="10.1.2" data-path="section-ecs.html"><a href="section-ecs.html#section-calcul-des-pertes-de-distribution-stockage-et-génération"><i class="fa fa-check"></i><b>10.1.2</b> Calcul des pertes de distribution, stockage et génération}</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="section-ecs.html"><a href="section-ecs.html#section-modes-de-production"><i class="fa fa-check"></i><b>10.2</b> Modes de production</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="section-ecs.html"><a href="section-ecs.html#section-instantané"><i class="fa fa-check"></i><b>10.2.1</b> Instantané</a></li>
+<li class="chapter" data-level="10.2.2" data-path="section-ecs.html"><a href="section-ecs.html#section-accumulation"><i class="fa fa-check"></i><b>10.2.2</b> Accumulation</a></li>
+<li class="chapter" data-level="10.2.3" data-path="section-ecs.html"><a href="section-ecs.html#section-semi-instantané-ou-semi-accumulation"><i class="fa fa-check"></i><b>10.2.3</b> Semi-instantané ou semi-accumulation</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="section-ecs.html"><a href="section-ecs.html#section-systèmes-de-production-decs"><i class="fa fa-check"></i><b>10.3</b> Systèmes de production d’ECS</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="section-ecs.html"><a href="section-ecs.html#section-cumulus-électrique"><i class="fa fa-check"></i><b>10.3.1</b> Cumulus électrique</a></li>
+<li class="chapter" data-level="10.3.2" data-path="section-ecs.html"><a href="section-ecs.html#section-chaudière-double-service"><i class="fa fa-check"></i><b>10.3.2</b> Chaudière double service}</a></li>
+<li class="chapter" data-level="10.3.3" data-path="section-ecs.html"><a href="section-ecs.html#section-chauffe-eau-solaire-individuel"><i class="fa fa-check"></i><b>10.3.3</b> Chauffe-eau solaire individuel}</a></li>
+<li class="chapter" data-level="10.3.4" data-path="section-ecs.html"><a href="section-ecs.html#section-système-solaire-combiné"><i class="fa fa-check"></i><b>10.3.4</b> Système solaire combiné</a></li>
+<li class="chapter" data-level="10.3.5" data-path="section-ecs.html"><a href="section-ecs.html#section-pompe-à-chaleur"><i class="fa fa-check"></i><b>10.3.5</b> Pompe à chaleur</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="section-ecs.html"><a href="section-ecs.html#section-dimensionnement-des-systèmes-solaires-solaire"><i class="fa fa-check"></i><b>10.4</b> Dimensionnement des systèmes solaires {solaire}</a></li>
+<li class="chapter" data-level="10.5" data-path="section-ecs.html"><a href="section-ecs.html#section-exercice-1"><i class="fa fa-check"></i><b>10.5</b> Exercice</a></li>
+<li class="chapter" data-level="10.6" data-path="section-ecs.html"><a href="section-ecs.html#section-estimating-the-consumption"><i class="fa fa-check"></i><b>10.6</b> Estimating the consumption</a></li>
+<li class="chapter" data-level="10.7" data-path="section-ecs.html"><a href="section-ecs.html#section-sizing-the-system"><i class="fa fa-check"></i><b>10.7</b> Sizing the system</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="section-ecs.html"><a href="section-ecs.html#section-solar-coverage"><i class="fa fa-check"></i><b>10.7.1</b> Solar coverage</a></li>
+<li class="chapter" data-level="10.7.2" data-path="section-ecs.html"><a href="section-ecs.html#section-temperatures"><i class="fa fa-check"></i><b>10.7.2</b> Temperatures</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="section-ventilation.html"><a href="section-ventilation.html"><i class="fa fa-check"></i><b>11</b> Ventilation</a></li>
+<li class="chapter" data-level="12" data-path="section-air-conditioning.html"><a href="section-air-conditioning.html"><i class="fa fa-check"></i><b>12</b> Air conditioning</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="section-air-conditioning.html"><a href="section-air-conditioning.html#section-evaluating-air-conditioning-needs"><i class="fa fa-check"></i><b>12.1</b> Evaluating air conditioning needs</a></li>
+<li class="chapter" data-level="12.2" data-path="section-air-conditioning.html"><a href="section-air-conditioning.html#section-tutorials-3"><i class="fa fa-check"></i><b>12.2</b> Tutorials</a></li>
+</ul></li>
+<li class="part"><span><b>III Designing energy performant buildings</b></span></li>
+<li class="chapter" data-level="13" data-path="section-bioclimatic-architecture.html"><a href="section-bioclimatic-architecture.html"><i class="fa fa-check"></i><b>13</b> Bioclimatic architecture</a></li>
+<li class="chapter" data-level="14" data-path="section-building-energy-simulation.html"><a href="section-building-energy-simulation.html"><i class="fa fa-check"></i><b>14</b> Building energy simulation</a></li>
+<li class="chapter" data-level="15" data-path="section-numerical-methods.html"><a href="section-numerical-methods.html"><i class="fa fa-check"></i><b>15</b> Numerical methods</a></li>
+<li class="divider"></li>
+<li><a href="https://srouchier.github.io/" target="blank">A book by Simon Rouchier</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Manuel de performance énergétique des bâtiments</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="section-hydronic-heating" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Chapitre 9</span> Hydronic heating<a href="section-hydronic-heating.html#section-hydronic-heating" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Une des sources principales de cette section est le site <a href="https://energieplus-lesite.be/category/techniques/chauffage10/chauffage-a-eau-chaude/">energyplus-lesite.be</a></p>
+<div id="section-généralités" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Généralités<a href="section-hydronic-heating.html#section-généralités" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Un réseau hydraulique est l’ensemble des équipements par lesquels l’eau chaude est produite et distribuée dans un bâtiment à des fins de chauffage. L’eau chaude est le mode le plus courant de distribution de chaleur dans les bâtiments, l’autre mode étant l’air.</p>
+<p>Pour la description des installations et la méthode de calcul des consommations, on distingue trois niveaux d’équipements :</p>
+<ol style="list-style-type: decimal">
+<li>L’<strong>émission</strong> correspondant à la satisfaction du besoin de l’occupant ;</li>
+<li>La <strong>distribution</strong> correspondant aux réseaux alimentant les émetteurs ;</li>
+<li>La <strong>génération</strong>, correspondant à l’alimentation énergétique des réseaux de distribution.</li>
+</ol>
+<p>A cela s’ajoutent les équipement de <strong>régulation</strong> visant à assurer les températures et débits voulus en chaque point du circuit.</p>
+<div class="figure"><span style="display:block;" id="fig:calculconso"></span>
+<img src="figures/calculconso.png" alt="Calcul des consommations à partir des besoins" width="90%" />
+<p class="caption">
+Figure 9.1: Calcul des consommations à partir des besoins
+</p>
+</div>
+<p>Cette section va décrire les différents types d’équipements de chaque catégorie, et les étapes principales pour le calcul de la consommation de chauffage. Ce calcul se fait en ``remontant’’ la chaîne de distribution de la chaleur, comme montré plus tôt sur la figure <a href="section-aperçu-des-systèmes.html#fig:besoinsconsos">8.1</a>, puis ici sur la figure <a href="section-hydronic-heating.html#fig:calculconso">9.1</a> : à partir des besoins de chauffage calculés précédemment, on calcule l’énergie qui doit être délivrée par les émetteurs, puis celle qui doit être produite par le générateur, puis la consommation d’énergie entrant dans le bâtiment. Chaque étape peut présenter des pertes.</p>
+</div>
+<div id="section-emission-de-chaleur" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Emission de chaleur<a href="section-hydronic-heating.html#section-emission-de-chaleur" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Les <strong>émetteurs</strong> sont les appareils délivrant la chaleur dans la zone chauffée : radiateurs, planchers chauffants, convecteurs, poêles… Un émetteur de chauffage est caractérisé entre autres par :</p>
+<ul>
+<li>Son régime de dimensionnement ;</li>
+<li>Les parts convective et radiative de l’émission ;</li>
+<li>Les éventuelles pertes au dos des émetteurs intégrés aux parois ;</li>
+<li>La variation spatiale représentant une éventuelle stratification.</li>
+</ul>
+<p>Le <strong>régime de dimensionnement</strong> d’un émetteur est déterminé par les températures d’entrée et de sortie de l’eau en conditions nominales (voir section <a href="#section-sec:dimensionnement"><strong>??</strong></a>). La figure <a href="section-hydronic-heating.html#fig:regime">9.2</a> montre l’exemple d’un radiateur de 2000 W dimensionné en régime 70/50 : il est alimenté avec de l’eau à 70°C, celle-ci cédera 2000 W de chaleur au local à 20°C, et ressortira avec une température de 50°C.</p>
+<div class="figure"><span style="display:block;" id="fig:regime"></span>
+<img src="figures/regime.png" alt="Radiateur en régime 70/50" width="40%" />
+<p class="caption">
+Figure 9.2: Radiateur en régime 70/50
+</p>
+</div>
+<p>La puissance cédée par le radiateur au local peut être calculée simplement par la conservation de l’énergie :
+<span class="math display" id="eq:puissanceemetteur">\[\begin{equation}
+    \Phi = \dot{m} \, c_p \, \left(T_\mathrm{entree} - T_\mathrm{sortie} \right)
+    \tag{9.1}
+\end{equation}\]</span>
+où <span class="math inline">\(\Phi\)</span> est une puissance en [W] et <span class="math inline">\(\dot{m}\)</span> un débit massique en kg/s. Cette formule peut être utilisée pour calculer le débit nécessaire si la puissance et les températures de dimensionnement sont connues.</p>
+<table>
+<caption><span id="tab:regimes">Table 9.1: </span> Température d’entrée de l’eau chaude dans les émetteurs</caption>
+<thead>
+<tr class="header">
+<th align="left">Emetteur</th>
+<th align="left">Température d’entrée</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Radiateur haute température</td>
+<td align="left">70 à 90°C</td>
+</tr>
+<tr class="even">
+<td align="left">Radiateur basse température</td>
+<td align="left">40 à 50°C</td>
+</tr>
+<tr class="odd">
+<td align="left">Plancher chauffant</td>
+<td align="left">35°C</td>
+</tr>
+</tbody>
+</table>
+<p>Une autre formule est souvent utilisée pour calculer la puissance délivrée par un même radiateur pour une température d’entrée de l’eau différente :
+<span class="math display">\[\begin{equation}
+    \Phi = a \cdot \Delta T^n
+\end{equation}\]</span>
+où les coefficients <span class="math inline">\(a\)</span> et <span class="math inline">\(n\)</span> sont fournis par le fabriquant. Dans cette formule, <span class="math inline">\(\Delta T\)</span> n’est pas la différence de température entrée-sortie du radiateur, mais la différence entre la température moyenne de l’eau dans le radiateur et la température du local. Par exemple pour un radiateur en 70/50 dans un local à 20°C, on aura <span class="math inline">\(\Delta T=40\)</span>°C.</p>
+<p>Une autre caractéristique importante des émetteur est leur <strong>part convective et radiative</strong> de l’émission de chaleur. La surface chaude d’un émetteur cède de la chaleur par échange convectif avec l’air de la pièce, et par échange radiatif avec les parois.</p>
+<table>
+<caption><span id="tab:convectionrayonnement">Table 9.2: </span> Part convective de l’émission</caption>
+<thead>
+<tr class="header">
+<th align="left">Emetteur</th>
+<th align="left">Part de convection</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Radiateur à éléments en fonte</td>
+<td align="left">75 à 85 %</td>
+</tr>
+<tr class="even">
+<td align="left">Radiateur à panneaux en acier</td>
+<td align="left">50 à 70 %</td>
+</tr>
+<tr class="odd">
+<td align="left">Ventilo-convecteur</td>
+<td align="left">95 %</td>
+</tr>
+<tr class="even">
+<td align="left">Plancher chauffant</td>
+<td align="left">50 %</td>
+</tr>
+</tbody>
+</table>
+<p>La répartition du transfert entre convection et rayonnement dépend de l’orientation, la forme et l’émissivité de la surface chauffante, et de l’écart de température entre elle et l’air ambiant.</p>
+<p>Une part importante de convection peut entraîner une <strong>stratification</strong> des températures : l’air chauffé par convection au contact de l’émetteur monte, et peut stagner en partie haute du local. Pour obtenir une température de confort voulue dans la zone d’occupation, la température moyenne de l’air de l’ensemble du local sera plus élevée (voir figure <a href="section-hydronic-heating.html#fig:stratification">9.3</a>).</p>
+<div class="figure"><span style="display:block;" id="fig:stratification"></span>
+<img src="figures/stratification.png" alt="Exemple de stratification des températures avec un chauffage par radiateur et un chauffage par convecteur : la stratification est plus importante dans le deuxième cas, entraînant des pertes de chaleur à cause de la température élevée au plafond, bien que la température soit la même au niveau du thermostat." width="40%" />
+<p class="caption">
+Figure 9.3: Exemple de stratification des températures avec un chauffage par radiateur et un chauffage par convecteur : la stratification est plus importante dans le deuxième cas, entraînant des pertes de chaleur à cause de la température élevée au plafond, bien que la température soit la même au niveau du thermostat.
+</p>
+</div>
+<p>Enfin, on s’intéresse aux <strong>pertes au dos</strong> des émetteurs, c’est-à-dire la part de chaleur qu’ils émettent en dehors du local à chauffer. Ces pertes peuvent être non négligeable pour les émetteurs placés près des parois froides, ou intégrés aux parois comme les planchers chauffants.</p>
+</div>
+<div id="section-distribution" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Distribution<a href="section-hydronic-heating.html#section-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="section-réglage-de-la-température-et-du-débit-dans-les-émetteurs" class="section level3 hasAnchor" number="9.3.1">
+<h3><span class="header-section-number">9.3.1</span> Réglage de la température et du débit dans les émetteurs<a href="section-hydronic-heating.html#section-réglage-de-la-température-et-du-débit-dans-les-émetteurs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Pour régler la puissance transmise à un ensemble d’émetteurs, on peut faire varier soit la température de l’eau qui y est envoyée, soit son débit, au moyen d’une vanne trois voie. Les deux alternatives sont montrées sur la figure <a href="section-hydronic-heating.html#fig:v3v">9.4</a>.</p>
+<div class="figure"><span style="display:block;" id="fig:v3v"></span>
+<img src="figures/v3v.png" alt="Distribution d'eau chaude aux émetteurs en régulant soit la température d'entrée soit le débit" width="80%" />
+<p class="caption">
+Figure 9.4: Distribution d’eau chaude aux émetteurs en régulant soit la température d’entrée soit le débit
+</p>
+</div>
+<p>Le premier cas est un montage en mode mélange: le débit <span class="math inline">\(\dot{m}\)</span> est fixé par un circulateur en aval de la vanne, et la température est variable selon l’ouverture de la vanne.La température nécessaire en entrée du radiateur pour assurer une puissance donnée avec un débit fixé se calcule avec l’équation <a href="section-hydronic-heating.html#eq:puissanceemetteur">(9.1)</a>. A l’inverse, le débit peut être calculé par cette formule si c’est la température <span class="math inline">\(T_1\)</span> qui est imposée. Ensuite, les lois de conservation de la quantité d’eau et de l’énergie, écrites sur la vanne 3 voies, permettent de calculer les autres débits du circuit : celui provenant de l’amont du circuit <span class="math inline">\(\dot{m}_0\)</span> et le débit de bi-passage <span class="math inline">\(\dot{m}_{BP}\)</span>.</p>
+<p>Une autre configuration est celle du montage en décharge (en bas de la figure <a href="section-hydronic-heating.html#fig:v3v">9.4</a>), où le débit est fixé dans la boucle primaire mais pas dans la boucle secondaire. En revanche la température en entrée de l’émetteur est la même que T0 en sortie de la chaudière, si on néglige les pertes. Tous les calculs se font avec les mêmes lois de conservation que dans le premier cas.</p>
+<p>Dans la pratique, il n’y aura pas une vanne 3 voies devant chaque radiateur, mais par exemple en entrée d’un circuit desservant un ensemble de radiateurs ayant la même température de consigne en conditions nominales. Le réglage de chaque radiateur peut se faire ensuite individuellement avec leurs vannes thermostatiques.</p>
+</div>
+<div id="section-circuits-primaires-et-secondaires" class="section level3 hasAnchor" number="9.3.2">
+<h3><span class="header-section-number">9.3.2</span> Circuits primaires et secondaires<a href="section-hydronic-heating.html#section-circuits-primaires-et-secondaires" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Dans les installations de chauffage de taille importante (tertiaire, logement collectif, réseaux sur plusieurs bâtiments), la distribution d’eau chaude comprend souvent, en chaufferie, un circuit primaire (ou collecteur) duquel partent plusieurs circuits secondaires qui alimentent les différentes zones : voir figure @ref(fig:circuit}=).</p>
+<div class="figure"><span style="display:block;" id="fig:circuit"></span>
+<img src="figures/circuit.png" alt="Exemple de réseau avec une boucle primaire et plusieurs boucles secondaires. La circulation de l'eau est assurée par un circulateur sur chaque boucle qui permet d'en gérer les débits indépendamment. Une vanne 3 voies peut être placée au départ de chaque circuit secondaire." width="80%" />
+<p class="caption">
+Figure 9.5: Exemple de réseau avec une boucle primaire et plusieurs boucles secondaires. La circulation de l’eau est assurée par un circulateur sur chaque boucle qui permet d’en gérer les débits indépendamment. Une vanne 3 voies peut être placée au départ de chaque circuit secondaire.
+</p>
+</div>
+<p>Un circuit primaire est dit en boucle fermée quand il existe un moyen pour l’eau de retourner aux chaudières sans passer par les circuits secondaires, comme sur la figure <a href="section-hydronic-heating.html#fig:bouclefermee">9.6</a>. Cela permet d’éviter une variation du débit dans les chaudières dans le cas où un ou plusieurs circuits secondaires seraient fermés, en mi-saison. On élimine ainsi les interférences entre circuits secondaires. Si de plus les chaudières fournissent de l’eau à plus haute température que les besoins des circuits secondaires, on élimine le risque de circulation inverse dans la boucle, qui pourrait être dû à la fermeture des vannes 3 voies.</p>
+<div class="figure"><span style="display:block;" id="fig:bouclefermee"></span>
+<img src="figures/bouclefermee.png" alt="Deux circuits en boucle fermée, avec bouteille casse-pression (en bas) ou sans (en haut)." width="80%" />
+<p class="caption">
+Figure 9.6: Deux circuits en boucle fermée, avec bouteille casse-pression (en bas) ou sans (en haut).
+</p>
+</div>
+<p>Une bouteille casse-pression, ou bouteille de découplage (en bas de la figure <a href="section-hydronic-heating.html#fig:bouclefermee">9.6</a> est un by-pass qui se trouve avant les circuits secondaires. Elle supprime toute interférence hydraulique entre le circuit des chaudières et les circuits secondaires. Lorsque les vannes mélangeuses sont partiellement fermées, le surplus de débit entre le circuit des chaudières et les circuits secondaires circulera dans la bouteille casse-pression (de A vers B). De l’eau chaude sera ainsi renvoyée vers les chaudières.</p>
+</div>
+<div id="section-equilibrage-hydraulique" class="section level3 hasAnchor" number="9.3.3">
+<h3><span class="header-section-number">9.3.3</span> Equilibrage hydraulique<a href="section-hydronic-heating.html#section-equilibrage-hydraulique" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Un circuit dessert plusieurs appareils émetteurs qui sont chacun situés plus ou moins loin de la production de chaleur. L’eau subit donc des pertes de charge qui dépendent de la boucle qu’elle parcourt. Pour un radiateur éloigné de la chaudière, le risque est que ces pertes de charge induisent une baisse de débit donc une baisse de puissance. L’équilibrage consiste à régler les pressions dans un réseau hydraulique, afin d’y assurer les débits voulus.</p>
+<div class="figure"><span style="display:block;" id="fig:equilibrage"></span>
+<img src="figures/equilibrage.png" alt="Un défaut d'équilibrage (à gauche) peut entraîner une mauvaise répartition des températures d'arrivée de l'eau dans les radiateurs." width="40%" />
+<p class="caption">
+Figure 9.7: Un défaut d’équilibrage (à gauche) peut entraîner une mauvaise répartition des températures d’arrivée de l’eau dans les radiateurs.
+</p>
+</div>
+<p>Les pertes de charge régulières ont lieu le long des conduites. Dans une conduite de longueur <span class="math inline">\(L\)</span> (m), diamètre <span class="math inline">\(D\)</span> (m) et coefficient de perte de charge <span class="math inline">\(\lambda\)</span>, où l’eau circule à une vitesse <span class="math inline">\(v\)</span> (m/s) :
+<span class="math display" id="eq:pdc1">\[\begin{equation}
+    \Delta p = \rho \, g \, \Delta h = \lambda \frac{L}{D} \frac{\rho \, v^2}{2}
+    \tag{9.2}
+\end{equation}\]</span>
+Elle peut être exprimée en pression <span class="math inline">\(\Delta p\)</span> (Pa) ou en hauteur d’eau <span class="math inline">\(\Delta h\)</span> (mètres de colonne d’eau, mCE). Les pertes singulières ont lieu aux différents obstacles des canalisations : coudes, raccords, vannes… Elles se calculent de la même façon, en fonction du coefficient de perte de charge <span class="math inline">\(\Lambda\)</span> de l’obstacle :
+<span class="math display" id="eq:pdc2">\[\begin{equation}
+    \Delta p = \Lambda \frac{\rho \, v^2}{2}
+    \tag{9.3}
+\end{equation}\]</span></p>
+<div class="figure"><span style="display:block;" id="fig:pdcexemple"></span>
+<img src="figures/pdcexemple.png" alt="Dans cet exemple, deux radiateurs ont besoin de 130 l/h chacun. Avant équilibrage (en haut), les PDC sont estimées à 200 mmCE dans la première boucle et 400 mmCE dans la deuxième, ce qui donne un débit réel de 200 l/h et 60 l/h respectivement. L'équilibrage se fait en ajoutant des vannes (en bas) qu'on règle pour que les PDC totales de chaque boucle soient égales." width="80%" />
+<p class="caption">
+Figure 9.8: Dans cet exemple, deux radiateurs ont besoin de 130 l/h chacun. Avant équilibrage (en haut), les PDC sont estimées à 200 mmCE dans la première boucle et 400 mmCE dans la deuxième, ce qui donne un débit réel de 200 l/h et 60 l/h respectivement. L’équilibrage se fait en ajoutant des vannes (en bas) qu’on règle pour que les PDC totales de chaque boucle soient égales.
+</p>
+</div>
+<p>L’équilibrage est réalisé au moyen de vannes placées chaque boucle, permettant d’ajouter des pertes de charges singulières aux branches plus favorisées afin de mieux répartir les débits. Quelques exemples de vannes sont montrés sur la figure <a href="section-hydronic-heating.html#fig:vannes">9.9</a> : robinet thermostatique adaptant automatiquement son ouverture à une mesure de température de la pièce ; té de réglage fixé lors de l’installation ; vannes d’équilibrages permettant la mesure des débits en circulation.</p>
+<div class="figure"><span style="display:block;" id="fig:vannes"></span>
+<img src="figures/vannes.png" alt="Robinet thermostatique, té de réglage, vanne d'équilibrage" width="40%" />
+<p class="caption">
+Figure 9.9: Robinet thermostatique, té de réglage, vanne d’équilibrage
+</p>
+</div>
+<p>% note à moi : cette partie sera à refaire en s’inspirant de <a href="https://energieplus-lesite.be/theories/chauffage11/hydraulique/" class="uri">https://energieplus-lesite.be/theories/chauffage11/hydraulique/</a></p>
+</div>
+<div id="section-circulateurs" class="section level3 hasAnchor" number="9.3.4">
+<h3><span class="header-section-number">9.3.4</span> Circulateurs<a href="section-hydronic-heating.html#section-circulateurs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>% <a href="https://energieplus-lesite.be/theories/chauffage11/hydraulique/" class="uri">https://energieplus-lesite.be/theories/chauffage11/hydraulique/</a></p>
+<p>Pour mettre en circulation l’eau dans le réseau de chauffage, il faut y installer un circulateur qui va compenser ses pertes de charges totales.</p>
+<div class="figure"><span style="display:block;" id="fig:circulateur0"></span>
+<img src="figures/circulateur0.png" alt="Circulateur à vitesse variable" width="40%" />
+<p class="caption">
+Figure 9.10: Circulateur à vitesse variable
+</p>
+</div>
+<p>Lorsqu’un circulateur est installé dans un réseau, le débit s’y stabilise à un certain point de fonctionnement qui est l’intersection entre deux courbes, comme le montre la figure <a href="section-hydronic-heating.html#fig:circulateur2">9.11</a> :</p>
+<ul>
+<li>La courbe caractéristique du circuit, qui indique le rapport entre la vitesse de l’eau et ses pertes de charges totales. Comme le montrent les équations <a href="section-hydronic-heating.html#eq:pdc1">(9.2)</a> et <a href="section-hydronic-heating.html#eq:pdc2">(9.3)</a>, les pertes de charges augmentent quadratiquement avec la vitesse de l’eau donc son débit.</li>
+<li>La courbe caractéristique du circulateur qui indique la hauteur manométrique qu’il peut fournir en fonction du débit.</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:circulateur2"></span>
+<img src="figures/circulateur2.png" alt="Détermination du point de fonctionnement en fonction des caractéristiques du réseau et du circulateur" width="40%" />
+<p class="caption">
+Figure 9.11: Détermination du point de fonctionnement en fonction des caractéristiques du réseau et du circulateur
+</p>
+</div>
+<p>La puissance utile d’un circulateur est le produit entre sa hauteur manométrique (<span class="math inline">\(\Delta p\)</span> en [Pa] ou <span class="math inline">\(\Delta h\)</span> en [mCE]) et son débit volumique <span class="math inline">\(Q\)</span> :
+<span class="math display">\[\begin{equation}
+    P_u = \Delta p \, Q = \rho \, g \, \Delta h \, Q
+\end{equation}\]</span>
+Cette puissance utile est plus faible que la puissance électrique consommée par la pompe du fait de pertes thermiques. Le rapport entre les deux est le rendement du circulateur : <span class="math inline">\(\eta = P_u / P_\mathrm{elec}\)</span>. Dans la réglementation, cette consommation est classée dans les ``auxiliaires de circulation’’.</p>
+</div>
+<div id="section-pertes-thermiques" class="section level3 hasAnchor" number="9.3.5">
+<h3><span class="header-section-number">9.3.5</span> Pertes thermiques<a href="section-hydronic-heating.html#section-pertes-thermiques" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Les déperditions thermiques brutes du réseau de distribution sont calculées à partir de l’écart entre la température moyenne de l’eau dans les canalisations et la température ambiante. Lorsque ces déperditions thermiques sont émises dans les espaces chauffés, elles sont considérées comme de la chaleur utile pour le chauffage. Lorsqu’elles ont lieu dans les espaces non chauffés, il s’agit de pertes à prendre en compte. Les conduits sont calorifugés pour minimiser ces pertes.</p>
+<div class="figure"><span style="display:block;" id="fig:pertesconduit"></span>
+<img src="figures/pertesconduit.png" alt="Notations pour le calcul des pertes thermiques de distribution" width="40%" />
+<p class="caption">
+Figure 9.12: Notations pour le calcul des pertes thermiques de distribution
+</p>
+</div>
+<p>Ces déperditions peuvent être estimées en calculant la chute de température le long d’un conduit parcouru par un écoulement. En reprenant les notations de la figure <a href="section-hydronic-heating.html#fig:pertesconduit">9.12</a> : si l’eau entre dans une conduite à la température <span class="math inline">\(T_0\)</span> avec un débit <span class="math inline">\(\dot{m}\)</span>, alors sa température après une longueur <span class="math inline">\(L\)</span> de conduite est :
+<span class="math display">\[\begin{equation}
+    \frac{T(L)-T_\infty}{T_0 - T_\infty} = \exp\left(- \frac{k \, 2\pi \, r_\mathit{ext}}{\dot{m} c_p } L\right)
+\end{equation}\]</span>
+où <span class="math inline">\(r_\mathit{ext}\)</span> est le rayon extérieur du conduit, <span class="math inline">\(T_\infty\)</span> est la température ambiante (de l’air de la pièce, ou du sol si la conduite est enterrée), et <span class="math inline">\(k\)</span> est un coefficient de transfert qui caractérise l’isolation. Ce coefficient dépend des coefficients de transfert surfacique intérieur et extérieur <span class="math inline">\(h_i\)</span> et <span class="math inline">\(h_e\)</span> (W.m<span class="math inline">\(^{-2}\)</span>.K<span class="math inline">\(^{-1}\)</span>) et des conductivités thermiques de chaque couche de la conduite (tuyau + isolant). Dans l’exemple montré sur la figure <a href="section-hydronic-heating.html#fig:pertesconduit">9.12</a> :
+<span class="math display">\[\begin{equation}
+    \frac{1}{k} = \frac{1}{h_i}+\frac{1}{\lambda_1}\ln\left(\frac{r_2}{r_1}\right)+\frac{1}{\lambda_2}\ln\left(\frac{r_3}{r_2}\right)+\frac{1}{h_e}
+\end{equation}\]</span></p>
+</div>
+</div>
+<div id="section-génération" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Génération<a href="section-hydronic-heating.html#section-génération" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La génération regroupe l’ensemble des dispositifs de stockage, de génération et de composants amont à la génération (énergie renouvelable, tours de refroidissement, boucle primaire). Les systèmes de génération peuvent être constitués d’un ou de plusieurs générateurs, et alimenter un ou plusieurs bâtiments.</p>
+<p>Les caractéristiques principales d’un générateur sont sa puissance nominale et son efficacité énergétique, qui est le rapport entre la puissance utile qu’il fournit au réseau et sa consommation d’énergie :
+<span class="math display" id="eq:rendementchaudiere">\[\begin{equation}
+    \eta = \frac{P_\mathrm{utile}}{P_\mathrm{conso}}
+    \tag{9.4}
+\end{equation}\]</span></p>
+<div id="section-chaudières" class="section level3 hasAnchor" number="9.4.1">
+<h3><span class="header-section-number">9.4.1</span> Chaudières<a href="section-hydronic-heating.html#section-chaudières" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Les systèmes de génération les plus courants pour les réseaux hydrauliques sont les générateurs à combustion, ou chaudières. Le fioul et le gaz naturel sont encore les combustibles les plus utilisés en France, mais tendent à être remplacés par les chaudières biomasse et les pompes à chaleur.</p>
+<div class="figure"><span style="display:block;" id="fig:chaudieres"></span>
+<img src="figures/chaudieres.png" alt="En haut : déperditions thermiques sur une chaudière. En bas : principe d'une chaudière à condensation." width="40%" />
+<p class="caption">
+Figure 9.13: En haut : déperditions thermiques sur une chaudière. En bas : principe d’une chaudière à condensation.
+</p>
+</div>
+<p>Une chaudière est une chambre de combustion dans laquelle circule un circuit d’eau à chauffer. Son rendement (équation <span class="math inline">\(\ref{eq:rendementchaudiere}\)</span>) est le rapport entre sa puissance utile et sa consommation de combustible. Celles-ci peuvent s’exprimer :
+<span class="math display">\[\begin{align}
+    P_\mathrm{utile} &amp; = \dot{m}_\mathrm{eau} \, c_p \, \left(T_\mathrm{depart} - T_\mathrm{retour} \right) \\
+    P_\mathrm{conso} &amp; = PCI \times \dot{m}_\mathrm{combustible}
+\end{align}\]</span>
+La différence entre ces deux puissances sont les pertes thermiques de la chaudière, illustrées sur la figure <span class="math inline">\(\ref{fig:chaudieres}\)</span>. La puissance utile est simplement proportionnelle à la hausse de température de l’eau entrant et sortant de la chaudière. La puissance consommée par la chaudière est le produit du débit de combustible consommé (kg/s) et de son pouvoir calorifique.</p>
+<ul>
+<li>Le pouvoir calorifique inférieur (PCI) est l’énergie récupérée par la combustion, c’est-à-dire la quantité de chaleur libérée lors de la combustion complète. L’eau formée est évacuée sous forme de vapeur et s’échappe avec les fumées dans l’atmosphère.</li>
+<li>Le pouvoir calorifique supérieur (PCS) est l’énergie récupérée par la combustion a laquelle se rajoute la récupération des calories contenues dans la condensation de la vapeur d’eau contenue dans les fumées. Grâce à la récupération de la chaleur de vaporisation et à la référence au PCI, les chaudières à condensation offrent des rendements supérieurs à 100 % sur PCI.</li>
+</ul>
+<p>L’ordre de grandeur du PCI et du PCS de quelques combustibles courants est donné sur le tableau <a href="section-hydronic-heating.html#tab:pci">9.3</a>. Le PCI du bois est très variable. Il dépend de l’essence du bois et de son taux d’humidité : le PCI du bois sec est plus élevé que pour le bois humide.</p>
+<table>
+<caption><span id="tab:pci">Table 9.3: </span> PCI</caption>
+<thead>
+<tr class="header">
+<th align="left">Combustible</th>
+<th align="left">PCI (kWh/kg)</th>
+<th align="left">PCS (kWh/kg)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Fioul domestique</td>
+<td align="left">11,86</td>
+<td align="left">12,75</td>
+</tr>
+<tr class="even">
+<td align="left">Gaz propane/butane</td>
+<td align="left">12,7</td>
+<td align="left">13,8</td>
+</tr>
+<tr class="odd">
+<td align="left">Gaz de ville</td>
+<td align="left">10,83</td>
+<td align="left">12,03</td>
+</tr>
+<tr class="even">
+<td align="left">Bois (feuillu, 20 % d’humidité)</td>
+<td align="left">3,8 .</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Bois (résineux, 20 % d’humidité)</td>
+<td align="left">4,1 .</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">Granulés de bois</td>
+<td align="left">4,6 .</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>Une chaudière à condensation (en bas de la figure <a href="section-hydronic-heating.html#fig:chaudieres">9.13</a>) est conçue pour récupérer une partie de la chaleur de vaporisation de l’eau des fumées : l’eau de retour du réseau de distribution doit être assez froide pour faire condenser la vapeur d’eau contenue dans les fumées. Grâce à cette récupération de l’eau et à la température basse des fumées, la chaleur utile d’une chaudière à condensation peut dépasser le PCI du combustible. Ce qui permet d’afficher un rendement supérieur à 100% s’il est calculé sur la base du PCI. Pour cette raison, ces chaudières sont d’autant plus intéressantes qu’elles sont utilisées avec un réseau à basse température, comme des planchers chauffants.</p>
+</div>
+<div id="section-pompes-à-chaleur" class="section level3 hasAnchor" number="9.4.2">
+<h3><span class="header-section-number">9.4.2</span> Pompes à chaleur<a href="section-hydronic-heating.html#section-pompes-à-chaleur" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Une pompe à chaleur (PAC) est un appareil permettant de transférer la chaleur depuis une source froide vers une source chaude. Elle permet donc de chauffer un local en hiver (transfert de l’extérieur froid vers l’intérieur plus chaud), ou de le climatiser en été (transfert de l’intérieur frais vers l’extérieur chaud). Une PAC est dite réversible si elle peut produire de la chaleur en hiver et du froid en été.</p>
+<p>Les PAC les plus courantes fonctionnent sur le principe du cycle frigorifique à compression schématisé sur la figure <span class="math inline">\(\ref{eq:puissanceemetteur}\)</span>, constitué de 4 étapes :</p>
+<div class="figure"><span style="display:block;" id="fig:pac"></span>
+<img src="figures/pac.png" alt="Principe d'une pompe à chaleur, ici en mode chauffage" width="40%" />
+<p class="caption">
+Figure 9.14: Principe d’une pompe à chaleur, ici en mode chauffage
+</p>
+</div>
+<ul>
+<li>Un <strong>compresseur</strong> met en circulation le fluide frigorigène à l’état gazeux, augmente sa pression tout en le chauffant ;</li>
+<li>Dans le <strong>condenseur</strong>, le fluide passe à l’état liquide en cédant sa chaleur de vaporisation au milieu qu’on souhaite chauffer en hiver (ou à l’extérieur en été) ;</li>
+<li>Le <strong>détendeur</strong> diminue la pression et la température du fluide qui est alors un mélange diphasique ;</li>
+<li>Dans l’<strong>évaporateur</strong>, le fluide à basse pression entre en ébullition en récupérant la chaleur de la source froide (pièce à refroidir en été, ou extérieur en hiver).</li>
+</ul>
+<p>Une alternative est la PAC à absorption, où le compresseur et le détendeur sont remplacés par un deuxième cycle thermodynamique utilisant un fluide absorbeur. Cet appareil est alimenté en chaleur plutôt qu’en électricité, ce qui permet par exemple d’exploiter l’énergie solaire pour refroidir un local.</p>
+<div class="figure"><span style="display:block;" id="fig:pacabsorption"></span>
+<img src="figures/pacabsorption.png" alt="Principe d'une pompe à chaleur à absorption" width="40%" />
+<p class="caption">
+Figure 9.15: Principe d’une pompe à chaleur à absorption
+</p>
+</div>
+<p>Une PAC est caractérisée par son coefficient de performance (COP) qui est le rapport entre sa puissance utile et sa consommation.
+<span class="math display">\[\begin{equation}
+    COP = \frac{P_\mathrm{utile}}{P_\mathrm{conso}} = \frac{\left|Q\right|}{W}
+\end{equation}\]</span>
+La consommation d’une PAC classique à compression est l’électricité fournie au compresseur, dont on a noté <span class="math inline">\(W\)</span> le travail. La puissance utile est soit la chaleur cédée à la source chaude (en mode chauffage), soit la chaleur prélevée à la source froide (en mode refroidissement). Dans ces deux modes de fonctionnement, le COP a des limites supérieures théoriques données par les températures des sources chaude et froide :
+<span class="math display">\[\begin{align}
+    COP_\mathrm{chaud} &amp; \leq \frac{T_\mathit{chaud}}{T_\mathit{chaud}-T_\mathit{froid}} \\
+    COP_\mathrm{froid} &amp; \leq \frac{T_\mathit{froid}}{T_\mathit{chaud}-T_\mathit{froid}} \\
+\end{align}\]</span>
+Même si ces limites théoriques sont loin d’être atteintes en réalité, le COP d’une PAC est d’autant plus élevé que la différence de température est faible entre les deux sources : elles se prêtent bien à la production d’eau chaude à basse température pour des planchers chauffants, ou d’air chaud. Un COP moyen est d’environ 3 ou 4.</p>
+<div class="figure"><span style="display:block;" id="fig:geothermie"></span>
+<img src="figures/schema-explicatif-geothermie.jpg" alt="Trois types de PAC géothermiques" width="70%" />
+<p class="caption">
+Figure 9.16: Trois types de PAC géothermiques
+</p>
+</div>
+<p>Les PAC peuvent ensuite être classées selon leurs deux sources :</p>
+<ul>
+<li>PAC air/air : la chaleur est échangée entre l’air extérieur et l’air intérieur (similaire à un climatiseur) ;</li>
+<li>PAC air/eau : la chaleur est échangée entre l’air extérieur et un réseau hydraulique de chauffage ou de froid ;</li>
+<li>PAC géothermique sol/eau : la chaleur est échangée entre des capteurs enterrés et un réseau hydraulique ;</li>
+<li>PAC géothermique eau/eau : la chaleur est échangée entre la nappe phréatique et un réseau hydraulique.</li>
+</ul>
+<p>Les PAC géothermiques sont un investissement plus élevé mais atteignent de bien meilleurs COP que les PAC à air.</p>
+</div>
+<div id="section-autres-générateurs-de-chaleur" class="section level3 hasAnchor" number="9.4.3">
+<h3><span class="header-section-number">9.4.3</span> Autres générateurs de chaleur<a href="section-hydronic-heating.html#section-autres-générateurs-de-chaleur" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>On peut évoquer d’autres types de générateurs de chaleur pour les réseaux hydrauliques de chauffage :</p>
+<ul>
+<li>Un système solaire combiné est un procédé solaire participant à la couverture des besoins de chauffage et d’eau chaude sanitaire ;</li>
+<li>Les sous-stations de réseau de chaleur, situées en pied d’immeuble, permettent le transfert de chaleur par le biais d’un échangeur entre le réseau de chaleur et le réseau de distribution interne de l’immeuble ou du petit groupe d’immeubles ;</li>
+<li>Certains poêles à bois qui produisent la chaleur directement dans la zone chauffée contiennent aussi un échangeur dans lequel circule de l’eau qui est ensuite distribuée.</li>
+</ul>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="section-aperçu-des-systèmes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="section-ecs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/srouchier/beh22-hydronic.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["manuel.pdf", "manuel.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapitre 12 Air conditioning | Manuel de performance énergétique des bâtiments</title>
+  <meta name="description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapitre 12 Air conditioning | Manuel de performance énergétique des bâtiments" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  <meta name="github-repo" content="srouchier/beh" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapitre 12 Air conditioning | Manuel de performance énergétique des bâtiments" />
+  
+  <meta name="twitter:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  
+
+<meta name="author" content="Simon Rouchier" />
+
+
+<meta name="date" content="2022-07-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="section-ventilation.html"/>
+<link rel="next" href="section-bioclimatic-architecture.html"/>
+<!-- HEAD_CONTENT -->
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Building Energy Handbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Préface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#section-a-propos"><i class="fa fa-check"></i>A propos</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="section-introduction.html"><a href="section-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="section-introduction.html"><a href="section-introduction.html#section-quelques-chiffres"><i class="fa fa-check"></i><b>1.1</b> Quelques chiffres</a></li>
+<li class="chapter" data-level="1.2" data-path="section-introduction.html"><a href="section-introduction.html#section-réglementation"><i class="fa fa-check"></i><b>1.2</b> Réglementation</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="section-introduction.html"><a href="section-introduction.html#section-re2020"><i class="fa fa-check"></i><b>1.2.1</b> Bâtiments neufs : la RE 2020</a></li>
+<li class="chapter" data-level="1.2.2" data-path="section-introduction.html"><a href="section-introduction.html#section-bâtiments-existants"><i class="fa fa-check"></i><b>1.2.2</b> Bâtiments existants</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="section-introduction.html"><a href="section-introduction.html#section-plan-du-livre"><i class="fa fa-check"></i><b>1.3</b> Plan du livre</a></li>
+</ul></li>
+<li class="part"><span><b>I Transferts de chaleur et de masse</b></span></li>
+<li class="chapter" data-level="2" data-path="section-apercu.html"><a href="section-apercu.html"><i class="fa fa-check"></i><b>2</b> Aperçu</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="section-apercu.html"><a href="section-apercu.html#section-apercu1"><i class="fa fa-check"></i><b>2.1</b> Bilan thermique global</a></li>
+<li class="chapter" data-level="2.2" data-path="section-apercu.html"><a href="section-apercu.html#section-apercu2"><i class="fa fa-check"></i><b>2.2</b> Calcul réglementaire</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="section-apercu.html"><a href="section-apercu.html#section-hypothèses"><i class="fa fa-check"></i><b>2.2.1</b> Hypothèses</a></li>
+<li class="chapter" data-level="2.2.2" data-path="section-apercu.html"><a href="section-apercu.html#section-besoins-de-chauffage-et-refroidissement"><i class="fa fa-check"></i><b>2.2.2</b> Besoins de chauffage et refroidissement</a></li>
+<li class="chapter" data-level="2.2.3" data-path="section-apercu.html"><a href="section-apercu.html#section-les-règles-th-bat"><i class="fa fa-check"></i><b>2.2.3</b> Les règles Th-bat</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="section-apercu.html"><a href="section-apercu.html#section-apercu3"><i class="fa fa-check"></i><b>2.3</b> Détail des transferts thermiques</a></li>
+<li class="chapter" data-level="2.4" data-path="section-apercu.html"><a href="section-apercu.html#section-exercice"><i class="fa fa-check"></i><b>2.4</b> Exercice</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="section-steady.html"><a href="section-steady.html"><i class="fa fa-check"></i><b>3</b> Conduction et convection stationnaire</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="section-steady.html"><a href="section-steady.html#section-conduction-dans-un-mur"><i class="fa fa-check"></i><b>3.1</b> Conduction dans un mur</a></li>
+<li class="chapter" data-level="3.2" data-path="section-steady.html"><a href="section-steady.html#section-ponts-thermiques"><i class="fa fa-check"></i><b>3.2</b> Ponts thermiques</a></li>
+<li class="chapter" data-level="3.3" data-path="section-steady.html"><a href="section-steady.html#section-convection-entre-pièces"><i class="fa fa-check"></i><b>3.3</b> Convection entre pièces</a></li>
+<li class="chapter" data-level="3.4" data-path="section-steady.html"><a href="section-steady.html#section-exercices"><i class="fa fa-check"></i><b>3.4</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="section-steady.html"><a href="section-steady.html#section-exo-1-déperditions-dune-pièce"><i class="fa fa-check"></i><b>3.4.1</b> Exo 1 : déperditions d’une pièce</a></li>
+<li class="chapter" data-level="3.4.2" data-path="section-steady.html"><a href="section-steady.html#section-exo-2-bilan-thermique-de-deux-pièces"><i class="fa fa-check"></i><b>3.4.2</b> Exo 2: bilan thermique de deux pièces</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="section-rayonnement.html"><a href="section-rayonnement.html"><i class="fa fa-check"></i><b>4</b> Radiative heat transfer</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-principles-of-radiative-transfer"><i class="fa fa-check"></i><b>4.1</b> Principles of radiative transfer</a></li>
+<li class="chapter" data-level="4.2" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-solar-heat-gain"><i class="fa fa-check"></i><b>4.2</b> Solar heat gain</a></li>
+<li class="chapter" data-level="4.3" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-radiative-heat-exchange"><i class="fa fa-check"></i><b>4.3</b> Radiative heat exchange</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-radiant-and-operative-temperatures"><i class="fa fa-check"></i><b>4.3.1</b> Radiant and operative temperatures</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-tutorials"><i class="fa fa-check"></i><b>4.4</b> Tutorials</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-tutorial-1-greenhouse"><i class="fa fa-check"></i><b>4.4.1</b> Tutorial 1: greenhouse</a></li>
+<li class="chapter" data-level="4.4.2" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-tutorial-2-radiator"><i class="fa fa-check"></i><b>4.4.2</b> Tutorial 2: radiator</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="section-transient.html"><a href="section-transient.html"><i class="fa fa-check"></i><b>5</b> Transient heat transfer</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="section-transient.html"><a href="section-transient.html#section-heat-capacity"><i class="fa fa-check"></i><b>5.1</b> Heat capacity</a></li>
+<li class="chapter" data-level="5.2" data-path="section-transient.html"><a href="section-transient.html#section-lumped-capacitance-models"><i class="fa fa-check"></i><b>5.2</b> Lumped capacitance models</a></li>
+<li class="chapter" data-level="5.3" data-path="section-transient.html"><a href="section-transient.html#section-tutorial-thermal-inertia"><i class="fa fa-check"></i><b>5.3</b> Tutorial: thermal inertia</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="section-transient.html"><a href="section-transient.html#section-question-1-winter-conditions"><i class="fa fa-check"></i><b>5.3.1</b> Question 1: winter conditions</a></li>
+<li class="chapter" data-level="5.3.2" data-path="section-transient.html"><a href="section-transient.html#section-question-2-summer-conditions"><i class="fa fa-check"></i><b>5.3.2</b> Question 2: summer conditions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="section-air.html"><a href="section-air.html"><i class="fa fa-check"></i><b>6</b> Air transfer</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="section-air.html"><a href="section-air.html#section-principles"><i class="fa fa-check"></i><b>6.1</b> Principles</a></li>
+<li class="chapter" data-level="6.2" data-path="section-air.html"><a href="section-air.html#section-air-flow-network"><i class="fa fa-check"></i><b>6.2</b> Air flow network</a></li>
+<li class="chapter" data-level="6.3" data-path="section-air.html"><a href="section-air.html#section-tutorials-1"><i class="fa fa-check"></i><b>6.3</b> Tutorials</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="section-air.html"><a href="section-air.html#section-tutorial-1-air-flow-through-a-door"><i class="fa fa-check"></i><b>6.3.1</b> Tutorial 1: air flow through a door</a></li>
+<li class="chapter" data-level="6.3.2" data-path="section-air.html"><a href="section-air.html#section-tutorial-2"><i class="fa fa-check"></i><b>6.3.2</b> Tutorial 2</a></li>
+<li class="chapter" data-level="6.3.3" data-path="section-air.html"><a href="section-air.html#section-tutorial-3-solar-chimney-and-evaporative-cooling"><i class="fa fa-check"></i><b>6.3.3</b> Tutorial 3: solar chimney and evaporative cooling</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="section-humidite.html"><a href="section-humidite.html"><i class="fa fa-check"></i><b>7</b> Moisture transfer</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="section-humidite.html"><a href="section-humidite.html#section-moisture-transfer-in-materials"><i class="fa fa-check"></i><b>7.1</b> Moisture transfer in materials</a></li>
+<li class="chapter" data-level="7.2" data-path="section-humidite.html"><a href="section-humidite.html#section-tutorials-2"><i class="fa fa-check"></i><b>7.2</b> Tutorials</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="section-humidite.html"><a href="section-humidite.html#section-tutorial-1-condensation"><i class="fa fa-check"></i><b>7.2.1</b> Tutorial 1: condensation</a></li>
+<li class="chapter" data-level="7.2.2" data-path="section-humidite.html"><a href="section-humidite.html#section-tutorial-2-dew-point"><i class="fa fa-check"></i><b>7.2.2</b> Tutorial 2: dew point</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II HVAC systems</b></span></li>
+<li class="chapter" data-level="8" data-path="section-aperçu-des-systèmes.html"><a href="section-aperçu-des-systèmes.html"><i class="fa fa-check"></i><b>8</b> Aperçu des systèmes</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="section-aperçu-des-systèmes.html"><a href="section-aperçu-des-systèmes.html#section-des-besoins-aux-consommations"><i class="fa fa-check"></i><b>8.1</b> Des besoins aux consommations</a></li>
+<li class="chapter" data-level="8.2" data-path="section-aperçu-des-systèmes.html"><a href="section-aperçu-des-systèmes.html#section-types-de-systèmes"><i class="fa fa-check"></i><b>8.2</b> Types de systèmes</a></li>
+<li class="chapter" data-level="8.3" data-path="section-aperçu-des-systèmes.html"><a href="section-aperçu-des-systèmes.html#section-dimensionnement"><i class="fa fa-check"></i><b>8.3</b> Dimensionnement</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html"><i class="fa fa-check"></i><b>9</b> Hydronic heating</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-généralités"><i class="fa fa-check"></i><b>9.1</b> Généralités</a></li>
+<li class="chapter" data-level="9.2" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-emission-de-chaleur"><i class="fa fa-check"></i><b>9.2</b> Emission de chaleur</a></li>
+<li class="chapter" data-level="9.3" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-distribution"><i class="fa fa-check"></i><b>9.3</b> Distribution</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-réglage-de-la-température-et-du-débit-dans-les-émetteurs"><i class="fa fa-check"></i><b>9.3.1</b> Réglage de la température et du débit dans les émetteurs</a></li>
+<li class="chapter" data-level="9.3.2" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-circuits-primaires-et-secondaires"><i class="fa fa-check"></i><b>9.3.2</b> Circuits primaires et secondaires</a></li>
+<li class="chapter" data-level="9.3.3" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-equilibrage-hydraulique"><i class="fa fa-check"></i><b>9.3.3</b> Equilibrage hydraulique</a></li>
+<li class="chapter" data-level="9.3.4" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-circulateurs"><i class="fa fa-check"></i><b>9.3.4</b> Circulateurs</a></li>
+<li class="chapter" data-level="9.3.5" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-pertes-thermiques"><i class="fa fa-check"></i><b>9.3.5</b> Pertes thermiques</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-génération"><i class="fa fa-check"></i><b>9.4</b> Génération</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-chaudières"><i class="fa fa-check"></i><b>9.4.1</b> Chaudières</a></li>
+<li class="chapter" data-level="9.4.2" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-pompes-à-chaleur"><i class="fa fa-check"></i><b>9.4.2</b> Pompes à chaleur</a></li>
+<li class="chapter" data-level="9.4.3" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-autres-générateurs-de-chaleur"><i class="fa fa-check"></i><b>9.4.3</b> Autres générateurs de chaleur</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="section-ecs.html"><a href="section-ecs.html"><i class="fa fa-check"></i><b>10</b> Domestic hot water</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="section-ecs.html"><a href="section-ecs.html#section-calcul-des-besoins-et-consommations"><i class="fa fa-check"></i><b>10.1</b> Calcul des besoins et consommations</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="section-ecs.html"><a href="section-ecs.html#section-calcul-des-besoins-decs"><i class="fa fa-check"></i><b>10.1.1</b> Calcul des besoins d’ECS</a></li>
+<li class="chapter" data-level="10.1.2" data-path="section-ecs.html"><a href="section-ecs.html#section-calcul-des-pertes-de-distribution-stockage-et-génération"><i class="fa fa-check"></i><b>10.1.2</b> Calcul des pertes de distribution, stockage et génération}</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="section-ecs.html"><a href="section-ecs.html#section-modes-de-production"><i class="fa fa-check"></i><b>10.2</b> Modes de production</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="section-ecs.html"><a href="section-ecs.html#section-instantané"><i class="fa fa-check"></i><b>10.2.1</b> Instantané</a></li>
+<li class="chapter" data-level="10.2.2" data-path="section-ecs.html"><a href="section-ecs.html#section-accumulation"><i class="fa fa-check"></i><b>10.2.2</b> Accumulation</a></li>
+<li class="chapter" data-level="10.2.3" data-path="section-ecs.html"><a href="section-ecs.html#section-semi-instantané-ou-semi-accumulation"><i class="fa fa-check"></i><b>10.2.3</b> Semi-instantané ou semi-accumulation</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="section-ecs.html"><a href="section-ecs.html#section-systèmes-de-production-decs"><i class="fa fa-check"></i><b>10.3</b> Systèmes de production d’ECS</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="section-ecs.html"><a href="section-ecs.html#section-cumulus-électrique"><i class="fa fa-check"></i><b>10.3.1</b> Cumulus électrique</a></li>
+<li class="chapter" data-level="10.3.2" data-path="section-ecs.html"><a href="section-ecs.html#section-chaudière-double-service"><i class="fa fa-check"></i><b>10.3.2</b> Chaudière double service}</a></li>
+<li class="chapter" data-level="10.3.3" data-path="section-ecs.html"><a href="section-ecs.html#section-chauffe-eau-solaire-individuel"><i class="fa fa-check"></i><b>10.3.3</b> Chauffe-eau solaire individuel}</a></li>
+<li class="chapter" data-level="10.3.4" data-path="section-ecs.html"><a href="section-ecs.html#section-système-solaire-combiné"><i class="fa fa-check"></i><b>10.3.4</b> Système solaire combiné</a></li>
+<li class="chapter" data-level="10.3.5" data-path="section-ecs.html"><a href="section-ecs.html#section-pompe-à-chaleur"><i class="fa fa-check"></i><b>10.3.5</b> Pompe à chaleur</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="section-ecs.html"><a href="section-ecs.html#section-dimensionnement-des-systèmes-solaires-solaire"><i class="fa fa-check"></i><b>10.4</b> Dimensionnement des systèmes solaires {solaire}</a></li>
+<li class="chapter" data-level="10.5" data-path="section-ecs.html"><a href="section-ecs.html#section-exercice-1"><i class="fa fa-check"></i><b>10.5</b> Exercice</a></li>
+<li class="chapter" data-level="10.6" data-path="section-ecs.html"><a href="section-ecs.html#section-estimating-the-consumption"><i class="fa fa-check"></i><b>10.6</b> Estimating the consumption</a></li>
+<li class="chapter" data-level="10.7" data-path="section-ecs.html"><a href="section-ecs.html#section-sizing-the-system"><i class="fa fa-check"></i><b>10.7</b> Sizing the system</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="section-ecs.html"><a href="section-ecs.html#section-solar-coverage"><i class="fa fa-check"></i><b>10.7.1</b> Solar coverage</a></li>
+<li class="chapter" data-level="10.7.2" data-path="section-ecs.html"><a href="section-ecs.html#section-temperatures"><i class="fa fa-check"></i><b>10.7.2</b> Temperatures</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="section-ventilation.html"><a href="section-ventilation.html"><i class="fa fa-check"></i><b>11</b> Ventilation</a></li>
+<li class="chapter" data-level="12" data-path="section-air-conditioning.html"><a href="section-air-conditioning.html"><i class="fa fa-check"></i><b>12</b> Air conditioning</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="section-air-conditioning.html"><a href="section-air-conditioning.html#section-evaluating-air-conditioning-needs"><i class="fa fa-check"></i><b>12.1</b> Evaluating air conditioning needs</a></li>
+<li class="chapter" data-level="12.2" data-path="section-air-conditioning.html"><a href="section-air-conditioning.html#section-tutorials-3"><i class="fa fa-check"></i><b>12.2</b> Tutorials</a></li>
+</ul></li>
+<li class="part"><span><b>III Designing energy performant buildings</b></span></li>
+<li class="chapter" data-level="13" data-path="section-bioclimatic-architecture.html"><a href="section-bioclimatic-architecture.html"><i class="fa fa-check"></i><b>13</b> Bioclimatic architecture</a></li>
+<li class="chapter" data-level="14" data-path="section-building-energy-simulation.html"><a href="section-building-energy-simulation.html"><i class="fa fa-check"></i><b>14</b> Building energy simulation</a></li>
+<li class="chapter" data-level="15" data-path="section-numerical-methods.html"><a href="section-numerical-methods.html"><i class="fa fa-check"></i><b>15</b> Numerical methods</a></li>
+<li class="divider"></li>
+<li><a href="https://srouchier.github.io/" target="blank">A book by Simon Rouchier</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Manuel de performance énergétique des bâtiments</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="section-air-conditioning" class="section level1 hasAnchor" number="12">
+<h1><span class="header-section-number">Chapitre 12</span> Air conditioning<a href="section-air-conditioning.html#section-air-conditioning" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>beaucoup de contenu dans les diapos du CM M1</p>
+<p>HVAC systems operate transformations that change the conditions of the moist air. These transformations can be represented on the psychrometric chart (Fig. <a href="section-air-conditioning.html#fig:aircon2">12.1</a>). In order to produce air at the required supply conditions, an air handling unit may use one or several elementary transformations. Supposing that the air flow being processed has a mass (or mass flow rate) of dry air <span class="math inline">\(m_{da}\)</span>:</p>
+<div class="figure"><span style="display:block;" id="fig:aircon2"></span>
+<img src="figures/aircon2.PNG" alt="Transformations" width="40%" />
+<p class="caption">
+Figure 12.1: Transformations
+</p>
+</div>
+<ol style="list-style-type: decimal">
+<li>Simple heating: increase of temperature at a constant absolute humidity. The heating power is directly related to the enthalpy change, which is only a difference of sensible heat because <span class="math inline">\(w\)</span> is constant (see eq. <a href="#eq:enthalpy">(<strong>??</strong>)</a>):
+<span class="math display">\[\begin{align}
+P_h &amp; = m_{da} \Delta h \\
+\Delta h &amp; =  c_{da} \Delta T
+\end{align}\]</span></li>
+<li>Vapour humidification: increase of humidity <span class="math inline">\(w\)</span> at constant dry bulb temperature. The vapour flow rate is directly related to the humidity change, and the power is only a difference of latent heat:
+\begin{align}
+Q_ &amp; = m_{da} w \
+P_ &amp; = m_{da} h \
+h &amp; = l_v w
+\end{align</li>
+<li>Adiabatic humidification: increase of humidity and decrease of temperature, at constant enthalpy. The evaporation rate <span class="math inline">\(Q_\mathit{vap}\)</span> generates a decrease of temperature <span class="math inline">\(\Delta T\)</span>:
+<span class="math display">\[\begin{align}
+Q_\mathit{vap} &amp; = m_{da} \Delta w \\
+\Delta h &amp; \approx  c_{da} \Delta T + l_v \Delta w = 0 \\
+\Delta T &amp; = -\frac{l_v}{c_\mathit{da}} \Delta w
+\end{align}\]</span></li>
+<li>“Dry” cooling: decrease of temperature at constant absolute humidity.
+<span class="math display">\[\begin{align}
+P_c &amp; = m_{da} \Delta h &lt;0 \\
+\Delta h &amp; =  c_{da} \Delta T &lt; 0
+\end{align}\]</span></li>
+<li>Cooling and dehumidification: allows cooling the air below its dew point. The absolute humidity decreases as a consequence of condensation on the cold exchanger.
+<span class="math display">\[\begin{align}
+P_c &amp; = m_{da} \Delta h &lt;0 \\
+\Delta h &amp; =  c_{da} \Delta T + l_v \Delta w&lt; 0
+\end{align}\]</span></li>
+</ol>
+<div id="section-evaluating-air-conditioning-needs" class="section level2 hasAnchor" number="12.1">
+<h2><span class="header-section-number">12.1</span> Evaluating air conditioning needs<a href="section-air-conditioning.html#section-evaluating-air-conditioning-needs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In order to maintain required indoor conditions (temperature and humidity), the AC system (air handling unit or other) must supply air at specified conditions. These conditions are entirely specified by: the dry bulb temperature <span class="math inline">\(T_s\)</span> and absolute humidity <span class="math inline">\(w_s\)</span> of the supply air (or any two variables from the psychrometric chart), and the supply mass flow rate <span class="math inline">\(\dot{m}_{da,s}\)</span>.</p>
+<p>The first step is the estimation of the loads of the building, i.e. all influences on the indoor heat and moisture balance besides the HVAC system.</p>
+<ul>
+<li><strong>Sensible loads</strong> (in W) are all heat inputs that directly impact the indoor temperature: heat loss (or gain) through the envelope, air infiltration, solar gain, occupants and equipments, lighting…
+<span class="math display">\[\begin{equation}
+\mathrm{SL} = H\left(T_e-T_i\right) + \dot{m}_\mathit{inf} c_{da} \left(T_e-T_i\right) + \Phi_\mathit{sol} + \Phi_\mathit{in} + ...
+\end{equation}\]</span></li>
+<li><strong>Latent loads</strong> (in W) are the energy content (latent heat) of the humidity inputs: air infiltration, indoor vapour production…
+<span class="math display">\[\begin{equation}
+\mathrm{LL} = l_v \left(  \dot{m}_\mathit{inf} \left(w_e-w_i\right) + Q_\mathit{vap,in} + ... \right)
+\end{equation}\]</span></li>
+</ul>
+<p>The supply conditions should be set so that the temperature of the air supply compensates the sensible loads, and the moisture content compensates the latent loads:
+<span class="math display">\[\begin{align}
+\dot{m}_{da,s} c_{da} (T_s - T_i) &amp; + \mathrm{SL} = 0 \\
+\dot{m}_{da,s} l_v (w_s - w_i) &amp; + \mathrm{LL} = 0
+\end{align}\]</span></p>
+<p>This is a system of two equations and three unknown variables <span class="math inline">\(\left\{ \dot{m}_{da,s}, T_s, w_s \right\}\)</span>. It can be solved by choosing the value of one of them: for instance, an imposed supply flow rate <span class="math inline">\(\dot{m}_{da,s}\)</span> or an imposed supply temperature.</p>
+</div>
+<div id="section-tutorials-3" class="section level2 hasAnchor" number="12.2">
+<h2><span class="header-section-number">12.2</span> Tutorials<a href="section-air-conditioning.html#section-tutorials-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Plein d’exos air conditioning dans le cours master ou S7</p>
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="section-ventilation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="section-bioclimatic-architecture.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/srouchier/beh25-ac.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["manuel.pdf", "manuel.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

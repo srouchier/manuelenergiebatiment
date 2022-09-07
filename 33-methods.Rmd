@@ -1,0 +1,3 @@
+# Numerical methods
+
+AS, optimisation, traitement de données

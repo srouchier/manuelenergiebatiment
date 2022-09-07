@@ -1,0 +1,288 @@
+# Hydronic heating
+
+Une des sources principales de cette section est le site [energyplus-lesite.be](https://energieplus-lesite.be/category/techniques/chauffage10/chauffage-a-eau-chaude/)
+
+## Généralités
+
+Un réseau hydraulique est l'ensemble des équipements par lesquels l'eau chaude est produite et distribuée dans un bâtiment à des fins de chauffage. L'eau chaude est le mode le plus courant de distribution de chaleur dans les bâtiments, l'autre mode étant l'air.
+
+Pour la description des installations et la méthode de calcul des consommations, on distingue trois niveaux d'équipements :
+
+1. L'**émission** correspondant à la satisfaction du besoin de l'occupant ;
+2. La **distribution** correspondant aux réseaux alimentant les émetteurs ;
+3. La **génération**, correspondant à l'alimentation énergétique des réseaux de distribution.
+
+A cela s'ajoutent les équipement de **régulation** visant à assurer les températures et débits voulus en chaque point du circuit.
+
+```{r, calculconso, echo=FALSE, out.width="90%", fig.cap="Calcul des consommations à partir des besoins"}
+knitr::include_graphics(rep("figures/calculconso.png"))
+```
+
+Cette section va décrire les différents types d'équipements de chaque catégorie, et les étapes principales pour le calcul de la consommation de chauffage. Ce calcul se fait en ``remontant'' la chaîne de distribution de la chaleur, comme montré plus tôt sur la figure \@ref(fig:besoinsconsos), puis ici sur la figure \@ref(fig:calculconso) : à partir des besoins de chauffage calculés précédemment, on calcule l'énergie qui doit être délivrée par les émetteurs, puis celle qui doit être produite par le générateur, puis la consommation d'énergie entrant dans le bâtiment. Chaque étape peut présenter des pertes.
+
+## Emission de chaleur
+
+Les **émetteurs** sont les appareils délivrant la chaleur dans la zone chauffée : radiateurs, planchers chauffants, convecteurs, poêles... Un émetteur de chauffage est caractérisé entre autres par :
+
+* Son régime de dimensionnement ;
+* Les parts convective et radiative de l'émission ;
+* Les éventuelles pertes au dos des émetteurs intégrés aux parois ;
+* La variation spatiale représentant une éventuelle stratification.
+
+
+Le **régime de dimensionnement** d'un émetteur est déterminé par les températures d'entrée et de sortie de l'eau en conditions nominales (voir section \@ref(sec:dimensionnement)). La figure \@ref(fig:regime) montre l'exemple d'un radiateur de 2000 W dimensionné en régime 70/50 : il est alimenté avec de l’eau à 70°C, celle-ci cédera 2000 W de chaleur au local à 20°C, et ressortira avec une température de 50°C.
+
+```{r, regime, echo=FALSE, out.width="40%", fig.cap="Radiateur en régime 70/50"}
+knitr::include_graphics(rep("figures/regime.png"))
+```
+
+La puissance cédée par le radiateur au local peut être calculée simplement par la conservation de l'énergie :
+\begin{equation}
+    \Phi = \dot{m} \, c_p \, \left(T_\mathrm{entree} - T_\mathrm{sortie} \right)
+    (\#eq:puissanceemetteur)
+\end{equation}
+où $\Phi$ est une puissance en [W] et $\dot{m}$ un débit massique en kg/s. Cette formule peut être utilisée pour calculer le débit nécessaire si la puissance et les températures de dimensionnement sont connues.
+
+Table: (\#tab:regimes) Température d'entrée de l'eau chaude dans les émetteurs
+
+Emetteur                          Température d'entrée
+---------                         ---------------------
+Radiateur haute température       70 à 90°C
+Radiateur basse température       40 à 50°C
+Plancher chauffant                35°C
+
+Une autre formule est souvent utilisée pour calculer la puissance délivrée par un même radiateur pour une température d'entrée de l'eau différente :
+\begin{equation}
+    \Phi = a \cdot \Delta T^n
+\end{equation}
+où les coefficients $a$ et $n$ sont fournis par le fabriquant. Dans cette formule, $\Delta T$ n'est pas la différence de température entrée-sortie du radiateur, mais la différence entre la température moyenne de l'eau dans le radiateur et la température du local. Par exemple pour un radiateur en 70/50 dans un local à 20°C, on aura $\Delta T=40$°C.
+
+
+
+Une autre caractéristique importante des émetteur est leur **part convective et radiative** de l'émission de chaleur. La surface chaude d'un émetteur cède de la chaleur par échange convectif avec l'air de la pièce, et par échange radiatif avec les parois.
+
+Table: (\#tab:convectionrayonnement) Part convective de l'émission
+
+Emetteur                            Part de convection
+---------                           --------------------
+Radiateur à éléments en fonte       75 à 85 \%
+Radiateur à panneaux en acier       50 à 70 \%
+Ventilo-convecteur                    95 \% 
+Plancher chauffant                    50 \% 
+
+La répartition du transfert entre convection et rayonnement dépend de l'orientation, la forme et l'émissivité de la surface chauffante, et de l'écart de température entre elle et l'air ambiant.
+
+Une part importante de convection peut entraîner une **stratification** des températures : l'air chauffé par convection au contact de l'émetteur monte, et peut stagner en partie haute du local. Pour obtenir une température de confort voulue dans la zone d’occupation, la température moyenne de l’air de l’ensemble du local sera plus élevée (voir figure \@ref(fig:stratification)).
+
+
+```{r, stratification, echo=FALSE, out.width="40%", fig.cap="Exemple de stratification des températures avec un chauffage par radiateur et un chauffage par convecteur : la stratification est plus importante dans le deuxième cas, entraînant des pertes de chaleur à cause de la température élevée au plafond, bien que la température soit la même au niveau du thermostat."}
+knitr::include_graphics(rep("figures/stratification.png"))
+```
+
+Enfin, on s'intéresse aux **pertes au dos** des émetteurs, c'est-à-dire la part de chaleur qu'ils émettent en dehors du local à chauffer. Ces pertes peuvent être non négligeable pour les émetteurs placés près des parois froides, ou intégrés aux parois comme les planchers chauffants.
+
+## Distribution
+
+### Réglage de la température et du débit dans les émetteurs
+
+Pour régler la puissance transmise à un ensemble d'émetteurs, on peut faire varier soit la température de l’eau qui y est envoyée, soit son débit, au moyen d’une vanne trois voie. Les deux alternatives sont montrées sur la figure \@ref(fig:v3v).
+
+
+```{r, v3v, echo=FALSE, out.width="80%", fig.cap="Distribution d'eau chaude aux émetteurs en régulant soit la température d'entrée soit le débit"}
+knitr::include_graphics(rep("figures/v3v.png"))
+```
+
+
+Le premier cas est un montage en mode mélange: le débit $\dot{m}$ est fixé par un circulateur en aval de la vanne, et la température est variable selon l’ouverture de la vanne.La température nécessaire en entrée du radiateur pour assurer une puissance donnée avec un débit fixé se calcule avec l'équation \@ref(eq:puissanceemetteur). A l'inverse, le débit peut être calculé par cette formule si c'est la température $T_1$ qui est imposée. Ensuite, les lois de conservation de la quantité d'eau et de l'énergie, écrites sur la vanne 3 voies, permettent de calculer les autres débits du circuit : celui provenant de l'amont du circuit $\dot{m}_0$ et le débit de bi-passage $\dot{m}_{BP}$.
+
+Une autre configuration est celle du montage en décharge (en bas de la figure \@ref(fig:v3v)), où le débit est fixé dans la boucle primaire mais pas dans la boucle secondaire. En revanche la température en entrée de l’émetteur est la même que T0 en sortie de la chaudière, si on néglige les pertes. Tous les calculs se font avec les mêmes lois de conservation que dans le premier cas.
+
+Dans la pratique, il n'y aura pas une vanne 3 voies devant chaque radiateur, mais par exemple en entrée d'un circuit desservant un ensemble de radiateurs ayant la même température de consigne en conditions nominales. Le réglage de chaque radiateur peut se faire ensuite individuellement avec leurs vannes thermostatiques.
+
+### Circuits primaires et secondaires
+
+Dans les installations de chauffage de taille importante (tertiaire, logement collectif, réseaux sur plusieurs bâtiments), la distribution d’eau chaude comprend souvent, en chaufferie, un circuit primaire (ou collecteur) duquel partent plusieurs circuits secondaires qui alimentent les différentes zones : voir figure \@ref(fig:circuit}=).
+
+```{r, circuit, echo=FALSE, out.width="80%", fig.cap="Exemple de réseau avec une boucle primaire et plusieurs boucles secondaires. La circulation de l'eau est assurée par un circulateur sur chaque boucle qui permet d'en gérer les débits indépendamment. Une vanne 3 voies peut être placée au départ de chaque circuit secondaire."}
+knitr::include_graphics(rep("figures/circuit.png"))
+```
+
+Un circuit primaire est dit en boucle fermée quand il existe un moyen pour l'eau de retourner aux chaudières sans passer par les circuits secondaires, comme sur la figure \@ref(fig:bouclefermee). Cela permet d'éviter une variation du débit dans les chaudières dans le cas où un ou plusieurs circuits secondaires seraient fermés, en mi-saison. On élimine ainsi les interférences entre circuits secondaires. Si de plus les chaudières fournissent de l'eau à plus haute température que les besoins des circuits secondaires, on élimine le risque de circulation inverse dans la boucle, qui pourrait être dû à la fermeture des vannes 3 voies.
+
+```{r, bouclefermee, echo=FALSE, out.width="80%", fig.cap="Deux circuits en boucle fermée, avec bouteille casse-pression (en bas) ou sans (en haut)."}
+knitr::include_graphics(rep("figures/bouclefermee.png"))
+```
+
+
+Une bouteille casse-pression, ou bouteille de découplage (en bas de la figure \@ref(fig:bouclefermee) est un by-pass qui se trouve avant les circuits secondaires. Elle supprime toute interférence hydraulique entre le circuit des chaudières et les circuits secondaires. Lorsque les vannes mélangeuses sont partiellement fermées, le surplus de débit entre le circuit des chaudières et les circuits secondaires circulera dans la bouteille casse-pression (de A vers B). De l’eau chaude sera ainsi renvoyée vers les chaudières.
+
+### Equilibrage hydraulique
+
+Un circuit dessert plusieurs appareils émetteurs qui sont chacun situés plus ou moins loin de la production de chaleur. L’eau subit donc des pertes de charge qui dépendent de la boucle qu’elle parcourt. Pour un radiateur éloigné de la chaudière, le risque est que ces pertes de charge induisent une baisse de débit donc une baisse de puissance. L’équilibrage consiste à régler les pressions dans un réseau hydraulique, afin d'y assurer les débits voulus.
+
+```{r, equilibrage, echo=FALSE, out.width="40%", fig.cap="Un défaut d'équilibrage (à gauche) peut entraîner une mauvaise répartition des températures d'arrivée de l'eau dans les radiateurs."}
+knitr::include_graphics(rep("figures/equilibrage.png"))
+```
+
+
+Les pertes de charge régulières ont lieu le long des conduites. Dans une conduite de longueur $L$ (m), diamètre $D$ (m) et coefficient de perte de charge $\lambda$, où l'eau circule à une vitesse $v$ (m/s) :
+\begin{equation}
+    \Delta p = \rho \, g \, \Delta h = \lambda \frac{L}{D} \frac{\rho \, v^2}{2}
+    (\#eq:pdc1)
+\end{equation}
+Elle peut être exprimée en pression $\Delta p$ (Pa) ou en hauteur d'eau $\Delta h$ (mètres de colonne d'eau, mCE). Les pertes singulières ont lieu aux différents obstacles des canalisations : coudes, raccords, vannes... Elles se calculent de la même façon, en fonction du coefficient de perte de charge $\Lambda$ de l'obstacle :
+\begin{equation}
+    \Delta p = \Lambda \frac{\rho \, v^2}{2}
+    (\#eq:pdc2)
+\end{equation}
+
+```{r, pdcexemple, echo=FALSE, out.width="80%", fig.cap="Dans cet exemple, deux radiateurs ont besoin de 130 l/h chacun. Avant équilibrage (en haut), les PDC sont estimées à 200 mmCE dans la première boucle et 400 mmCE dans la deuxième, ce qui donne un débit réel de 200 l/h et 60 l/h respectivement. L'équilibrage se fait en ajoutant des vannes (en bas) qu'on règle pour que les PDC totales de chaque boucle soient égales."}
+knitr::include_graphics(rep("figures/pdcexemple.png"))
+```
+
+L'équilibrage est réalisé au moyen de vannes placées chaque boucle, permettant d'ajouter des pertes de charges singulières aux branches plus favorisées afin de mieux répartir les débits. Quelques exemples de vannes sont montrés sur la figure \@ref(fig:vannes) : robinet thermostatique adaptant automatiquement son ouverture à une mesure de température de la pièce ; té de réglage fixé lors de l'installation ; vannes d'équilibrages permettant la mesure des débits en circulation.
+
+```{r, vannes, echo=FALSE, out.width="40%", fig.cap="Robinet thermostatique, té de réglage, vanne d'équilibrage"}
+knitr::include_graphics(rep("figures/vannes.png"))
+```
+
+% note à moi : cette partie sera à refaire en s'inspirant de https://energieplus-lesite.be/theories/chauffage11/hydraulique/
+
+### Circulateurs
+    
+% https://energieplus-lesite.be/theories/chauffage11/hydraulique/
+
+Pour mettre en circulation l'eau dans le réseau de chauffage, il faut y installer un circulateur qui va compenser ses pertes de charges totales.
+
+```{r, circulateur0, echo=FALSE, out.width="40%", fig.cap="Circulateur à vitesse variable"}
+knitr::include_graphics(rep("figures/circulateur0.png"))
+```
+
+Lorsqu'un circulateur est installé dans un réseau, le débit s'y stabilise à un certain point de fonctionnement qui est l'intersection entre deux courbes, comme le montre la figure \@ref(fig:circulateur2) :
+
+* La courbe caractéristique du circuit, qui indique le rapport entre la vitesse de l'eau et ses pertes de charges totales. Comme le montrent les équations \@ref(eq:pdc1) et \@ref(eq:pdc2), les pertes de charges augmentent quadratiquement avec la vitesse de l'eau donc son débit.
+* La courbe caractéristique du circulateur qui indique la hauteur manométrique qu'il peut fournir en fonction du débit.
+
+```{r, circulateur2, echo=FALSE, out.width="40%", fig.cap="Détermination du point de fonctionnement en fonction des caractéristiques du réseau et du circulateur"}
+knitr::include_graphics(rep("figures/circulateur2.png"))
+```
+
+La puissance utile d'un circulateur est le produit entre sa hauteur manométrique ($\Delta p$ en [Pa] ou $\Delta h$ en [mCE]) et son débit volumique $Q$ :
+\begin{equation}
+    P_u = \Delta p \, Q = \rho \, g \, \Delta h \, Q
+\end{equation}
+Cette puissance utile est plus faible que la puissance électrique consommée par la pompe du fait de pertes thermiques. Le rapport entre les deux est le rendement du circulateur : $\eta = P_u / P_\mathrm{elec}$. Dans la réglementation, cette consommation est classée dans les ``auxiliaires de circulation''.
+
+### Pertes thermiques
+
+Les déperditions thermiques brutes du réseau de distribution sont calculées à partir de l’écart entre la température moyenne de l’eau dans les canalisations et la température ambiante. Lorsque ces déperditions thermiques sont émises dans les espaces chauffés, elles sont considérées comme de la chaleur utile pour le chauffage. Lorsqu'elles ont lieu dans les espaces non chauffés, il s'agit de pertes à prendre en compte. Les conduits sont calorifugés pour minimiser ces pertes.
+
+```{r, pertesconduit, echo=FALSE, out.width="40%", fig.cap="Notations pour le calcul des pertes thermiques de distribution"}
+knitr::include_graphics(rep("figures/pertesconduit.png"))
+```
+
+Ces déperditions peuvent être estimées en calculant la chute de température le long d'un conduit parcouru par un écoulement. En reprenant les notations de la figure \@ref(fig:pertesconduit) : si l'eau entre dans une conduite à la température $T_0$ avec un débit $\dot{m}$, alors sa température après une longueur $L$ de conduite est :
+\begin{equation}
+    \frac{T(L)-T_\infty}{T_0 - T_\infty} = \exp\left(- \frac{k \, 2\pi \, r_\mathit{ext}}{\dot{m} c_p } L\right)
+\end{equation}
+où $r_\mathit{ext}$ est le rayon extérieur du conduit, $T_\infty$ est la température ambiante (de l'air de la pièce, ou du sol si la conduite est enterrée), et $k$ est un coefficient de transfert qui caractérise l'isolation. Ce coefficient dépend des coefficients de transfert surfacique intérieur et extérieur $h_i$ et $h_e$ (W.m$^{-2}$.K$^{-1}$) et des conductivités thermiques de chaque couche de la conduite (tuyau + isolant). Dans l'exemple montré sur la figure \@ref(fig:pertesconduit) :
+\begin{equation}
+    \frac{1}{k} = \frac{1}{h_i}+\frac{1}{\lambda_1}\ln\left(\frac{r_2}{r_1}\right)+\frac{1}{\lambda_2}\ln\left(\frac{r_3}{r_2}\right)+\frac{1}{h_e}
+\end{equation}
+
+## Génération
+
+La génération regroupe l'ensemble des dispositifs de stockage, de génération et de composants amont à la génération (énergie renouvelable, tours de refroidissement, boucle primaire). Les systèmes de génération peuvent être constitués d'un ou de plusieurs générateurs, et alimenter un ou plusieurs bâtiments.
+
+Les caractéristiques principales d'un générateur sont sa puissance nominale et son efficacité énergétique, qui est le rapport entre la puissance utile qu'il fournit au réseau et sa consommation d'énergie :
+\begin{equation}
+    \eta = \frac{P_\mathrm{utile}}{P_\mathrm{conso}}
+    (\#eq:rendementchaudiere)
+\end{equation}
+
+### Chaudières
+
+Les systèmes de génération les plus courants pour les réseaux hydrauliques sont les générateurs à combustion, ou chaudières. Le fioul et le gaz naturel sont encore les combustibles les plus utilisés en France, mais tendent à être remplacés par les chaudières biomasse et les pompes à chaleur.
+
+```{r, chaudieres, echo=FALSE, out.width="40%", fig.cap="En haut : déperditions thermiques sur une chaudière. En bas : principe d'une chaudière à condensation."}
+knitr::include_graphics(rep("figures/chaudieres.png"))
+```
+
+Une chaudière est une chambre de combustion dans laquelle circule un circuit d'eau à chauffer. Son rendement (équation \ref{eq:rendementchaudiere}) est le rapport entre sa puissance utile et sa consommation de combustible. Celles-ci peuvent s'exprimer :
+\begin{align}
+    P_\mathrm{utile} & = \dot{m}_\mathrm{eau} \, c_p \, \left(T_\mathrm{depart} - T_\mathrm{retour} \right) \\
+    P_\mathrm{conso} & = PCI \times \dot{m}_\mathrm{combustible}
+\end{align}
+La différence entre ces deux puissances sont les pertes thermiques de la chaudière, illustrées sur la figure \ref{fig:chaudieres}. La puissance utile est simplement proportionnelle à la hausse de température de l'eau entrant et sortant de la chaudière. La puissance consommée par la chaudière est le produit du débit de combustible consommé (kg/s) et de son pouvoir calorifique.
+
+* Le pouvoir calorifique inférieur (PCI) est l'énergie récupérée par la combustion, c'est-à-dire la quantité de chaleur libérée lors de la combustion complète. L'eau formée est évacuée sous forme de vapeur et s'échappe avec les fumées dans l'atmosphère.
+* Le pouvoir calorifique supérieur (PCS) est l'énergie récupérée par la combustion a laquelle se rajoute la récupération des calories contenues dans la condensation de la vapeur d'eau contenue dans les fumées. Grâce à la récupération de la chaleur de vaporisation et à la référence au PCI, les chaudières à condensation offrent des rendements supérieurs à 100 \% sur PCI.
+
+L'ordre de grandeur du PCI et du PCS de quelques combustibles courants est donné sur le tableau \@ref(tab:pci). Le PCI du bois est très variable. Il dépend de l'essence du bois et de son taux d'humidité : le PCI du bois sec est plus élevé que pour le bois humide.
+
+Table: (\#tab:pci) PCI
+
+Combustible                         PCI (kWh/kg)            PCS (kWh/kg)
+------------                        -------------           -------------
+Fioul domestique                    11,86                   12,75
+Gaz propane/butane                    12,7                    13,8
+Gaz de ville                        10,83                   12,03
+Bois (feuillu, 20 \% d'humidité)    3,8           .
+Bois (résineux, 20 \% d'humidité)   4,1           .
+Granulés de bois                    4,6           .
+
+Une chaudière à condensation (en bas de la figure \@ref(fig:chaudieres)) est conçue pour récupérer une partie de la chaleur de vaporisation de l'eau des fumées : l'eau de retour du réseau de distribution doit être assez froide pour faire condenser la vapeur d'eau contenue dans les fumées. Grâce à cette récupération de l'eau et à la température basse des fumées, la chaleur utile d'une chaudière à condensation peut dépasser le PCI du combustible. Ce qui permet d'afficher un rendement supérieur à 100\% s'il est calculé sur la base du PCI. Pour cette raison, ces chaudières sont d'autant plus intéressantes qu'elles sont utilisées avec un réseau à basse température, comme des planchers chauffants.
+
+### Pompes à chaleur
+
+Une pompe à chaleur (PAC) est un appareil permettant de transférer la chaleur depuis une source froide vers une source chaude. Elle permet donc de chauffer un local en hiver (transfert de l'extérieur froid vers l'intérieur plus chaud), ou de le climatiser en été (transfert de l'intérieur frais vers l'extérieur chaud). Une PAC est dite réversible si elle peut produire de la chaleur en hiver et du froid en été.
+
+Les PAC les plus courantes fonctionnent sur le principe du cycle frigorifique à compression schématisé sur la figure \ref{eq:puissanceemetteur}, constitué de 4 étapes :
+
+
+```{r, pac, echo=FALSE, out.width="40%", fig.cap="Principe d'une pompe à chaleur, ici en mode chauffage"}
+knitr::include_graphics(rep("figures/pac.png"))
+```
+
+* Un **compresseur** met en circulation le fluide frigorigène à l'état gazeux, augmente sa pression tout en le chauffant ;
+* Dans le **condenseur**, le fluide passe à l'état liquide en cédant sa chaleur de vaporisation au milieu qu'on souhaite chauffer en hiver (ou à l'extérieur en été) ;
+* Le **détendeur** diminue la pression et la température du fluide qui est alors un mélange diphasique ;
+* Dans l'**évaporateur**, le fluide à basse pression entre en ébullition en récupérant la chaleur de la source froide (pièce à refroidir en été, ou extérieur en hiver).
+
+Une alternative est la PAC à absorption, où le compresseur et le détendeur sont remplacés par un deuxième cycle thermodynamique utilisant un fluide absorbeur. Cet appareil est alimenté en chaleur plutôt qu'en électricité, ce qui permet par exemple d'exploiter l'énergie solaire pour refroidir un local.
+
+```{r, pacabsorption, echo=FALSE, out.width="40%", fig.cap="Principe d'une pompe à chaleur à absorption"}
+knitr::include_graphics(rep("figures/pacabsorption.png"))
+```
+
+Une PAC est caractérisée par son coefficient de performance (COP) qui est le rapport entre sa puissance utile et sa consommation.
+\begin{equation}
+    COP = \frac{P_\mathrm{utile}}{P_\mathrm{conso}} = \frac{\left|Q\right|}{W}
+\end{equation}
+La consommation d'une PAC classique à compression est l'électricité fournie au compresseur, dont on a noté $W$ le travail. La puissance utile est soit la chaleur cédée à la source chaude (en mode chauffage), soit la chaleur prélevée à la source froide (en mode refroidissement). Dans ces deux modes de fonctionnement, le COP a des limites supérieures théoriques données par les températures des sources chaude et froide :
+\begin{align}
+    COP_\mathrm{chaud} & \leq \frac{T_\mathit{chaud}}{T_\mathit{chaud}-T_\mathit{froid}} \\
+    COP_\mathrm{froid} & \leq \frac{T_\mathit{froid}}{T_\mathit{chaud}-T_\mathit{froid}} \\
+\end{align}
+Même si ces limites théoriques sont loin d'être atteintes en réalité, le COP d'une PAC est d'autant plus élevé que la différence de température est faible entre les deux sources : elles se prêtent bien à la production d'eau chaude à basse température pour des planchers chauffants, ou d'air chaud. Un COP moyen est d'environ 3 ou 4.
+
+```{r, geothermie, echo=FALSE, out.width="70%", fig.cap="Trois types de PAC géothermiques"}
+knitr::include_graphics(rep("figures/schema-explicatif-geothermie.jpg"))
+```
+
+Les PAC peuvent ensuite être classées selon leurs deux sources : 
+
+* PAC air/air : la chaleur est échangée entre l'air extérieur et l'air intérieur (similaire à un climatiseur) ;
+* PAC air/eau : la chaleur est échangée entre l'air extérieur et un réseau hydraulique de chauffage ou de froid ;
+* PAC géothermique sol/eau : la chaleur est échangée entre des capteurs enterrés et un réseau hydraulique ;
+* PAC géothermique eau/eau : la chaleur est échangée entre la nappe phréatique et un réseau hydraulique.
+
+Les PAC géothermiques sont un investissement plus élevé mais atteignent de bien meilleurs COP que les PAC à air.
+
+### Autres générateurs de chaleur
+
+On peut évoquer d'autres types de générateurs de chaleur pour les réseaux hydrauliques de chauffage :
+
+* Un système solaire combiné est un procédé solaire participant à la couverture des besoins de chauffage et d'eau chaude sanitaire ;
+* Les sous-stations de réseau de chaleur, situées en pied d’immeuble, permettent le transfert de chaleur par le biais d’un échangeur entre le réseau de chaleur et le réseau de distribution interne de l'immeuble ou du petit groupe d’immeubles ;
+* Certains poêles à bois qui produisent la chaleur directement dans la zone chauffée contiennent aussi un échangeur dans lequel circule de l'eau qui est ensuite distribuée.

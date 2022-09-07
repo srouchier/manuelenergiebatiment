@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapitre 3 Steady state conductive and convective heat transfer | Manuel de performance énergétique des bâtiments</title>
+  <meta name="description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapitre 3 Steady state conductive and convective heat transfer | Manuel de performance énergétique des bâtiments" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  <meta name="github-repo" content="srouchier/beh" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapitre 3 Steady state conductive and convective heat transfer | Manuel de performance énergétique des bâtiments" />
+  
+  <meta name="twitter:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  
+
+<meta name="author" content="Simon Rouchier" />
+
+
+<meta name="date" content="2022-07-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="apercu.html"/>
+<link rel="next" href="radiative-heat-transfer.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Building Energy Handbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Préface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-propos"><i class="fa fa-check"></i>A propos</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#quelques-chiffres"><i class="fa fa-check"></i><b>1.1</b> Quelques chiffres</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#réglementation"><i class="fa fa-check"></i><b>1.2</b> Réglementation</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#bâtiments-neufs-la-re-2020"><i class="fa fa-check"></i><b>1.2.1</b> Bâtiments neufs : la RE 2020</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#bâtiments-existants"><i class="fa fa-check"></i><b>1.2.2</b> Bâtiments existants</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#plan-du-livre"><i class="fa fa-check"></i><b>1.3</b> Plan du livre</a></li>
+</ul></li>
+<li class="part"><span><b>I Transferts de chaleur et de masse</b></span></li>
+<li class="chapter" data-level="2" data-path="apercu.html"><a href="apercu.html"><i class="fa fa-check"></i><b>2</b> Aperçu</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="apercu.html"><a href="apercu.html#apercu1"><i class="fa fa-check"></i><b>2.1</b> Bilan thermique global</a></li>
+<li class="chapter" data-level="2.2" data-path="apercu.html"><a href="apercu.html#apercu2"><i class="fa fa-check"></i><b>2.2</b> Calcul réglementaire</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="apercu.html"><a href="apercu.html#hypothèses"><i class="fa fa-check"></i><b>2.2.1</b> Hypothèses</a></li>
+<li class="chapter" data-level="2.2.2" data-path="apercu.html"><a href="apercu.html#besoins-de-chauffage-et-refroidissement"><i class="fa fa-check"></i><b>2.2.2</b> Besoins de chauffage et refroidissement</a></li>
+<li class="chapter" data-level="2.2.3" data-path="apercu.html"><a href="apercu.html#les-règles-th-bat"><i class="fa fa-check"></i><b>2.2.3</b> Les règles Th-Bat</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="apercu.html"><a href="apercu.html#apercu3"><i class="fa fa-check"></i><b>2.3</b> Transferts thermiques dans une pièce</a></li>
+<li class="chapter" data-level="2.4" data-path="apercu.html"><a href="apercu.html#exercice"><i class="fa fa-check"></i><b>2.4</b> Exercice</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="apercu.html"><a href="apercu.html#enoncé"><i class="fa fa-check"></i><b>2.4.1</b> Enoncé</a></li>
+<li class="chapter" data-level="2.4.2" data-path="apercu.html"><a href="apercu.html#solution"><i class="fa fa-check"></i><b>2.4.2</b> Solution</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="steady-state-conductive-and-convective-heat-transfer.html"><a href="steady-state-conductive-and-convective-heat-transfer.html"><i class="fa fa-check"></i><b>3</b> Steady state conductive and convective heat transfer</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="steady-state-conductive-and-convective-heat-transfer.html"><a href="steady-state-conductive-and-convective-heat-transfer.html#conduction-through-a-wall"><i class="fa fa-check"></i><b>3.1</b> Conduction through a wall</a></li>
+<li class="chapter" data-level="3.2" data-path="steady-state-conductive-and-convective-heat-transfer.html"><a href="steady-state-conductive-and-convective-heat-transfer.html#d-and-3d-transfer-thermal-bridges"><i class="fa fa-check"></i><b>3.2</b> 2D and 3D transfer: thermal bridges</a></li>
+<li class="chapter" data-level="3.3" data-path="steady-state-conductive-and-convective-heat-transfer.html"><a href="steady-state-conductive-and-convective-heat-transfer.html#heat-exchange-between-rooms"><i class="fa fa-check"></i><b>3.3</b> Heat exchange between rooms</a></li>
+<li class="chapter" data-level="3.4" data-path="steady-state-conductive-and-convective-heat-transfer.html"><a href="steady-state-conductive-and-convective-heat-transfer.html#tutorials"><i class="fa fa-check"></i><b>3.4</b> Tutorials</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="steady-state-conductive-and-convective-heat-transfer.html"><a href="steady-state-conductive-and-convective-heat-transfer.html#tutorial-1-heat-balance-of-a-room"><i class="fa fa-check"></i><b>3.4.1</b> Tutorial 1: heat balance of a room</a></li>
+<li class="chapter" data-level="3.4.2" data-path="steady-state-conductive-and-convective-heat-transfer.html"><a href="steady-state-conductive-and-convective-heat-transfer.html#tutorial-2-heat-balance-of-two-rooms"><i class="fa fa-check"></i><b>3.4.2</b> Tutorial 2: heat balance of two rooms</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="radiative-heat-transfer.html"><a href="radiative-heat-transfer.html"><i class="fa fa-check"></i><b>4</b> Radiative heat transfer</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="radiative-heat-transfer.html"><a href="radiative-heat-transfer.html#principles-of-radiative-transfer"><i class="fa fa-check"></i><b>4.1</b> Principles of radiative transfer</a></li>
+<li class="chapter" data-level="4.2" data-path="radiative-heat-transfer.html"><a href="radiative-heat-transfer.html#solar-heat-gain"><i class="fa fa-check"></i><b>4.2</b> Solar heat gain</a></li>
+<li class="chapter" data-level="4.3" data-path="radiative-heat-transfer.html"><a href="radiative-heat-transfer.html#radiative-heat-exchange"><i class="fa fa-check"></i><b>4.3</b> Radiative heat exchange</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="radiative-heat-transfer.html"><a href="radiative-heat-transfer.html#radiant-and-operative-temperatures"><i class="fa fa-check"></i><b>4.3.1</b> Radiant and operative temperatures</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="radiative-heat-transfer.html"><a href="radiative-heat-transfer.html#tutorials-1"><i class="fa fa-check"></i><b>4.4</b> Tutorials</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="radiative-heat-transfer.html"><a href="radiative-heat-transfer.html#tutorial-1-greenhouse"><i class="fa fa-check"></i><b>4.4.1</b> Tutorial 1: greenhouse</a></li>
+<li class="chapter" data-level="4.4.2" data-path="radiative-heat-transfer.html"><a href="radiative-heat-transfer.html#tutorial-2-radiator"><i class="fa fa-check"></i><b>4.4.2</b> Tutorial 2: radiator</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="transient-heat-transfer.html"><a href="transient-heat-transfer.html"><i class="fa fa-check"></i><b>5</b> Transient heat transfer</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="transient-heat-transfer.html"><a href="transient-heat-transfer.html#heat-capacity"><i class="fa fa-check"></i><b>5.1</b> Heat capacity</a></li>
+<li class="chapter" data-level="5.2" data-path="transient-heat-transfer.html"><a href="transient-heat-transfer.html#lumped-capacitance-models"><i class="fa fa-check"></i><b>5.2</b> Lumped capacitance models</a></li>
+<li class="chapter" data-level="5.3" data-path="transient-heat-transfer.html"><a href="transient-heat-transfer.html#tutorial-thermal-inertia"><i class="fa fa-check"></i><b>5.3</b> Tutorial: thermal inertia</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="transient-heat-transfer.html"><a href="transient-heat-transfer.html#question-1-winter-conditions"><i class="fa fa-check"></i><b>5.3.1</b> Question 1: winter conditions</a></li>
+<li class="chapter" data-level="5.3.2" data-path="transient-heat-transfer.html"><a href="transient-heat-transfer.html#question-2-summer-conditions"><i class="fa fa-check"></i><b>5.3.2</b> Question 2: summer conditions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="air-transfer.html"><a href="air-transfer.html"><i class="fa fa-check"></i><b>6</b> Air transfer</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="air-transfer.html"><a href="air-transfer.html#principles"><i class="fa fa-check"></i><b>6.1</b> Principles</a></li>
+<li class="chapter" data-level="6.2" data-path="air-transfer.html"><a href="air-transfer.html#air-flow-network"><i class="fa fa-check"></i><b>6.2</b> Air flow network</a></li>
+<li class="chapter" data-level="6.3" data-path="air-transfer.html"><a href="air-transfer.html#tutorials-2"><i class="fa fa-check"></i><b>6.3</b> Tutorials</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="air-transfer.html"><a href="air-transfer.html#tutorial-1-air-flow-through-a-door"><i class="fa fa-check"></i><b>6.3.1</b> Tutorial 1: air flow through a door</a></li>
+<li class="chapter" data-level="6.3.2" data-path="air-transfer.html"><a href="air-transfer.html#tutorial-2"><i class="fa fa-check"></i><b>6.3.2</b> Tutorial 2</a></li>
+<li class="chapter" data-level="6.3.3" data-path="air-transfer.html"><a href="air-transfer.html#tutorial-3-solar-chimney-and-evaporative-cooling"><i class="fa fa-check"></i><b>6.3.3</b> Tutorial 3: solar chimney and evaporative cooling</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="moisture-transfer.html"><a href="moisture-transfer.html"><i class="fa fa-check"></i><b>7</b> Moisture transfer</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="moisture-transfer.html"><a href="moisture-transfer.html#moisture-transfer-in-materials"><i class="fa fa-check"></i><b>7.1</b> Moisture transfer in materials</a></li>
+<li class="chapter" data-level="7.2" data-path="moisture-transfer.html"><a href="moisture-transfer.html#tutorials-3"><i class="fa fa-check"></i><b>7.2</b> Tutorials</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="moisture-transfer.html"><a href="moisture-transfer.html#tutorial-1-condensation"><i class="fa fa-check"></i><b>7.2.1</b> Tutorial 1: condensation</a></li>
+<li class="chapter" data-level="7.2.2" data-path="moisture-transfer.html"><a href="moisture-transfer.html#tutorial-2-dew-point"><i class="fa fa-check"></i><b>7.2.2</b> Tutorial 2: dew point</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II HVAC systems</b></span></li>
+<li class="chapter" data-level="8" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html"><i class="fa fa-check"></i><b>8</b> Aperçu des systèmes</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html#des-besoins-aux-consommations"><i class="fa fa-check"></i><b>8.1</b> Des besoins aux consommations</a></li>
+<li class="chapter" data-level="8.2" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html#types-de-systèmes"><i class="fa fa-check"></i><b>8.2</b> Types de systèmes</a></li>
+<li class="chapter" data-level="8.3" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html#dimensionnement"><i class="fa fa-check"></i><b>8.3</b> Dimensionnement</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="hydronic-heating.html"><a href="hydronic-heating.html"><i class="fa fa-check"></i><b>9</b> Hydronic heating</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="hydronic-heating.html"><a href="hydronic-heating.html#généralités"><i class="fa fa-check"></i><b>9.1</b> Généralités</a></li>
+<li class="chapter" data-level="9.2" data-path="hydronic-heating.html"><a href="hydronic-heating.html#emission-de-chaleur"><i class="fa fa-check"></i><b>9.2</b> Emission de chaleur</a></li>
+<li class="chapter" data-level="9.3" data-path="hydronic-heating.html"><a href="hydronic-heating.html#distribution"><i class="fa fa-check"></i><b>9.3</b> Distribution</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="hydronic-heating.html"><a href="hydronic-heating.html#réglage-de-la-température-et-du-débit-dans-les-émetteurs"><i class="fa fa-check"></i><b>9.3.1</b> Réglage de la température et du débit dans les émetteurs</a></li>
+<li class="chapter" data-level="9.3.2" data-path="hydronic-heating.html"><a href="hydronic-heating.html#circuits-primaires-et-secondaires"><i class="fa fa-check"></i><b>9.3.2</b> Circuits primaires et secondaires</a></li>
+<li class="chapter" data-level="9.3.3" data-path="hydronic-heating.html"><a href="hydronic-heating.html#equilibrage-hydraulique"><i class="fa fa-check"></i><b>9.3.3</b> Equilibrage hydraulique</a></li>
+<li class="chapter" data-level="9.3.4" data-path="hydronic-heating.html"><a href="hydronic-heating.html#circulateurs"><i class="fa fa-check"></i><b>9.3.4</b> Circulateurs</a></li>
+<li class="chapter" data-level="9.3.5" data-path="hydronic-heating.html"><a href="hydronic-heating.html#pertes-thermiques"><i class="fa fa-check"></i><b>9.3.5</b> Pertes thermiques</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="hydronic-heating.html"><a href="hydronic-heating.html#génération"><i class="fa fa-check"></i><b>9.4</b> Génération</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="hydronic-heating.html"><a href="hydronic-heating.html#chaudières"><i class="fa fa-check"></i><b>9.4.1</b> Chaudières</a></li>
+<li class="chapter" data-level="9.4.2" data-path="hydronic-heating.html"><a href="hydronic-heating.html#pompes-à-chaleur"><i class="fa fa-check"></i><b>9.4.2</b> Pompes à chaleur</a></li>
+<li class="chapter" data-level="9.4.3" data-path="hydronic-heating.html"><a href="hydronic-heating.html#autres-générateurs-de-chaleur"><i class="fa fa-check"></i><b>9.4.3</b> Autres générateurs de chaleur</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html"><i class="fa fa-check"></i><b>10</b> Domestic hot water</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#calcul-des-besoins-et-consommations"><i class="fa fa-check"></i><b>10.1</b> Calcul des besoins et consommations</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#calcul-des-besoins-decs"><i class="fa fa-check"></i><b>10.1.1</b> Calcul des besoins d’ECS</a></li>
+<li class="chapter" data-level="10.1.2" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#calcul-des-pertes-de-distribution-stockage-et-génération"><i class="fa fa-check"></i><b>10.1.2</b> Calcul des pertes de distribution, stockage et génération}</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#modes-de-production"><i class="fa fa-check"></i><b>10.2</b> Modes de production</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#instantané"><i class="fa fa-check"></i><b>10.2.1</b> Instantané</a></li>
+<li class="chapter" data-level="10.2.2" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#accumulation"><i class="fa fa-check"></i><b>10.2.2</b> Accumulation</a></li>
+<li class="chapter" data-level="10.2.3" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#semi-instantané-ou-semi-accumulation"><i class="fa fa-check"></i><b>10.2.3</b> Semi-instantané ou semi-accumulation</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#systèmes-de-production-decs"><i class="fa fa-check"></i><b>10.3</b> Systèmes de production d’ECS</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#cumulus-électrique"><i class="fa fa-check"></i><b>10.3.1</b> Cumulus électrique</a></li>
+<li class="chapter" data-level="10.3.2" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#chaudière-double-service"><i class="fa fa-check"></i><b>10.3.2</b> Chaudière double service}</a></li>
+<li class="chapter" data-level="10.3.3" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#chauffe-eau-solaire-individuel"><i class="fa fa-check"></i><b>10.3.3</b> Chauffe-eau solaire individuel}</a></li>
+<li class="chapter" data-level="10.3.4" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#système-solaire-combiné"><i class="fa fa-check"></i><b>10.3.4</b> Système solaire combiné</a></li>
+<li class="chapter" data-level="10.3.5" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#pompe-à-chaleur"><i class="fa fa-check"></i><b>10.3.5</b> Pompe à chaleur</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#dimensionnement-des-systèmes-solaires-solaire"><i class="fa fa-check"></i><b>10.4</b> Dimensionnement des systèmes solaires {solaire}</a></li>
+<li class="chapter" data-level="10.5" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#exercice-1"><i class="fa fa-check"></i><b>10.5</b> Exercice</a></li>
+<li class="chapter" data-level="10.6" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#estimating-the-consumption"><i class="fa fa-check"></i><b>10.6</b> Estimating the consumption</a></li>
+<li class="chapter" data-level="10.7" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#sizing-the-system"><i class="fa fa-check"></i><b>10.7</b> Sizing the system</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#solar-coverage"><i class="fa fa-check"></i><b>10.7.1</b> Solar coverage</a></li>
+<li class="chapter" data-level="10.7.2" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#temperatures"><i class="fa fa-check"></i><b>10.7.2</b> Temperatures</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ventilation.html"><a href="ventilation.html"><i class="fa fa-check"></i><b>11</b> Ventilation</a></li>
+<li class="chapter" data-level="12" data-path="air-conditioning.html"><a href="air-conditioning.html"><i class="fa fa-check"></i><b>12</b> Air conditioning</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="air-conditioning.html"><a href="air-conditioning.html#evaluating-air-conditioning-needs"><i class="fa fa-check"></i><b>12.1</b> Evaluating air conditioning needs</a></li>
+<li class="chapter" data-level="12.2" data-path="air-conditioning.html"><a href="air-conditioning.html#tutorials-4"><i class="fa fa-check"></i><b>12.2</b> Tutorials</a></li>
+</ul></li>
+<li class="part"><span><b>III Designing energy performant buildings</b></span></li>
+<li class="chapter" data-level="13" data-path="bioclimatic-architecture.html"><a href="bioclimatic-architecture.html"><i class="fa fa-check"></i><b>13</b> Bioclimatic architecture</a></li>
+<li class="chapter" data-level="14" data-path="building-energy-simulation.html"><a href="building-energy-simulation.html"><i class="fa fa-check"></i><b>14</b> Building energy simulation</a></li>
+<li class="chapter" data-level="15" data-path="numerical-methods.html"><a href="numerical-methods.html"><i class="fa fa-check"></i><b>15</b> Numerical methods</a></li>
+<li class="divider"></li>
+<li><a href="https://srouchier.github.io/" target="blank">A book by Simon Rouchier</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Manuel de performance énergétique des bâtiments</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="steady-state-conductive-and-convective-heat-transfer" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapitre 3</span> Steady state conductive and convective heat transfer<a href="steady-state-conductive-and-convective-heat-transfer.html#steady-state-conductive-and-convective-heat-transfer" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="figure"><span style="display:block;" id="fig:discretisation2"></span>
+<img src="figures/discretisation.png" alt="Discretization of temperatures in a building" width="40%" />
+<p class="caption">
+Figure 3.1: Discretization of temperatures in a building
+</p>
+</div>
+<p>Transfer types 1 and 3 shown here</p>
+<p>This section covers the calculation of the global heat transfer coefficient <span class="math inline">\(H\)</span> (W.K<span class="math inline">\(^{-1}\)</span>) of a single thermal zone, which is defined as the ratio between the heating or cooling power <span class="math inline">\(\Phi\)</span> (W) and the indoor-outdoor temperature difference (K) is steady state:
+<span class="math display" id="eq:steady1">\[\begin{equation}
+\Phi = H \left(T_i - T_e\right)
+\tag{3.1}
+\end{equation}\]</span></p>
+<div id="conduction-through-a-wall" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Conduction through a wall<a href="steady-state-conductive-and-convective-heat-transfer.html#conduction-through-a-wall" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Les matériaux de construction, en particulier isolants, affichent une valeur de résistance thermique</p>
+<p>certaines aides financières à la réhabilitation énergétique sont conditionnées à ce que soit installée une certaine résistance thermique minimale sur les parois.</p>
+<p>Pour l’ensemble de cette section, on considère une paroi composée d’une ou plusieurs couches en régime stationnaire : la température d’un point donné dans la paroi est constante dans le temps.</p>
+<p>Considérons un mur simple monocouche représenté en figure REF</p>
+<p>figure : mur monocouche, profil linéaire de température, flux phi en W/m2 affiché, coordonnée x</p>
+<p>La conduction thermique est décrite par la loi de Fourier : la densité de flux de chaleur <span class="math inline">\(\phi\)</span> est proportionnelle au gradient de température.</p>
+<p><span class="math display">\[\begin{align}
+  \rho c_p \frac{\partial T}{\partial t} &amp; = -\vec{\nabla} \cdot \vec{\phi} \\
+  \vec{\phi} &amp; = - \lambda \vec{\nabla} T
+\end{align}\]</span></p>
+<p>Dans le cas unidimensionnel :</p>
+<p><span class="math display">\[\begin{align}
+  \rho c_p \frac{\partial T}{\partial t} &amp; = \lambda \frac{\partial^2 T}{\partial x^2} \\
+  \phi &amp; = - \lambda \frac{\partial T}{\partial x}
+\end{align}\]</span></p>
+<p>Dans le cas général, <span class="math inline">\(\vec{\phi}\)</span> est un vecteur. Dans le cas unidimensionnel on le considère ici comme un scalaire, qui peut prendre des valeurs négatives.</p>
+<p>stationnaire :</p>
+<p><span class="math display">\[\begin{equation}
+  \frac{\partial^2T}{\partial x^2} = 0
+\end{equation}\]</span></p>
+<p>Si on a noté (comme en fig. REF) que les conditions aux limites en <span class="math inline">\(x=0\)</span> et <span class="math inline">\(x=e\)</span> sont respectivement <span class="math inline">\(T_1\)</span> et <span class="math inline">\(T_2\)</span>, alors l’équation se résoud en l’intégrant deux fois :
+<span class="math display">\[\begin{equation}
+  T(x) = T_1 + \frac{x}{e} \left(T_2-T_1\right)
+\end{equation}\]</span></p>
+<p>C’est-à-dire qu’en régime permanent, dans un mur aux propriétés thermiques uniformes, la température a un profil linéaire. Il suit également de la loi de Fourier que</p>
+<p><span class="math display">\[\begin{equation}
+  \phi = - \lambda \frac{\partial T}{\partial x} = \frac{\lambda}{e} \left(T_1-T_2\right)
+\end{equation}\]</span></p>
+<p>On appelle résistance thermique <span class="math inline">\(R\)</span> le rapport entre l’épaisseur du mur et sa conductivité thermique, et conductance thermique son inverse:</p>
+<p><span class="math display">\[\begin{align}
+  R &amp; = \frac{e}{\lambda} \\
+  U &amp; = \frac{1}{R} = \frac{\lambda}{e}
+\end{align}\]</span></p>
+<p>Il suit alors une loi équivalente à la loi d’Ohm</p>
+<p><span class="math display">\[\begin{equation}
+  \phi = U \, \Delta T = \frac{\Delta T}{R}
+\end{equation}\]</span></p>
+<div class="figure"><span style="display:block;" id="fig:paroi1"></span>
+<img src="figures/paroi1.png" alt="Total resistance of a multi-layered component" width="50%" />
+<p class="caption">
+Figure 3.2: Total resistance of a multi-layered component
+</p>
+</div>
+<p>The thermal resistance <span class="math inline">\(R\)</span> (m<span class="math inline">\(^2\)</span>.K.W<span class="math inline">\(^{-1}\)</span>) of a single wall component is the sum of the resistance of its layers, including the surface transfer resistances (Fig. <span class="math inline">\(\ref{fig:paroi1}\)</span>):</p>
+<p><span class="math display" id="eq:steady2">\[\begin{equation}
+R = \sum_i R_i = \sum_i \dfrac{e_i}{\lambda_i} + R_{se} + R_{si}
+\tag{3.2}
+\end{equation}\]</span></p>
+<p>The thermal transmittance <span class="math inline">\(U\)</span> (W.m<span class="math inline">\(^{-2}.\)</span>K<span class="math inline">\(^{-1}\)</span>) of this component is the inverse of the resistance. The heat flow rate <span class="math inline">\(\varphi\)</span> is the amount of heat flow per unit surface.</p>
+<p><span class="math display" id="eq:steady4" id="eq:steady3">\[\begin{align}
+U &amp; = \frac{1}{R}  \tag{3.3} \\
+\varphi &amp; = U \left(T_i - T_e\right)
+\tag{3.4}
+\end{align}\]</span></p>
+<div class="figure"><span style="display:block;" id="fig:paroi2"></span>
+<img src="figures/paroi2.png" alt="Total transmittance of a multi-component wall" width="35%" />
+<p class="caption">
+Figure 3.3: Total transmittance of a multi-component wall
+</p>
+</div>
+<p>The total transmittance <span class="math inline">\(H\)</span> (W.K<span class="math inline">\(^{-1}\)</span>) of a wall that includes several components is the sum of their transmittances <span class="math inline">\(U_i\)</span> weighted by their areas <span class="math inline">\(A_i\)</span> (Fig. <a href="steady-state-conductive-and-convective-heat-transfer.html#fig:paroi2">3.3</a>):
+<span class="math display" id="eq:steady4">\[\begin{equation}
+H = U \, A = \sum_i U_i \, A_i
+\tag{3.4}
+\end{equation}\]</span></p>
+<table>
+<caption><span id="tab:steady1">Table 3.1: </span> Variables and their units</caption>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Name</th>
+<th align="left">Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(R\)</span></td>
+<td align="left">Thermal resistance</td>
+<td align="left">m<span class="math inline">\(^2\)</span>.K.W<span class="math inline">\(^{-1}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(U\)</span></td>
+<td align="left">Thermal transmittance</td>
+<td align="left">W.m<span class="math inline">\(^{-2}.\)</span>K<span class="math inline">\(^{-1}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(H\)</span></td>
+<td align="left">Heat transfer coefficient</td>
+<td align="left">W.K<span class="math inline">\(^{-1}\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="figure"><span style="display:block;" id="fig:paroi3"></span>
+<img src="figures/paroi3.png" alt="Heat transfer towards an unheated room" width="45%" />
+<p class="caption">
+Figure 3.4: Heat transfer towards an unheated room
+</p>
+</div>
+<p>If the room at temperature <span class="math inline">\(T_i\)</span> is adjacent to an unheated (or uncooled) room at temperature <span class="math inline">\(T_u\)</span>, then the transmittance of the partition wall can be weighted by a coefficient so that heat transfer is still written relatively to the indoor-outdoor temperature difference (Fig. <a href="steady-state-conductive-and-convective-heat-transfer.html#fig:paroi3">3.4</a>)</p>
+<p>Air infiltration from the outside towards the room results in a heat transfer coefficient <span class="math inline">\(H_\mathit{inf}\)</span> proportional to the air flow rate <span class="math inline">\(\dot{m}\)</span> (kg.<span class="math inline">\(s^{-1}\)</span>) (Fig. <span class="math inline">\(\ref{fig:paroi4}\)</span>). This coefficient can also be expressed using the volumetric air flow rate <span class="math inline">\(Q_v\)</span> (m<span class="math inline">\(^3\)</span>.h<span class="math inline">\(^{-1}\)</span>).
+<span class="math display">\[\begin{equation}
+H_\mathit{inf} = \dot{m} \, c_a = 0.34 \, Q_vre
+\end{equation}\]</span></p>
+<div class="figure"><span style="display:block;" id="fig:paroi4"></span>
+<img src="figures/paroi4.png" alt="Heat transfer from air infiltration" width="40%" />
+<p class="caption">
+Figure 3.5: Heat transfer from air infiltration
+</p>
+</div>
+<p>coeffs de transfert surfacique…</p>
+</div>
+<div id="d-and-3d-transfer-thermal-bridges" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> 2D and 3D transfer: thermal bridges<a href="steady-state-conductive-and-convective-heat-transfer.html#d-and-3d-transfer-thermal-bridges" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Transferts 2D et 3D : ponts thermiques</p>
+</div>
+<div id="heat-exchange-between-rooms" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Heat exchange between rooms<a href="steady-state-conductive-and-convective-heat-transfer.html#heat-exchange-between-rooms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Convection entre 2 pièces ou entre intérieur/extérieur</p>
+<p>Coefficients de réduction avec LNC</p>
+</div>
+<div id="tutorials" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Tutorials<a href="steady-state-conductive-and-convective-heat-transfer.html#tutorials" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="tutorial-1-heat-balance-of-a-room" class="section level3 hasAnchor" number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Tutorial 1: heat balance of a room<a href="steady-state-conductive-and-convective-heat-transfer.html#tutorial-1-heat-balance-of-a-room" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The walls of a room are made of:</p>
+<ul>
+<li>44 m<span class="math inline">\(^2\)</span> of concrete wall (<span class="math inline">\(e_c=15\)</span> cm, <span class="math inline">\(\lambda_c=2,3\)</span> W/(m.K)) with an insulation layer (<span class="math inline">\(e_{i}=10\)</span> cm, <span class="math inline">\(\lambda_{i}=0.04\)</span> W/(m.K))</li>
+<li>8 m<span class="math inline">\(^2\)</span> of double glazing (<span class="math inline">\(U_v=3.3\)</span> W/(m<span class="math inline">\(^2\)</span>.K))</li>
+<li>The indoor heat transfer coefficient is <span class="math inline">\(h_i = 0.11\)</span> (m<span class="math inline">\(^2\)</span>.K)/W, the outdoor one is <span class="math inline">\(h_e = 0.07\)</span> (m<span class="math inline">\(^2\)</span>.K)/W</li>
+</ul>
+<p>The room is ventilated with an air change rate of 9 m<span class="math inline">\(^3\)</span>/h.</p>
+<p>Calculate the heating power that should be prescribed to maintain an indoor temperature of 19°C, if the outdoor temperature is 2°C.</p>
+</div>
+<div id="tutorial-2-heat-balance-of-two-rooms" class="section level3 hasAnchor" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> Tutorial 2: heat balance of two rooms<a href="steady-state-conductive-and-convective-heat-transfer.html#tutorial-2-heat-balance-of-two-rooms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Consider the following building with two rooms: room 1 is heated, and room 2 is unheated but its temperature is unknown.</p>
+<div class="figure"><span style="display:block;" id="fig:tuto1"></span>
+<img src="figures/tuto1.png" alt="There is air flow from ventilation or infiltration, going from the outside to the heated room, then to the unheated room. The effects of the sun are not considered. The properties of the construction are listed in the table below." width="80%" />
+<p class="caption">
+Figure 3.6: There is air flow from ventilation or infiltration, going from the outside to the heated room, then to the unheated room. The effects of the sun are not considered. The properties of the construction are listed in the table below.
+</p>
+</div>
+<ul>
+<li>Write one energy balance equation for each room.</li>
+<li>If the outdoor temperature is 9°C and the temperature of room 1 is 19°C, solve the system for the heating power of room 1 and the temperature of room 2.</li>
+</ul>
+<p>What is the solution of the problem if the direction of the air flow is reversed?</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="apercu.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="radiative-heat-transfer.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/srouchier/beh12-steady.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["manuel.pdf", "manuel.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

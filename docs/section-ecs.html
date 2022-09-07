@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapitre 10 Domestic hot water | Manuel de performance énergétique des bâtiments</title>
+  <meta name="description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapitre 10 Domestic hot water | Manuel de performance énergétique des bâtiments" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  <meta name="github-repo" content="srouchier/beh" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapitre 10 Domestic hot water | Manuel de performance énergétique des bâtiments" />
+  
+  <meta name="twitter:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  
+
+<meta name="author" content="Simon Rouchier" />
+
+
+<meta name="date" content="2022-07-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="section-hydronic-heating.html"/>
+<link rel="next" href="section-ventilation.html"/>
+<!-- HEAD_CONTENT -->
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Building Energy Handbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Préface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#section-a-propos"><i class="fa fa-check"></i>A propos</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="section-introduction.html"><a href="section-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="section-introduction.html"><a href="section-introduction.html#section-quelques-chiffres"><i class="fa fa-check"></i><b>1.1</b> Quelques chiffres</a></li>
+<li class="chapter" data-level="1.2" data-path="section-introduction.html"><a href="section-introduction.html#section-réglementation"><i class="fa fa-check"></i><b>1.2</b> Réglementation</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="section-introduction.html"><a href="section-introduction.html#section-re2020"><i class="fa fa-check"></i><b>1.2.1</b> Bâtiments neufs : la RE 2020</a></li>
+<li class="chapter" data-level="1.2.2" data-path="section-introduction.html"><a href="section-introduction.html#section-bâtiments-existants"><i class="fa fa-check"></i><b>1.2.2</b> Bâtiments existants</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="section-introduction.html"><a href="section-introduction.html#section-plan-du-livre"><i class="fa fa-check"></i><b>1.3</b> Plan du livre</a></li>
+</ul></li>
+<li class="part"><span><b>I Transferts de chaleur et de masse</b></span></li>
+<li class="chapter" data-level="2" data-path="section-apercu.html"><a href="section-apercu.html"><i class="fa fa-check"></i><b>2</b> Aperçu</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="section-apercu.html"><a href="section-apercu.html#section-apercu1"><i class="fa fa-check"></i><b>2.1</b> Bilan thermique global</a></li>
+<li class="chapter" data-level="2.2" data-path="section-apercu.html"><a href="section-apercu.html#section-apercu2"><i class="fa fa-check"></i><b>2.2</b> Calcul réglementaire</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="section-apercu.html"><a href="section-apercu.html#section-hypothèses"><i class="fa fa-check"></i><b>2.2.1</b> Hypothèses</a></li>
+<li class="chapter" data-level="2.2.2" data-path="section-apercu.html"><a href="section-apercu.html#section-besoins-de-chauffage-et-refroidissement"><i class="fa fa-check"></i><b>2.2.2</b> Besoins de chauffage et refroidissement</a></li>
+<li class="chapter" data-level="2.2.3" data-path="section-apercu.html"><a href="section-apercu.html#section-les-règles-th-bat"><i class="fa fa-check"></i><b>2.2.3</b> Les règles Th-bat</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="section-apercu.html"><a href="section-apercu.html#section-apercu3"><i class="fa fa-check"></i><b>2.3</b> Détail des transferts thermiques</a></li>
+<li class="chapter" data-level="2.4" data-path="section-apercu.html"><a href="section-apercu.html#section-exercice"><i class="fa fa-check"></i><b>2.4</b> Exercice</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="section-steady.html"><a href="section-steady.html"><i class="fa fa-check"></i><b>3</b> Conduction et convection stationnaire</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="section-steady.html"><a href="section-steady.html#section-conduction-dans-un-mur"><i class="fa fa-check"></i><b>3.1</b> Conduction dans un mur</a></li>
+<li class="chapter" data-level="3.2" data-path="section-steady.html"><a href="section-steady.html#section-ponts-thermiques"><i class="fa fa-check"></i><b>3.2</b> Ponts thermiques</a></li>
+<li class="chapter" data-level="3.3" data-path="section-steady.html"><a href="section-steady.html#section-convection-entre-pièces"><i class="fa fa-check"></i><b>3.3</b> Convection entre pièces</a></li>
+<li class="chapter" data-level="3.4" data-path="section-steady.html"><a href="section-steady.html#section-exercices"><i class="fa fa-check"></i><b>3.4</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="section-steady.html"><a href="section-steady.html#section-exo-1-déperditions-dune-pièce"><i class="fa fa-check"></i><b>3.4.1</b> Exo 1 : déperditions d’une pièce</a></li>
+<li class="chapter" data-level="3.4.2" data-path="section-steady.html"><a href="section-steady.html#section-exo-2-bilan-thermique-de-deux-pièces"><i class="fa fa-check"></i><b>3.4.2</b> Exo 2: bilan thermique de deux pièces</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="section-rayonnement.html"><a href="section-rayonnement.html"><i class="fa fa-check"></i><b>4</b> Radiative heat transfer</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-principles-of-radiative-transfer"><i class="fa fa-check"></i><b>4.1</b> Principles of radiative transfer</a></li>
+<li class="chapter" data-level="4.2" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-solar-heat-gain"><i class="fa fa-check"></i><b>4.2</b> Solar heat gain</a></li>
+<li class="chapter" data-level="4.3" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-radiative-heat-exchange"><i class="fa fa-check"></i><b>4.3</b> Radiative heat exchange</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-radiant-and-operative-temperatures"><i class="fa fa-check"></i><b>4.3.1</b> Radiant and operative temperatures</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-tutorials"><i class="fa fa-check"></i><b>4.4</b> Tutorials</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-tutorial-1-greenhouse"><i class="fa fa-check"></i><b>4.4.1</b> Tutorial 1: greenhouse</a></li>
+<li class="chapter" data-level="4.4.2" data-path="section-rayonnement.html"><a href="section-rayonnement.html#section-tutorial-2-radiator"><i class="fa fa-check"></i><b>4.4.2</b> Tutorial 2: radiator</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="section-transient.html"><a href="section-transient.html"><i class="fa fa-check"></i><b>5</b> Transient heat transfer</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="section-transient.html"><a href="section-transient.html#section-heat-capacity"><i class="fa fa-check"></i><b>5.1</b> Heat capacity</a></li>
+<li class="chapter" data-level="5.2" data-path="section-transient.html"><a href="section-transient.html#section-lumped-capacitance-models"><i class="fa fa-check"></i><b>5.2</b> Lumped capacitance models</a></li>
+<li class="chapter" data-level="5.3" data-path="section-transient.html"><a href="section-transient.html#section-tutorial-thermal-inertia"><i class="fa fa-check"></i><b>5.3</b> Tutorial: thermal inertia</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="section-transient.html"><a href="section-transient.html#section-question-1-winter-conditions"><i class="fa fa-check"></i><b>5.3.1</b> Question 1: winter conditions</a></li>
+<li class="chapter" data-level="5.3.2" data-path="section-transient.html"><a href="section-transient.html#section-question-2-summer-conditions"><i class="fa fa-check"></i><b>5.3.2</b> Question 2: summer conditions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="section-air.html"><a href="section-air.html"><i class="fa fa-check"></i><b>6</b> Air transfer</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="section-air.html"><a href="section-air.html#section-principles"><i class="fa fa-check"></i><b>6.1</b> Principles</a></li>
+<li class="chapter" data-level="6.2" data-path="section-air.html"><a href="section-air.html#section-air-flow-network"><i class="fa fa-check"></i><b>6.2</b> Air flow network</a></li>
+<li class="chapter" data-level="6.3" data-path="section-air.html"><a href="section-air.html#section-tutorials-1"><i class="fa fa-check"></i><b>6.3</b> Tutorials</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="section-air.html"><a href="section-air.html#section-tutorial-1-air-flow-through-a-door"><i class="fa fa-check"></i><b>6.3.1</b> Tutorial 1: air flow through a door</a></li>
+<li class="chapter" data-level="6.3.2" data-path="section-air.html"><a href="section-air.html#section-tutorial-2"><i class="fa fa-check"></i><b>6.3.2</b> Tutorial 2</a></li>
+<li class="chapter" data-level="6.3.3" data-path="section-air.html"><a href="section-air.html#section-tutorial-3-solar-chimney-and-evaporative-cooling"><i class="fa fa-check"></i><b>6.3.3</b> Tutorial 3: solar chimney and evaporative cooling</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="section-humidite.html"><a href="section-humidite.html"><i class="fa fa-check"></i><b>7</b> Moisture transfer</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="section-humidite.html"><a href="section-humidite.html#section-moisture-transfer-in-materials"><i class="fa fa-check"></i><b>7.1</b> Moisture transfer in materials</a></li>
+<li class="chapter" data-level="7.2" data-path="section-humidite.html"><a href="section-humidite.html#section-tutorials-2"><i class="fa fa-check"></i><b>7.2</b> Tutorials</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="section-humidite.html"><a href="section-humidite.html#section-tutorial-1-condensation"><i class="fa fa-check"></i><b>7.2.1</b> Tutorial 1: condensation</a></li>
+<li class="chapter" data-level="7.2.2" data-path="section-humidite.html"><a href="section-humidite.html#section-tutorial-2-dew-point"><i class="fa fa-check"></i><b>7.2.2</b> Tutorial 2: dew point</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II HVAC systems</b></span></li>
+<li class="chapter" data-level="8" data-path="section-aperçu-des-systèmes.html"><a href="section-aperçu-des-systèmes.html"><i class="fa fa-check"></i><b>8</b> Aperçu des systèmes</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="section-aperçu-des-systèmes.html"><a href="section-aperçu-des-systèmes.html#section-des-besoins-aux-consommations"><i class="fa fa-check"></i><b>8.1</b> Des besoins aux consommations</a></li>
+<li class="chapter" data-level="8.2" data-path="section-aperçu-des-systèmes.html"><a href="section-aperçu-des-systèmes.html#section-types-de-systèmes"><i class="fa fa-check"></i><b>8.2</b> Types de systèmes</a></li>
+<li class="chapter" data-level="8.3" data-path="section-aperçu-des-systèmes.html"><a href="section-aperçu-des-systèmes.html#section-dimensionnement"><i class="fa fa-check"></i><b>8.3</b> Dimensionnement</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html"><i class="fa fa-check"></i><b>9</b> Hydronic heating</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-généralités"><i class="fa fa-check"></i><b>9.1</b> Généralités</a></li>
+<li class="chapter" data-level="9.2" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-emission-de-chaleur"><i class="fa fa-check"></i><b>9.2</b> Emission de chaleur</a></li>
+<li class="chapter" data-level="9.3" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-distribution"><i class="fa fa-check"></i><b>9.3</b> Distribution</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-réglage-de-la-température-et-du-débit-dans-les-émetteurs"><i class="fa fa-check"></i><b>9.3.1</b> Réglage de la température et du débit dans les émetteurs</a></li>
+<li class="chapter" data-level="9.3.2" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-circuits-primaires-et-secondaires"><i class="fa fa-check"></i><b>9.3.2</b> Circuits primaires et secondaires</a></li>
+<li class="chapter" data-level="9.3.3" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-equilibrage-hydraulique"><i class="fa fa-check"></i><b>9.3.3</b> Equilibrage hydraulique</a></li>
+<li class="chapter" data-level="9.3.4" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-circulateurs"><i class="fa fa-check"></i><b>9.3.4</b> Circulateurs</a></li>
+<li class="chapter" data-level="9.3.5" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-pertes-thermiques"><i class="fa fa-check"></i><b>9.3.5</b> Pertes thermiques</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-génération"><i class="fa fa-check"></i><b>9.4</b> Génération</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-chaudières"><i class="fa fa-check"></i><b>9.4.1</b> Chaudières</a></li>
+<li class="chapter" data-level="9.4.2" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-pompes-à-chaleur"><i class="fa fa-check"></i><b>9.4.2</b> Pompes à chaleur</a></li>
+<li class="chapter" data-level="9.4.3" data-path="section-hydronic-heating.html"><a href="section-hydronic-heating.html#section-autres-générateurs-de-chaleur"><i class="fa fa-check"></i><b>9.4.3</b> Autres générateurs de chaleur</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="section-ecs.html"><a href="section-ecs.html"><i class="fa fa-check"></i><b>10</b> Domestic hot water</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="section-ecs.html"><a href="section-ecs.html#section-calcul-des-besoins-et-consommations"><i class="fa fa-check"></i><b>10.1</b> Calcul des besoins et consommations</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="section-ecs.html"><a href="section-ecs.html#section-calcul-des-besoins-decs"><i class="fa fa-check"></i><b>10.1.1</b> Calcul des besoins d’ECS</a></li>
+<li class="chapter" data-level="10.1.2" data-path="section-ecs.html"><a href="section-ecs.html#section-calcul-des-pertes-de-distribution-stockage-et-génération"><i class="fa fa-check"></i><b>10.1.2</b> Calcul des pertes de distribution, stockage et génération}</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="section-ecs.html"><a href="section-ecs.html#section-modes-de-production"><i class="fa fa-check"></i><b>10.2</b> Modes de production</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="section-ecs.html"><a href="section-ecs.html#section-instantané"><i class="fa fa-check"></i><b>10.2.1</b> Instantané</a></li>
+<li class="chapter" data-level="10.2.2" data-path="section-ecs.html"><a href="section-ecs.html#section-accumulation"><i class="fa fa-check"></i><b>10.2.2</b> Accumulation</a></li>
+<li class="chapter" data-level="10.2.3" data-path="section-ecs.html"><a href="section-ecs.html#section-semi-instantané-ou-semi-accumulation"><i class="fa fa-check"></i><b>10.2.3</b> Semi-instantané ou semi-accumulation</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="section-ecs.html"><a href="section-ecs.html#section-systèmes-de-production-decs"><i class="fa fa-check"></i><b>10.3</b> Systèmes de production d’ECS</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="section-ecs.html"><a href="section-ecs.html#section-cumulus-électrique"><i class="fa fa-check"></i><b>10.3.1</b> Cumulus électrique</a></li>
+<li class="chapter" data-level="10.3.2" data-path="section-ecs.html"><a href="section-ecs.html#section-chaudière-double-service"><i class="fa fa-check"></i><b>10.3.2</b> Chaudière double service}</a></li>
+<li class="chapter" data-level="10.3.3" data-path="section-ecs.html"><a href="section-ecs.html#section-chauffe-eau-solaire-individuel"><i class="fa fa-check"></i><b>10.3.3</b> Chauffe-eau solaire individuel}</a></li>
+<li class="chapter" data-level="10.3.4" data-path="section-ecs.html"><a href="section-ecs.html#section-système-solaire-combiné"><i class="fa fa-check"></i><b>10.3.4</b> Système solaire combiné</a></li>
+<li class="chapter" data-level="10.3.5" data-path="section-ecs.html"><a href="section-ecs.html#section-pompe-à-chaleur"><i class="fa fa-check"></i><b>10.3.5</b> Pompe à chaleur</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="section-ecs.html"><a href="section-ecs.html#section-dimensionnement-des-systèmes-solaires-solaire"><i class="fa fa-check"></i><b>10.4</b> Dimensionnement des systèmes solaires {solaire}</a></li>
+<li class="chapter" data-level="10.5" data-path="section-ecs.html"><a href="section-ecs.html#section-exercice-1"><i class="fa fa-check"></i><b>10.5</b> Exercice</a></li>
+<li class="chapter" data-level="10.6" data-path="section-ecs.html"><a href="section-ecs.html#section-estimating-the-consumption"><i class="fa fa-check"></i><b>10.6</b> Estimating the consumption</a></li>
+<li class="chapter" data-level="10.7" data-path="section-ecs.html"><a href="section-ecs.html#section-sizing-the-system"><i class="fa fa-check"></i><b>10.7</b> Sizing the system</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="section-ecs.html"><a href="section-ecs.html#section-solar-coverage"><i class="fa fa-check"></i><b>10.7.1</b> Solar coverage</a></li>
+<li class="chapter" data-level="10.7.2" data-path="section-ecs.html"><a href="section-ecs.html#section-temperatures"><i class="fa fa-check"></i><b>10.7.2</b> Temperatures</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="section-ventilation.html"><a href="section-ventilation.html"><i class="fa fa-check"></i><b>11</b> Ventilation</a></li>
+<li class="chapter" data-level="12" data-path="section-air-conditioning.html"><a href="section-air-conditioning.html"><i class="fa fa-check"></i><b>12</b> Air conditioning</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="section-air-conditioning.html"><a href="section-air-conditioning.html#section-evaluating-air-conditioning-needs"><i class="fa fa-check"></i><b>12.1</b> Evaluating air conditioning needs</a></li>
+<li class="chapter" data-level="12.2" data-path="section-air-conditioning.html"><a href="section-air-conditioning.html#section-tutorials-3"><i class="fa fa-check"></i><b>12.2</b> Tutorials</a></li>
+</ul></li>
+<li class="part"><span><b>III Designing energy performant buildings</b></span></li>
+<li class="chapter" data-level="13" data-path="section-bioclimatic-architecture.html"><a href="section-bioclimatic-architecture.html"><i class="fa fa-check"></i><b>13</b> Bioclimatic architecture</a></li>
+<li class="chapter" data-level="14" data-path="section-building-energy-simulation.html"><a href="section-building-energy-simulation.html"><i class="fa fa-check"></i><b>14</b> Building energy simulation</a></li>
+<li class="chapter" data-level="15" data-path="section-numerical-methods.html"><a href="section-numerical-methods.html"><i class="fa fa-check"></i><b>15</b> Numerical methods</a></li>
+<li class="divider"></li>
+<li><a href="https://srouchier.github.io/" target="blank">A book by Simon Rouchier</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Manuel de performance énergétique des bâtiments</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="section-ecs" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Chapitre 10</span> Domestic hot water<a href="section-ecs.html#section-ecs" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="section-calcul-des-besoins-et-consommations" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Calcul des besoins et consommations<a href="section-ecs.html#section-calcul-des-besoins-et-consommations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sur le même principe que pour le chauffage, la consommation d’énergie pour la préparation de l’ECS est l’énergie nécessaire pour satisfaire les besoins, augmentée des pertes de distribution, stockage et génération. Le calcul commence donc à nouveau par l’estimation des besoins.</p>
+<p>L’énergie <span class="math inline">\(E\)</span> contenue dans un volume <span class="math inline">\(V\)</span> d’eau chaude à la température <span class="math inline">\(T_c\)</span> est :
+<span class="math display" id="eq:ecs1">\[\begin{equation}
+    E = \rho \, c_p \, V \left(T_c - T_f\right)
+    \tag{10.1}
+\end{equation}\]</span>
+Note: l’équation donne l’énergie en J. Pour l’avoir en kWh, il faut diviser par <span class="math inline">\(3,6 \times 10^6\)</span>.</p>
+<p>Le chiffrage des besoins d’ECS se fait donc en fonction de 3 paramètres : le volume, la température d’eau chaude, et la température d’eau froide <span class="math inline">\(T_f\)</span>.</p>
+<div id="section-calcul-des-besoins-decs" class="section level3 hasAnchor" number="10.1.1">
+<h3><span class="header-section-number">10.1.1</span> Calcul des besoins d’ECS<a href="section-ecs.html#section-calcul-des-besoins-decs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Le besoin d’ECS se calcule en trois étapes :</p>
+<ul>
+<li>Calcul du nombre de litres d’ECS à 40°C hebdomadaires. Ce calcul tient compte du besoin unitaire d’ECS (donnée conventionnelle selon type d’usage du bâtiment), et de la taille du bâtiment.</li>
+<li>Calcul du nombre de litres d’ECS à 40°C horaire en utilisant la clé de répartition horaire qui est une donnée conventionnelle issus des scénarii.</li>
+<li>Calcul des besoins horaires d’ECS en Wh : quantité d’énergie nécessaire à l’élévation en température de l’eau froide à 40°C pour le nombre de litres horaires calculé précédemment.</li>
+</ul>
+<p>Pour les maisons individuelles ou accolées et les logements collectifs, ces besoins sont calculés en fonction de la densité d’occupation conventionnelle. Le besoin d’ECS est pris égal à 392 litres à 40°C/adulte/semaine en moyenne. Il est modulé suivant les périodes d’occupation/inoccupation et la période de l’année (été/hiver et périodes de vacances). Les besoins peuvent ensuite être exprimés par unité de surface en reliant la densité d’occupation à la surface habitable.</p>
+<div class="figure"><span style="display:block;" id="fig:ecsstandard"></span>
+<img src="figures/ecsstandard.PNG" alt="Coefficients d'équivalence permettant de calculer le nombre de logements standards. Par exemple, un appartement T4 dans un immeuble du parc social est considéré égal à 1,4 logement standard." width="40%" />
+<p class="caption">
+Figure 10.1: Coefficients d’équivalence permettant de calculer le nombre de logements standards. Par exemple, un appartement T4 dans un immeuble du parc social est considéré égal à 1,4 logement standard.
+</p>
+</div>
+<p>Les besoins d’ECS à l’échelle d’un immeuble sont caractérisés par trois types d’indicateurs :</p>
+<ul>
+<li>les besoins moyens annuels,</li>
+<li>les besoins de pointes sur 10 minutes et 1 à 8 heures,</li>
+<li>les profils moyens journaliers, hebdomadaires et mensuels, ainsi que des profils journaliers maximaux.</li>
+</ul>
+<p>Les <strong>besoins moyens</strong> sont déterminés en fonction de son nombre de logements standards (voir figure <a href="section-ecs.html#fig:ecsstandard">10.1</a>. Le logement standard est un T3 d’un immeuble du parc social, occupé par 2,1 personnes. Les besoins journaliers moyens d’un immeuble sur l’année sont, en moyenne, de 125 <span class="math inline">\(\pm\)</span> 50 litres à 40<span class="math inline">\(\degree\)</span>C par logement standard, soit environ 70 <span class="math inline">\(\pm\)</span> 25 litres à 60<span class="math inline">\(\degree\)</span>C, pour une température moyenne annuelle d’eau froide de 16<span class="math inline">\(\degree\)</span>C.</p>
+<p>On a aussi besoin de connaître les <strong>besoins de pointes</strong> sur 10 minutes, ou 1 à 8h. Ces besoins de pointes, en litres à 60<span class="math inline">\(\degree\)</span>C, pour une température minimale moyenne d’eau froide à 9<span class="math inline">\(\degree\)</span>C, peuvent être estimés avec le nombre de logements standards <span class="math inline">\(N_s\)</span> :
+<span class="math display">\[\begin{align}
+    Vp_\mathrm{10min} &amp; = 61 \times N_s^{0,503} \\
+    Vp_\mathrm{1h} &amp; = 83 \times N_s^{0,708} \\
+    Vp_\mathrm{8h} &amp; = 294 \times N_s^{0,762}
+\end{align}\]</span>
+Les valeurs de besoins de pointes sur 10 minutes sont destinées au dimensionnement des systèmes de production couplant échangeurs et ballons. Les valeurs de pointes horaires sur 1 à 8h sont destinées au dimensionnement des systèmes de production collective avec stockage d’ECS.</p>
+<div class="figure"><span style="display:block;" id="fig:profilecs"></span>
+<img src="figures/profilecs.PNG" alt="Exemple de profils de soutirage moyens horaires, hebdomadaires et mensuels sur un échantillon de logements standards du parc social." width="40%" />
+<p class="caption">
+Figure 10.2: Exemple de profils de soutirage moyens horaires, hebdomadaires et mensuels sur un échantillon de logements standards du parc social.
+</p>
+</div>
+<p>Enfin, les profils horaires, hebdomadaires et mensuels moyens sont destinés au calcul des consommations d’énergies annuelles prévisionnelles. Des exemples en sont donnés sur la figure <a href="section-ecs.html#fig:profilecs">10.2</a>.</p>
+</div>
+<div id="section-calcul-des-pertes-de-distribution-stockage-et-génération" class="section level3 hasAnchor" number="10.1.2">
+<h3><span class="header-section-number">10.1.2</span> Calcul des pertes de distribution, stockage et génération}<a href="section-ecs.html#section-calcul-des-pertes-de-distribution-stockage-et-génération" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Le calcul des pertes de distribution est analogue à celui réalisé pour le chauffage. Les pertes brutes de stockage sont calculées à partir des caractéristiques d’isolation du composant de stockage, et des conditions de températures de part et d’autre du composant. Pour les générateurs qui assurent à la fois le chauffage et l’ECS, l’efficacité du système de production de l’ECS se calcule également de manière analogue au chauffage ; pour les autres générateurs, le principe est le suivant : prise en compte des caractéristiques en conditions nominales et de l’évolution de ces caractéristiques selon la charge et les conditions d’utilisation.</p>
+</div>
+</div>
+<div id="section-modes-de-production" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Modes de production<a href="section-ecs.html#section-modes-de-production" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>On peut classifier les différents modes de production d’ECS en : production instantanée, production semi-instantanée ou en semi-accumulation, et production en accumulation.</p>
+<p>La différence entre ces types de production provient du rapport entre la puissance de production et le volume de stockage choisi pour assurer le confort d’utilisation.</p>
+<p>On peut d’autre part parler de production directe quand il y a contact direct entre le générateur de chaleur et l’eau chaude ou de production indirecte quand un fluide caloporteur transmet la chaleur d’un générateur vers l’eau chaude.</p>
+<div id="section-instantané" class="section level3 hasAnchor" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> Instantané<a href="section-ecs.html#section-instantané" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Avec la production d’ECS en <strong>instantané pur</strong>, il n’y a pas de volume de stockage : l’ECS est produite par un échangeur ou un générateur gaz au moment de la demande. Ce type de production doit être dimensionné pour satisfaire le plus haut besoin de pointe de la journée. Il est approprié seulement dans certains cas particuliers, et quand la demande n’est pas trop intermittente.</p>
+<p>Son dimensionnement consiste à connaître la puissance du générateur (production directe) ou de la chaudière et de l’échangeur (production indirecte). On détermine d’abord l’énergie nécessaire pour satisfaire à la demande maximale de
+l’année pendant 10 minutes. Sur cette base, on dimensionne le préparateur instantané en déterminant sa puissance :</p>
+<p><span class="math display" id="eq:ecsinstantane">\[\begin{equation}
+    P_\mathrm{prod,inst} = \frac{\rho \, c_p}{1000} \frac{Vp_\mathrm{10min}}{600} \left(60-9\right) + P_\mathrm{distrib}
+\tag{10.2}
+\end{equation}\]</span>
+où <span class="math inline">\(P_\mathrm{distrib}\)</span> sont les pertes de distribution. Dans cette formule, le volume puisé en 10 minutes est divisé par 600 (s) pour le convertir en débit volumique en litres par secondes.</p>
+</div>
+<div id="section-accumulation" class="section level3 hasAnchor" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> Accumulation<a href="section-ecs.html#section-accumulation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La production en <strong>accumulation pure</strong> consiste à stocker l’integralité de la consommation journalière, le stock étant reconstitué durant la nuit. Ce mode de production est logiquement d’application si la production est électrique avec un tarif bihoraire : il y a un intérêt économique à recharger le ballon de stockage uniquement durant la nuit.</p>
+<p>On détermine d’abord l’énergie <span class="math inline">\(E_\mathrm{acc}\)</span> nécessaire pour satisfaire à la demande maximale de l’année pendant une journée. Sur cette base, on dimensionne le préparateur à accumulation en déterminant sa puissance et son volume. L’énergie <span class="math inline">\(E_\mathrm{acc}\)</span> est obtenue à partir des profils journaliers maximaux. Par exemple si ces profils sont donnés par un ensemble de puisages (ici en litres) à différentes températures, avec une température d’eau froide de 9<span class="math inline">\(\degree\)</span>C :
+<span class="math display">\[\begin{equation}
+    E_\mathrm{acc} = \frac{\rho \, c_p}{1000} \sum_\mathrm{puisages} V_\mathrm{puisage} \left(T_\mathrm{puisage}-9\right)
+\end{equation}\]</span>
+Où <span class="math inline">\(E_\mathrm{acc}\)</span> est donné ici en Joules (rappel : pour le convertir en kWh, on divise par <span class="math inline">\(3,6\times 10^6\)</span>). Le volume de stockage (ici en m<span class="math inline">\(^3\)</span>) se calcule ensuite en choisissant une température de stockage <span class="math inline">\(T_\mathrm{acc}\)</span> de 55 ou 60<span class="math inline">\(\degree\)</span>C
+<span class="math display">\[\begin{equation}
+    V_\mathrm{acc} = \frac{E_\mathrm{acc}}{\rho \, c_p \, \left(T_\mathrm{acc}-9\right) \, a}
+\end{equation}\]</span>
+où <span class="math inline">\(a\)</span> est un coefficient d’efficacité de stockage. Il vient du fait que le volume d’énergie réellement exploitable dans le stock est inférieure à son volume total, par exemple en cas de mauvaise stratification des températures dans le ballon : il faut donc le surdimensionner.</p>
+</div>
+<div id="section-semi-instantané-ou-semi-accumulation" class="section level3 hasAnchor" number="10.2.3">
+<h3><span class="header-section-number">10.2.3</span> Semi-instantané ou semi-accumulation<a href="section-ecs.html#section-semi-instantané-ou-semi-accumulation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La production d’ECS en semi-accumulation ou semi-instantanée (échangeur + ballon de stockage) consiste à choisir un volume de stockage correspondant au volume prélevé lors d’une période de pointe, mais inférieur à la consommation journalière. Une production instantanée d’appoint permet de préparer le complément nécessaire pendant la durée de l’appel (semi-instantané) ou entre deux pointes (semi-accumulation).</p>
+<div class="figure"><span style="display:block;" id="fig:profilmaxecs"></span>
+<img src="figures/profilmaxecs.PNG" alt="Exemple de profil journalier maximal au pas de temps 10 minutes dans un ensemble de 208 logements du parc social" width="80%" />
+<p class="caption">
+Figure 10.3: Exemple de profil journalier maximal au pas de temps 10 minutes dans un ensemble de 208 logements du parc social
+</p>
+</div>
+<p>Suivant le profil de puisage, la base de temps sur laquelle repose la méthode de calcul est différente. Pour les besoins continus, l’installation peut être dimensionnée sur un profil horaire; pour des besoins discontinus, l’installation doit vaincre un débit de pointe pendant un temps donné.</p>
+</div>
+</div>
+<div id="section-systèmes-de-production-decs" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Systèmes de production d’ECS<a href="section-ecs.html#section-systèmes-de-production-decs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="section-cumulus-électrique" class="section level3 hasAnchor" number="10.3.1">
+<h3><span class="header-section-number">10.3.1</span> Cumulus électrique<a href="section-ecs.html#section-cumulus-électrique" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure"><span style="display:block;" id="fig:cumuluselectrique"></span>
+<img src="figures/cumuluselectrique.png" alt="Composition et dimensionnement d'un chauffe-eau électrique" width="80%" />
+<p class="caption">
+Figure 10.4: Composition et dimensionnement d’un chauffe-eau électrique
+</p>
+</div>
+<p>Un des systèmes individuels les plus simples et courants sont les cumulus électriques : des ballons de stockage séparés du réseau de chauffage. L’avantage d’un système électrique est la possibilité de recharger le ballon en heures creuses.</p>
+</div>
+<div id="section-chaudière-double-service" class="section level3 hasAnchor" number="10.3.2">
+<h3><span class="header-section-number">10.3.2</span> Chaudière double service}<a href="section-ecs.html#section-chaudière-double-service" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Les chaudières peuvent assurer une production d’ECS instantanée, à micro-accumulation, ou à accumulation avec un ou deux ballons, intégrés sous le même habillage que la chaudière ou bien séparés. Il peut s’agir d’un ballon avec un échangeur à serpentin ou à double enveloppe ou de bien de ballon tampon à régénération directe raccordé à l’échangeur sanitaire de la chaudière.</p>
+<div class="figure"><span style="display:block;" id="fig:chaudieredoubleservice"></span>
+<img src="figures/chaudieredoubleservice.PNG" alt="Exemple d'une chaudière double service dotée d'un ballon d'ECS avec un échangeur à serpentin" width="40%" />
+<p class="caption">
+Figure 10.5: Exemple d’une chaudière double service dotée d’un ballon d’ECS avec un échangeur à serpentin
+</p>
+</div>
+</div>
+<div id="section-chauffe-eau-solaire-individuel" class="section level3 hasAnchor" number="10.3.3">
+<h3><span class="header-section-number">10.3.3</span> Chauffe-eau solaire individuel}<a href="section-ecs.html#section-chauffe-eau-solaire-individuel" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Un chauffe-eau solaire individuel (CESI) est un procédé solaire participant, en partie, à la couverture des besoins d’ECS d’un bâtiment. L’installation est composée de trois parties principales :</p>
+<ul>
+<li>Des capteurs solaires, qui transforment le rayonnement solaire en chaleur ;</li>
+<li>Une boucle de transfert, qui transporte cette énergie vers le ballon de stockage par le biais d’un échangeur incorporé au ballon ;</li>
+<li>Un ballon de stockage.</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:cesi"></span>
+<img src="figures/cesi.png" alt="Chauffe-eau solaire individuel avec appoint par une chaudière instantanée" width="40%" />
+<p class="caption">
+Figure 10.6: Chauffe-eau solaire individuel avec appoint par une chaudière instantanée
+</p>
+</div>
+<p>Il n’est pas possible pour un CESI d’assurer une converture totale des besoins d’ECS toute l’année. Un appoint est donc nécessaire, soit intégré au ballon solaire (résistance électrique ou échangeur), soit séparé. Sur l’exemple montré en figure <a href="section-ecs.html#fig:cesi">10.6</a>, l’appoint est séparé et assuré par une chaudière qui assure aussi le chauffage.</p>
+</div>
+<div id="section-système-solaire-combiné" class="section level3 hasAnchor" number="10.3.4">
+<h3><span class="header-section-number">10.3.4</span> Système solaire combiné<a href="section-ecs.html#section-système-solaire-combiné" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Un système solaire combiné (SSC) est un procédé solaire participant, en partie, à la couverture des besoins de chauffage et d’ECS de l’habitation. Il est composé des mêmes parties que le CESI, à quelques différences près : le réservoir d’eau peut intégrer pour la production d’ECS soit un échangeur sanitaire, ou bien un ballon placé en partie haute du réservoir.</p>
+<div class="figure"><span style="display:block;" id="fig:ssc"></span>
+<img src="figures/ssc.png" alt="Système solaire combiné" width="40%" />
+<p class="caption">
+Figure 10.7: Système solaire combiné
+</p>
+</div>
+<p>Comme pour un CESI, un appoint est nécessaire pour couvrir les besoins de chauffage et d’ECS toute l’année. Le dimensionnement des composants du SSC sera abordé en section <a href="#section-sec:solaire"><strong>??</strong></a>.</p>
+</div>
+<div id="section-pompe-à-chaleur" class="section level3 hasAnchor" number="10.3.5">
+<h3><span class="header-section-number">10.3.5</span> Pompe à chaleur<a href="section-ecs.html#section-pompe-à-chaleur" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Un chauffe-eau thermodynamique est une pompe à chaleur dédiée à la production d’ECS. Dans le cas d’une PAC qui assure le chauffage et la production d’ECS (avec éventuellement un appoint électrique), on parle de PAC double-service.</p>
+<div class="figure"><span style="display:block;" id="fig:pacecs"></span>
+<img src="figures/pacecs.png" alt="Chauffe-eau thermodynamique (à gauche) et PAC double-service (à droite)" width="80%" />
+<p class="caption">
+Figure 10.8: Chauffe-eau thermodynamique (à gauche) et PAC double-service (à droite)
+</p>
+</div>
+</div>
+</div>
+<div id="section-dimensionnement-des-systèmes-solaires-solaire" class="section level2 hasAnchor" number="10.4">
+<h2><span class="header-section-number">10.4</span> Dimensionnement des systèmes solaires {solaire}<a href="section-ecs.html#section-dimensionnement-des-systèmes-solaires-solaire" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Il n’y a pas une solution unique à la question du dimensionnement des systèmes solaires, que ce soit pour la production d’ECS seule ou bien d’ECS et de chauffage combinés. La question principale est de viser un certain <strong>taux de couverture</strong> (voir figure <a href="section-ecs.html#fig:couverture">10.9</a>), qui est la part des besoins annuels en énergie couverts par l’énergie solaire. Pour un CESI, un bon compromis économique est un taux de couverture compris entre 50 et 70 %.</p>
+<div class="figure"><span style="display:block;" id="fig:couverture"></span>
+<img src="figures/couverture.PNG" alt="Evolution de la production solaire au long de l'année, et évolution de la productivité solaire par mètre carré de capteurs" width="40%" />
+<p class="caption">
+Figure 10.9: Evolution de la production solaire au long de l’année, et évolution de la productivité solaire par mètre carré de capteurs
+</p>
+</div>
+<p>La production solaire par mètre carré de capteurs installés décroît rapidement avec la surface installée : viser un taux de couverture important conduit à un surdimensionnement de l’installation, qui génère un surcoût important pour des gains moindres.</p>
+<p>Afin de viser un bon compromis en taux de couverture et éviter les surdimensionnements, on peut partir de valeurs préconisées ci-dessous pour la surface de capteurs. Ensuite, on choisit le volume de stockage correspondant.</p>
+<ul>
+<li>La surface de capteurs conseillée est 1 m<span class="math inline">\(^2\)</span> pour chaque 1000 kWh de besoins annuels. (1 m<span class="math inline">\(^2\)</span> de collecteurs reçoit environ 1500 kWh de rayonnement solaire par an. Avec une efficacité de 30%, 1 m<span class="math inline">\(^2\)</span> peut produire environ 450 kWh par an.)</li>
+<li>Le volume de stockage conseillé dépend de la zone climatique (figure <a href="section-ecs.html#fig:ecs1">10.10</a> et tableau <a href="section-ecs.html#tab:ecs">10.1</a>): en climat plus chaud, un volume plus important peut être produit par mètre carré de capteurs</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:ecs1"></span>
+<img src="figures/ecs1.png" alt="Climate zones in continental France" width="40%" />
+<p class="caption">
+Figure 10.10: Climate zones in continental France
+</p>
+</div>
+<table>
+<caption><span id="tab:ecs">Table 10.1: </span> Volume de stockage conseillé par surface de capteurs (litre/m<span class="math inline">\(^2\)</span>) pour viser un taux de couverture moyen</caption>
+<thead>
+<tr class="header">
+<th align="left">Zone climatique</th>
+<th>ECS seulement</th>
+<th>ECS et chauffage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">H1</td>
+<td>45</td>
+<td>50</td>
+</tr>
+<tr class="even">
+<td align="left">H2</td>
+<td>55</td>
+<td>67</td>
+</tr>
+<tr class="odd">
+<td align="left">H3</td>
+<td>65</td>
+<td>82</td>
+</tr>
+<tr class="even">
+<td align="left">H4</td>
+<td>75</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="section-exercice-1" class="section level2 hasAnchor" number="10.5">
+<h2><span class="header-section-number">10.5</span> Exercice<a href="section-ecs.html#section-exercice-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A family of 4 uses 150 litres of domestic hot water (DHW) at 50°C per day. Their single-family house has a heat loss coefficient of 120 W/K. They are located in Chambéry, where the minimal temperature for sizing heating systems is -11°C and the total of heating degree days is 2,700 °C.d annually. We want to propose a solution for a combined solar system producing DHW and space heating.</p>
+</div>
+<div id="section-estimating-the-consumption" class="section level2 hasAnchor" number="10.6">
+<h2><span class="header-section-number">10.6</span> Estimating the consumption<a href="section-ecs.html#section-estimating-the-consumption" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Estimate the total annual needs for space heating and DHW, in kWh. We suppose that cold water comes at 10°C.</p>
+</div>
+<div id="section-sizing-the-system" class="section level2 hasAnchor" number="10.7">
+<h2><span class="header-section-number">10.7</span> Sizing the system<a href="section-ecs.html#section-sizing-the-system" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Choose the surface of collectors and volume of storage.
+* The suggested surface of collectors is 1 m<span class="math inline">\(^2\)</span> for each 1,000 kWh of total annual need. (1 m<span class="math inline">\(^2\)</span> of collectors receives about 1,500 kWh of solar irradiance annually. With an efficiency of 30%, 1 m<span class="math inline">\(^2\)</span> can then produce about 450 kWh a year)
+* The suggested storage volume depends on the climate zone: in warmer climates, a larger volume of hot water can be produced per square meter of collector.</p>
+<p>Calculate the energy capacity of the tank, if water is stored at 60°C.</p>
+<div id="section-solar-coverage" class="section level3 hasAnchor" number="10.7.1">
+<h3><span class="header-section-number">10.7.1</span> Solar coverage<a href="section-ecs.html#section-solar-coverage" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The efficiency of thermal collectors (see Fig.<a href="section-ecs.html#fig:ecs2">10.11</a>) is highest when solar irradiance <span class="math inline">\(E\)</span> is high and the temperature difference <span class="math inline">\(\Delta T\)</span> between water and outdoor is low.</p>
+<div class="figure"><span style="display:block;" id="fig:ecs2"></span>
+<img src="figures/ecs2.png" alt="Efficiency of thermal solar panels" width="40%" />
+<p class="caption">
+Figure 10.11: Efficiency of thermal solar panels
+</p>
+</div>
+<p><span class="math display">\[\begin{equation}
+\eta = \eta_0 - a_1 \frac{\Delta T}{E} - a_2 \frac{\Delta T^2}{E}
+\end{equation}\]</span>
+For simplification, we will assume that the efficiency of the supply loop, from collectors to storage, is 40<span class="math inline">\(\%\)</span>.</p>
+<p>The following table gives the average outdoor temperature and total solar irradiance during a few typical days.</p>
+<table>
+<caption><span id="tab:ecs2">Table 10.2: </span> Typical days</caption>
+<thead>
+<tr class="header">
+<th align="left">Average temperature (°C)</th>
+<th align="left">Solar irradiance (kWh/day)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">-1</td>
+<td align="left">1.2</td>
+</tr>
+<tr class="even">
+<td align="left">7</td>
+<td align="left">2.6</td>
+</tr>
+<tr class="odd">
+<td align="left">26</td>
+<td align="left">4.4</td>
+</tr>
+</tbody>
+</table>
+<p>For each of these days, calculate: the space heating need; the solar production; the solar coverage for DHW and space heating, and the energy required from the auxiliary heating system.</p>
+</div>
+<div id="section-temperatures" class="section level3 hasAnchor" number="10.7.2">
+<h3><span class="header-section-number">10.7.2</span> Temperatures<a href="section-ecs.html#section-temperatures" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure"><span style="display:block;" id="fig:ecs4"></span>
+<img src="figures/ecs4.PNG" alt="Control law of the water temperature" width="40%" />
+<p class="caption">
+Figure 10.12: Control law of the water temperature
+</p>
+</div>
+<p>The house uses low-temperature radiators, operating at 45/38/20°C. We suppose that the house has 5 radiators of identical size and heating power. Calculate the flow rate into each radiator, and the return temperature into the tank.</p>
+<div class="figure"><span style="display:block;" id="fig:ecs3"></span>
+<img src="figures/ecs3.png" alt="System" width="90%" />
+<p class="caption">
+Figure 10.13: System
+</p>
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="section-hydronic-heating.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="section-ventilation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/srouchier/beh23-dhw.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["manuel.pdf", "manuel.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

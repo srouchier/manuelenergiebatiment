@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapitre 7 Moisture transfer | Manuel de performance énergétique des bâtiments</title>
+  <meta name="description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapitre 7 Moisture transfer | Manuel de performance énergétique des bâtiments" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  <meta name="github-repo" content="srouchier/beh" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapitre 7 Moisture transfer | Manuel de performance énergétique des bâtiments" />
+  
+  <meta name="twitter:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  
+
+<meta name="author" content="Simon Rouchier" />
+
+
+<meta name="date" content="2022-07-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="air-transfer.html"/>
+<link rel="next" href="aperçu-des-systèmes.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Building Energy Handbook</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Préface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-propos"><i class="fa fa-check"></i>A propos</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#quelques-chiffres"><i class="fa fa-check"></i><b>1.1</b> Quelques chiffres</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#réglementation"><i class="fa fa-check"></i><b>1.2</b> Réglementation</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#bâtiments-neufs-la-re-2020"><i class="fa fa-check"></i><b>1.2.1</b> Bâtiments neufs : la RE 2020</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#bâtiments-existants"><i class="fa fa-check"></i><b>1.2.2</b> Bâtiments existants</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#plan-du-livre"><i class="fa fa-check"></i><b>1.3</b> Plan du livre</a></li>
+</ul></li>
+<li class="part"><span><b>I Transferts de chaleur et de masse</b></span></li>
+<li class="chapter" data-level="2" data-path="apercu.html"><a href="apercu.html"><i class="fa fa-check"></i><b>2</b> Aperçu</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="apercu.html"><a href="apercu.html#apercu1"><i class="fa fa-check"></i><b>2.1</b> Bilan thermique global</a></li>
+<li class="chapter" data-level="2.2" data-path="apercu.html"><a href="apercu.html#apercu2"><i class="fa fa-check"></i><b>2.2</b> Calcul réglementaire</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="apercu.html"><a href="apercu.html#hypothèses"><i class="fa fa-check"></i><b>2.2.1</b> Hypothèses</a></li>
+<li class="chapter" data-level="2.2.2" data-path="apercu.html"><a href="apercu.html#besoins-de-chauffage-et-refroidissement"><i class="fa fa-check"></i><b>2.2.2</b> Besoins de chauffage et refroidissement</a></li>
+<li class="chapter" data-level="2.2.3" data-path="apercu.html"><a href="apercu.html#les-règles-th-bat"><i class="fa fa-check"></i><b>2.2.3</b> Les règles Th-Bat</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="apercu.html"><a href="apercu.html#apercu3"><i class="fa fa-check"></i><b>2.3</b> Transferts thermiques dans une pièce</a></li>
+<li class="chapter" data-level="2.4" data-path="apercu.html"><a href="apercu.html#exercice"><i class="fa fa-check"></i><b>2.4</b> Exercice</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="apercu.html"><a href="apercu.html#enoncé"><i class="fa fa-check"></i><b>2.4.1</b> Enoncé</a></li>
+<li class="chapter" data-level="2.4.2" data-path="apercu.html"><a href="apercu.html#solution"><i class="fa fa-check"></i><b>2.4.2</b> Solution</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="steady-state-conductive-and-convective-heat-transfer.html"><a href="steady-state-conductive-and-convective-heat-transfer.html"><i class="fa fa-check"></i><b>3</b> Steady state conductive and convective heat transfer</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="steady-state-conductive-and-convective-heat-transfer.html"><a href="steady-state-conductive-and-convective-heat-transfer.html#conduction-through-a-wall"><i class="fa fa-check"></i><b>3.1</b> Conduction through a wall</a></li>
+<li class="chapter" data-level="3.2" data-path="steady-state-conductive-and-convective-heat-transfer.html"><a href="steady-state-conductive-and-convective-heat-transfer.html#d-and-3d-transfer-thermal-bridges"><i class="fa fa-check"></i><b>3.2</b> 2D and 3D transfer: thermal bridges</a></li>
+<li class="chapter" data-level="3.3" data-path="steady-state-conductive-and-convective-heat-transfer.html"><a href="steady-state-conductive-and-convective-heat-transfer.html#heat-exchange-between-rooms"><i class="fa fa-check"></i><b>3.3</b> Heat exchange between rooms</a></li>
+<li class="chapter" data-level="3.4" data-path="steady-state-conductive-and-convective-heat-transfer.html"><a href="steady-state-conductive-and-convective-heat-transfer.html#tutorials"><i class="fa fa-check"></i><b>3.4</b> Tutorials</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="steady-state-conductive-and-convective-heat-transfer.html"><a href="steady-state-conductive-and-convective-heat-transfer.html#tutorial-1-heat-balance-of-a-room"><i class="fa fa-check"></i><b>3.4.1</b> Tutorial 1: heat balance of a room</a></li>
+<li class="chapter" data-level="3.4.2" data-path="steady-state-conductive-and-convective-heat-transfer.html"><a href="steady-state-conductive-and-convective-heat-transfer.html#tutorial-2-heat-balance-of-two-rooms"><i class="fa fa-check"></i><b>3.4.2</b> Tutorial 2: heat balance of two rooms</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="radiative-heat-transfer.html"><a href="radiative-heat-transfer.html"><i class="fa fa-check"></i><b>4</b> Radiative heat transfer</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="radiative-heat-transfer.html"><a href="radiative-heat-transfer.html#principles-of-radiative-transfer"><i class="fa fa-check"></i><b>4.1</b> Principles of radiative transfer</a></li>
+<li class="chapter" data-level="4.2" data-path="radiative-heat-transfer.html"><a href="radiative-heat-transfer.html#solar-heat-gain"><i class="fa fa-check"></i><b>4.2</b> Solar heat gain</a></li>
+<li class="chapter" data-level="4.3" data-path="radiative-heat-transfer.html"><a href="radiative-heat-transfer.html#radiative-heat-exchange"><i class="fa fa-check"></i><b>4.3</b> Radiative heat exchange</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="radiative-heat-transfer.html"><a href="radiative-heat-transfer.html#radiant-and-operative-temperatures"><i class="fa fa-check"></i><b>4.3.1</b> Radiant and operative temperatures</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="radiative-heat-transfer.html"><a href="radiative-heat-transfer.html#tutorials-1"><i class="fa fa-check"></i><b>4.4</b> Tutorials</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="radiative-heat-transfer.html"><a href="radiative-heat-transfer.html#tutorial-1-greenhouse"><i class="fa fa-check"></i><b>4.4.1</b> Tutorial 1: greenhouse</a></li>
+<li class="chapter" data-level="4.4.2" data-path="radiative-heat-transfer.html"><a href="radiative-heat-transfer.html#tutorial-2-radiator"><i class="fa fa-check"></i><b>4.4.2</b> Tutorial 2: radiator</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="transient-heat-transfer.html"><a href="transient-heat-transfer.html"><i class="fa fa-check"></i><b>5</b> Transient heat transfer</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="transient-heat-transfer.html"><a href="transient-heat-transfer.html#heat-capacity"><i class="fa fa-check"></i><b>5.1</b> Heat capacity</a></li>
+<li class="chapter" data-level="5.2" data-path="transient-heat-transfer.html"><a href="transient-heat-transfer.html#lumped-capacitance-models"><i class="fa fa-check"></i><b>5.2</b> Lumped capacitance models</a></li>
+<li class="chapter" data-level="5.3" data-path="transient-heat-transfer.html"><a href="transient-heat-transfer.html#tutorial-thermal-inertia"><i class="fa fa-check"></i><b>5.3</b> Tutorial: thermal inertia</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="transient-heat-transfer.html"><a href="transient-heat-transfer.html#question-1-winter-conditions"><i class="fa fa-check"></i><b>5.3.1</b> Question 1: winter conditions</a></li>
+<li class="chapter" data-level="5.3.2" data-path="transient-heat-transfer.html"><a href="transient-heat-transfer.html#question-2-summer-conditions"><i class="fa fa-check"></i><b>5.3.2</b> Question 2: summer conditions</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="air-transfer.html"><a href="air-transfer.html"><i class="fa fa-check"></i><b>6</b> Air transfer</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="air-transfer.html"><a href="air-transfer.html#principles"><i class="fa fa-check"></i><b>6.1</b> Principles</a></li>
+<li class="chapter" data-level="6.2" data-path="air-transfer.html"><a href="air-transfer.html#air-flow-network"><i class="fa fa-check"></i><b>6.2</b> Air flow network</a></li>
+<li class="chapter" data-level="6.3" data-path="air-transfer.html"><a href="air-transfer.html#tutorials-2"><i class="fa fa-check"></i><b>6.3</b> Tutorials</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="air-transfer.html"><a href="air-transfer.html#tutorial-1-air-flow-through-a-door"><i class="fa fa-check"></i><b>6.3.1</b> Tutorial 1: air flow through a door</a></li>
+<li class="chapter" data-level="6.3.2" data-path="air-transfer.html"><a href="air-transfer.html#tutorial-2"><i class="fa fa-check"></i><b>6.3.2</b> Tutorial 2</a></li>
+<li class="chapter" data-level="6.3.3" data-path="air-transfer.html"><a href="air-transfer.html#tutorial-3-solar-chimney-and-evaporative-cooling"><i class="fa fa-check"></i><b>6.3.3</b> Tutorial 3: solar chimney and evaporative cooling</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="moisture-transfer.html"><a href="moisture-transfer.html"><i class="fa fa-check"></i><b>7</b> Moisture transfer</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="moisture-transfer.html"><a href="moisture-transfer.html#moisture-transfer-in-materials"><i class="fa fa-check"></i><b>7.1</b> Moisture transfer in materials</a></li>
+<li class="chapter" data-level="7.2" data-path="moisture-transfer.html"><a href="moisture-transfer.html#tutorials-3"><i class="fa fa-check"></i><b>7.2</b> Tutorials</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="moisture-transfer.html"><a href="moisture-transfer.html#tutorial-1-condensation"><i class="fa fa-check"></i><b>7.2.1</b> Tutorial 1: condensation</a></li>
+<li class="chapter" data-level="7.2.2" data-path="moisture-transfer.html"><a href="moisture-transfer.html#tutorial-2-dew-point"><i class="fa fa-check"></i><b>7.2.2</b> Tutorial 2: dew point</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II HVAC systems</b></span></li>
+<li class="chapter" data-level="8" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html"><i class="fa fa-check"></i><b>8</b> Aperçu des systèmes</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html#des-besoins-aux-consommations"><i class="fa fa-check"></i><b>8.1</b> Des besoins aux consommations</a></li>
+<li class="chapter" data-level="8.2" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html#types-de-systèmes"><i class="fa fa-check"></i><b>8.2</b> Types de systèmes</a></li>
+<li class="chapter" data-level="8.3" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html#dimensionnement"><i class="fa fa-check"></i><b>8.3</b> Dimensionnement</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="hydronic-heating.html"><a href="hydronic-heating.html"><i class="fa fa-check"></i><b>9</b> Hydronic heating</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="hydronic-heating.html"><a href="hydronic-heating.html#généralités"><i class="fa fa-check"></i><b>9.1</b> Généralités</a></li>
+<li class="chapter" data-level="9.2" data-path="hydronic-heating.html"><a href="hydronic-heating.html#emission-de-chaleur"><i class="fa fa-check"></i><b>9.2</b> Emission de chaleur</a></li>
+<li class="chapter" data-level="9.3" data-path="hydronic-heating.html"><a href="hydronic-heating.html#distribution"><i class="fa fa-check"></i><b>9.3</b> Distribution</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="hydronic-heating.html"><a href="hydronic-heating.html#réglage-de-la-température-et-du-débit-dans-les-émetteurs"><i class="fa fa-check"></i><b>9.3.1</b> Réglage de la température et du débit dans les émetteurs</a></li>
+<li class="chapter" data-level="9.3.2" data-path="hydronic-heating.html"><a href="hydronic-heating.html#circuits-primaires-et-secondaires"><i class="fa fa-check"></i><b>9.3.2</b> Circuits primaires et secondaires</a></li>
+<li class="chapter" data-level="9.3.3" data-path="hydronic-heating.html"><a href="hydronic-heating.html#equilibrage-hydraulique"><i class="fa fa-check"></i><b>9.3.3</b> Equilibrage hydraulique</a></li>
+<li class="chapter" data-level="9.3.4" data-path="hydronic-heating.html"><a href="hydronic-heating.html#circulateurs"><i class="fa fa-check"></i><b>9.3.4</b> Circulateurs</a></li>
+<li class="chapter" data-level="9.3.5" data-path="hydronic-heating.html"><a href="hydronic-heating.html#pertes-thermiques"><i class="fa fa-check"></i><b>9.3.5</b> Pertes thermiques</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="hydronic-heating.html"><a href="hydronic-heating.html#génération"><i class="fa fa-check"></i><b>9.4</b> Génération</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="hydronic-heating.html"><a href="hydronic-heating.html#chaudières"><i class="fa fa-check"></i><b>9.4.1</b> Chaudières</a></li>
+<li class="chapter" data-level="9.4.2" data-path="hydronic-heating.html"><a href="hydronic-heating.html#pompes-à-chaleur"><i class="fa fa-check"></i><b>9.4.2</b> Pompes à chaleur</a></li>
+<li class="chapter" data-level="9.4.3" data-path="hydronic-heating.html"><a href="hydronic-heating.html#autres-générateurs-de-chaleur"><i class="fa fa-check"></i><b>9.4.3</b> Autres générateurs de chaleur</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html"><i class="fa fa-check"></i><b>10</b> Domestic hot water</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#calcul-des-besoins-et-consommations"><i class="fa fa-check"></i><b>10.1</b> Calcul des besoins et consommations</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#calcul-des-besoins-decs"><i class="fa fa-check"></i><b>10.1.1</b> Calcul des besoins d’ECS</a></li>
+<li class="chapter" data-level="10.1.2" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#calcul-des-pertes-de-distribution-stockage-et-génération"><i class="fa fa-check"></i><b>10.1.2</b> Calcul des pertes de distribution, stockage et génération}</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#modes-de-production"><i class="fa fa-check"></i><b>10.2</b> Modes de production</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#instantané"><i class="fa fa-check"></i><b>10.2.1</b> Instantané</a></li>
+<li class="chapter" data-level="10.2.2" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#accumulation"><i class="fa fa-check"></i><b>10.2.2</b> Accumulation</a></li>
+<li class="chapter" data-level="10.2.3" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#semi-instantané-ou-semi-accumulation"><i class="fa fa-check"></i><b>10.2.3</b> Semi-instantané ou semi-accumulation</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#systèmes-de-production-decs"><i class="fa fa-check"></i><b>10.3</b> Systèmes de production d’ECS</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#cumulus-électrique"><i class="fa fa-check"></i><b>10.3.1</b> Cumulus électrique</a></li>
+<li class="chapter" data-level="10.3.2" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#chaudière-double-service"><i class="fa fa-check"></i><b>10.3.2</b> Chaudière double service}</a></li>
+<li class="chapter" data-level="10.3.3" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#chauffe-eau-solaire-individuel"><i class="fa fa-check"></i><b>10.3.3</b> Chauffe-eau solaire individuel}</a></li>
+<li class="chapter" data-level="10.3.4" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#système-solaire-combiné"><i class="fa fa-check"></i><b>10.3.4</b> Système solaire combiné</a></li>
+<li class="chapter" data-level="10.3.5" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#pompe-à-chaleur"><i class="fa fa-check"></i><b>10.3.5</b> Pompe à chaleur</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#dimensionnement-des-systèmes-solaires-solaire"><i class="fa fa-check"></i><b>10.4</b> Dimensionnement des systèmes solaires {solaire}</a></li>
+<li class="chapter" data-level="10.5" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#exercice-1"><i class="fa fa-check"></i><b>10.5</b> Exercice</a></li>
+<li class="chapter" data-level="10.6" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#estimating-the-consumption"><i class="fa fa-check"></i><b>10.6</b> Estimating the consumption</a></li>
+<li class="chapter" data-level="10.7" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#sizing-the-system"><i class="fa fa-check"></i><b>10.7</b> Sizing the system</a>
+<ul>
+<li class="chapter" data-level="10.7.1" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#solar-coverage"><i class="fa fa-check"></i><b>10.7.1</b> Solar coverage</a></li>
+<li class="chapter" data-level="10.7.2" data-path="domestic-hot-water.html"><a href="domestic-hot-water.html#temperatures"><i class="fa fa-check"></i><b>10.7.2</b> Temperatures</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ventilation.html"><a href="ventilation.html"><i class="fa fa-check"></i><b>11</b> Ventilation</a></li>
+<li class="chapter" data-level="12" data-path="air-conditioning.html"><a href="air-conditioning.html"><i class="fa fa-check"></i><b>12</b> Air conditioning</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="air-conditioning.html"><a href="air-conditioning.html#evaluating-air-conditioning-needs"><i class="fa fa-check"></i><b>12.1</b> Evaluating air conditioning needs</a></li>
+<li class="chapter" data-level="12.2" data-path="air-conditioning.html"><a href="air-conditioning.html#tutorials-4"><i class="fa fa-check"></i><b>12.2</b> Tutorials</a></li>
+</ul></li>
+<li class="part"><span><b>III Designing energy performant buildings</b></span></li>
+<li class="chapter" data-level="13" data-path="bioclimatic-architecture.html"><a href="bioclimatic-architecture.html"><i class="fa fa-check"></i><b>13</b> Bioclimatic architecture</a></li>
+<li class="chapter" data-level="14" data-path="building-energy-simulation.html"><a href="building-energy-simulation.html"><i class="fa fa-check"></i><b>14</b> Building energy simulation</a></li>
+<li class="chapter" data-level="15" data-path="numerical-methods.html"><a href="numerical-methods.html"><i class="fa fa-check"></i><b>15</b> Numerical methods</a></li>
+<li class="divider"></li>
+<li><a href="https://srouchier.github.io/" target="blank">A book by Simon Rouchier</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Manuel de performance énergétique des bâtiments</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="moisture-transfer" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapitre 7</span> Moisture transfer<a href="moisture-transfer.html#moisture-transfer" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Human activities in buildings generate water vapour, which is transported by air flow between rooms and between inside and outside. Moisture transfer also occurs within walls. It can generate condensation if the thermal properties of the envelope allow it, which may then degrade materials and lower the efficiency of insulation. The psychrometric chart, figure <a href="moisture-transfer.html#fig:dah">7.1</a>, is a diagram that shows the variables related to humidity. It allows evaluating the risks of condensation.</p>
+<div class="figure"><span style="display:block;" id="fig:dah"></span>
+<img src="figures/psychrometric_chart.jpg" alt="Psychrometric chart" width="100%" />
+<p class="caption">
+Figure 7.1: Psychrometric chart
+</p>
+</div>
+<p>The first important variable is the <strong>saturation vapour pressure</strong>, which is the maximum value that water vapour pressure can reach before condensation. It is a function of temperature only, here in degree Celsius:
+<span class="math display">\[\begin{equation}
+p_\mathit{sat}(T) = \mathrm{exp} \left(23.5771-\frac{4042.9}{T+273.15-37.58}\right)
+\end{equation}\]</span>
+The is the ratio between the vapour pressure and this saturation value:
+<span class="math display">\[\begin{equation}
+\mathrm{RH} = \frac{p_v}{p_\mathit{sat}}
+\end{equation}\]</span>
+RH ranges between 0<span class="math inline">\(\%\)</span> (no humidity at all) and 100<span class="math inline">\(\%\)</span></p>
+<p>The <strong>moisture content</strong><span class="math inline">\(w\)</span>, sometimes called humidity ratio <span class="math inline">\(r\)</span>, is the quantity of water contained in air. In the following equation, its unit is [kg.kg<span class="math inline">\(^{-1}\)</span>]: <span class="math inline">\(w\)</span> is the mass of water contained in a certain mass of air.
+<span class="math display">\[\begin{equation}
+w = 0.622 \frac{p_v}{p_\mathit{atm}-p_v}
+\end{equation}\]</span>
+where <span class="math inline">\(p_\mathit{atm}\)</span> is the atmospheric pressure. The moisture content can also be expressed in [kg.m<span class="math inline">\(^{-3}\)</span>], simply by multiplying the above value with the density of air. A room with a volume <span class="math inline">\(V\)</span> then contains a total mass of water:
+<span class="math display">\[\begin{equation}
+M_{H_2O}=\rho_a \cdot V \cdot w
+\end{equation}\]</span>
+This total mass of water in a room is the balance between incoming and outgoing water flow rates, and the humidity generated inside the room. The unit of these flows is [kg.s<span class="math inline">\(^{-1}\)</span>].
+<span class="math display">\[\begin{equation}
+\frac{\mathrm{d}M_{H_2O}}{\mathrm{d}t} = G_{H_2O,\mathrm{in}} - G_{H_2O, \mathrm{out}} + G_{H_2O,\mathrm{generated}}
+\end{equation}\]</span>
+In particular, an air flow rate <span class="math inline">\(\dot{m}\)</span> between two room that have moisture contents of <span class="math inline">\(w_1\)</span> and <span class="math inline">\(w_2\)</span> respectively, will carry a water flow rate of <span class="math inline">\(G=\dot{m}(w_1-w_2)\)</span>.</p>
+<div class="figure"><span style="display:block;" id="fig:aircon1"></span>
+<img src="figures/aircon1.PNG" alt="Psychrometrics" width="100%" />
+<p class="caption">
+Figure 7.2: Psychrometrics
+</p>
+</div>
+<p>In air conditioning, air is described as a mixture of dry air and water vapour. Its properties can be read on the psychrometric chart, and are also related to each other by the following formula.</p>
+<ul>
+<li><strong>Dry bulb temperature</strong> <span class="math inline">\(T\)</span>, or just ``temperature’’.</li>
+<li>The <strong>wet bulb temperature</strong> <span class="math inline">\(T_w\)</span> is the temperature measured by a wet thermometer. It is the temperature that would be reached if the air was humidified until saturation at constant enthalpy.</li>
+<li>The <strong>dew point temperature</strong> <span class="math inline">\(T_{dp}\)</span> is the temperature at which condensation would start is the air was cooled at constant (absolute) humidity.</li>
+<li>The <strong>relative humidity</strong> RH is the ratio between the vapor pressure of water <span class="math inline">\(p_\mathit{vap}\)</span> and the saturation vapor pressure <span class="math inline">\(p_\mathit{sat}\)</span>, which is only a function of temperature, here in degree Celsius:</li>
+</ul>
+<p><span class="math display">\[\begin{align}
+\mathrm{RH} &amp; = \frac{p_\mathit{vap}}{p_\mathit{sat}} \\
+p_\mathit{sat}(T) &amp; = \mathrm{exp} \left(23.5771-\frac{4042.9}{T+273.15-37.58}\right)
+\end{align}\]</span></p>
+<ul>
+<li>The <strong>moisture content</strong> <span class="math inline">\(w\)</span>, or absolute humidity, is the mass of water vapor per unit mass of dry air containing the vapor. Its unit is [kg<span class="math inline">\(_\mathit{vap}\)</span>/kg<span class="math inline">\(_\mathit{da}\)</span>].</li>
+</ul>
+<p><span class="math display">\[\begin{equation}
+w = \frac{\rho_\mathit{vap}}{\rho_\mathit{da}} = \frac{r_\mathit{da}}{r_\mathit{vap}} \frac{p_\mathit{vap}}{p_\mathit{atm}-p_\mathit{vap}}
+\end{equation}\]</span></p>
+<ul>
+<li>The <strong>specific enthalpy</strong> is the total energy of the dry air and water vapor, per unit mass of dry air [kJ/kg<span class="math inline">\(_{da}\)</span>]. It is the addition of the sensible heat of dry air <span class="math inline">\(c_a \, T\)</span> and the latent heat from the water vapor content:</li>
+</ul>
+<p><span class="math display">\[\begin{equation}
+h = c_\mathit{da}\, T + w \, (l_v+c_\mathit{vap}\, T)
+\label{eq:enthalpy}
+\end{equation}\]</span></p>
+<ul>
+<li>The <strong>specific volume</strong> <span class="math inline">\(v_s\)</span> is the volume occupied by unit mass of dry air [m<span class="math inline">\(^3\)</span>/kg<span class="math inline">\(_{da}\)</span>]. It is the opposite of the dry air density <span class="math inline">\(\rho_\mathit{da}\)</span>.</li>
+</ul>
+<p><span class="math display">\[\begin{equation}
+\rho_\mathit{da} = \frac{1}{v_s} = \frac{p_\mathit{atm}}{\left(w \, r_\mathit{vap}+r_\mathit{da}\right) T}
+\end{equation}\]</span></p>
+<p>In the above definitions, the <code>vap'' index stands for water vapour and the</code>da’’ index stands for dry air. The constants that appear in the equations are summarised in this table:</p>
+<table>
+<caption><span id="tab:constants">Table 7.1: </span> Variables and their units</caption>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Dry air (da)</th>
+<th align="left">Water vapour (vap)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Specific heat <span class="math inline">\(c_p\)</span> [J.kg<span class="math inline">\(^{-1}\)</span>.K<span class="math inline">\(^{-1}\)</span>]</td>
+<td align="left">1000</td>
+<td align="left">1850</td>
+</tr>
+<tr class="even">
+<td align="left">Ideal gas constant <span class="math inline">\(r\)</span> [J.kg<span class="math inline">\(^{-1}\)</span>.K<span class="math inline">\(^{-1}\)</span>]</td>
+<td align="left">287</td>
+<td align="left">462</td>
+</tr>
+<tr class="odd">
+<td align="left">Latent heat of evaporation <span class="math inline">\(l_v\)</span> [J.kg<span class="math inline">\(^{-1}\)</span>]</td>
+<td align="left">.</td>
+<td align="left"><span class="math inline">\(2.5 \times 10^6\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>When mixing two air flows with mass of dry air <span class="math inline">\(m_{da,1}\)</span> and <span class="math inline">\(m_{da,2}\)</span>, the equations for conservation of mass and energy allow obtaining the properties of the mixture <span class="math inline">\(m\)</span> from the properties of each part <span class="math inline">\(1\)</span> and <span class="math inline">\(2\)</span>:
+<span class="math display">\[\begin{align}
+m_{da,m} &amp; = m_{da,1} + m_{da,2} \\
+m_{da,m} \, T_m &amp; = m_{da,1} \, T_1 + m_{da,2} \, T_2 \\
+m_{da,m} \, w_m &amp; = m_{da,1} \, w_1 + m_{da,2} \, w_2 \\
+m_{da,m} \, h_m &amp; = m_{da,1} \, h_1 + m_{da,2} \, h_2
+\end{align}\]</span>
+The temperature, absolute humidity and enthalpy of the mixture are weighted averages of the properties of each component.</p>
+<div id="moisture-transfer-in-materials" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Moisture transfer in materials<a href="moisture-transfer.html#moisture-transfer-in-materials" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Most building materials have the capacity to store and release moisture. There are simplified models to estimate this effect of moisture buffering on the variations of indoor humidity. We can also describe water transfer through walls, with a formulation that is similar to heat transfer:
+<span class="math display">\[\begin{equation}
+\frac{\partial w}{\partial t} = -\mathrm{div} \left( g_\mathrm{vap} + g_\mathrm{liq} \right)
+\end{equation}\]</span>
+where <span class="math inline">\(g_\mathrm{vap}\)</span> and <span class="math inline">\(g_\mathrm{liq}\)</span>, in [kg.s<span class="math inline">\(^{-1}\)</span>.m<span class="math inline">\(^{-2}\)</span>] are the flow rates per unit surface of vapour and liquid water, respectively. The moisture content <span class="math inline">\(w\)</span> is expressed here in [kg.m<span class="math inline">\(^{-3}\)</span>]. Liquid transfer is often neglected, unless there is significant rain leakage or capillary rise from the ground. The vapour flow rate follows Fick’s law, which is the equivalent of the heat conduction law: it is driven by a gradient of vapour pressure, and a permeability coefficient <span class="math inline">\(\delta_p\)</span>:
+<span class="math display">\[\begin{equation}
+g_\mathrm{vap} = - \delta_\mathrm{vap} \nabla p_v
+\end{equation}\]</span></p>
+<div class="figure"><span style="display:block;" id="fig:moistureinwall"></span>
+<img src="figures/moistureinwall.png" alt="Steady state moisture transfer inside a wall" width="40%" />
+<p class="caption">
+Figure 7.3: Steady state moisture transfer inside a wall
+</p>
+</div>
+<p>This means that in steady state, the distribution of vapour pressure inside a wall component with thickness <span class="math inline">\(e\)</span> and permeability <span class="math inline">\(\delta_p\)</span> is linear, as shown by Fig. <a href="moisture-transfer.html#fig:moistureinwall">7.3</a>.
+<span class="math display" id="eq:gvap1">\[\begin{equation}
+g_\mathrm{vap} = \frac{\delta_\mathrm{vap}}{e}(p_{v1}-p_{v2})
+\tag{7.1}
+\end{equation}\]</span>
+We can therefore define the <em>moisture transfer resistance</em> of a wall component as <span class="math inline">\(R=e/\delta_\mathrm{vap}\)</span>. The moisture exchange between the surface of a wall and the ambient air can also be formulated in the same way as heat transfer, with a surface moisture transfer coefficient <span class="math inline">\(h_m\)</span>:
+<span class="math display" id="eq:gvap2">\[\begin{equation}
+g_\mathrm{vap} = h_m (p_{v,\mathrm{surf}}-p_{v,\mathrm{air}})
+\tag{7.2}
+\end{equation}\]</span></p>
+<p>Equations <a href="moisture-transfer.html#eq:gvap1">(7.1)</a> and <a href="moisture-transfer.html#eq:gvap2">(7.2)</a> can be used to calculate the distribution of vapour pressure across a multi-layered wall, like we would do with temperatures. This allows identifying eventual condensation spots.</p>
+</div>
+<div id="tutorials-3" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Tutorials<a href="moisture-transfer.html#tutorials-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="tutorial-1-condensation" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Tutorial 1: condensation<a href="moisture-transfer.html#tutorial-1-condensation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A window separates a room at <span class="math inline">\(T=20\)</span>°C from the outside at <span class="math inline">\(T_e=8\)</span>°C. The window has a thickness of 4 mm and conductivity 1.1 W.m<span class="math inline">\({-1}\)</span>.K<span class="math inline">\(^{-1}\)</span>. The indoor and outdoor superficial resistances are 0.13 and 0.04 m<span class="math inline">\(^2\)</span>.K.W<span class="math inline">\(^{-1}\)</span>, respectively.</p>
+<ol style="list-style-type: decimal">
+<li>Calculate the temperature at the inside surface of the window.
+% 11.1 °C</li>
+<li>Calculate the saturation vapour pressure at the temperatures of the room and window surface.
+% 2340 et 1322.4</li>
+<li>What it the relative humidity at which condensation appears at the window?
+% 56%</li>
+</ol>
+</div>
+<div id="tutorial-2-dew-point" class="section level3 hasAnchor" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Tutorial 2: dew point<a href="moisture-transfer.html#tutorial-2-dew-point" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure"><span style="display:block;" id="fig:exocondensation"></span>
+<img src="figures/exocondensation.png" alt="Multilayered wall: is there condensation?" width="40%" />
+<p class="caption">
+Figure 7.4: Multilayered wall: is there condensation?
+</p>
+</div>
+<p>The wall shown on Fig. <a href="moisture-transfer.html#fig:exocondensation">7.4</a> has three layers. The thickness, thermal conductivity and vapour permeability of each layer is given in the following table, along with the surface transfer coefficient for heat <span class="math inline">\(h_t\)</span> and moisture <span class="math inline">\(h_m\)</span> on each side of the wall.</p>
+<table>
+<caption><span id="tab:ex4properties">Table 7.2: </span> Material properties</caption>
+<thead>
+<tr class="header">
+<th align="left">Material</th>
+<th align="left">Thickness (m)</th>
+<th align="left"><span class="math inline">\(\lambda\)</span> [W.m<span class="math inline">\(^{-1}.\)</span>K<span class="math inline">\(^{-1}\)</span>]</th>
+<th align="left"><span class="math inline">\(\delta_\mathrm{vap}\)</span> [s]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Concrete</td>
+<td align="left">0.18</td>
+<td align="left">2</td>
+<td align="left"><span class="math inline">\(2.2\times 10^{-12}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Insulation</td>
+<td align="left">0.15</td>
+<td align="left">0.04</td>
+<td align="left"><span class="math inline">\(1.5\times 10^{-10}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left">Gypsum</td>
+<td align="left">0.013</td>
+<td align="left">0.35</td>
+<td align="left"><span class="math inline">\(9\times 10^{-12}\)</span></td>
+</tr>
+</tbody>
+</table>
+<table>
+<caption><span id="tab:surfacetransfer">Table 7.3: </span> Surface heat and moisture transfer coefficients</caption>
+<thead>
+<tr class="header">
+<th align="left">Side</th>
+<th align="left"><span class="math inline">\(h_t\)</span> [W.m<span class="math inline">\(^{-2}.\)</span>K<span class="math inline">\(^{-1}\)</span>]</th>
+<th align="left"><span class="math inline">\(h_m\)</span> [s.m<span class="math inline">\(^{-1}\)</span>]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Outside</td>
+<td align="left">16</td>
+<td align="left"><span class="math inline">\(4\times10^{-8}\)</span></td>
+</tr>
+<tr class="even">
+<td align="left">Inside</td>
+<td align="left">4.1</td>
+<td align="left"><span class="math inline">\(1\times10^{-8}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Indoor conditions: <span class="math inline">\(T_i=20\)</span>°C and RH<span class="math inline">\(_i\)</span>=60<span class="math inline">\(\%\)</span>. Outdoor conditions: <span class="math inline">\(T_e=6\)</span>°C and RH<span class="math inline">\(_e\)</span>=80<span class="math inline">\(\%\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>Calculate the vapour pressure <span class="math inline">\(p_v\)</span> of air inside and outside.</li>
+<li>Calculate the temperature, saturation pressure and vapour pressure at each interface of the wall (the 4 points shown on Fig. <a href="moisture-transfer.html#fig:exocondensation">7.4</a>.</li>
+<li>Is there condensation somewhere?</li>
+</ol>
+
+</div>
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="air-transfer.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="aperçu-des-systèmes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/srouchier/beh16-moisture.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["manuel.pdf", "manuel.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
