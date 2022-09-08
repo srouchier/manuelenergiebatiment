@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapitre 8 Aperçu des systèmes | Manuel de performance énergétique des bâtiments</title>
+  <title>Chapitre 14 Simulation énergétique | Manuel de performance énergétique des bâtiments</title>
   <meta name="description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
   <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapitre 8 Aperçu des systèmes | Manuel de performance énergétique des bâtiments" />
+  <meta property="og:title" content="Chapitre 14 Simulation énergétique | Manuel de performance énergétique des bâtiments" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
   <meta name="github-repo" content="srouchier/beh" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapitre 8 Aperçu des systèmes | Manuel de performance énergétique des bâtiments" />
+  <meta name="twitter:title" content="Chapitre 14 Simulation énergétique | Manuel de performance énergétique des bâtiments" />
   
   <meta name="twitter:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="humidite.html"/>
-<link rel="next" href="chauffage-hydronique.html"/>
+<link rel="prev" href="architecture-bioclimatique.html"/>
+<link rel="next" href="méthodes-numériques.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -315,112 +315,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="aperçu-des-systèmes" class="section level1 hasAnchor" number="8">
-<h1><span class="header-section-number">Chapitre 8</span> Aperçu des systèmes<a href="aperçu-des-systèmes.html#aperçu-des-systèmes" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>La première partie du livre a montré comment calculer les <strong>besoins</strong> bioclimatiques d’un bâtiment. Une partie de ces besoins peut être résumée par le coefficient Bbio : chauffage, refroidissement, éclairage. On peut y ajouter le besoin d’eau chaude sanitaire, non inclus dans le Bbio, et qui sera abordé dans le chapitre <a href="ecs.html#ecs">10</a>. Dans la deuxième partie du livre, on s’intéresse maintenant à la <strong>consommation</strong> d’énergie nécessaire pour satisfaire ces besoins.</p>
-<div id="des-besoins-aux-consommations" class="section level2 hasAnchor" number="8.1">
-<h2><span class="header-section-number">8.1</span> Des besoins aux consommations<a href="aperçu-des-systèmes.html#des-besoins-aux-consommations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Les 5 postes de consommation énergétique d’un bâtiment (sauf bâtiments industriels avec des procédés spécifiques) sont :</p>
-<ul>
-<li>Le chauffage,</li>
-<li>Le refroidissement,</li>
-<li>L’éclairage,</li>
-<li>L’eau chaude sanitaire,</li>
-<li>Tout le reste.</li>
-</ul>
-<p>La figure <a href="introduction.html#fig:conso2">1.2</a> donne une idée de l’importance de chaque poste dans la consommation globale.</p>
-<div class="figure"><span style="display:block;" id="fig:besoinsconsos"></span>
-<img src="figures/besoinsconsos.png" alt="Des besoins aux consommations d'énergie importée" width="60%" />
-<p class="caption">
-Figure 8.1: Des besoins aux consommations d’énergie importée
-</p>
-</div>
-<p>Une fois les besoins estimés, on calcule les consommations d’énergie à importer dans le bâtiment pour les satisfaire (gaz, électricité, fioul, bois). Cette énergie <strong>finale</strong> est la quantité d’énergie directement consommée par l’utilisateur. Comme montré par la figure <a href="aperçu-des-systèmes.html#fig:besoinsconsos">8.1</a>, la différence entre les besoins de chauffage (en kWh) et la consommation d’énergie finale provient des déperditions de chaleur de l’ensemble des équipements : pertes de génération, de stockage, de distribution et de régulation. Le calcul de la consommation à partir des besoins constituera l’essentiel du cours et des exercices décrits plus loin.</p>
-<p>L’indicateur Cep est la somme des consommations d’énergie <strong>primaire</strong> du bâtiment pour les différents postes de consommation : chauffage, refroidissement, ECS, éclairage, auxiliaires de ventilation et distribution. L’énergie primaire est la consommation d’énergie nécessaire à la production d’énergie finale. Pour chaque poste, la consommation en énergie primaire Cep est calculée à partir des consommations d’énergie finale Cef, multipliée par le coefficient de conversion en énergie primaire propre à chaque énergie. L’indicateur Cepnr de consommation d’énergie primaire non renouvelable est calculé de la même façon :
-<span class="math display" id="eq:cepnr" id="eq:cep">\[\begin{align}
-    \mathrm{Cep} &amp; = \sum_\mathrm{energie} \mathrm{Cef}(\mathrm{energie}) \times \mathrm{CoefEP}(\mathrm{energie}) \tag{8.1}\\
-    \mathrm{Cepnr} &amp; = \sum_\mathrm{energie} \mathrm{Cef}(\mathrm{energie}) \times \mathrm{CoefEPnr}(\mathrm{energie}) \tag{8.2}
-\end{align}\]</span>
-Où CoeffEP et CoeffEPnr sont les coefficients de transformation de l’énergie entrant dans le bâtiment en énergie primaire, renouvelable ou non. Pour les réseaux urbains, la valeur du coefficient CoefEPnr pour les réseaux de chauffage/ECS est fonction du ratio d’énergie renouvelable du réseau.</p>
-<table>
-<caption><span id="tab:coeffcep">Table 8.1: </span> Coefficients de conversion d’énergie entrant dans le bâtiment en énergie primaire</caption>
-<thead>
-<tr class="header">
-<th align="left">Type d’énergie</th>
-<th align="left">CoeffEP</th>
-<th align="left">CoeffEPnr</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Gaz naturel</td>
-<td align="left">1</td>
-<td align="left">1</td>
-</tr>
-<tr class="even">
-<td align="left">Fioul</td>
-<td align="left">1</td>
-<td align="left">1</td>
-</tr>
-<tr class="odd">
-<td align="left">Bois</td>
-<td align="left">1</td>
-<td align="left">0</td>
-</tr>
-<tr class="even">
-<td align="left">Electricité</td>
-<td align="left">2.3</td>
-<td align="left">2.3</td>
-</tr>
-<tr class="odd">
-<td align="left">Réseau urbain</td>
-<td align="left">1</td>
-<td align="left">1 - ratio d’ENR</td>
-</tr>
-</tbody>
-</table>
-<p>Enfin, une fois les consommations d’énergie primaire calculées, on s’intéressera à leur impact environnemental. L’indicateur Ic<span class="math inline">\(_\mathrm{energie}\)</span> mesure l’impact sur le changement climatique des consommations pendant l’exploitation du bâtiment. Il est obtenu en multipliant les consommations d’énergie finale par les coefficients de conversion d’énergie en quantité de gaz à effet de serre montrés dans le tableau <a href="aperçu-des-systèmes.html#tab:coeffco2">8.2</a>.</p>
-<table>
-<caption><span id="tab:coeffco2">Table 8.2: </span> Coefficients de conversion de l’énergie entrant dans le bâtiment en quantité de gaz à effet de serre émis</caption>
-<thead>
-<tr class="header">
-<th align="left">Type d’énergie finale</th>
-<th align="left">kg équivalent CO<span class="math inline">\(_2\)</span> par kWh en PCI</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Bois</td>
-<td align="left">0,024 à 0,03</td>
-</tr>
-<tr class="even">
-<td align="left">Electricité</td>
-<td align="left">0,064 à 0,079</td>
-</tr>
-<tr class="odd">
-<td align="left">Gaz</td>
-<td align="left">0,227 à 0,272</td>
-</tr>
-<tr class="even">
-<td align="left">Autres combustibles fossiles</td>
-<td align="left">0,324</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div id="types-de-systèmes" class="section level2 hasAnchor" number="8.2">
-<h2><span class="header-section-number">8.2</span> Types de systèmes<a href="aperçu-des-systèmes.html#types-de-systèmes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Aperçu des différents systèmes CVC pour satisfaire chaque besoin. Cette partie n’est pas encore écrite (dernière mise à jour du livre en septembre 2022).</p>
+<div id="simulation-énergétique" class="section level1 hasAnchor" number="14">
+<h1><span class="header-section-number">Chapitre 14</span> Simulation énergétique<a href="simulation-énergétique.html#simulation-énergétique" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Ce chapitre n’est pas encore écrit (dernière mise à jour du site : septembre 2022).</p>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="humidite.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="chauffage-hydronique.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="architecture-bioclimatique.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="méthodes-numériques.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -451,7 +357,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/srouchier/beh21-overlook.Rmd",
+"link": "https://github.com/srouchier/beh32-simulation.Rmd",
 "text": "Edit"
 },
 "history": {

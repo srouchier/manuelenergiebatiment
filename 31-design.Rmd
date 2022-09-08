@@ -1,7 +1,5 @@
-# (PART) Designing energy performant buildings {-}
+# (PART) Conception de bâtiments performants {-}
 
-# Bioclimatic architecture
+# Architecture bioclimatique
 
-comment moins chauffer en été
-
-comment moins climatiser en hiver
+Ce chapitre n'est pas encore écrit (dernière mise à jour du site : septembre 2022).

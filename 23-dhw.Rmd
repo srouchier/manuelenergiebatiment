@@ -1,4 +1,10 @@
-# Domestic hot water {#ecs}
+# Eau chaude sanitaire {#ecs}
+
+Principales sources pour cette page :
+
+* Guide ADEME "Les besoins d'eau chaude sanitaire en habitat individuel et collectif"
+* Guide COSTIC ["Le dimensionnement des systèmes de production d'ECS"](https://librairie.ademe.fr/urbanisme-et-batiment/772-dimensionnement-des-systemes-de-production-d-eau-chaude-sanitaire-en-habitat-individuel-et-collectif-le.html)
+* Recommandations RAGE "Chauffe-eau solaire en habitat individuel"
 
 ## Calcul des besoins et consommations
 
@@ -23,7 +29,7 @@ Le besoin d’ECS se calcule en trois étapes :
 
 Pour les maisons individuelles ou accolées et les logements collectifs, ces besoins sont calculés en fonction de la densité d'occupation conventionnelle. Le besoin d'ECS est pris égal à 392 litres à 40°C/adulte/semaine en moyenne. Il est modulé suivant les périodes d’occupation/inoccupation et la période de l’année (été/hiver et périodes de vacances). Les besoins peuvent ensuite être exprimés par unité de surface en reliant la densité d'occupation à la surface habitable.
 
-```{r, ecsstandard, echo=FALSE, out.width="40%", fig.cap="Coefficients d'équivalence permettant de calculer le nombre de logements standards. Par exemple, un appartement T4 dans un immeuble du parc social est considéré égal à 1,4 logement standard."}
+```{r, ecsstandard, echo=FALSE, out.width="50%", fig.cap="Coefficients d'équivalence permettant de calculer le nombre de logements standards. Par exemple, un appartement T4 dans un immeuble du parc social est considéré égal à 1,4 logement standard."}
 knitr::include_graphics(rep("figures/ecsstandard.png"))
 ```
 
@@ -33,9 +39,9 @@ Les besoins d'ECS à l'échelle d'un immeuble sont caractérisés par trois type
 * les besoins de pointes sur 10 minutes et 1 à 8 heures,
 * les profils moyens journaliers, hebdomadaires et mensuels, ainsi que des profils journaliers maximaux.
 
-Les **besoins moyens** sont déterminés en fonction de son nombre de logements standards (voir figure \@ref(fig:ecsstandard). Le logement standard est un T3 d'un immeuble du parc social, occupé par 2,1 personnes. Les besoins journaliers moyens d'un immeuble sur l'année sont, en moyenne, de 125 $\pm$ 50 litres à 40$\degree$C par logement standard, soit environ 70 $\pm$ 25 litres à 60$\degree$C, pour une température moyenne annuelle d'eau froide de 16$\degree$C.
+Les **besoins moyens** sont déterminés en fonction de son nombre de logements standards (voir figure \@ref(fig:ecsstandard). Le logement standard est un T3 d'un immeuble du parc social, occupé par 2,1 personnes. Les besoins journaliers moyens d'un immeuble sur l'année sont, en moyenne, de 125 $\pm$ 50 litres à 40°C par logement standard, soit environ 70 $\pm$ 25 litres à 60°C, pour une température moyenne annuelle d'eau froide de 16°C.
 
-On a aussi besoin de connaître les **besoins de pointes** sur 10 minutes, ou 1 à 8h. Ces besoins de pointes, en litres à 60$\degree$C, pour une température minimale moyenne d'eau froide à 9$\degree$C, peuvent être estimés avec le nombre de logements standards $N_s$ :
+On a aussi besoin de connaître les **besoins de pointes** sur 10 minutes, ou 1 à 8h. Ces besoins de pointes, en litres à 60°C, pour une température minimale moyenne d'eau froide à 9°C, peuvent être estimés avec le nombre de logements standards $N_s$ :
 \begin{align}
     Vp_\mathrm{10min} & = 61 \times N_s^{0,503} \\
     Vp_\mathrm{1h} & = 83 \times N_s^{0,708} \\
@@ -43,13 +49,13 @@ On a aussi besoin de connaître les **besoins de pointes** sur 10 minutes, ou 1 
 \end{align}
 Les valeurs de besoins de pointes sur 10 minutes sont destinées au dimensionnement des systèmes de production couplant échangeurs et ballons. Les valeurs de pointes horaires sur 1 à 8h sont destinées au dimensionnement des systèmes de production collective avec stockage d'ECS.
 
-```{r, profilecs, echo=FALSE, out.width="40%", fig.cap="Exemple de profils de soutirage moyens horaires, hebdomadaires et mensuels sur un échantillon de logements standards du parc social."}
+```{r, profilecs, echo=FALSE, out.width="50%", fig.cap="Exemple de profils de soutirage moyens horaires, hebdomadaires et mensuels sur un échantillon de logements standards du parc social."}
 knitr::include_graphics(rep("figures/profilecs.PNG"))
 ```
 
 Enfin, les profils horaires, hebdomadaires et mensuels moyens sont destinés au calcul des consommations d'énergies annuelles prévisionnelles. Des exemples en sont donnés sur la figure  \@ref(fig:profilecs).
 
-### Calcul des pertes de distribution, stockage et génération}
+### Calcul des pertes de distribution, stockage et génération
 
 Le calcul des pertes de distribution est analogue à celui réalisé pour le chauffage. Les pertes brutes de stockage sont calculées à partir des caractéristiques d’isolation du composant de stockage, et des conditions de températures de part et d’autre du composant. Pour les générateurs qui assurent à la fois le chauffage et l’ECS, l’efficacité du système de production de l’ECS se calcule également de manière analogue au chauffage ; pour les autres générateurs, le principe est le suivant : prise en compte des caractéristiques en conditions nominales et de l’évolution de ces caractéristiques selon la charge et les conditions d’utilisation.
 
@@ -69,20 +75,20 @@ Son dimensionnement consiste à connaître la puissance du générateur (product
 l'année pendant 10 minutes. Sur cette base, on dimensionne le préparateur instantané en déterminant sa puissance :
 
 \begin{equation}
-    P_\mathrm{prod,inst} = \frac{\rho \, c_p}{1000} \frac{Vp_\mathrm{10min}}{600} \left(60-9\right) + P_\mathrm{distrib}
+    P_\mathrm{prod,inst} = \frac{\rho \, c_p}{1000} \frac{Vp_\mathrm{10min}}{600} \left(T_{ec}-T_{ef}\right) + P_\mathrm{distrib}
 (\#eq:ecsinstantane)
 \end{equation}
-où $P_\mathrm{distrib}$ sont les pertes de distribution. Dans cette formule, le volume puisé en 10 minutes est divisé par 600 (s) pour le convertir en débit volumique en litres par secondes.
+où $T_{ec}$ et $T_{ef}$ sont les températures d'eau chaude et d'eau froide, et $P_\mathrm{distrib}$ sont les pertes de distribution. Dans cette formule, le volume puisé en 10 minutes est divisé par 600 (s) pour le convertir en débit volumique en litres par secondes.
 
 ### Accumulation
 
 La production en **accumulation pure** consiste à stocker l’integralité de la consommation journalière, le stock étant reconstitué durant la nuit. Ce mode de production est logiquement d’application si la production est électrique avec un tarif bihoraire : il y a un intérêt économique à recharger le ballon de stockage uniquement durant la nuit.
 
-On détermine d'abord l'énergie $E_\mathrm{acc}$ nécessaire pour satisfaire à la demande maximale de l'année pendant une journée. Sur cette base, on dimensionne le préparateur à accumulation en déterminant sa puissance et son volume. L'énergie $E_\mathrm{acc}$ est obtenue à partir des profils journaliers maximaux. Par exemple si ces profils sont donnés par un ensemble de puisages (ici en litres) à différentes températures, avec une température d'eau froide de 9$\degree$C :
+On détermine d'abord l'énergie $E_\mathrm{acc}$ nécessaire pour satisfaire à la demande maximale de l'année pendant une journée. Sur cette base, on dimensionne le préparateur à accumulation en déterminant sa puissance et son volume. L'énergie $E_\mathrm{acc}$ est obtenue à partir des profils journaliers maximaux. Par exemple si ces profils sont donnés par un ensemble de puisages (ici en litres) à différentes températures, avec une température d'eau froide de 9°C :
 \begin{equation}
     E_\mathrm{acc} = \frac{\rho \, c_p}{1000} \sum_\mathrm{puisages} V_\mathrm{puisage} \left(T_\mathrm{puisage}-9\right)
 \end{equation}
-Où $E_\mathrm{acc}$ est donné ici en Joules (rappel : pour le convertir en kWh, on divise par $3,6\times 10^6$). Le volume de stockage (ici en m$^3$) se calcule ensuite en choisissant une température de stockage $T_\mathrm{acc}$ de 55 ou 60$\degree$C
+Où $E_\mathrm{acc}$ est donné ici en Joules (rappel : pour le convertir en kWh, on divise par $3,6\times 10^6$). Le volume de stockage (ici en m$^3$) se calcule ensuite en choisissant une température de stockage $T_\mathrm{acc}$ de 55 ou 60°C
 \begin{equation}
     V_\mathrm{acc} = \frac{E_\mathrm{acc}}{\rho \, c_p \, \left(T_\mathrm{acc}-9\right) \, a}
 \end{equation}
@@ -92,7 +98,7 @@ où $a$ est un coefficient d'efficacité de stockage. Il vient du fait que le vo
 
 La production d’ECS en semi-accumulation ou semi-instantanée (échangeur + ballon de stockage) consiste à choisir un volume de stockage correspondant au volume prélevé lors d’une période de pointe, mais inférieur à la consommation journalière. Une production instantanée d'appoint permet de préparer le complément nécessaire pendant la durée de l'appel (semi-instantané) ou entre deux pointes (semi-accumulation).
 
-```{r, profilmaxecs, echo=FALSE, out.width="80%", fig.cap="Exemple de profil journalier maximal au pas de temps 10 minutes dans un ensemble de 208 logements du parc social"}
+```{r, profilmaxecs, echo=FALSE, out.width="50%", fig.cap="Exemple de profil journalier maximal au pas de temps 10 minutes dans un ensemble de 208 logements du parc social"}
 knitr::include_graphics(rep("figures/profilmaxecs.PNG"))
 ```
 
@@ -102,23 +108,23 @@ Suivant le profil de puisage, la base de temps sur laquelle repose la méthode d
 
 ### Cumulus électrique
 
-```{r, cumuluselectrique, echo=FALSE, out.width="80%", fig.cap="Composition et dimensionnement d'un chauffe-eau électrique"}
+```{r, cumuluselectrique, echo=FALSE, out.width="90%", fig.cap="Composition et dimensionnement d'un chauffe-eau électrique"}
 knitr::include_graphics(rep("figures/cumuluselectrique.png"))
 ```
 
 
 Un des systèmes individuels les plus simples et courants sont les cumulus électriques : des ballons de stockage séparés du réseau de chauffage. L'avantage d'un système électrique est la possibilité de recharger le ballon en heures creuses.
 
-### Chaudière double service}
+### Chaudière double service
 
 Les chaudières peuvent assurer une production d’ECS instantanée, à micro-accumulation, ou à accumulation avec un ou deux ballons, intégrés sous le même habillage que la chaudière ou bien séparés. Il peut s’agir d’un ballon avec un échangeur à serpentin ou à double enveloppe ou de bien de ballon tampon à régénération directe raccordé à l’échangeur sanitaire de la chaudière.
 
-```{r, chaudieredoubleservice, echo=FALSE, out.width="40%", fig.cap="Exemple d'une chaudière double service dotée d'un ballon d'ECS avec un échangeur à serpentin"}
+```{r, chaudieredoubleservice, echo=FALSE, out.width="35%", fig.cap="Exemple d'une chaudière double service dotée d'un ballon d'ECS avec un échangeur à serpentin"}
 knitr::include_graphics(rep("figures/chaudieredoubleservice.PNG"))
 ```
 
 
-### Chauffe-eau solaire individuel}
+### Chauffe-eau solaire individuel
 
 Un chauffe-eau solaire individuel (CESI) est un procédé solaire participant, en partie, à la couverture des besoins d'ECS d'un bâtiment. L'installation est composée de trois parties principales :
 
@@ -126,7 +132,7 @@ Un chauffe-eau solaire individuel (CESI) est un procédé solaire participant, e
 * Une boucle de transfert, qui transporte cette énergie vers le ballon de stockage par le biais d'un échangeur incorporé au ballon ;
 * Un ballon de stockage.
 
-```{r, cesi, echo=FALSE, out.width="40%", fig.cap="Chauffe-eau solaire individuel avec appoint par une chaudière instantanée"}
+```{r, cesi, echo=FALSE, out.width="50%", fig.cap="Chauffe-eau solaire individuel avec appoint par une chaudière instantanée"}
 knitr::include_graphics(rep("figures/cesi.png"))
 ```
 
@@ -136,11 +142,11 @@ Il n'est pas possible pour un CESI d'assurer une converture totale des besoins d
 
 Un système solaire combiné (SSC) est un procédé solaire participant, en partie, à la couverture des besoins de chauffage et d'ECS de l'habitation. Il est composé des mêmes parties que le CESI, à quelques différences près : le réservoir d'eau peut intégrer pour la production d'ECS soit un échangeur sanitaire, ou bien un ballon placé en partie haute du réservoir.
 
-```{r, ssc, echo=FALSE, out.width="40%", fig.cap="Système solaire combiné"}
+```{r, ssc, echo=FALSE, out.width="60%", fig.cap="Système solaire combiné"}
 knitr::include_graphics(rep("figures/ssc.png"))
 ```
 
-Comme pour un CESI, un appoint est nécessaire pour couvrir les besoins de chauffage et d'ECS toute l'année. Le dimensionnement des composants du SSC sera abordé en section \@ref(sec:solaire).
+Comme pour un CESI, un appoint est nécessaire pour couvrir les besoins de chauffage et d'ECS toute l'année. Le dimensionnement des composants du SSC sera abordé en section \@ref(solaire).
 
 ### Pompe à chaleur
 
@@ -150,11 +156,11 @@ Un chauffe-eau thermodynamique est une pompe à chaleur dédiée à la productio
 knitr::include_graphics(rep("figures/pacecs.png"))
 ```
 
-## Dimensionnement des systèmes solaires {solaire}
+## Dimensionnement des systèmes solaires {#solaire}
 
 Il n'y a pas une solution unique à la question du dimensionnement des systèmes solaires, que ce soit pour la production d'ECS seule ou bien d'ECS et de chauffage combinés. La question principale est de viser un certain **taux de couverture** (voir figure \@ref(fig:couverture)), qui est la part des besoins annuels en énergie couverts par l'énergie solaire. Pour un CESI, un bon compromis économique est un taux de couverture compris entre 50 et 70 \%.
 
-```{r, couverture, echo=FALSE, out.width="40%", fig.cap="Evolution de la production solaire au long de l'année, et évolution de la productivité solaire par mètre carré de capteurs"}
+```{r, couverture, echo=FALSE, out.width="50%", fig.cap="Evolution de la production solaire au long de l'année, et évolution de la productivité solaire par mètre carré de capteurs"}
 knitr::include_graphics(rep("figures/couverture.png"))
 ```
 
@@ -171,22 +177,24 @@ knitr::include_graphics(rep("figures/ecs1.png"))
 
 Table: (\#tab:ecs) Volume de stockage conseillé par surface de capteurs (litre/m$^2$) pour viser un taux de couverture moyen
 
-Zone climatique    ECS seulement    ECS et chauffage
-----------------   -------------    ----------------
+Zone climatique    ECS seulement     ECS et chauffage
+----------------   --------------    -----------------
 H1                    45                50
 H2                    55                67
 H3                    65                82
 H4                    75                100
 
+
+<!-- 
 ## Exercice
 
 A family of 4 uses 150 litres of domestic hot water (DHW) at 50°C per day. Their single-family house has a heat loss coefficient of 120 W/K. They are located in Chambéry, where the minimal temperature for sizing heating systems is -11°C and the total of heating degree days is 2,700 °C.d annually. We want to propose a solution for a combined solar system producing DHW and space heating.
 
-## Estimating the consumption
+**Estimating the consumption**
 
 Estimate the total annual needs for space heating and DHW, in kWh. We suppose that cold water comes at 10°C.
 
-## Sizing the system
+**Sizing the system**
 
 Choose the surface of collectors and volume of storage.
 * The suggested surface of collectors is 1 m$^2$ for each 1,000 kWh of total annual need. (1 m$^2$ of collectors receives about 1,500 kWh of solar irradiance annually. With an efficiency of 30\%, 1 m$^2$ can then produce about 450 kWh a year)
@@ -194,7 +202,7 @@ Choose the surface of collectors and volume of storage.
 
 Calculate the energy capacity of the tank, if water is stored at 60°C.
 
-### Solar coverage
+**Solar coverage**
 
 The efficiency of thermal collectors (see Fig.\@ref(fig:ecs2)) is highest when solar irradiance $E$ is high and the temperature difference $\Delta T$ between water and outdoor is low.
 
@@ -219,7 +227,7 @@ Average temperature (°C)   Solar irradiance (kWh/day)
 
 For each of these days, calculate: the space heating need; the solar production; the solar coverage for DHW and space heating, and the energy required from the auxiliary heating system.
 
-### Temperatures
+**Temperatures**
 
 ```{r, ecs4, echo=FALSE, out.width="40%", fig.cap="Control law of the water temperature"}
 knitr::include_graphics(rep("figures/ecs4.png"))
@@ -231,3 +239,4 @@ The house uses low-temperature radiators, operating at 45/38/20°C. We suppose t
 knitr::include_graphics(rep("figures/ecs3.png"))
 ```
 
+-->

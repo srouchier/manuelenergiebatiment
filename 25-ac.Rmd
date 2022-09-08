@@ -1,4 +1,8 @@
-# Air conditioning
+# Traitement d'air et climatisation
+
+Ce chapitre n'est pas encore écrit (dernière mise à jour du site : septembre 2022).
+
+<!--
 
 beaucoup de contenu dans les diapos du CM M1
 
@@ -62,3 +66,5 @@ This is a system of two equations and three unknown variables $\left\{ \dot{m}_{
 ## Tutorials
 
 Plein d'exos air conditioning dans le cours master ou S7
+
+-->
