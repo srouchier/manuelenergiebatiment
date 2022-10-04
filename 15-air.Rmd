@@ -64,7 +64,7 @@ A^* = \frac{1}{\sqrt{ \left(\frac{1}{C_{d1}\cdot A_1}\right)^2 +\left(\frac{1}{C
 (\#eq:flowrate3)
 \end{equation}
 
-## Ventilation naturelle
+## Ventilation naturelle {#ventilationnaturelle}
 
 La ventilation naturelle est le déplacement d'air qui n'est pas dû à une ventilation mécanique contrôlée. Elle provient de deux forces principales qui génèrent des variations locales de pression, qui ensuite résultent en un déplacement d'air des zones de pression élevée vers les pressions faibles : le vent et le tirage thermique.
 
@@ -156,7 +156,7 @@ shiny::includeHTML("figures/video5.html")
 
 Dans les deux paragraphes ci-dessus, on a donné les formules des débits d'air traversant un bâtiment possédant deux ouvertures, sous l'effet soit du vent, soit du tirage thermique. Ces deux effets peuvent cependant se cumuler ou s'opposer. La somme des équations \@ref(eq:air5) et \@ref(eq:air9) est alors :
 \begin{equation}
-Q=A^* \left( \sqrt{\left|\Delta C_p\right|\cdot U_\mathit{wind}^2  } \pm \sqrt{2\cdot g\cdot H \left(\frac{|\Delta T|}{\bar{T}}}\right) } \right)
+Q=A^* \left( \sqrt{\left|\Delta C_p\right|\cdot V_\mathit{vent}^2  } \pm \sqrt{2\cdot g\cdot H \left(\frac{|\Delta T|}{\bar{T}}\right) } \right)
 (\#eq:flowrate5)
 \end{equation}
 où $\bar{T}$ est la moyenne de température entre intérieur et extérieur en Kelvin. Le signe $\pm$ de cette formule vient du faire que l'effet du vent et du tirage thermique sont soit dans le même sens et s'additionnent, soit de sens opposés.
@@ -167,7 +167,7 @@ où $\bar{T}$ est la moyenne de température entre intérieur et extérieur en K
 
 Le bâtiment montré sur la figure \@ref(fig:exowind) a deux ouvertures opposées, en partie basse et en partie haute, séparées par une différence d'altitude $\Delta z$. Le vent souffle dans la direction montrée sur la figure. La température intérieure est 20°C, température extérieure 0°C. Les coefficients de pression des deux ouvertures sont 0,6 et -0,4 respectivement.
 
-```{r exowind, echo=FALSE, out.width="30%", fig.cap="Wind and stack effect in a building"}
+```{r exowind, echo=FALSE, out.width="30%", fig.cap="Vent et tirage thermique dans un bâtiment"}
 knitr::include_graphics(rep("figures/exowind.png"))
 ```
 
@@ -175,11 +175,11 @@ knitr::include_graphics(rep("figures/exowind.png"))
 2. La vitesse du vent est 5 m/s et la hauteur $\Delta z$ est 10 m. En utilisant l'équation \@ref(eq:flowrate5), trouver quelle force l'emporte sur l'autre et dans quel sens l'air circule dans le bâtiment.
 3. Pour quelle valeur de la vitesse du vent les deux forces s'annulent-elles ?
 
-### Exercice 2 : cheminée solaire
+### Exercice 2 : cheminée solaire {#excheminee}
 
 On étudie la cheminée solaire montrée sur la figure \@ref(fig:chimney). L'air est chauffé dans la cheminée, créant un effet de tirage thermique vers le haut. L'air est mis en dépression dans le bâtiment, ce qui attire l'air extérieur à travers un puits canadien. On cherche à calculer la température intérieure du bâtiment sous l'effet de cet apport d'air frais.
 
-```{r chimney, echo=FALSE, out.width="40%", fig.cap="Solar chimney"}
+```{r chimney, echo=FALSE, out.width="40%", fig.cap="Cheminée solaire"}
 knitr::include_graphics(rep("figures/chimney.png"))
 ```
 

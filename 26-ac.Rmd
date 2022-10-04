@@ -1,0 +1,215 @@
+# Traitement d'air {#ac}
+
+<!-- beaucoup de contenu dans les diapos du CM M1 
+vidéos ? -->
+
+La climatisation ne désigne pas seulement le refroidissement, mais de manière plus générale la régulation de l'ambiance intérieure : température, humidité, qualité de l'air. Ce chapitre couvre l'utilisation du vecteur air pour le chauffage et le refroidissement, tout en gardant le contrôle de l'humidité.
+
+## Traitement d'air {#climairhumide}
+
+Cette section fait suite au chapitre \@ref(humidite) pour décrire les transformations de l'air humide qui seront opérées par les appareils de climatisation.
+
+### Mélanges
+
+```{r video7, echo=FALSE}
+shiny::includeHTML("figures/video7.html")
+```
+
+Pour les calculs de la partie du cours sur les centrales de traitement d'air, on aura besoin de décrire le mélange de deux volumes d'air humide dont les propriétés (température, humidité, enthalpie, masse volumique...) sont différentes.
+
+```{r melanges1, echo=FALSE, out.width="30%", fig.cap="Mélange de deux masses d'air humide"}
+knitr::include_graphics(rep("figures/melange1.png"))
+```
+
+On suppose deux volumes d'air $V_1$ et $V_2$ qu'on mélange pour produire un volume $V_3$. Tout le raisonnement ci-dessous est valable aussi bien pour des volumes donnés (m$^3$) ou pour des débits (m$^3$/h par exemple).
+
+La masse d'air sec contenue dans chaque volume est :
+\begin{equation}
+m_{as}=\rho_{as} V = \frac{1}{v_s} V
+(\#eq:clim1)
+\end{equation}
+où $\rho_{as}$ est la masse volumique d'air sec et $\rho_{as}$ est le volume spécifique, son inverse (voir l'équation \@ref(eq:humidite5)).
+
+Ensuite,les propriétés du mélange s'obtiennent avec les lois de conservation.
+
+* Conservation de la masse d'air sec :
+\begin{equation}
+m_{as3} = m_{as1} + m_{as2}
+(\#eq:clim2)
+\end{equation}
+* Conservation de la masse d'eau :
+\begin{equation}
+m_{as3} \, w_3 = m_{as1} \, w_1 + m_{as2} \, w_2
+(\#eq:clim3)
+\end{equation}
+* Conservation de l'énergie :
+\begin{equation}
+m_{as3} \, h_3 = m_{as1} \, h_1 + m_{as2} \, h_2
+(\#eq:clim4)
+\end{equation}
+
+Ces équations montrent pourquoi les grandeurs comme l'enthalpie et la teneur en eau sont définis par unité de masse d'air sec : c'est sur cette base qu'on peut calculer les propriétés d'un mélange.
+
+Entre parenthèses, on peut déduire de l'équation \@ref(eq:clim4) et de la définition de l'enthalpie \@ref(eq:humidite4), un bilan équivalent pour la température du mélange :
+\begin{equation}
+m_{as3} \, T_3 = m_{as1} \, T_1 + m_{as2} \, T_2
+(\#eq:clim5)
+\end{equation}
+
+
+```{r melanges2, echo=FALSE, out.width="60%", fig.cap="Mélange d'air sur le diagramme d'air humide"}
+knitr::include_graphics(rep("figures/melange2.png"))
+```
+
+Sur le diagramme de l'air humide, le point qui désigne le mélange entre deux masses d'air est situé sur la droite qui relie leurs points. Sa position sur la droite est fonction de la quantité de chacune dans le mélange.
+
+**Attention** : les autres grandeurs visibles sur le diagramme (humidité relative, température d'air humide et de rosée) ne suivent pas une loi de mélange simple comme les bilans ci-dessus. Pour obtenir ces caractéristiques du mélange, il faut les trouver par lecture ou par calcul.
+
+### Transformations
+
+Les systèmes de climatisation opèrent des transformations sur l'air humide: chauffage, humidification, refroidissement... Ces transformations peuvent être représentées par des déplacements sur le diagramme de l'air humide (Fig. \@ref(fig:aircon2)). Afin de produire de l'air aux conditions voulues, une centrale de traitement d'air peut opérer une ou plusieurs de ces transformations à la suite.
+
+```{r, aircon2, echo=FALSE, out.width="40%", fig.cap="Transformations"}
+knitr::include_graphics(rep("figures/aircon2.PNG"))
+```
+
+On suppose une quantité (ou un débit) d'air $m_{as}$ initialement dans un état 1 et qu'on transforme jusqu'à un état 2. Dans le cas général, la transformation nécessite une puissance $P$ égale à :
+\begin{align}
+P & = m_{as} \left( h_2 - h_1 \right)  \\
+ & = m_{as} \left[ c_a\, (T_2-T_1) + l_v\, (w_2-w_1) \right] (\#eq:clim6)
+\end{align}
+
+La figure \@ref(fig:aircon2) montre le trajet sur le diagramme de 5 exemples de transformations élémentaires. La puissance nécessaire à chaque transformation se déduit de l'équation \@ref(eq:clim6).
+
+1. Chauffage simple : augmentation de température à humidité absolue constante. La puissance de chauffage est directement proportionnelle à l'écart de température.
+\begin{align}
+P & = m_{as} \, \Delta h \\
+\Delta h & = c_a \, \Delta T (\#eq:clim7)
+\end{align}
+2. Humidification simple : à température constante, augmentation de l'humidité $w$ liée à un apport de vapeur $Q_\mathit{vap}$.
+\begin{align}
+Q_\mathit{vap} & = m_{as} \Delta w (\#eq:clim8) \\
+P & = m_{as} \, \Delta h \\
+\Delta h & = l_v \, \Delta w (\#eq:clim9)
+\end{align}
+3. Humidification adiabatique : augmentation d'humidité et baisse de température, à enthalpie constante. Une quantité d'eau évaporée $Q_\mathit{vap}$ entraîne une baisse de température $\Delta T$:
+\begin{align}
+Q_\mathit{vap} & = m_{as} \Delta w (\#eq:clim10) \\
+\Delta h & \approx  c_a \Delta T + l_v \Delta w = 0 (\#eq:clim11)\\
+ \Delta T & = -\frac{l_v}{c_a} \Delta w (\#eq:clim12)
+\end{align}
+4. Refroidissement "sec" : baisse de température à humidité constante, par exemple dans un échangeur.
+\begin{align}
+P & = m_{as} \, \Delta h & < 0\\
+\Delta h & = c_a \, \Delta T & < 0 (\#eq:clim13)
+\end{align}
+5. Refroidissement et déshumidification : l'humidité absolue diminue en raison de la condensation à la surface d'un échangeur plus froid que la température de rosée de l'air.
+\begin{align}
+P & = m_{as} \Delta h & < 0 \\
+\Delta h & =  c_a \Delta T + l_v \Delta w & < 0 (\#eq:clim14)
+\end{align}
+
+## Conditions de soufflage
+
+Une centrale de traitement d'air insuffle dans un bâtiment de l'air conditionné pour maintenir une température et un degré d'hygrométrie voulues. Il faut donc pouvoir déterminer, pour des conditions (extérieures et intérieures) données :
+
+* La température de l'air soufflé $T_s$ ;
+* La teneur en eau de l'air soufflé $w_s$ ;
+* Son débit $\dot{m}_s$.
+
+Pour calculer ces trois valeurs, la première étape est le calcul des **charges** du local :
+
+* La **charge sensible** (en W) est l'ensemble des apports externes ou internes de chaleur sensible :
+\begin{equation}
+\mathrm{CS} = D\left(T_e-T_i\right) + \dot{m}_\mathit{inf} \, c_{a} \left(T_e-T_i\right) + \Phi_\mathit{sol} + \Phi_\mathit{in} + ...
+(\#eq:clim15)
+\end{equation}
+où on a supposé par exemple un coefficient de déperditions $D$ de l'enveloppe, des infiltrations $\dot{m}_\mathit{inf}$, des apports solaires $\Phi_\mathit{sol}$ et internes $\Phi_\mathit{in}$, etc. 
+* La **charge latente** (en W) est l'ensemble des apports externes ou internes de chaleur latente. Il s'agit de la quantité de vapeur d'eau gagnée par le local, multipliée par la chaleur latente de vaporisation $l_v$ :
+\begin{equation}
+\mathrm{CL} = l_v \left(  \dot{m}_\mathit{inf} \left(w_e-w_i\right) + Q_\mathit{vap,in} + ... \right)
+(\#eq:clim16)
+\end{equation}
+où le premier terme est la chaleur latente de l'infiltration d'air et $Q_\mathit{vap,in}$ est une production interne de vapeur d'eau (kg/s).
+
+La charge sensible utilise la même formule que le calcul des besoins de chauffage et de refroidissement, mais peut prendre un signe positif ou négatif. Si $\mathrm{CS}>0$ alors le bâtiment "gagne" trop de chaleur et doit être refroidi ; si $\mathrm{CS}<0$ alors les déperditions dépassent les apports et le bâtiment doit être chauffé. Même chose pour la charge latente : si elle est positive, le bâtiment produit un excès d'humidité qui doit être régulé.
+
+Les conditions de soufflage se calculent à partir de ce principe : l'air soufflé par la CTA et les charges sensibles et latentes doivent aboutir à un bilan de chaleur nul.
+\begin{align}
+\dot{m}_s c_a (T_s - T_i) & + \mathrm{CS} = 0 (\#eq:clim17) \\
+\dot{m}_s l_v (w_s - w_i) & + \mathrm{CL} = 0 (\#eq:clim18) 
+\end{align}
+
+Ces deux équations déterminent les trois grandeurs qui décrivent les conditions de soufflage : $\dot{m}_s, T_s, w_s $. Comme il s'agit d'un système de deux équations et trois inconnues, il y a une infinité de solutions : un même besoin peut être satisfait avec différents choix du débit d'air $\dot{m}_s$ qui détermineront différentes conditions $(T_s, w_s)$.
+
+```{r, soufflage, echo=FALSE, out.width="60%", fig.cap="Placement des conditions de soufflage 's' sur le diagramme de l'air humide, à partir des conditions intérieures 'i'. Dans cet exemple, l'air soufflé doit être plus chaud et sec que l'air intérieur."}
+knitr::include_graphics(rep("figures/soufflage.png"))
+```
+
+La figure \@ref(fig:soufflage) montre un exemple où :
+
+* La charge sensible CS est négative donc $T_s > T_i$ ;
+* La charge latente CL est positive donc $w_s < w_i$.
+
+L'ensemble des conditions de soufflage qui satisfont les deux conditions \@ref(eq:clim17) et \@ref(eq:clim18) sont situées sur une droite passant par le point de l'air intérieur "i". Plus le point de soufflage "s" choisi sera proche des conditions intérieures, plus le débit d'air nécessaire sera important.
+
+La CTA est l'appareil chargé de transformer l'air entrant "e" en air de soufflage "s".
+
+## Centrales de traitement d'air {#cta}
+
+Une centrale de traitement d'air (CTA) est un appareil servant à contrôler les caractéristiques d'un flux d'air entrant dans le bâtiment. Son principe de fonctionnement est de prendre de l'air à traiter, de lui faire subir un traitement (chauffage, refroidissement, purification, déshumidification...) et de l'insuffler via le réseau de gaines aérauliques dans les locaux. Elle est composée entre autres de :
+
+* Des filtres contre la poussière et les particules ;
+* Une batterie de chauffage : un échangeur entre l'air et de l'eau chaude apportée à la CTA ;
+* Une batterie froide : un échangeur où circule un fluide frigorifique ;
+* Un humidificateur à vapeur ou à évaporation ;
+* Un ventilateur de soufflage, et éventuellement un pour l'extraction ;
+* Différentes sondes pour la régulation, etc.
+
+```{r, cta1, echo=FALSE, out.width="50%", fig.cap="Disposition d'une CTA et des gaines de soufflage et de reprise d'air"}
+knitr::include_graphics(rep("figures/cta1.png"))
+```
+
+Une CTA fonctionnant en mode "tout air neuf", l'air extérieur pris par la CTA qui assure les transformations pour produire l'air soufflé. Ce mode de fonctionnement est le plus hygiénique car aucun air vicié n'est recyclé dans le bâtiment, mais nécessite une puissance importante pour le traitement.
+
+```{r, cta2, echo=FALSE, out.width="100%", fig.cap="CTA en mode tout air neuf. Image partiellement reprise de [dimclim.fr](https://www.dimclim.fr/conditions-de-soufflage.php)"}
+knitr::include_graphics(rep("figures/cta2.png"))
+```
+
+Dans le cas d'une CTA double flux, la CTA reprend l'air dans les pièces nécessitant une extraction d'air, récupère une partie de son énergie thermique et l'expulse hors du bâtiment. Cette récupération d'énergie peut se faire soit via un échangeur de chaleur, soit en mélangeant à l'air neuf une partie de l'air extrait.
+
+```{r, cta3, echo=FALSE, out.width="100%", fig.cap="CTA avec échangeur de chaleur entre l'air neuf et l'air extrait. Image partiellement reprise de [dimclim.fr](https://www.dimclim.fr/conditions-de-soufflage.php)"}
+knitr::include_graphics(rep("figures/cta3.png"))
+```
+
+La figure \@ref(fig:cta3) montre le fonctionnement d'une CTA double flux en mode "tout air neuf" : une partie de la puissance récupérable sur l'air extrait (chaud ou froid) est transférée sur l'air neuf. L'économie d'énergie peut être intéressante rapidement, car la consommation globale de la CTA pour le traitement est :
+\begin{equation}
+P = \dot{m} \Delta h
+(\#eq:clim19) 
+\end{equation}
+où $\Delta h$ est la différence d'enthalpie entre l'entrée et la sortie du traitement d'air, qui est réduite par la présence d'un échangeur.
+
+```{r, cta4, echo=FALSE, out.width="100%", fig.cap="CTA en mode mélange. Image partiellement reprise de [dimclim.fr](https://www.dimclim.fr/conditions-de-soufflage.php)"}
+knitr::include_graphics(rep("figures/cta4.png"))
+```
+
+Un autre moyen de récupérer la chaleur de l'air extrait, et donc de réaliser des économies sur le chauffage ou le refroidissement, est de le recycler en en mélangeant une partie à l'air neuf. Les conditions du mélange peuvent se calculer avec les formules \@ref(eq:clim2) à \@ref(eq:clim5) :
+\begin{equation}
+m_s \, h_\mathit{mélange} = m_\mathit{neuf} \, h_\mathit{neuf} + m_\mathit{recyclé} \, h_\mathit{recyclé}
+(\#eq:clim20)
+\end{equation}
+
+Comme avec l'échangeur, cette méthode réduit l'écart d'enthalpie entre l'entrée et la sortie du traitement d'air, donc réduit la consommation de la CTA. Pour des raisons d'hygiène, il faut cependant s'assurer qu'un certain renouvellement d'air neuf est toujours assuré. Le mode "tout air recyclé", qui serait le plus économe en énergie, n'est pas possible à moins d'avoir un apport séparé d'air neuf.
+
+<!--
+
+### Roue dessiccante
+
+```{r, dessiccant, echo=FALSE, out.width="100%", fig.cap="Roue dessiccante"}
+knitr::include_graphics(rep("figures/dessiccant.png"))
+```
+
+## Exercices
+
+Plein d'exos air conditioning dans le cours master ou S7
+-->

@@ -242,11 +242,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Systèmes CVC</b></span></li>
-<li class="chapter" data-level="8" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html"><i class="fa fa-check"></i><b>8</b> Aperçu des systèmes</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html#des-besoins-aux-consommations"><i class="fa fa-check"></i><b>8.1</b> Des besoins aux consommations</a></li>
-<li class="chapter" data-level="8.2" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html#types-de-systèmes"><i class="fa fa-check"></i><b>8.2</b> Types de systèmes</a></li>
-</ul></li>
+<li class="chapter" data-level="8" data-path="des-besoins-aux-consommations.html"><a href="des-besoins-aux-consommations.html"><i class="fa fa-check"></i><b>8</b> Des besoins aux consommations</a></li>
 <li class="chapter" data-level="9" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html"><i class="fa fa-check"></i><b>9</b> Chauffage hydronique</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#généralités"><i class="fa fa-check"></i><b>9.1</b> Généralités</a></li>
@@ -290,7 +286,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.4" data-path="ecs.html"><a href="ecs.html#solaire"><i class="fa fa-check"></i><b>10.4</b> Dimensionnement des systèmes solaires</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="ventilation.html"><a href="ventilation.html"><i class="fa fa-check"></i><b>11</b> Ventilation</a></li>
-<li class="chapter" data-level="12" data-path="traitement-dair-et-climatisation.html"><a href="traitement-dair-et-climatisation.html"><i class="fa fa-check"></i><b>12</b> Traitement d’air et climatisation</a></li>
+<li class="chapter" data-level="12" data-path="traitement-dair-et-climatisation.html"><a href="traitement-dair-et-climatisation.html"><i class="fa fa-check"></i><b>12</b> Traitement d’air et climatisation</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="traitement-dair-et-climatisation.html"><a href="traitement-dair-et-climatisation.html#air-humide-1"><i class="fa fa-check"></i><b>12.1</b> Air humide</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="traitement-dair-et-climatisation.html"><a href="traitement-dair-et-climatisation.html#mélanges"><i class="fa fa-check"></i><b>12.1.1</b> Mélanges</a></li>
+<li class="chapter" data-level="12.1.2" data-path="traitement-dair-et-climatisation.html"><a href="traitement-dair-et-climatisation.html#transformations"><i class="fa fa-check"></i><b>12.1.2</b> Transformations</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="traitement-dair-et-climatisation.html"><a href="traitement-dair-et-climatisation.html#centrales-de-traitement-dair"><i class="fa fa-check"></i><b>12.2</b> Centrales de traitement d’air</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="traitement-dair-et-climatisation.html"><a href="traitement-dair-et-climatisation.html#evaluating-air-conditioning-needs"><i class="fa fa-check"></i><b>12.2.1</b> Evaluating air conditioning needs</a></li>
+<li class="chapter" data-level="12.2.2" data-path="traitement-dair-et-climatisation.html"><a href="traitement-dair-et-climatisation.html#conditions-de-soufflage"><i class="fa fa-check"></i><b>12.2.2</b> Conditions de soufflage</a></li>
+<li class="chapter" data-level="12.2.3" data-path="traitement-dair-et-climatisation.html"><a href="traitement-dair-et-climatisation.html#types-de-cta"><i class="fa fa-check"></i><b>12.2.3</b> Types de CTA</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="traitement-dair-et-climatisation.html"><a href="traitement-dair-et-climatisation.html#tutorials"><i class="fa fa-check"></i><b>12.3</b> Tutorials</a></li>
+</ul></li>
 <li class="part"><span><b>III Conception de bâtiments performants</b></span></li>
 <li class="chapter" data-level="13" data-path="architecture-bioclimatique.html"><a href="architecture-bioclimatique.html"><i class="fa fa-check"></i><b>13</b> Architecture bioclimatique</a></li>
 <li class="chapter" data-level="14" data-path="simulation-énergétique.html"><a href="simulation-énergétique.html"><i class="fa fa-check"></i><b>14</b> Simulation énergétique</a></li>
@@ -317,75 +327,91 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="traitement-dair-et-climatisation" class="section level1 hasAnchor" number="12">
 <h1><span class="header-section-number">Chapitre 12</span> Traitement d’air et climatisation<a href="traitement-dair-et-climatisation.html#traitement-dair-et-climatisation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Ce chapitre n’est pas encore écrit (dernière mise à jour du site : septembre 2022).</p>
-<!--
-
-beaucoup de contenu dans les diapos du CM M1
-
-HVAC systems operate transformations that change the conditions of the moist air. These transformations can be represented on the psychrometric chart (Fig. \@ref(fig:aircon2)). In order to produce air at the required supply conditions, an air handling unit may use one or several elementary transformations. Supposing that the air flow being processed has a mass (or mass flow rate) of dry air $m_{da}$:
-
-<div class="figure">
-<img src="figures/aircon2.PNG" alt="Transformations" width="40%" />
-<p class="caption">(\#fig:aircon2)Transformations</p>
+<p>beaucoup de contenu dans les diapos du CM M1</p>
+<div id="air-humide-1" class="section level2 hasAnchor" number="12.1">
+<h2><span class="header-section-number">12.1</span> Air humide<a href="traitement-dair-et-climatisation.html#air-humide-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="mélanges" class="section level3 hasAnchor" number="12.1.1">
+<h3><span class="header-section-number">12.1.1</span> Mélanges<a href="traitement-dair-et-climatisation.html#mélanges" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>récupérer le texte dans le poly M1</p>
 </div>
-
-1. Simple heating: increase of temperature at a constant absolute humidity. The heating power is directly related to the enthalpy change, which is only a difference of sensible heat because $w$ is constant (see eq. \@ref(eq:enthalpy)):
+<div id="transformations" class="section level3 hasAnchor" number="12.1.2">
+<h3><span class="header-section-number">12.1.2</span> Transformations<a href="traitement-dair-et-climatisation.html#transformations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>HVAC systems operate transformations that change the conditions of the moist air. These transformations can be represented on the psychrometric chart (Fig. <a href="traitement-dair-et-climatisation.html#fig:aircon2">12.1</a>). In order to produce air at the required supply conditions, an air handling unit may use one or several elementary transformations. Supposing that the air flow being processed has a mass (or mass flow rate) of dry air <span class="math inline">\(m_{da}\)</span>:</p>
+<div class="figure"><span style="display:block;" id="fig:aircon2"></span>
+<img src="figures/aircon2.PNG" alt="Transformations" width="40%" />
+<p class="caption">
+Figure 12.1: Transformations
+</p>
+</div>
+<ol style="list-style-type: decimal">
+<li>Simple heating: increase of temperature at a constant absolute humidity. The heating power is directly related to the enthalpy change, which is only a difference of sensible heat because <span class="math inline">\(w\)</span> is constant (see eq. <a href="#eq:enthalpy">(<strong>??</strong>)</a>):
+<span class="math display">\[\begin{align}
+P_h &amp; = m_{da} \Delta h \\
+\Delta h &amp; =  c_{da} \Delta T
+\end{align}\]</span></li>
+<li>Vapour humidification: increase of humidity <span class="math inline">\(w\)</span> at constant dry bulb temperature. The vapour flow rate is directly related to the humidity change, and the power is only a difference of latent heat:
 \begin{align}
-P_h & = m_{da} \Delta h \\
-\Delta h & =  c_{da} \Delta T
-\end{align}
-2. Vapour humidification: increase of humidity $w$ at constant dry bulb temperature. The vapour flow rate is directly related to the humidity change, and the power is only a difference of latent heat:
-\begin{align}
-Q_\mathit{vap} & = m_{da} \Delta w \\
-P_\mathit{vap} & = m_{da} \Delta h \\
-\Delta h & = l_v \Delta w
-\end{align
-3. Adiabatic humidification: increase of humidity and decrease of temperature, at constant enthalpy. The evaporation rate $Q_\mathit{vap}$ generates a decrease of temperature $\Delta T$:
-\begin{align}
-Q_\mathit{vap} & = m_{da} \Delta w \\
-\Delta h & \approx  c_{da} \Delta T + l_v \Delta w = 0 \\
- \Delta T & = -\frac{l_v}{c_\mathit{da}} \Delta w
-\end{align}
-4. "Dry" cooling: decrease of temperature at constant absolute humidity.
-\begin{align}
-P_c & = m_{da} \Delta h <0 \\
-\Delta h & =  c_{da} \Delta T < 0
-\end{align}
-5. Cooling and dehumidification: allows cooling the air below its dew point. The absolute humidity decreases as a consequence of condensation on the cold exchanger.
-\begin{align}
-P_c & = m_{da} \Delta h <0 \\
-\Delta h & =  c_{da} \Delta T + l_v \Delta w< 0
-\end{align}
-
-## Evaluating air conditioning needs
-
-In order to maintain required indoor conditions (temperature and humidity), the AC system (air handling unit or other) must supply air at specified conditions. These conditions are entirely specified by: the dry bulb temperature $T_s$ and absolute humidity $w_s$ of the supply air (or any two variables from the psychrometric chart), and the supply mass flow rate $\dot{m}_{da,s}$.
-
-The first step is the estimation of the loads of the building, i.e. all influences on the indoor heat and moisture balance besides the HVAC system.
-
-* **Sensible loads** (in W) are all heat inputs that directly impact the indoor temperature: heat loss (or gain) through the envelope, air infiltration, solar gain, occupants and equipments, lighting...
-\begin{equation}
+Q_ &amp; = m_{da} w \
+P_ &amp; = m_{da} h \
+h &amp; = l_v w
+\end{align</li>
+<li>Adiabatic humidification: increase of humidity and decrease of temperature, at constant enthalpy. The evaporation rate <span class="math inline">\(Q_\mathit{vap}\)</span> generates a decrease of temperature <span class="math inline">\(\Delta T\)</span>:
+<span class="math display">\[\begin{align}
+Q_\mathit{vap} &amp; = m_{da} \Delta w \\
+\Delta h &amp; \approx  c_{da} \Delta T + l_v \Delta w = 0 \\
+\Delta T &amp; = -\frac{l_v}{c_\mathit{da}} \Delta w
+\end{align}\]</span></li>
+<li>“Dry” cooling: decrease of temperature at constant absolute humidity. (par exemple dans un échangeur)
+<span class="math display">\[\begin{align}
+P_c &amp; = m_{da} \Delta h &lt;0 \\
+\Delta h &amp; =  c_{da} \Delta T &lt; 0
+\end{align}\]</span></li>
+<li>Cooling and dehumidification: allows cooling the air below its dew point. The absolute humidity decreases as a consequence of condensation on the cold exchanger. (batterie froide dont la surface est plus froide que la température de rosée)
+<span class="math display">\[\begin{align}
+P_c &amp; = m_{da} \Delta h &lt;0 \\
+\Delta h &amp; =  c_{da} \Delta T + l_v \Delta w&lt; 0
+\end{align}\]</span></li>
+</ol>
+</div>
+</div>
+<div id="centrales-de-traitement-dair" class="section level2 hasAnchor" number="12.2">
+<h2><span class="header-section-number">12.2</span> Centrales de traitement d’air<a href="traitement-dair-et-climatisation.html#centrales-de-traitement-dair" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>étapes du dimensionnement d’une CTA</p>
+<div id="evaluating-air-conditioning-needs" class="section level3 hasAnchor" number="12.2.1">
+<h3><span class="header-section-number">12.2.1</span> Evaluating air conditioning needs<a href="traitement-dair-et-climatisation.html#evaluating-air-conditioning-needs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In order to maintain required indoor conditions (temperature and humidity), the AC system (air handling unit or other) must supply air at specified conditions. These conditions are entirely specified by: the dry bulb temperature <span class="math inline">\(T_s\)</span> and absolute humidity <span class="math inline">\(w_s\)</span> of the supply air (or any two variables from the psychrometric chart), and the supply mass flow rate <span class="math inline">\(\dot{m}_{da,s}\)</span>.</p>
+<p>The first step is the estimation of the loads of the building, i.e. all influences on the indoor heat and moisture balance besides the HVAC system.</p>
+<ul>
+<li><strong>Sensible loads</strong> (in W) are all heat inputs that directly impact the indoor temperature: heat loss (or gain) through the envelope, air infiltration, solar gain, occupants and equipments, lighting…
+<span class="math display">\[\begin{equation}
 \mathrm{SL} = H\left(T_e-T_i\right) + \dot{m}_\mathit{inf} c_{da} \left(T_e-T_i\right) + \Phi_\mathit{sol} + \Phi_\mathit{in} + ...
-\end{equation}
-* **Latent loads** (in W) are the energy content (latent heat) of the humidity inputs: air infiltration, indoor vapour production...
-\begin{equation}
+\end{equation}\]</span></li>
+<li><strong>Latent loads</strong> (in W) are the energy content (latent heat) of the humidity inputs: air infiltration, indoor vapour production…
+<span class="math display">\[\begin{equation}
 \mathrm{LL} = l_v \left(  \dot{m}_\mathit{inf} \left(w_e-w_i\right) + Q_\mathit{vap,in} + ... \right)
-\end{equation}
+\end{equation}\]</span></li>
+</ul>
+<p>The supply conditions should be set so that the temperature of the air supply compensates the sensible loads, and the moisture content compensates the latent loads:
+<span class="math display">\[\begin{align}
+\dot{m}_{da,s} c_{da} (T_s - T_i) &amp; + \mathrm{SL} = 0 \\
+\dot{m}_{da,s} l_v (w_s - w_i) &amp; + \mathrm{LL} = 0
+\end{align}\]</span></p>
+<p>This is a system of two equations and three unknown variables <span class="math inline">\(\left\{ \dot{m}_{da,s}, T_s, w_s \right\}\)</span>. It can be solved by choosing the value of one of them: for instance, an imposed supply flow rate <span class="math inline">\(\dot{m}_{da,s}\)</span> or an imposed supply temperature.</p>
+</div>
+<div id="conditions-de-soufflage" class="section level3 hasAnchor" number="12.2.2">
+<h3><span class="header-section-number">12.2.2</span> Conditions de soufflage<a href="traitement-dair-et-climatisation.html#conditions-de-soufflage" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>droite de soufflage etc.</p>
+</div>
+<div id="types-de-cta" class="section level3 hasAnchor" number="12.2.3">
+<h3><span class="header-section-number">12.2.3</span> Types de CTA<a href="traitement-dair-et-climatisation.html#types-de-cta" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>simple et doubles flux, avec échangeur</p>
+</div>
+</div>
+<div id="tutorials" class="section level2 hasAnchor" number="12.3">
+<h2><span class="header-section-number">12.3</span> Tutorials<a href="traitement-dair-et-climatisation.html#tutorials" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Plein d’exos air conditioning dans le cours master ou S7</p>
 
-The supply conditions should be set so that the temperature of the air supply compensates the sensible loads, and the moisture content compensates the latent loads:
-\begin{align}
-\dot{m}_{da,s} c_{da} (T_s - T_i) & + \mathrm{SL} = 0 \\
-\dot{m}_{da,s} l_v (w_s - w_i) & + \mathrm{LL} = 0
-\end{align}
-
-This is a system of two equations and three unknown variables $\left\{ \dot{m}_{da,s}, T_s, w_s \right\}$. It can be solved by choosing the value of one of them: for instance, an imposed supply flow rate $\dot{m}_{da,s}$ or an imposed supply temperature.
-
-## Tutorials
-
-Plein d'exos air conditioning dans le cours master ou S7
-
--->
-
+</div>
 </div>
 
 

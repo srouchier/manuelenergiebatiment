@@ -4,6 +4,12 @@ L'humidité dans les bâtiments peut provenir des activités des occupants (cuis
 
 ## Air humide
 
+Résumé en vidéo :
+
+```{r video6, echo=FALSE}
+shiny::includeHTML("figures/video6.html")
+```
+
 Pour comprendre les problématiques d'humidité dans les bâtiments, on commence par une description de l'air humide. Celui-ci est considéré comme un mélange de deux gaz : l'air sec et la vapeur d'eau. Ses propriétés sont affichées sur le diagramme de l'air humide, ou diagramme psychrométrique.
 
 ```{r dah, echo=FALSE, out.width="100%", fig.cap="Diagramme de l'air humide"}
@@ -13,7 +19,7 @@ knitr::include_graphics(rep("figures/dah.png"))
 Un état donné de l'air, en termes de température et d'humidité, est représenté par un point sur le diagramme. Celui-ci permet alors de lire toutes ses propriétés, au nombre de 7 :
 
 * La **température d'air sec** $T$, ou plus simplement la température tout court.
-* L'**humidité relative HR est le rapport entre la pression partielle de vapeur dans l'air $p_\mathit{vap}$, et la pression de vapeur saturante $p_\mathit{sat}$. Cette dernière est la pression maximale qui pourrait être atteinte par la vapeur à une température donnée.
+* L'**humidité relative** HR est le rapport entre la pression partielle de vapeur dans l'air $p_\mathit{vap}$, et la pression de vapeur saturante $p_\mathit{sat}$. Cette dernière est la pression maximale qui pourrait être atteinte par la vapeur à une température donnée.
 \begin{align}
 \mathrm{RH} & = \frac{p_\mathit{vap}}{p_\mathit{sat}} (\#eq:humidite1) \\
 p_\mathit{sat}(T) & = \mathrm{exp} \left(23.5771-\frac{4042.9}{T+273.15-37.58}\right)
@@ -33,7 +39,7 @@ h = c_\mathit{as}\, T + w \, (l_v+c_\mathit{vap}\, T)
 où $c_\mathit{as}$ est la chaleur spécifique de l'air sec, $c_\mathit{vap}$ celle de la vapeur d'eau, et $l_v$ sa chaleur latente de vaporisation (valeurs données plus bas).
 * Le **volume spécifique** $v_s$ est le volume occupé par le mélange, par unité de masse d'air sec, en m$^3$/kg$_{as}$. C'est l'inverse de la masse volumique de l'air sec $\rho_\mathit{as}$.
 \begin{equation}
-\rho_\mathit{da} = \frac{1}{v_s} = \frac{p_\mathit{atm}}{\left(w \, r_\mathit{vap}+r_\mathit{as}\right) T}
+\rho_\mathit{as} = \frac{1}{v_s} = \frac{p_\mathit{atm}}{\left(w \, r_\mathit{vap}+r_\mathit{as}\right) T}
 (\#eq:humidite5)
 \end{equation}
 * La **température d'air humide** $T_{ah}$ est la température qu'aurait l'air s'il était saturé en humidité à enthalpie constante.
@@ -138,7 +144,7 @@ M_{H_2O}=\rho_a \cdot V \cdot w
 
 On peut exprimer l'échange d'humidité entre l'air et les matériaux par les formules de la section précédente, ou par des modèles plus simples. L'échange d'humidité entre deux pièces est plus simple : un débit d'air $\dot{m}$ entre deux pièces dont les teneurs en eau sont $w_1$ et $w_2$ transporte une quantité d'eau $G=\dot{m}(w_1-w_2)$.
 
-## Exercice
+## Exercices
 
 ### Exercice 1 : condensation
 

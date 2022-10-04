@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapitre 11 Climatisation | Manuel de performance énergétique des bâtiments</title>
+  <meta name="description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapitre 11 Climatisation | Manuel de performance énergétique des bâtiments" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  <meta name="github-repo" content="srouchier/beh" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapitre 11 Climatisation | Manuel de performance énergétique des bâtiments" />
+  
+  <meta name="twitter:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
+  
+
+<meta name="author" content="Simon Rouchier" />
+
+
+<meta name="date" content="2022-09-28" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ecs.html"/>
+<link rel="next" href="architecture-bioclimatique.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Manuel énergie bâtiments</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Préface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-propos"><i class="fa fa-check"></i>A propos</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#quelques-chiffres"><i class="fa fa-check"></i><b>1.1</b> Quelques chiffres</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#réglementation"><i class="fa fa-check"></i><b>1.2</b> Réglementation</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#re2020"><i class="fa fa-check"></i><b>1.2.1</b> Bâtiments neufs : la RE 2020</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#bâtiments-existants"><i class="fa fa-check"></i><b>1.2.2</b> Bâtiments existants</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#plan-du-livre"><i class="fa fa-check"></i><b>1.3</b> Plan du livre</a></li>
+</ul></li>
+<li class="part"><span><b>I Transferts de chaleur et de masse</b></span></li>
+<li class="chapter" data-level="2" data-path="apercu.html"><a href="apercu.html"><i class="fa fa-check"></i><b>2</b> Aperçu</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="apercu.html"><a href="apercu.html#apercu1"><i class="fa fa-check"></i><b>2.1</b> Bilan thermique global</a></li>
+<li class="chapter" data-level="2.2" data-path="apercu.html"><a href="apercu.html#apercu2"><i class="fa fa-check"></i><b>2.2</b> Calcul réglementaire</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="apercu.html"><a href="apercu.html#hypothèses"><i class="fa fa-check"></i><b>2.2.1</b> Hypothèses</a></li>
+<li class="chapter" data-level="2.2.2" data-path="apercu.html"><a href="apercu.html#besoins-de-chauffage-et-refroidissement"><i class="fa fa-check"></i><b>2.2.2</b> Besoins de chauffage et refroidissement</a></li>
+<li class="chapter" data-level="2.2.3" data-path="apercu.html"><a href="apercu.html#les-règles-th-bat"><i class="fa fa-check"></i><b>2.2.3</b> Les règles Th-bat</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="apercu.html"><a href="apercu.html#apercu3"><i class="fa fa-check"></i><b>2.3</b> Détail des transferts thermiques</a></li>
+<li class="chapter" data-level="2.4" data-path="apercu.html"><a href="apercu.html#exercice"><i class="fa fa-check"></i><b>2.4</b> Exercice</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="steady.html"><a href="steady.html"><i class="fa fa-check"></i><b>3</b> Conduction et convection stationnaire</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="steady.html"><a href="steady.html#conduction"><i class="fa fa-check"></i><b>3.1</b> Conduction dans un mur</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="steady.html"><a href="steady.html#conduction-1d-et-analogie-électrique"><i class="fa fa-check"></i><b>3.1.1</b> Conduction 1D et analogie électrique</a></li>
+<li class="chapter" data-level="3.1.2" data-path="steady.html"><a href="steady.html#assemblage-de-résistances"><i class="fa fa-check"></i><b>3.1.2</b> Assemblage de résistances</a></li>
+<li class="chapter" data-level="3.1.3" data-path="steady.html"><a href="steady.html#surfacique"><i class="fa fa-check"></i><b>3.1.3</b> Transferts surfaciques</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="steady.html"><a href="steady.html#ponts-thermiques"><i class="fa fa-check"></i><b>3.2</b> Ponts thermiques</a></li>
+<li class="chapter" data-level="3.3" data-path="steady.html"><a href="steady.html#echanges-convectifs"><i class="fa fa-check"></i><b>3.3</b> Echanges convectifs</a></li>
+<li class="chapter" data-level="3.4" data-path="steady.html"><a href="steady.html#bilan-des-déperditions"><i class="fa fa-check"></i><b>3.4</b> Bilan des déperditions</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="steady.html"><a href="steady.html#locaux-non-chauffés"><i class="fa fa-check"></i><b>3.4.1</b> Locaux non chauffés</a></li>
+<li class="chapter" data-level="3.4.2" data-path="steady.html"><a href="steady.html#bilan-dune-zone"><i class="fa fa-check"></i><b>3.4.2</b> Bilan d’une zone</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="steady.html"><a href="steady.html#exercices"><i class="fa fa-check"></i><b>3.5</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="steady.html"><a href="steady.html#ex-1-déperditions-dune-pièce"><i class="fa fa-check"></i><b>3.5.1</b> Ex 1 : déperditions d’une pièce</a></li>
+<li class="chapter" data-level="3.5.2" data-path="steady.html"><a href="steady.html#ex-2-bilan-thermique-de-deux-pièces"><i class="fa fa-check"></i><b>3.5.2</b> Ex 2: bilan thermique de deux pièces</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="rayonnement.html"><a href="rayonnement.html"><i class="fa fa-check"></i><b>4</b> Rayonnement</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="rayonnement.html"><a href="rayonnement.html#principes-de-rayonnement"><i class="fa fa-check"></i><b>4.1</b> Principes de rayonnement</a></li>
+<li class="chapter" data-level="4.2" data-path="rayonnement.html"><a href="rayonnement.html#apports-solaires"><i class="fa fa-check"></i><b>4.2</b> Apports solaires</a></li>
+<li class="chapter" data-level="4.3" data-path="rayonnement.html"><a href="rayonnement.html#echanges-radiatifs-glo"><i class="fa fa-check"></i><b>4.3</b> Echanges radiatifs GLO</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="rayonnement.html"><a href="rayonnement.html#définitions"><i class="fa fa-check"></i><b>4.3.1</b> Définitions</a></li>
+<li class="chapter" data-level="4.3.2" data-path="rayonnement.html"><a href="rayonnement.html#résolution-des-bilans-radiatifs"><i class="fa fa-check"></i><b>4.3.2</b> Résolution des bilans radiatifs</a></li>
+<li class="chapter" data-level="4.3.3" data-path="rayonnement.html"><a href="rayonnement.html#facteurs-de-forme"><i class="fa fa-check"></i><b>4.3.3</b> Facteurs de forme</a></li>
+<li class="chapter" data-level="4.3.4" data-path="rayonnement.html"><a href="rayonnement.html#température-radiative-et-opérative"><i class="fa fa-check"></i><b>4.3.4</b> Température radiative et opérative</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="rayonnement.html"><a href="rayonnement.html#exercices-1"><i class="fa fa-check"></i><b>4.4</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="rayonnement.html"><a href="rayonnement.html#exercice-1-serre"><i class="fa fa-check"></i><b>4.4.1</b> Exercice 1 : serre</a></li>
+<li class="chapter" data-level="4.4.2" data-path="rayonnement.html"><a href="rayonnement.html#tutorial-2-radiateur"><i class="fa fa-check"></i><b>4.4.2</b> Tutorial 2: radiateur</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="transient.html"><a href="transient.html"><i class="fa fa-check"></i><b>5</b> Régime transitoire</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="transient.html"><a href="transient.html#conduction-dans-un-mur"><i class="fa fa-check"></i><b>5.1</b> Conduction dans un mur</a></li>
+<li class="chapter" data-level="5.2" data-path="transient.html"><a href="transient.html#modèles-rc"><i class="fa fa-check"></i><b>5.2</b> Modèles RC</a></li>
+<li class="chapter" data-level="5.3" data-path="transient.html"><a href="transient.html#exercices-inertie-thermique"><i class="fa fa-check"></i><b>5.3</b> Exercices : inertie thermique</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="transient.html"><a href="transient.html#exercice-1-bâtiment-lourd-ou-léger"><i class="fa fa-check"></i><b>5.3.1</b> Exercice 1 : bâtiment lourd ou léger</a></li>
+<li class="chapter" data-level="5.3.2" data-path="transient.html"><a href="transient.html#exercice-2-isolation-intérieure-ou-extérieure"><i class="fa fa-check"></i><b>5.3.2</b> Exercice 2 : isolation intérieure ou extérieure</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="air.html"><a href="air.html"><i class="fa fa-check"></i><b>6</b> Aéraulique</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="air.html"><a href="air.html#méthode-nodale"><i class="fa fa-check"></i><b>6.1</b> Méthode nodale</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="air.html"><a href="air.html#rappels-de-mécanique-des-fluides"><i class="fa fa-check"></i><b>6.1.1</b> Rappels de mécanique des fluides</a></li>
+<li class="chapter" data-level="6.1.2" data-path="air.html"><a href="air.html#débit-dans-les-ouvertures"><i class="fa fa-check"></i><b>6.1.2</b> Débit dans les ouvertures</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="air.html"><a href="air.html#ventilation-naturelle"><i class="fa fa-check"></i><b>6.2</b> Ventilation naturelle</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="air.html"><a href="air.html#vent"><i class="fa fa-check"></i><b>6.2.1</b> Vent</a></li>
+<li class="chapter" data-level="6.2.2" data-path="air.html"><a href="air.html#tirage-thermique"><i class="fa fa-check"></i><b>6.2.2</b> Tirage thermique</a></li>
+<li class="chapter" data-level="6.2.3" data-path="air.html"><a href="air.html#bilan"><i class="fa fa-check"></i><b>6.2.3</b> Bilan</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="air.html"><a href="air.html#exercices-2"><i class="fa fa-check"></i><b>6.3</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="air.html"><a href="air.html#exercice-1-vent-et-tirage-thermique"><i class="fa fa-check"></i><b>6.3.1</b> Exercice 1 : vent et tirage thermique</a></li>
+<li class="chapter" data-level="6.3.2" data-path="air.html"><a href="air.html#exercice-2-cheminée-solaire"><i class="fa fa-check"></i><b>6.3.2</b> Exercice 2 : cheminée solaire</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="humidite.html"><a href="humidite.html"><i class="fa fa-check"></i><b>7</b> Humidité</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="humidite.html"><a href="humidite.html#air-humide"><i class="fa fa-check"></i><b>7.1</b> Air humide</a></li>
+<li class="chapter" data-level="7.2" data-path="humidite.html"><a href="humidite.html#humidité-dans-les-matériaux"><i class="fa fa-check"></i><b>7.2</b> Humidité dans les matériaux</a></li>
+<li class="chapter" data-level="7.3" data-path="humidite.html"><a href="humidite.html#bilans-dhumidité"><i class="fa fa-check"></i><b>7.3</b> Bilans d’humidité</a></li>
+<li class="chapter" data-level="7.4" data-path="humidite.html"><a href="humidite.html#exercices-3"><i class="fa fa-check"></i><b>7.4</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="humidite.html"><a href="humidite.html#exercice-1-condensation"><i class="fa fa-check"></i><b>7.4.1</b> Exercice 1 : condensation</a></li>
+<li class="chapter" data-level="7.4.2" data-path="humidite.html"><a href="humidite.html#exercice-2-point-de-rosée"><i class="fa fa-check"></i><b>7.4.2</b> Exercice 2 : point de rosée</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Systèmes CVC</b></span></li>
+<li class="chapter" data-level="8" data-path="des-besoins-aux-consommations.html"><a href="des-besoins-aux-consommations.html"><i class="fa fa-check"></i><b>8</b> Des besoins aux consommations</a></li>
+<li class="chapter" data-level="9" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html"><i class="fa fa-check"></i><b>9</b> Chauffage hydronique</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#généralités"><i class="fa fa-check"></i><b>9.1</b> Généralités</a></li>
+<li class="chapter" data-level="9.2" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#emission-de-chaleur"><i class="fa fa-check"></i><b>9.2</b> Emission de chaleur</a></li>
+<li class="chapter" data-level="9.3" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#distribution"><i class="fa fa-check"></i><b>9.3</b> Distribution</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#réglage-de-la-température-et-du-débit-dans-les-émetteurs"><i class="fa fa-check"></i><b>9.3.1</b> Réglage de la température et du débit dans les émetteurs</a></li>
+<li class="chapter" data-level="9.3.2" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#circuits-primaires-et-secondaires"><i class="fa fa-check"></i><b>9.3.2</b> Circuits primaires et secondaires</a></li>
+<li class="chapter" data-level="9.3.3" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#equilibrage-hydraulique"><i class="fa fa-check"></i><b>9.3.3</b> Equilibrage hydraulique</a></li>
+<li class="chapter" data-level="9.3.4" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#circulateurs"><i class="fa fa-check"></i><b>9.3.4</b> Circulateurs</a></li>
+<li class="chapter" data-level="9.3.5" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#pertes-thermiques"><i class="fa fa-check"></i><b>9.3.5</b> Pertes thermiques</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#génération"><i class="fa fa-check"></i><b>9.4</b> Génération</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#chaudières"><i class="fa fa-check"></i><b>9.4.1</b> Chaudières</a></li>
+<li class="chapter" data-level="9.4.2" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#pacchaud"><i class="fa fa-check"></i><b>9.4.2</b> Pompes à chaleur</a></li>
+<li class="chapter" data-level="9.4.3" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#autres-générateurs-de-chaleur"><i class="fa fa-check"></i><b>9.4.3</b> Autres générateurs de chaleur</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="ecs.html"><a href="ecs.html"><i class="fa fa-check"></i><b>10</b> Eau chaude sanitaire</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="ecs.html"><a href="ecs.html#calcul-des-besoins-et-consommations"><i class="fa fa-check"></i><b>10.1</b> Calcul des besoins et consommations</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="ecs.html"><a href="ecs.html#calcul-des-besoins-decs"><i class="fa fa-check"></i><b>10.1.1</b> Calcul des besoins d’ECS</a></li>
+<li class="chapter" data-level="10.1.2" data-path="ecs.html"><a href="ecs.html#calcul-des-pertes-de-distribution-stockage-et-génération"><i class="fa fa-check"></i><b>10.1.2</b> Calcul des pertes de distribution, stockage et génération</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="ecs.html"><a href="ecs.html#modes-de-production"><i class="fa fa-check"></i><b>10.2</b> Modes de production</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="ecs.html"><a href="ecs.html#instantané"><i class="fa fa-check"></i><b>10.2.1</b> Instantané</a></li>
+<li class="chapter" data-level="10.2.2" data-path="ecs.html"><a href="ecs.html#accumulation"><i class="fa fa-check"></i><b>10.2.2</b> Accumulation</a></li>
+<li class="chapter" data-level="10.2.3" data-path="ecs.html"><a href="ecs.html#semi-instantané-ou-semi-accumulation"><i class="fa fa-check"></i><b>10.2.3</b> Semi-instantané ou semi-accumulation</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="ecs.html"><a href="ecs.html#systèmes-de-production-decs"><i class="fa fa-check"></i><b>10.3</b> Systèmes de production d’ECS</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="ecs.html"><a href="ecs.html#cumulus-électrique"><i class="fa fa-check"></i><b>10.3.1</b> Cumulus électrique</a></li>
+<li class="chapter" data-level="10.3.2" data-path="ecs.html"><a href="ecs.html#chaudière-double-service"><i class="fa fa-check"></i><b>10.3.2</b> Chaudière double service</a></li>
+<li class="chapter" data-level="10.3.3" data-path="ecs.html"><a href="ecs.html#chauffe-eau-solaire-individuel"><i class="fa fa-check"></i><b>10.3.3</b> Chauffe-eau solaire individuel</a></li>
+<li class="chapter" data-level="10.3.4" data-path="ecs.html"><a href="ecs.html#système-solaire-combiné"><i class="fa fa-check"></i><b>10.3.4</b> Système solaire combiné</a></li>
+<li class="chapter" data-level="10.3.5" data-path="ecs.html"><a href="ecs.html#pompe-à-chaleur"><i class="fa fa-check"></i><b>10.3.5</b> Pompe à chaleur</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="ecs.html"><a href="ecs.html#solaire"><i class="fa fa-check"></i><b>10.4</b> Dimensionnement des systèmes solaires</a></li>
+<li class="chapter" data-level="10.5" data-path="ecs.html"><a href="ecs.html#exercice-1"><i class="fa fa-check"></i><b>10.5</b> Exercice</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="climatisation.html"><a href="climatisation.html"><i class="fa fa-check"></i><b>11</b> Climatisation</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="climatisation.html"><a href="climatisation.html#climairhumide"><i class="fa fa-check"></i><b>11.1</b> Traitement d’air</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="climatisation.html"><a href="climatisation.html#mélanges"><i class="fa fa-check"></i><b>11.1.1</b> Mélanges</a></li>
+<li class="chapter" data-level="11.1.2" data-path="climatisation.html"><a href="climatisation.html#transformations"><i class="fa fa-check"></i><b>11.1.2</b> Transformations</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="climatisation.html"><a href="climatisation.html#climatiseurs"><i class="fa fa-check"></i><b>11.2</b> Refroidissement</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="climatisation.html"><a href="climatisation.html#besoins-de-froid"><i class="fa fa-check"></i><b>11.2.1</b> Besoins de froid</a></li>
+<li class="chapter" data-level="11.2.2" data-path="climatisation.html"><a href="climatisation.html#appareils-de-refroidissement"><i class="fa fa-check"></i><b>11.2.2</b> Appareils de refroidissement</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="climatisation.html"><a href="climatisation.html#cta"><i class="fa fa-check"></i><b>11.3</b> Centrales de traitement d’air</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="climatisation.html"><a href="climatisation.html#besoins-de-traitement-dair"><i class="fa fa-check"></i><b>11.3.1</b> Besoins de traitement d’air</a></li>
+<li class="chapter" data-level="11.3.2" data-path="climatisation.html"><a href="climatisation.html#conditions-de-soufflage"><i class="fa fa-check"></i><b>11.3.2</b> Conditions de soufflage</a></li>
+<li class="chapter" data-level="11.3.3" data-path="climatisation.html"><a href="climatisation.html#types-de-cta"><i class="fa fa-check"></i><b>11.3.3</b> Types de CTA</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="climatisation.html"><a href="climatisation.html#exercices-4"><i class="fa fa-check"></i><b>11.4</b> Exercices</a></li>
+</ul></li>
+<li class="part"><span><b>III Conception de bâtiments performants</b></span></li>
+<li class="chapter" data-level="12" data-path="architecture-bioclimatique.html"><a href="architecture-bioclimatique.html"><i class="fa fa-check"></i><b>12</b> Architecture bioclimatique</a></li>
+<li class="chapter" data-level="13" data-path="simulation-énergétique.html"><a href="simulation-énergétique.html"><i class="fa fa-check"></i><b>13</b> Simulation énergétique</a></li>
+<li class="chapter" data-level="14" data-path="méthodes-numériques.html"><a href="méthodes-numériques.html"><i class="fa fa-check"></i><b>14</b> Méthodes numériques</a></li>
+<li class="divider"></li>
+<li><a href="https://srouchier.github.io/" target="blank">Un livre de Simon Rouchier</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Manuel de performance énergétique des bâtiments</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="climatisation" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Chapitre 11</span> Climatisation<a href="climatisation.html#climatisation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!-- beaucoup de contenu dans les diapos du CM M1 
+vidéos ? -->
+<p>La climatisation ne désigne pas seulement le refroidissement, mais de manière plus générale la régulation de l’ambiance intérieure : température, humidité, qualité de l’air. Ce chapitre couvre l’utilisation du vecteur air pour le chauffage et le refroidissement, tout en gardant le contrôle de l’humidité.</p>
+<ul>
+<li>La partie <a href="climatisation.html#climairhumide">11.1</a> fait suite au chapitre <a href="humidite.html#humidite">7</a> pour décrire les transformations de l’air humide qui seront opérées par les appareils de climatisation.</li>
+<li>La partie <a href="climatisation.html#climatiseurs">11.2</a> décrit les appareils de climatisation simples servant uniquement au refroidissement, sans régulation de l’humidité.</li>
+<li>La partie <a href="climatisation.html#cta">11.3</a> décrit les centrales de traitement d’air qui permettent une plus grande régulation des ambiances : température, humidité, qualité de l’air.</li>
+</ul>
+<div id="climairhumide" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Traitement d’air<a href="climatisation.html#climairhumide" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="mélanges" class="section level3 hasAnchor" number="11.1.1">
+<h3><span class="header-section-number">11.1.1</span> Mélanges<a href="climatisation.html#mélanges" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<!DOCTYPE html>
+<html>
+<body>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/w5DBL-UA6zs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+</html>
+<p>Pour les calculs de la partie du cours sur les centrales de traitement d’air, on aura besoin de décrire le mélange de deux volumes d’air humide dont les propriétés (température, humidité, enthalpie, masse volumique…) sont différentes.</p>
+<div class="figure"><span style="display:block;" id="fig:melanges1"></span>
+<img src="figures/melange1.PNG" alt="Mélange de deux masses d'air humide" width="30%" />
+<p class="caption">
+Figure 11.1: Mélange de deux masses d’air humide
+</p>
+</div>
+<p>On suppose deux volumes d’air <span class="math inline">\(V_1\)</span> et <span class="math inline">\(V_2\)</span> qu’on mélange pour produire un volume <span class="math inline">\(V_3\)</span>. Tout le raisonnement ci-dessous est valable aussi bien pour des volumes donnés (m<span class="math inline">\(^3\)</span>) ou pour des débits (m<span class="math inline">\(^3\)</span>/h par exemple).</p>
+<p>La masse d’air sec contenue dans chaque volume est :
+<span class="math display" id="eq:clim1">\[\begin{equation}
+m_{as}=\rho_{as} V = \frac{1}{v_s} V
+\tag{11.1}
+\end{equation}\]</span>
+où <span class="math inline">\(\rho_{as}\)</span> est la masse volumique d’air sec et <span class="math inline">\(\rho_{as}\)</span> est le volume spécifique, son inverse (voir l’équation <a href="#eq:humidite5">(<strong>??</strong>)</a>).</p>
+<p>Ensuite,les propriétés du mélange s’obtiennent avec les lois de conservation.</p>
+<ul>
+<li>Conservation de la masse d’air sec :
+<span class="math display" id="eq:clim2">\[\begin{equation}
+m_{as3} = m_{as1} + m_{as2}
+\tag{11.2}
+\end{equation}\]</span></li>
+<li>Conservation de la masse d’eau :
+<span class="math display" id="eq:clim3">\[\begin{equation}
+m_{as3} \, w_3 = m_{as1} \, w_1 + m_{as2} \, w_2
+\tag{11.3}
+\end{equation}\]</span></li>
+<li>Conservation de l’énergie :
+<span class="math display" id="eq:clim4">\[\begin{equation}
+m_{as3} \, h_3 = m_{as1} \, h_1 + m_{as2} \, h_2
+\tag{11.4}
+\end{equation}\]</span></li>
+</ul>
+<p>Ces équations montrent pourquoi les grandeurs comme l’enthalpie et la teneur en eau sont définis par unité de masse d’air sec : c’est sur cette base qu’on peut calculer les propriétés d’un mélange.</p>
+<p>Entre parenthèses, on peut déduire de l’équation <a href="climatisation.html#eq:clim4">(11.4)</a> et de la définition de l’enthalpie <a href="#eq:humidite4">(<strong>??</strong>)</a>, un bilan équivalent pour la température du mélange :
+<span class="math display" id="eq:clim5">\[\begin{equation}
+m_{as3} \, T_3 = m_{as1} \, T_1 + m_{as2} \, T_2
+\tag{11.5}
+\end{equation}\]</span></p>
+<div class="figure"><span style="display:block;" id="fig:melanges2"></span>
+<img src="figures/melange2.PNG" alt="Mélange d'air sur le diagramme d'air humide" width="60%" />
+<p class="caption">
+Figure 11.2: Mélange d’air sur le diagramme d’air humide
+</p>
+</div>
+<p>Sur le diagramme de l’air humide, le point qui désigne le mélange entre deux masses d’air est situé sur la droite qui relie leurs points. Sa position sur la droite est fonction de la quantité de chacune dans le mélange.</p>
+<p><strong>Attention</strong> : les autres grandeurs visibles sur le diagramme (humidité relative, température d’air humide et de rosée) ne suivent pas une loi de mélange simple comme les bilans ci-dessus. Pour obtenir ces caractéristiques du mélange, il faut les trouver par lecture ou par calcul.</p>
+</div>
+<div id="transformations" class="section level3 hasAnchor" number="11.1.2">
+<h3><span class="header-section-number">11.1.2</span> Transformations<a href="climatisation.html#transformations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Les systèmes de climatisation opèrent des transformations sur l’air humide: chauffage, humidification, refroidissement… Ces transformations peuvent être représentées par des déplacements sur le diagramme de l’air humide (Fig. <a href="climatisation.html#fig:aircon2">11.3</a>). Afin de produire de l’air aux conditions voulues, une centrale de traitement d’air peut opérer une ou plusieurs de ces transformations à la suite.</p>
+<div class="figure"><span style="display:block;" id="fig:aircon2"></span>
+<img src="figures/aircon2.PNG" alt="Transformations" width="40%" />
+<p class="caption">
+Figure 11.3: Transformations
+</p>
+</div>
+<p>On suppose une quantité (ou un débit) d’air <span class="math inline">\(m_{as}\)</span> initialement dans un état 1 et qu’on transforme jusqu’à un état 2. Dans le cas général, la transformation nécessite une puissance <span class="math inline">\(P\)</span> égale à :
+<span class="math display" id="eq:clim6">\[\begin{align}
+P &amp; = m_{as} \left( h_2 - h_1 \right)  \\
+&amp; = m_{as} \left[ c_\mathit{as}\, (T_2-T_1) + l_v\, (w_2-w_1) \right] \tag{11.6}
+\end{align}\]</span></p>
+<p>La figure <a href="#aircon2"><strong>??</strong></a> montre le trajet sur le diagramme de 5 exemples de transformations élémentaires. La puissance nécessaire à chaque transformation se déduit de l’équation <a href="climatisation.html#eq:clim6">(11.6)</a>.</p>
+<ol style="list-style-type: decimal">
+<li>Chauffage simple : augmentation de température à humidité absolue constante. La puissance de chauffage est directement proportionnelle à l’écart de température.
+<span class="math display" id="eq:clim7">\[\begin{align}
+P &amp; = m_{as} \, \Delta h \\
+\Delta h &amp; = c_{as} \, \Delta T \tag{11.7}
+\end{align}\]</span></li>
+<li>Humidification simple : à température constante, augmentation de l’humidité <span class="math inline">\(w\)</span> liée à un apport de vapeur <span class="math inline">\(Q_\mathit{vap}\)</span>.
+<span class="math display" id="eq:clim9" id="eq:clim8">\[\begin{align}
+Q_\mathit{vap} &amp; = m_{as} \Delta w \tag{11.8} \\
+P &amp; = m_{as} \, \Delta h \\
+\Delta h &amp; = l_v \, \Delta w \tag{11.9}
+\end{align}\]</span></li>
+<li>Humidification adiabatique : augmentation d’humidité et baisse de température, à enthalpie constante. Une quantité d’eau évaporée <span class="math inline">\(Q_\mathit{vap}\)</span> entraîne une baisse de température <span class="math inline">\(\Delta T\)</span>:
+<span class="math display" id="eq:clim12" id="eq:clim11" id="eq:clim10">\[\begin{align}
+Q_\mathit{vap} &amp; = m_{as} \Delta w \tag{11.10} \\
+\Delta h &amp; \approx  c_{as} \Delta T + l_v \Delta w = 0 \tag{11.11}\\
+\Delta T &amp; = -\frac{l_v}{c_\mathit{as}} \Delta w \tag{11.12}
+\end{align}\]</span></li>
+<li>Refroidissement “sec” : baisse de température à humidité constante, par exemple dans un échangeur.
+<span class="math display" id="eq:clim13">\[\begin{align}
+P &amp; = m_{as} \, \Delta h &amp; &lt; 0\\
+\Delta h &amp; = c_{as} \, \Delta T &amp; &lt; 0 \tag{11.13}
+\end{align}\]</span></li>
+<li>Refroidissement et déshumidification : l’humidité absolue diminue en raison de la condensation à la surface d’un échangeur plus froid que la température de rosée de l’air.
+<span class="math display" id="eq:clim14">\[\begin{align}
+P &amp; = m_{as} \Delta h &amp; &lt; 0 \\
+\Delta h &amp; =  c_{as} \Delta T + l_v \Delta w &amp; &lt; 0 \tag{11.14}
+\end{align}\]</span></li>
+</ol>
+</div>
+</div>
+<div id="climatiseurs" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Refroidissement<a href="climatisation.html#climatiseurs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Avec le réchauffement climatique, l’usage de la climatisation augmente rapidement même dans les pays comme la France qui en utilisaient alors assez peu. Les fluides frigorigènes les plus nocifs pour la couche d’ozone ont été interdits, mais l’usage excessif de la climatisation a d’autres inconvénients qui vont perdurer :</p>
+<ul>
+<li>Hausse de la consommation globale d’électricité, et donc des émissions de CO<span class="math inline">\(_2\)</span> liées à sa production;</li>
+<li>Hausse des pics de demande d’électricité, avec risques de coupure du réseau;</li>
+<li>Augmentation de l’effet d’îlot de chaleur urbain avec les rejets de chaleur vers l’extérieur.</li>
+</ul>
+<p>S’il devient à l’avenir de plus en plus difficile de se passer de climatisation, on peut au moins donner ici des éléments pour réduire au maximum l’impact de ces systèmes sur l’environnement.</p>
+<div id="besoins-de-froid" class="section level3 hasAnchor" number="11.2.1">
+<h3><span class="header-section-number">11.2.1</span> Besoins de froid<a href="climatisation.html#besoins-de-froid" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En premier lieu, la réduction de la consommation énergétique des systèmes de climatisation passe par la réduction du <strong>besoin</strong> de refroidissement. Le calcul de ce besoin est similaire au besoin de chauffage développé au chapitre <a href="apercu.html#apercu">2</a>. Si on repart du bilan thermique stationnaire de l’équation <a href="#eq:thermique2">(<strong>??</strong>)</a>
+<span class="math display" id="eq:froid1">\[\begin{equation}
+\Phi_\mathit{CVC} = D (T_i-T_e) - \Phi_\mathit{apports}
+\tag{11.15}
+\end{equation}\]</span>
+On s’aperçoit qu’en été, les deux termes de cette équation sont négatifs car <span class="math inline">\(T_i&lt;T_e\)</span> et <span class="math inline">\(\Phi_\mathit{apports}&gt;0\)</span>. La puissance <span class="math inline">\(\Phi_\mathit{CVC}\)</span> à fournir pour maintenir la température <span class="math inline">\(T_i\)</span> dans le bâtiment est négative, de valeur (absolue) d’autant plus élevée que :</p>
+<ul>
+<li>le coefficient de déperdition <span class="math inline">\(D\)</span> est élevé,</li>
+<li>l’écart <span class="math inline">\(T_e-T_i\)</span> est important,</li>
+<li>les apports internes de chaleur et ceux du soleil sont forts.</li>
+</ul>
+<p>Comme on l’a fait avec le chauffage dans l’équation <a href="#eq:bes-chauffage1">(<strong>??</strong>)</a>, on peut intégrer cette puissance instantanée de refroidissement pour calculer un besoin de froid sur une certaine durée. Le besoin de froid étant une quantité positive, on intègre en fait la valeur absolue de la puissance <span class="math inline">\(\Phi_\mathit{CVC}\)</span> :
+<span class="math display" id="eq:froid4" id="eq:froid3" id="eq:froid2">\[\begin{align}
+    \mathrm{Bes}_\mathit{froid} &amp; = \int_{24h} \left| \Phi_\textit{CVC} \right| \, \mathrm{d}t \tag{11.16} &amp; \\
+     &amp; = D \times \sum_{h=1}^{24} \underbrace{\left(T_e(h)-T_i(h)\right)}_{DH} &amp; + \mathrm{Apports} \tag{11.17}  \\
+    &amp; = D \times 24 \times \underbrace{\overline{\left(T_e-T_i\right)}}_{DJ} &amp; + \mathrm{Apports} \tag{11.18}
+\end{align}\]</span>
+où DH et DJ sont des degrés-heures ou des degrés-jours de refroidissement : ils quantifient un certain écart entre la température de consigne intérieure et la température extérieure pendant une certaine durée.</p>
+<p>Les stratégies pour réduire les besoins de froid sont donc relativement simples :</p>
+<ul>
+<li>Améliorer l’isolation du bâtiment pour diminuer la valeur du coefficient <span class="math inline">\(D\)</span>;</li>
+<li>Laisser les fenêtres fermées pendant un pic de chaleur; ouvrir les fenêtres peut créer un courant d’air qui améliore temporairement la sensation de confort, mais au prix d’un apport de chaleur à court terme.</li>
+<li>Choisir une température de consigne pas trop basse, par exemple 26°C;</li>
+<li>Diminuer les apports de chaleur internes : moins d’usage d’appareils électroniques, éclairage, fours, etc.</li>
+<li>Diminuer les apports solaires : masques solaires extérieurs, volets fermés.</li>
+</ul>
+<p>Une des meilleures stratégies passives contre la surchauffe est d’exploiter l’inertie du bâtiment, comme on l’a un peu abordé avec les exercices du chapitre <a href="transient.html#transient">5</a>. Un bâtiment lourd et/ou bien isolé retarde la propagation d’une vague de chaleur vers l’intérieur. Si ce déphasage est suffisant, le pic de chaleur n’atteint pas encore l’intérieur avant la nuit, et on peut alors surventiler le bâtiment (c’est-à-dire ouvrir les fenêtres) pour exploiter la fraîcheur nocturne. Cela revient à “recharger” la masse thermique du bâtiment en fraîcheur avant le pic de chaleur suivant, comme une glacière.</p>
+<p>Cette stratégie est la plus efficace dans les bâtiments bien isolés (une glacière performante) et à inertie forte (plus grande quantité de glaçons à l’intérieur). Pour cette raison, l’isolation thermique par l’extérieur est bien plus intéressante que par l’intérieur pour la protection contre la chaleur, même à coefficient de déperditions <span class="math inline">\(D\)</span> équivalent. C’est d’autant plus le cas si la température nocturne est assez basse, par exemple hors des grandes villes.</p>
+</div>
+<div id="appareils-de-refroidissement" class="section level3 hasAnchor" number="11.2.2">
+<h3><span class="header-section-number">11.2.2</span> Appareils de refroidissement<a href="climatisation.html#appareils-de-refroidissement" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Une fois le besoin de froid réduit, il reste à prendre les mesures pour réduire la <strong>consommation</strong> de climatisation. Cela se fait par le choix de systèmes performants ou passifs.</p>
+<div id="climatisation-à-compression" class="section level4 unnumbered hasAnchor">
+<h4>Climatisation à compression<a href="climatisation.html#climatisation-à-compression" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Les climatiseurs “standard” les plus courants fonctionnent sur le principe du cycle frigorifique à compression. Ils existent sous différents formats (figure <a href="climatisation.html#fig:climatiseurs">11.4</a>)</p>
+<div class="figure"><span style="display:block;" id="fig:climatiseurs"></span>
+<img src="figures/climatiseurs.png" alt="Différents formats de climatiseurs à compression : système mono-split, multi-split, centrale de traitement d'air en toiture." width="90%" />
+<p class="caption">
+Figure 11.4: Différents formats de climatiseurs à compression : système mono-split, multi-split, centrale de traitement d’air en toiture.
+</p>
+</div>
+<p>Le principe du cycle frigorifique à compression est le même que pour une pompe à chaleur :</p>
+<ul>
+<li>Un <strong>compresseur</strong> met en circulation le fluide frigorigène à l’état gazeux, augmente sa pression tout en le chauffant ;</li>
+<li>Dans le <strong>condenseur</strong>, le fluide passe à l’état liquide en cédant sa chaleur de vaporisation au milieu qu’on souhaite chauffer en hiver (ou à l’extérieur en été) ;</li>
+<li>Le <strong>détendeur</strong> diminue la pression et la température du fluide qui est alors un mélange diphasique ;</li>
+<li>Dans l’<strong>évaporateur</strong>, le fluide à basse pression entre en ébullition en récupérant la chaleur de la source froide (pièce à refroidir en été, ou extérieur en hiver).</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:climatiseurs2"></span>
+<img src="figures/climatiseurs2.png" alt="Principe d'une pompe à chaleur, ici en mode refroidissement (image de [energyplus-lesite.be](https://energieplus-lesite.be/techniques/climatisation8/production-de-froid/machine-frigorifique-a-compression/))" width="90%" />
+<p class="caption">
+Figure 11.5: Principe d’une pompe à chaleur, ici en mode refroidissement (image de <a href="https://energieplus-lesite.be/techniques/climatisation8/production-de-froid/machine-frigorifique-a-compression/">energyplus-lesite.be</a>)
+</p>
+</div>
+<p>Une PAC réversible est capable, en un seul système, de fournir chauffage (voir section <a href="chauffage-hydronique.html#pacchaud">9.4.2</a>) et refroidissement.</p>
+<p>La consommation électrique du système est celle du compresseur qui fournit le travail <span class="math inline">\(W\)</span> au cycle thermodynamique. Comme pour une PAC en mode chauffage, le coefficient de performance d’un climatiseur est le rapport entre sa puissance utile (<span class="math inline">\(Q_1\)</span> sur la figure <a href="climatisation.html#fig:climatiseurs2">11.5</a>) et sa consommation.
+<span class="math display" id="eq:froid5">\[\begin{equation}
+    COP = \frac{P_\mathrm{utile}}{P_\mathrm{conso}} = \frac{\left|Q\right|}{W}
+    \tag{11.19}
+\end{equation}\]</span></p>
+<p>Le COP d’un climatiseur moyen est compris entre 2,5 et 4 environ.</p>
+</div>
+<div id="absorption---froid-solaire" class="section level4 unnumbered hasAnchor">
+<h4>Absorption - <em>froid solaire</em><a href="climatisation.html#absorption---froid-solaire" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Une alternative au cycle à compression est la climatisation à absorption, où le compresseur et le détendeur sont remplacés par un deuxième cycle thermodynamique utilisant un fluide absorbeur.</p>
+<div class="figure"><span style="display:block;" id="fig:pacabsorption"></span>
+<img src="figures/schema_mach_absorp5.gif" alt="Principe du climatiseur à absorption - image de [energieplus-lesite.be](https://energieplus-lesite.be/techniques/climatisation8/production-de-froid/machine-frigorifique-a-ab-adsorption/)" width="70%" />
+<p class="caption">
+Figure 11.6: Principe du climatiseur à absorption - image de <a href="https://energieplus-lesite.be/techniques/climatisation8/production-de-froid/machine-frigorifique-a-ab-adsorption/">energieplus-lesite.be</a>
+</p>
+</div>
+<p>Le principe de fonctionnement est expliqué <a href="https://energieplus-lesite.be/techniques/climatisation8/production-de-froid/machine-frigorifique-a-ab-adsorption/">sur cette page</a> et recopié ici :</p>
+<ol style="list-style-type: decimal">
+<li>Dans l’évaporateur, le réfrigérant (ici de l’eau) est pulvérisé dans une ambiance à très faible pression. L’évaporateur est parcouru par un circuit à eau. En s’évaporant, le réfrigérant soustrait sa chaleur à cette eau qui est ainsi refroidie.</li>
+<li>La vapeur d’eau créée dans l’évaporateur est amenée à l’absorbeur. Il contient la solution absorbante (LiBr) qui est continuellement pompée dans le fond du récipient pour y être pulvérisée. Le LiBr absorbe la vapeur d’eau hors de l’évaporateur et y maintient ainsi la basse pression nécessaire à la vaporisation du réfrigérant.</li>
+<li>La solution est régénérée dans le concentrateur. Elle est réchauffée, par une batterie à eau chaude (environ 85°C) et une partie de l’eau s’évapore. La solution régénérée retourne à l’absorbeur.</li>
+<li>Enfin, la vapeur d’eau extraite du concentrateur est amenée dans le condenseur, où elle est refroidie par une circulation d’eau froide. L’eau condensée retourne à l’évaporateur.</li>
+</ol>
+<div class="figure"><span style="display:block;" id="fig:pacabsorption2"></span>
+<img src="figures/pacabsorption.png" alt="Comparaison entre un cycle de réfrigération à compression (à gauche) et à absorption (à droite) - image de [energieplus-lesite.be](https://energieplus-lesite.be/techniques/climatisation8/production-de-froid/machine-frigorifique-a-ab-adsorption/)" width="100%" />
+<p class="caption">
+Figure 11.7: Comparaison entre un cycle de réfrigération à compression (à gauche) et à absorption (à droite) - image de <a href="https://energieplus-lesite.be/techniques/climatisation8/production-de-froid/machine-frigorifique-a-ab-adsorption/">energieplus-lesite.be</a>
+</p>
+</div>
+<p>La différence principale entre ce système et une machine frigorifique classique à compression réside dans le moyen de comprimer le fluide, thermique plutôt que mécanique. Ce système remplace la consommation électrique du compresseur par un apport de chaleur extérieur. Cet apport peut provenir de la dissipation de chaleur d’un moteur thermique, ou bien de l’énergie solaire : on parle alors de climatisation solaire.</p>
+<p>Le coefficient de performance d’un climatiseur à absorption est le rapport entre la puissance de refroidissement produite et l’apport de chaleur :
+<span class="math display">\[\begin{equation}
+\mathrm{COP} = \frac{Q_\mathit{froid}}{Q_\mathir{apport}}
+\end{equation}\]</span></p>
+<p>Ce type de machine permet de refroidir de l’eau jusqu’à 7°C environ. La température de l’eau utilisée pour la décomposition de l’eau et de l’absorbant doit être comprise entre 80 et 120°C, ce qui est atteignable avec des capteurs solaires sous vide.</p>
+<p>Un autre type de “froid solaire” peut être produit par les systèmes à rafraîchissement évaporatif décrits plus bas.</p>
+</div>
+<div id="rafraîchissement-par-ventilation---free-cooling" class="section level4 unnumbered hasAnchor">
+<h4>Rafraîchissement par ventilation - <em>free cooling</em><a href="climatisation.html#rafraîchissement-par-ventilation---free-cooling" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="rafraîchissement-évaporatif" class="section level4 unnumbered hasAnchor">
+<h4>Rafraîchissement évaporatif<a href="climatisation.html#rafraîchissement-évaporatif" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>direct ou indirect (diapos M1)</p>
+<p>peut aussi faire partie du “free cooling” selon comment on définit ce terme</p>
+</div>
+<div id="géocooling" class="section level4 unnumbered hasAnchor">
+<h4>Géocooling<a href="climatisation.html#géocooling" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+<div id="roue-dessiccante" class="section level4 unnumbered hasAnchor">
+<h4>Roue dessiccante<a href="climatisation.html#roue-dessiccante" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+</div>
+</div>
+</div>
+<div id="cta" class="section level2 hasAnchor" number="11.3">
+<h2><span class="header-section-number">11.3</span> Centrales de traitement d’air<a href="climatisation.html#cta" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Une centrale de traitement d’air (CTA) est un appareil servant à contrôler les caractéristiques d’un flux d’air entrant dans le bâtiment. Son principe de fonctionnement est de prendre de l’air à traiter, de lui faire subir un traitement (chauffage, refroidissement, purification, déshumidification…) et de l’insuffler via le réseau de gaines aérauliques dans les locaux.</p>
+<p>Dans le cas d’une CTA double flux, la CTA reprend l’air dans les pièces nécessitant une extraction d’air, récupère une partie de son énergie thermique et l’expulse hors du bâtiment. Cette récupération d’énergie peut se faire soit via un échangeur de chaleur, soit en mélangeant à l’air neuf une partie de l’air extrait.</p>
+<div id="besoins-de-traitement-dair" class="section level3 hasAnchor" number="11.3.1">
+<h3><span class="header-section-number">11.3.1</span> Besoins de traitement d’air<a href="climatisation.html#besoins-de-traitement-dair" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In order to maintain required indoor conditions (temperature and humidity), the AC system (air handling unit or other) must supply air at specified conditions. These conditions are entirely specified by: the dry bulb temperature <span class="math inline">\(T_s\)</span> and absolute humidity <span class="math inline">\(w_s\)</span> of the supply air (or any two variables from the psychrometric chart), and the supply mass flow rate <span class="math inline">\(\dot{m}_{da,s}\)</span>.</p>
+<p>The first step is the estimation of the loads of the building, i.e. all influences on the indoor heat and moisture balance besides the HVAC system.</p>
+<ul>
+<li><strong>Sensible loads</strong> (in W) are all heat inputs that directly impact the indoor temperature: heat loss (or gain) through the envelope, air infiltration, solar gain, occupants and equipments, lighting…
+<span class="math display">\[\begin{equation}
+\mathrm{SL} = H\left(T_e-T_i\right) + \dot{m}_\mathit{inf} c_{da} \left(T_e-T_i\right) + \Phi_\mathit{sol} + \Phi_\mathit{in} + ...
+\end{equation}\]</span></li>
+<li><strong>Latent loads</strong> (in W) are the energy content (latent heat) of the humidity inputs: air infiltration, indoor vapour production…
+<span class="math display">\[\begin{equation}
+\mathrm{LL} = l_v \left(  \dot{m}_\mathit{inf} \left(w_e-w_i\right) + Q_\mathit{vap,in} + ... \right)
+\end{equation}\]</span></li>
+</ul>
+<p>The supply conditions should be set so that the temperature of the air supply compensates the sensible loads, and the moisture content compensates the latent loads:
+<span class="math display">\[\begin{align}
+\dot{m}_{da,s} c_{da} (T_s - T_i) &amp; + \mathrm{SL} = 0 \\
+\dot{m}_{da,s} l_v (w_s - w_i) &amp; + \mathrm{LL} = 0
+\end{align}\]</span></p>
+<p>This is a system of two equations and three unknown variables <span class="math inline">\(\left\{ \dot{m}_{da,s}, T_s, w_s \right\}\)</span>. It can be solved by choosing the value of one of them: for instance, an imposed supply flow rate <span class="math inline">\(\dot{m}_{da,s}\)</span> or an imposed supply temperature.</p>
+</div>
+<div id="conditions-de-soufflage" class="section level3 hasAnchor" number="11.3.2">
+<h3><span class="header-section-number">11.3.2</span> Conditions de soufflage<a href="climatisation.html#conditions-de-soufflage" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>droite de soufflage etc.</p>
+</div>
+<div id="types-de-cta" class="section level3 hasAnchor" number="11.3.3">
+<h3><span class="header-section-number">11.3.3</span> Types de CTA<a href="climatisation.html#types-de-cta" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>simple et doubles flux, avec échangeur</p>
+</div>
+</div>
+<div id="exercices-4" class="section level2 hasAnchor" number="11.4">
+<h2><span class="header-section-number">11.4</span> Exercices<a href="climatisation.html#exercices-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Plein d’exos air conditioning dans le cours master ou S7</p>
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ecs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="architecture-bioclimatique.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/srouchier/beh25-ac.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["manuel.pdf", "manuel.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

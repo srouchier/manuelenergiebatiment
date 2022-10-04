@@ -176,7 +176,7 @@ D_{pt} = l . \psi
 
 En plus des ponts thermiques linéiques, on peut également compter les ponts thermiques ponctuels caractérisés par un coefficient de transmission $\chi$ en (W.$K$^{-1}$).
 
-## Echanges convectifs
+## Echanges convectifs {#convection}
 
 Les transferts d'air entre l'intérieur et l'extérieur, ou entre différentes zones, entraînent un transfert de chaleur par convection. 
 

@@ -234,7 +234,7 @@ Granulés de bois                    4,6                       .
 
 Une chaudière à condensation (en bas de la figure \@ref(fig:chaudieres)) est conçue pour récupérer une partie de la chaleur de vaporisation de l'eau des fumées : l'eau de retour du réseau de distribution doit être assez froide pour faire condenser la vapeur d'eau contenue dans les fumées. Grâce à cette récupération de l'eau et à la température basse des fumées, la chaleur utile d'une chaudière à condensation peut dépasser le PCI du combustible. Ce qui permet d'afficher un rendement supérieur à 100\% s'il est calculé sur la base du PCI. Pour cette raison, ces chaudières sont d'autant plus intéressantes qu'elles sont utilisées avec un réseau à basse température, comme des planchers chauffants.
 
-### Pompes à chaleur
+### Pompes à chaleur {#pacchaud}
 
 Une pompe à chaleur (PAC) est un appareil permettant de transférer la chaleur depuis une source froide vers une source chaude. Elle permet donc de chauffer un local en hiver (transfert de l'extérieur froid vers l'intérieur plus chaud), ou de le climatiser en été (transfert de l'intérieur frais vers l'extérieur chaud). Une PAC est dite réversible si elle peut produire de la chaleur en hiver et du froid en été.
 
@@ -248,12 +248,6 @@ knitr::include_graphics(rep("figures/pac.png"))
 * Dans le **condenseur**, le fluide passe à l'état liquide en cédant sa chaleur de vaporisation au milieu qu'on souhaite chauffer en hiver (ou à l'extérieur en été) ;
 * Le **détendeur** diminue la pression et la température du fluide qui est alors un mélange diphasique ;
 * Dans l'**évaporateur**, le fluide à basse pression entre en ébullition en récupérant la chaleur de la source froide (pièce à refroidir en été, ou extérieur en hiver).
-
-Une alternative est la PAC à absorption, où le compresseur et le détendeur sont remplacés par un deuxième cycle thermodynamique utilisant un fluide absorbeur. Cet appareil est alimenté en chaleur plutôt qu'en électricité, ce qui permet par exemple d'exploiter l'énergie solaire pour refroidir un local.
-
-```{r, pacabsorption, echo=FALSE, out.width="50%", fig.cap="Principe d'une pompe à chaleur à absorption"}
-knitr::include_graphics(rep("figures/pacabsorption.png"))
-```
 
 Une PAC est caractérisée par son coefficient de performance (COP) qui est le rapport entre sa puissance utile et sa consommation.
 \begin{equation}

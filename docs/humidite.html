@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Rouchier" />
 
 
-<meta name="date" content="2022-09-08" />
+<meta name="date" content="2022-10-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="air.html"/>
-<link rel="next" href="aperçu-des-systèmes.html"/>
+<link rel="next" href="des-besoins-aux-consommations.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -138,6 +138,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Préface</a>
 <ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contenu-à-venir"><i class="fa fa-check"></i>Contenu à venir</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-propos"><i class="fa fa-check"></i>A propos</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
@@ -172,7 +173,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1.3" data-path="steady.html"><a href="steady.html#surfacique"><i class="fa fa-check"></i><b>3.1.3</b> Transferts surfaciques</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="steady.html"><a href="steady.html#ponts-thermiques"><i class="fa fa-check"></i><b>3.2</b> Ponts thermiques</a></li>
-<li class="chapter" data-level="3.3" data-path="steady.html"><a href="steady.html#echanges-convectifs"><i class="fa fa-check"></i><b>3.3</b> Echanges convectifs</a></li>
+<li class="chapter" data-level="3.3" data-path="steady.html"><a href="steady.html#convection"><i class="fa fa-check"></i><b>3.3</b> Echanges convectifs</a></li>
 <li class="chapter" data-level="3.4" data-path="steady.html"><a href="steady.html#bilan-des-déperditions"><i class="fa fa-check"></i><b>3.4</b> Bilan des déperditions</a>
 <ul>
 <li class="chapter" data-level="3.4.1" data-path="steady.html"><a href="steady.html#locaux-non-chauffés"><i class="fa fa-check"></i><b>3.4.1</b> Locaux non chauffés</a></li>
@@ -218,7 +219,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1.1" data-path="air.html"><a href="air.html#rappels-de-mécanique-des-fluides"><i class="fa fa-check"></i><b>6.1.1</b> Rappels de mécanique des fluides</a></li>
 <li class="chapter" data-level="6.1.2" data-path="air.html"><a href="air.html#débit-dans-les-ouvertures"><i class="fa fa-check"></i><b>6.1.2</b> Débit dans les ouvertures</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="air.html"><a href="air.html#ventilation-naturelle"><i class="fa fa-check"></i><b>6.2</b> Ventilation naturelle</a>
+<li class="chapter" data-level="6.2" data-path="air.html"><a href="air.html#ventilationnaturelle"><i class="fa fa-check"></i><b>6.2</b> Ventilation naturelle</a>
 <ul>
 <li class="chapter" data-level="6.2.1" data-path="air.html"><a href="air.html#vent"><i class="fa fa-check"></i><b>6.2.1</b> Vent</a></li>
 <li class="chapter" data-level="6.2.2" data-path="air.html"><a href="air.html#tirage-thermique"><i class="fa fa-check"></i><b>6.2.2</b> Tirage thermique</a></li>
@@ -227,7 +228,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3" data-path="air.html"><a href="air.html#exercices-2"><i class="fa fa-check"></i><b>6.3</b> Exercices</a>
 <ul>
 <li class="chapter" data-level="6.3.1" data-path="air.html"><a href="air.html#exercice-1-vent-et-tirage-thermique"><i class="fa fa-check"></i><b>6.3.1</b> Exercice 1 : vent et tirage thermique</a></li>
-<li class="chapter" data-level="6.3.2" data-path="air.html"><a href="air.html#exercice-2-cheminée-solaire"><i class="fa fa-check"></i><b>6.3.2</b> Exercice 2 : cheminée solaire</a></li>
+<li class="chapter" data-level="6.3.2" data-path="air.html"><a href="air.html#excheminee"><i class="fa fa-check"></i><b>6.3.2</b> Exercice 2 : cheminée solaire</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="humidite.html"><a href="humidite.html"><i class="fa fa-check"></i><b>7</b> Humidité</a>
@@ -235,18 +236,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="humidite.html"><a href="humidite.html#air-humide"><i class="fa fa-check"></i><b>7.1</b> Air humide</a></li>
 <li class="chapter" data-level="7.2" data-path="humidite.html"><a href="humidite.html#humidité-dans-les-matériaux"><i class="fa fa-check"></i><b>7.2</b> Humidité dans les matériaux</a></li>
 <li class="chapter" data-level="7.3" data-path="humidite.html"><a href="humidite.html#bilans-dhumidité"><i class="fa fa-check"></i><b>7.3</b> Bilans d’humidité</a></li>
-<li class="chapter" data-level="7.4" data-path="humidite.html"><a href="humidite.html#exercice-1"><i class="fa fa-check"></i><b>7.4</b> Exercice</a>
+<li class="chapter" data-level="7.4" data-path="humidite.html"><a href="humidite.html#exercices-3"><i class="fa fa-check"></i><b>7.4</b> Exercices</a>
 <ul>
 <li class="chapter" data-level="7.4.1" data-path="humidite.html"><a href="humidite.html#exercice-1-condensation"><i class="fa fa-check"></i><b>7.4.1</b> Exercice 1 : condensation</a></li>
 <li class="chapter" data-level="7.4.2" data-path="humidite.html"><a href="humidite.html#exercice-2-point-de-rosée"><i class="fa fa-check"></i><b>7.4.2</b> Exercice 2 : point de rosée</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Systèmes CVC</b></span></li>
-<li class="chapter" data-level="8" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html"><i class="fa fa-check"></i><b>8</b> Aperçu des systèmes</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html#des-besoins-aux-consommations"><i class="fa fa-check"></i><b>8.1</b> Des besoins aux consommations</a></li>
-<li class="chapter" data-level="8.2" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html#types-de-systèmes"><i class="fa fa-check"></i><b>8.2</b> Types de systèmes</a></li>
-</ul></li>
+<li class="chapter" data-level="8" data-path="des-besoins-aux-consommations.html"><a href="des-besoins-aux-consommations.html"><i class="fa fa-check"></i><b>8</b> Des besoins aux consommations</a></li>
 <li class="chapter" data-level="9" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html"><i class="fa fa-check"></i><b>9</b> Chauffage hydronique</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#généralités"><i class="fa fa-check"></i><b>9.1</b> Généralités</a></li>
@@ -262,7 +259,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.4" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#génération"><i class="fa fa-check"></i><b>9.4</b> Génération</a>
 <ul>
 <li class="chapter" data-level="9.4.1" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#chaudières"><i class="fa fa-check"></i><b>9.4.1</b> Chaudières</a></li>
-<li class="chapter" data-level="9.4.2" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#pompes-à-chaleur"><i class="fa fa-check"></i><b>9.4.2</b> Pompes à chaleur</a></li>
+<li class="chapter" data-level="9.4.2" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#pacchaud"><i class="fa fa-check"></i><b>9.4.2</b> Pompes à chaleur</a></li>
 <li class="chapter" data-level="9.4.3" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#autres-générateurs-de-chaleur"><i class="fa fa-check"></i><b>9.4.3</b> Autres générateurs de chaleur</a></li>
 </ul></li>
 </ul></li>
@@ -289,8 +286,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="ecs.html"><a href="ecs.html#solaire"><i class="fa fa-check"></i><b>10.4</b> Dimensionnement des systèmes solaires</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="ventilation.html"><a href="ventilation.html"><i class="fa fa-check"></i><b>11</b> Ventilation</a></li>
-<li class="chapter" data-level="12" data-path="traitement-dair-et-climatisation.html"><a href="traitement-dair-et-climatisation.html"><i class="fa fa-check"></i><b>12</b> Traitement d’air et climatisation</a></li>
+<li class="chapter" data-level="11" data-path="climatiseurs.html"><a href="climatiseurs.html"><i class="fa fa-check"></i><b>11</b> Rafraîchissement</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="climatiseurs.html"><a href="climatiseurs.html#besoins-de-froid"><i class="fa fa-check"></i><b>11.1</b> Besoins de froid</a></li>
+<li class="chapter" data-level="11.2" data-path="climatiseurs.html"><a href="climatiseurs.html#climatiseurs-1"><i class="fa fa-check"></i><b>11.2</b> Climatiseurs</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="climatiseurs.html"><a href="climatiseurs.html#machine-à-compression"><i class="fa fa-check"></i><b>11.2.1</b> Machine à compression</a></li>
+<li class="chapter" data-level="11.2.2" data-path="climatiseurs.html"><a href="climatiseurs.html#machine-à-absorption-et-froid-solaire"><i class="fa fa-check"></i><b>11.2.2</b> Machine à absorption et “froid solaire”</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="climatiseurs.html"><a href="climatiseurs.html#rafraîchissements-passifs"><i class="fa fa-check"></i><b>11.3</b> Rafraîchissements passifs</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="climatiseurs.html"><a href="climatiseurs.html#rafraîchissement-par-ventilation"><i class="fa fa-check"></i><b>11.3.1</b> Rafraîchissement par ventilation</a></li>
+<li class="chapter" data-level="11.3.2" data-path="climatiseurs.html"><a href="climatiseurs.html#puits-climatique"><i class="fa fa-check"></i><b>11.3.2</b> Puits climatique</a></li>
+<li class="chapter" data-level="11.3.3" data-path="climatiseurs.html"><a href="climatiseurs.html#géocooling"><i class="fa fa-check"></i><b>11.3.3</b> Géocooling</a></li>
+<li class="chapter" data-level="11.3.4" data-path="climatiseurs.html"><a href="climatiseurs.html#rafraîchissement-évaporatif"><i class="fa fa-check"></i><b>11.3.4</b> Rafraîchissement évaporatif</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ac.html"><a href="ac.html"><i class="fa fa-check"></i><b>12</b> Traitement d’air</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="ac.html"><a href="ac.html#climairhumide"><i class="fa fa-check"></i><b>12.1</b> Traitement d’air</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="ac.html"><a href="ac.html#mélanges"><i class="fa fa-check"></i><b>12.1.1</b> Mélanges</a></li>
+<li class="chapter" data-level="12.1.2" data-path="ac.html"><a href="ac.html#transformations"><i class="fa fa-check"></i><b>12.1.2</b> Transformations</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="ac.html"><a href="ac.html#conditions-de-soufflage"><i class="fa fa-check"></i><b>12.2</b> Conditions de soufflage</a></li>
+<li class="chapter" data-level="12.3" data-path="ac.html"><a href="ac.html#cta"><i class="fa fa-check"></i><b>12.3</b> Centrales de traitement d’air</a></li>
+</ul></li>
 <li class="part"><span><b>III Conception de bâtiments performants</b></span></li>
 <li class="chapter" data-level="13" data-path="architecture-bioclimatique.html"><a href="architecture-bioclimatique.html"><i class="fa fa-check"></i><b>13</b> Architecture bioclimatique</a></li>
 <li class="chapter" data-level="14" data-path="simulation-énergétique.html"><a href="simulation-énergétique.html"><i class="fa fa-check"></i><b>14</b> Simulation énergétique</a></li>
@@ -320,6 +341,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>L’humidité dans les bâtiments peut provenir des activités des occupants (cuisine, salle de bain, lessives…), d’infiltration d’eau de pluie dans la façade, ou bien de remontées capillaires depuis le sol. Si les mesures nécessaires ne sont pas prises, elle peut s’accumuler dans l’air, ce qui peut poser des problèmes d’hygiène, ou dans les matériaux, pouvant compromettre leur durabilité et leurs performances.</p>
 <div id="air-humide" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Air humide<a href="humidite.html#air-humide" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Résumé en vidéo :</p>
+<!DOCTYPE html>
+<html>
+<body>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tX3_UP8QBmU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</body>
+</html>
 <p>Pour comprendre les problématiques d’humidité dans les bâtiments, on commence par une description de l’air humide. Celui-ci est considéré comme un mélange de deux gaz : l’air sec et la vapeur d’eau. Ses propriétés sont affichées sur le diagramme de l’air humide, ou diagramme psychrométrique.</p>
 <div class="figure"><span style="display:block;" id="fig:dah"></span>
 <img src="figures/dah.PNG" alt="Diagramme de l'air humide" width="100%" />
@@ -330,7 +358,7 @@ Figure 7.1: Diagramme de l’air humide
 <p>Un état donné de l’air, en termes de température et d’humidité, est représenté par un point sur le diagramme. Celui-ci permet alors de lire toutes ses propriétés, au nombre de 7 :</p>
 <ul>
 <li>La <strong>température d’air sec</strong> <span class="math inline">\(T\)</span>, ou plus simplement la température tout court.</li>
-<li>L’**humidité relative HR est le rapport entre la pression partielle de vapeur dans l’air <span class="math inline">\(p_\mathit{vap}\)</span>, et la pression de vapeur saturante <span class="math inline">\(p_\mathit{sat}\)</span>. Cette dernière est la pression maximale qui pourrait être atteinte par la vapeur à une température donnée.
+<li>L’<strong>humidité relative</strong> HR est le rapport entre la pression partielle de vapeur dans l’air <span class="math inline">\(p_\mathit{vap}\)</span>, et la pression de vapeur saturante <span class="math inline">\(p_\mathit{sat}\)</span>. Cette dernière est la pression maximale qui pourrait être atteinte par la vapeur à une température donnée.
 <span class="math display" id="eq:humidite2" id="eq:humidite1">\[\begin{align}
 \mathrm{RH} &amp; = \frac{p_\mathit{vap}}{p_\mathit{sat}} \tag{7.1} \\
 p_\mathit{sat}(T) &amp; = \mathrm{exp} \left(23.5771-\frac{4042.9}{T+273.15-37.58}\right)
@@ -350,7 +378,7 @@ h = c_\mathit{as}\, T + w \, (l_v+c_\mathit{vap}\, T)
 où <span class="math inline">\(c_\mathit{as}\)</span> est la chaleur spécifique de l’air sec, <span class="math inline">\(c_\mathit{vap}\)</span> celle de la vapeur d’eau, et <span class="math inline">\(l_v\)</span> sa chaleur latente de vaporisation (valeurs données plus bas).</li>
 <li>Le <strong>volume spécifique</strong> <span class="math inline">\(v_s\)</span> est le volume occupé par le mélange, par unité de masse d’air sec, en m<span class="math inline">\(^3\)</span>/kg<span class="math inline">\(_{as}\)</span>. C’est l’inverse de la masse volumique de l’air sec <span class="math inline">\(\rho_\mathit{as}\)</span>.
 <span class="math display" id="eq:humidite5">\[\begin{equation}
-\rho_\mathit{da} = \frac{1}{v_s} = \frac{p_\mathit{atm}}{\left(w \, r_\mathit{vap}+r_\mathit{as}\right) T}
+\rho_\mathit{as} = \frac{1}{v_s} = \frac{p_\mathit{atm}}{\left(w \, r_\mathit{vap}+r_\mathit{as}\right) T}
 \tag{7.5}
 \end{equation}\]</span></li>
 <li>La <strong>température d’air humide</strong> <span class="math inline">\(T_{ah}\)</span> est la température qu’aurait l’air s’il était saturé en humidité à enthalpie constante.</li>
@@ -487,8 +515,8 @@ M_{H_2O}=\rho_a \cdot V \cdot w
 \end{equation}\]</span></p>
 <p>On peut exprimer l’échange d’humidité entre l’air et les matériaux par les formules de la section précédente, ou par des modèles plus simples. L’échange d’humidité entre deux pièces est plus simple : un débit d’air <span class="math inline">\(\dot{m}\)</span> entre deux pièces dont les teneurs en eau sont <span class="math inline">\(w_1\)</span> et <span class="math inline">\(w_2\)</span> transporte une quantité d’eau <span class="math inline">\(G=\dot{m}(w_1-w_2)\)</span>.</p>
 </div>
-<div id="exercice-1" class="section level2 hasAnchor" number="7.4">
-<h2><span class="header-section-number">7.4</span> Exercice<a href="humidite.html#exercice-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exercices-3" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Exercices<a href="humidite.html#exercices-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="exercice-1-condensation" class="section level3 hasAnchor" number="7.4.1">
 <h3><span class="header-section-number">7.4.1</span> Exercice 1 : condensation<a href="humidite.html#exercice-1-condensation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Une fenêtre sépare une pièce à <span class="math inline">\(T=20\)</span>°C de l’extérieur à <span class="math inline">\(T_e=8\)</span>°C. La fenêtre a une épaisseur de 4 mm et une conductivité thermique de 1.1 W.m<span class="math inline">\({-1}\)</span>.K<span class="math inline">\(^{-1}\)</span>. Les résistances de transfert surfacique sont 0.13 et 0.04 m<span class="math inline">\(^2\)</span>.K.W<span class="math inline">\(^{-1}\)</span>, respectivement.</p>
@@ -588,7 +616,7 @@ Figure 7.5: Mur multicouche : y a-t-il de la condensation ?
         </div>
       </div>
 <a href="air.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="aperçu-des-systèmes.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="des-besoins-aux-consommations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

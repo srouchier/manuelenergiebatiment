@@ -4,9 +4,9 @@
 
 Ce chapitre sert d'introduction aux transferts thermiques et massiques qui seront approfondis dans les chapitres suivants de la partie I.
 
-* On commence par y donner un aperçu des principales sources de chaleur et de déperditions thermiques en présentant l'exemple de bilan thermique d'un bâtiment.
-* Ensuite, on présente les hypothèses principales prises par le calcul réglementaire RE 2020 pour formuler ce bilan thermique et calculer les besoins de chauffage et de refroidissement.
-* Enfin, la section \@ref(apercu1) annonce la description plus détaillée qui sera faite des transferts thermiques dans les chapitres suivants.
+* On commence par donner en section \@ref(apercu1) un aperçu des principales sources de chaleur et de déperditions thermiques en présentant l'exemple de bilan thermique d'un bâtiment.
+* Ensuite, on présente en section \@ref(apercu2) les hypothèses principales prises par le calcul réglementaire RE 2020 pour formuler ce bilan thermique et calculer les besoins de chauffage et de refroidissement.
+* Enfin, la section \@ref(apercu3) annonce la description plus détaillée qui sera faite des transferts thermiques dans les chapitres suivants.
 
 Le but de la partie I est de comprendre les phénomènes principaux de transferts, afin non seulement de comprendre le calcul réglementaire mais surtout de réaliser des calculcs indépendamment de celui-ci.
 
@@ -90,7 +90,7 @@ Le coefficient Bbio (voir \@ref(re2020)) est basé sur les besoins de chauffage,
 Les besoins de chauffage et de refroidissement sont une quantité d'énergie, c'est-à-dire une puissance multipliée par un temps. 1 kWh est l'énergie consommée par un appareil d'une puissance de 1 kW fonctionnant pendant 1 heure. On peut donc calculer les besoins en intégrant l'équation \@ref(eq:thermique2) sur une certaine durée, par exemple 24 h :
 
 \begin{align}
-    \mathrm{Bes}_\mathit{chauffage} & = \int_{24h} \Phi_\textit{CVC} \mathrm{d}t (\#eq:bes-chauffage1) \\
+    \mathrm{Bes}_\mathit{chauffage} & = \int_{24h} \Phi_\textit{CVC} \, \mathrm{d}t (\#eq:bes-chauffage1) \\
         & = \int_{24h} D \left(T_i - T_e \right) \mathrm{d}t - \int_{24h} \Phi_\mathit{apports} \mathrm{d}t (\#eq:bes-chauffage1)
 \end{align}
 

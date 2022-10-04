@@ -1,10 +1,8 @@
 # (PART) Systèmes CVC {-}
 
-# Aperçu des systèmes
+# Des besoins aux consommations
 
 La première partie du livre a montré comment calculer les **besoins** bioclimatiques d'un bâtiment. Une partie de ces besoins peut être résumée par le coefficient Bbio : chauffage, refroidissement, éclairage. On peut y ajouter le besoin d'eau chaude sanitaire, non inclus dans le Bbio, et qui sera abordé dans le chapitre \@ref(ecs). Dans la deuxième partie du livre, on s'intéresse maintenant à la **consommation** d'énergie nécessaire pour satisfaire ces besoins.
-
-## Des besoins aux consommations
 
 Les 5 postes de consommation énergétique d'un bâtiment (sauf bâtiments industriels avec des procédés spécifiques) sont :
 
@@ -49,8 +47,4 @@ Bois                                  0,024 à 0,03
 Electricité                             0,064 à 0,079
 Gaz                                     0,227 à 0,272
 Autres combustibles fossiles          0,324
-
-## Types de systèmes
-
-Aperçu des différents systèmes CVC pour satisfaire chaque besoin. Cette partie n'est pas encore écrite (dernière mise à jour du livre en septembre 2022).
 

@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Rouchier" />
 
 
-<meta name="date" content="2022-09-08" />
+<meta name="date" content="2022-10-04" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -138,6 +138,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Préface</a>
 <ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contenu-à-venir"><i class="fa fa-check"></i>Contenu à venir</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#a-propos"><i class="fa fa-check"></i>A propos</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
@@ -172,7 +173,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1.3" data-path="steady.html"><a href="steady.html#surfacique"><i class="fa fa-check"></i><b>3.1.3</b> Transferts surfaciques</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="steady.html"><a href="steady.html#ponts-thermiques"><i class="fa fa-check"></i><b>3.2</b> Ponts thermiques</a></li>
-<li class="chapter" data-level="3.3" data-path="steady.html"><a href="steady.html#echanges-convectifs"><i class="fa fa-check"></i><b>3.3</b> Echanges convectifs</a></li>
+<li class="chapter" data-level="3.3" data-path="steady.html"><a href="steady.html#convection"><i class="fa fa-check"></i><b>3.3</b> Echanges convectifs</a></li>
 <li class="chapter" data-level="3.4" data-path="steady.html"><a href="steady.html#bilan-des-déperditions"><i class="fa fa-check"></i><b>3.4</b> Bilan des déperditions</a>
 <ul>
 <li class="chapter" data-level="3.4.1" data-path="steady.html"><a href="steady.html#locaux-non-chauffés"><i class="fa fa-check"></i><b>3.4.1</b> Locaux non chauffés</a></li>
@@ -218,7 +219,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1.1" data-path="air.html"><a href="air.html#rappels-de-mécanique-des-fluides"><i class="fa fa-check"></i><b>6.1.1</b> Rappels de mécanique des fluides</a></li>
 <li class="chapter" data-level="6.1.2" data-path="air.html"><a href="air.html#débit-dans-les-ouvertures"><i class="fa fa-check"></i><b>6.1.2</b> Débit dans les ouvertures</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="air.html"><a href="air.html#ventilation-naturelle"><i class="fa fa-check"></i><b>6.2</b> Ventilation naturelle</a>
+<li class="chapter" data-level="6.2" data-path="air.html"><a href="air.html#ventilationnaturelle"><i class="fa fa-check"></i><b>6.2</b> Ventilation naturelle</a>
 <ul>
 <li class="chapter" data-level="6.2.1" data-path="air.html"><a href="air.html#vent"><i class="fa fa-check"></i><b>6.2.1</b> Vent</a></li>
 <li class="chapter" data-level="6.2.2" data-path="air.html"><a href="air.html#tirage-thermique"><i class="fa fa-check"></i><b>6.2.2</b> Tirage thermique</a></li>
@@ -227,7 +228,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.3" data-path="air.html"><a href="air.html#exercices-2"><i class="fa fa-check"></i><b>6.3</b> Exercices</a>
 <ul>
 <li class="chapter" data-level="6.3.1" data-path="air.html"><a href="air.html#exercice-1-vent-et-tirage-thermique"><i class="fa fa-check"></i><b>6.3.1</b> Exercice 1 : vent et tirage thermique</a></li>
-<li class="chapter" data-level="6.3.2" data-path="air.html"><a href="air.html#exercice-2-cheminée-solaire"><i class="fa fa-check"></i><b>6.3.2</b> Exercice 2 : cheminée solaire</a></li>
+<li class="chapter" data-level="6.3.2" data-path="air.html"><a href="air.html#excheminee"><i class="fa fa-check"></i><b>6.3.2</b> Exercice 2 : cheminée solaire</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="humidite.html"><a href="humidite.html"><i class="fa fa-check"></i><b>7</b> Humidité</a>
@@ -235,18 +236,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="humidite.html"><a href="humidite.html#air-humide"><i class="fa fa-check"></i><b>7.1</b> Air humide</a></li>
 <li class="chapter" data-level="7.2" data-path="humidite.html"><a href="humidite.html#humidité-dans-les-matériaux"><i class="fa fa-check"></i><b>7.2</b> Humidité dans les matériaux</a></li>
 <li class="chapter" data-level="7.3" data-path="humidite.html"><a href="humidite.html#bilans-dhumidité"><i class="fa fa-check"></i><b>7.3</b> Bilans d’humidité</a></li>
-<li class="chapter" data-level="7.4" data-path="humidite.html"><a href="humidite.html#exercice-1"><i class="fa fa-check"></i><b>7.4</b> Exercice</a>
+<li class="chapter" data-level="7.4" data-path="humidite.html"><a href="humidite.html#exercices-3"><i class="fa fa-check"></i><b>7.4</b> Exercices</a>
 <ul>
 <li class="chapter" data-level="7.4.1" data-path="humidite.html"><a href="humidite.html#exercice-1-condensation"><i class="fa fa-check"></i><b>7.4.1</b> Exercice 1 : condensation</a></li>
 <li class="chapter" data-level="7.4.2" data-path="humidite.html"><a href="humidite.html#exercice-2-point-de-rosée"><i class="fa fa-check"></i><b>7.4.2</b> Exercice 2 : point de rosée</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Systèmes CVC</b></span></li>
-<li class="chapter" data-level="8" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html"><i class="fa fa-check"></i><b>8</b> Aperçu des systèmes</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html#des-besoins-aux-consommations"><i class="fa fa-check"></i><b>8.1</b> Des besoins aux consommations</a></li>
-<li class="chapter" data-level="8.2" data-path="aperçu-des-systèmes.html"><a href="aperçu-des-systèmes.html#types-de-systèmes"><i class="fa fa-check"></i><b>8.2</b> Types de systèmes</a></li>
-</ul></li>
+<li class="chapter" data-level="8" data-path="des-besoins-aux-consommations.html"><a href="des-besoins-aux-consommations.html"><i class="fa fa-check"></i><b>8</b> Des besoins aux consommations</a></li>
 <li class="chapter" data-level="9" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html"><i class="fa fa-check"></i><b>9</b> Chauffage hydronique</a>
 <ul>
 <li class="chapter" data-level="9.1" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#généralités"><i class="fa fa-check"></i><b>9.1</b> Généralités</a></li>
@@ -262,7 +259,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.4" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#génération"><i class="fa fa-check"></i><b>9.4</b> Génération</a>
 <ul>
 <li class="chapter" data-level="9.4.1" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#chaudières"><i class="fa fa-check"></i><b>9.4.1</b> Chaudières</a></li>
-<li class="chapter" data-level="9.4.2" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#pompes-à-chaleur"><i class="fa fa-check"></i><b>9.4.2</b> Pompes à chaleur</a></li>
+<li class="chapter" data-level="9.4.2" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#pacchaud"><i class="fa fa-check"></i><b>9.4.2</b> Pompes à chaleur</a></li>
 <li class="chapter" data-level="9.4.3" data-path="chauffage-hydronique.html"><a href="chauffage-hydronique.html#autres-générateurs-de-chaleur"><i class="fa fa-check"></i><b>9.4.3</b> Autres générateurs de chaleur</a></li>
 </ul></li>
 </ul></li>
@@ -289,8 +286,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="10.4" data-path="ecs.html"><a href="ecs.html#solaire"><i class="fa fa-check"></i><b>10.4</b> Dimensionnement des systèmes solaires</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="ventilation.html"><a href="ventilation.html"><i class="fa fa-check"></i><b>11</b> Ventilation</a></li>
-<li class="chapter" data-level="12" data-path="traitement-dair-et-climatisation.html"><a href="traitement-dair-et-climatisation.html"><i class="fa fa-check"></i><b>12</b> Traitement d’air et climatisation</a></li>
+<li class="chapter" data-level="11" data-path="climatiseurs.html"><a href="climatiseurs.html"><i class="fa fa-check"></i><b>11</b> Rafraîchissement</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="climatiseurs.html"><a href="climatiseurs.html#besoins-de-froid"><i class="fa fa-check"></i><b>11.1</b> Besoins de froid</a></li>
+<li class="chapter" data-level="11.2" data-path="climatiseurs.html"><a href="climatiseurs.html#climatiseurs-1"><i class="fa fa-check"></i><b>11.2</b> Climatiseurs</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="climatiseurs.html"><a href="climatiseurs.html#machine-à-compression"><i class="fa fa-check"></i><b>11.2.1</b> Machine à compression</a></li>
+<li class="chapter" data-level="11.2.2" data-path="climatiseurs.html"><a href="climatiseurs.html#machine-à-absorption-et-froid-solaire"><i class="fa fa-check"></i><b>11.2.2</b> Machine à absorption et “froid solaire”</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="climatiseurs.html"><a href="climatiseurs.html#rafraîchissements-passifs"><i class="fa fa-check"></i><b>11.3</b> Rafraîchissements passifs</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="climatiseurs.html"><a href="climatiseurs.html#rafraîchissement-par-ventilation"><i class="fa fa-check"></i><b>11.3.1</b> Rafraîchissement par ventilation</a></li>
+<li class="chapter" data-level="11.3.2" data-path="climatiseurs.html"><a href="climatiseurs.html#puits-climatique"><i class="fa fa-check"></i><b>11.3.2</b> Puits climatique</a></li>
+<li class="chapter" data-level="11.3.3" data-path="climatiseurs.html"><a href="climatiseurs.html#géocooling"><i class="fa fa-check"></i><b>11.3.3</b> Géocooling</a></li>
+<li class="chapter" data-level="11.3.4" data-path="climatiseurs.html"><a href="climatiseurs.html#rafraîchissement-évaporatif"><i class="fa fa-check"></i><b>11.3.4</b> Rafraîchissement évaporatif</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ac.html"><a href="ac.html"><i class="fa fa-check"></i><b>12</b> Traitement d’air</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="ac.html"><a href="ac.html#climairhumide"><i class="fa fa-check"></i><b>12.1</b> Traitement d’air</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="ac.html"><a href="ac.html#mélanges"><i class="fa fa-check"></i><b>12.1.1</b> Mélanges</a></li>
+<li class="chapter" data-level="12.1.2" data-path="ac.html"><a href="ac.html#transformations"><i class="fa fa-check"></i><b>12.1.2</b> Transformations</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="ac.html"><a href="ac.html#conditions-de-soufflage"><i class="fa fa-check"></i><b>12.2</b> Conditions de soufflage</a></li>
+<li class="chapter" data-level="12.3" data-path="ac.html"><a href="ac.html#cta"><i class="fa fa-check"></i><b>12.3</b> Centrales de traitement d’air</a></li>
+</ul></li>
 <li class="part"><span><b>III Conception de bâtiments performants</b></span></li>
 <li class="chapter" data-level="13" data-path="architecture-bioclimatique.html"><a href="architecture-bioclimatique.html"><i class="fa fa-check"></i><b>13</b> Architecture bioclimatique</a></li>
 <li class="chapter" data-level="14" data-path="simulation-énergétique.html"><a href="simulation-énergétique.html"><i class="fa fa-check"></i><b>14</b> Simulation énergétique</a></li>
@@ -318,7 +339,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Manuel de performance énergétique des bâtiments</h1>
 <p class="author"><em>Simon Rouchier</em></p>
-<p class="date"><em>2022-09-08</em></p>
+<p class="date"><em>2022-10-04</em></p>
 </div>
 <div id="préface" class="section level1 unnumbered hasAnchor">
 <h1>Préface<a href="index.html#préface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -326,9 +347,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>La première partie, <strong>transferts de chaleur et de masse</strong>, est une description des principaux phénomènes physiques qui définissent la performance énergétique d’un bâtiment, avant que des systèmes de chauffage ventilation et climatisation y soient installés. On y revient sur les principales formes de transfert thermique, décrites avec les hypothèses de la modélisation des bâtiments, et sur les transferts hygriques et aérauliques. Cette partie inclut les éléments de calcul du coefficient Bbio de la réglementation.</li>
 <li>La deuxième partie, <strong>systèmes CVC</strong>, présente les équipements servant à satisfaire les besoins bioclimatiques estimés en première partie: chauffage, ventilation, refroidissement, eau chaude sanitaire. On y fait un inventaire des solutions existantes et on y décrit comment les dimensionner et estimer leur consommation. Cete partie correspond environ au calcul des indicateurs de consommation et d’impact sur le changement climatique de la réglementation.</li>
-<li>Dans une troisième partie, on aborde quelques notions de conception de bâtiments à haute efficacité énergétique : éléments d’architecture bioclimatique et méthodes numériques d’appui à la simulation énergétique des bâtiments.</li>
+<li>Dans une troisième partie, on abordera quelques notions de conception de bâtiments à haute efficacité énergétique : éléments d’architecture bioclimatique et méthodes numériques d’appui à la simulation énergétique des bâtiments.</li>
 </ul>
-<p>Ce site était prévu initialement comme support de travail et de révisions pour les étudiants de la filière bâtiment écoconstruction de l’école Polytech Annecy-Chambéry. De fil en aiguille, le contenu s’est étoffé jusqu’à devenir un livre complet utilisable en dehors de l’école.</p>
+<p>Ce site était prévu initialement comme support de travail et de révisions pour les étudiants de la filière bâtiment écoconstruction de l’école <a href="https://www.polytech.univ-smb.fr/">Polytech Annecy-Chambéry</a>. De fil en aiguille, le contenu s’est étoffé jusqu’à devenir un livre complet utilisable en dehors de l’école.</p>
+<div id="contenu-à-venir" class="section level2 unnumbered hasAnchor">
+<h2>Contenu à venir<a href="index.html#contenu-à-venir" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Le contenu n’est pas finalisé et sera enrichi progressivement en 2023 :</p>
+<ul>
+<li>Des exercices seront ajoutés aux chapitres de la partie II CVC</li>
+<li>Un chapitre sur l’éclairage dans la partie I</li>
+<li>Un chapitre sur la ventilation dans la partie II</li>
+<li>La partie III du livre : architecture bioclimatique, simulation énergétique, méthodes numériques, mesure et vérification, commissionnement…</li>
+</ul>
+</div>
 <div id="a-propos" class="section level2 unnumbered hasAnchor">
 <h2>A propos<a href="index.html#a-propos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Ce livre est écrit par <a href="https://srouchier.github.io/">Simon Rouchier</a>, enseignant chercheur à l’<a href="https://www.univ-smb.fr/">Université Savoie Mont Blanc</a>, Chambéry.</p>

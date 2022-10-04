@@ -18,9 +18,18 @@ Ce livre vise à être un manuel générique de calcul de la performance énerg�
 
 * La première partie, **transferts de chaleur et de masse**, est une description des principaux phénomènes physiques qui définissent la performance énergétique d'un bâtiment, avant que des systèmes de chauffage ventilation et climatisation y soient installés. On y revient sur les principales formes de transfert thermique, décrites avec les hypothèses de la modélisation des bâtiments, et sur les transferts hygriques et aérauliques. Cette partie inclut les éléments de calcul du coefficient Bbio de la réglementation.
 * La deuxième partie, **systèmes CVC**, présente les équipements servant à satisfaire les besoins bioclimatiques estimés en première partie: chauffage, ventilation, refroidissement, eau chaude sanitaire. On y fait un inventaire des solutions existantes et on y décrit comment les dimensionner et estimer leur consommation. Cete partie correspond environ au calcul des indicateurs de consommation et d'impact sur le changement climatique de la réglementation.
-* Dans une troisième partie, on aborde quelques notions de conception de bâtiments à haute efficacité énergétique : éléments d'architecture bioclimatique et méthodes numériques d'appui à la simulation énergétique des bâtiments.
+* Dans une troisième partie, on abordera quelques notions de conception de bâtiments à haute efficacité énergétique : éléments d'architecture bioclimatique et méthodes numériques d'appui à la simulation énergétique des bâtiments.
 
-Ce site était prévu initialement comme support de travail et de révisions pour les étudiants de la filière bâtiment écoconstruction de l'école Polytech Annecy-Chambéry. De fil en aiguille, le contenu s'est étoffé jusqu'à devenir un livre complet utilisable en dehors de l'école.
+Ce site était prévu initialement comme support de travail et de révisions pour les étudiants de la filière bâtiment écoconstruction de l'école [Polytech Annecy-Chambéry](https://www.polytech.univ-smb.fr/). De fil en aiguille, le contenu s'est étoffé jusqu'à devenir un livre complet utilisable en dehors de l'école.
+
+## Contenu à venir {-}
+
+Le contenu n'est pas finalisé et sera enrichi progressivement en 2023 :
+
+* Des exercices seront ajoutés aux chapitres de la partie II CVC
+* Un chapitre sur l'éclairage dans la partie I
+* Un chapitre sur la ventilation dans la partie II
+* La partie III du livre : architecture bioclimatique, simulation énergétique, méthodes numériques, mesure et vérification, commissionnement...
 
 ## A propos {-}
 
