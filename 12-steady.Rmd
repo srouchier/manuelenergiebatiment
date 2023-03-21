@@ -337,7 +337,7 @@ $\Phi = \underbrace{(D_1+D_2+D_3)}_{W/K}.\underbrace{\Delta T}_{K} = (16,03 + 16
 
 On considère un bâtiment composé de deux zones thermiques : la zone 1 est chauffée, la zone 2 est non chauffée. Un débit d'air passe de l'extérieur vers la zone 1 puis vers la zone 2. Les données du problèmes sont résumées ici :
 
-```{r tuto1, echo=FALSE, out.width="80%", fig.cap="Exercice 2"}
+```{r tuto1, echo=FALSE, out.width="70%", fig.cap="Exercice 2"}
 knitr::include_graphics(rep("figures/tuto1.png"))
 ```
 

@@ -129,9 +129,10 @@ z_n = \frac{P_e(0)-P_i(0)}{g(\rho_i-\rho_e)}
 (\#eq:air8)
 \end{equation}
 
-Donc dans l'exemple d'une température extérieure inférieure à la température intérieure, l'effet du tirage thermique est que
+Donc dans l'exemple d'une température extérieure inférieure à la température intérieure, l'effet du tirage thermique est que:
+
 * en dessous de l'axe neutre $z_n$, $P_e > P_i$ donc l'air rentre dans le bâtiment,
-* au dessus de l'axe neutre, $P_e < P_i donc l'air sort du bâtiment.
+* au dessus de l'axe neutre, $P_e < P_i$ donc l'air sort du bâtiment.
 
 Cette variation de l'écart de pression entraîne un déplacement d'air de haut en bas dans le bâtiment, d'où le nom de tirage thermique.
 
@@ -188,5 +189,21 @@ Dans la cheminée, l'air circule entre une paroi de verre et un mur de béton. O
 Pour résoudre le problème, on a besoin de trois équations :
 
 1. Ecrire le bilan thermique de la maison en fonction de son coefficient global de déperditions $D=100$ W/K et du débit d'air $\dot{m}$.
-2. Formuler le débit d'air $\dot{m}$ en fonction de la température de l'air en entrée $T_\mathrm{in}=13$°C et à la sortie de la cheminée $T_\mathrm{out}$, et de la différence d'élévation $z$ entre ces deux points.
+2. Formuler le débit d'air $\dot{m}$ en fonction de la température de l'air en entrée $T_i$ et à la sortie de la cheminée $T_\mathrm{out}$, et de la différence d'élévation $z$ entre ces deux points.
 3. Ecrire un bilan thermique à l'intérieur de la cheminée pour estimer la température maximale de l'air qui en sort.
+
+**Solution**
+
+1. En notant $T_\mathrm{in}$ la température d'entrée de l'air, $T_i$ et $T_e$ les températures intérieure et extérieure :
+\begin{equation}
+\dot{m} c_p \left(T_\mathrm{in}-T_i\right) + D \left(T_e-T_i\right) = 0
+(\#eq:airsolution1)
+\end{equation}
+2. On reprend la formule \@ref(eq:air9) du tirage thermique en considérant que la température "intérieure" à la cheminée est $T_\mathrm{out}$ et la température "extérieure" est celle de l'air entrant, soit $T_i$:
+\begin{equation}
+Q = A^* \sqrt{2 \, g \, z\frac{T_\mathrm{out}-T_i}{T_\mathrm{out}}}
+(\#eq:airsolution2)
+\end{equation}
+où $A^*$ est la surface effective des ouvertures de la cheminée et $Q=\dot{m}/\rho$ est le débit volumique à la sortie.
+
+3. L'air dans la cheminée est situé entre une paroi vitrée et une paroi isolée qui absorbe une partie du rayonnement solaire. Le calcul de sa température se fait par la même méthode que dans l'exemple de la serre, exercice \@ref(serre).

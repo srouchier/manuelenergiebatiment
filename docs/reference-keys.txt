@@ -117,6 +117,8 @@ eq:air9
 eq:flowrate5
 fig:exowind
 fig:chimney
+eq:airsolution1
+eq:airsolution2
 fig:dah
 eq:humidite1
 eq:humidite2
@@ -267,7 +269,7 @@ résolution-des-bilans-radiatifs
 facteurs-de-forme
 température-radiative-et-opérative
 exercices-1
-exercice-1-serre
+serre
 tutorial-2-radiateur
 transient
 conduction-dans-un-mur

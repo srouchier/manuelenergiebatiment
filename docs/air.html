@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Rouchier" />
 
 
-<meta name="date" content="2022-10-04" />
+<meta name="date" content="2023-03-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -198,7 +198,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4.4" data-path="rayonnement.html"><a href="rayonnement.html#exercices-1"><i class="fa fa-check"></i><b>4.4</b> Exercices</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="rayonnement.html"><a href="rayonnement.html#exercice-1-serre"><i class="fa fa-check"></i><b>4.4.1</b> Exercice 1 : serre</a></li>
+<li class="chapter" data-level="4.4.1" data-path="rayonnement.html"><a href="rayonnement.html#serre"><i class="fa fa-check"></i><b>4.4.1</b> Exercice 1 : serre</a></li>
 <li class="chapter" data-level="4.4.2" data-path="rayonnement.html"><a href="rayonnement.html#tutorial-2-radiateur"><i class="fa fa-check"></i><b>4.4.2</b> Tutorial 2: radiateur</a></li>
 </ul></li>
 </ul></li>
@@ -458,9 +458,11 @@ P_e(z) - P_i(z) &amp; = \left( P_e(0)-\rho_e \, g \, z\right) - \left( P_i(0)-\r
 z_n = \frac{P_e(0)-P_i(0)}{g(\rho_i-\rho_e)}
 \tag{6.11}
 \end{equation}\]</span></p>
-<p>Donc dans l’exemple d’une température extérieure inférieure à la température intérieure, l’effet du tirage thermique est que
-* en dessous de l’axe neutre <span class="math inline">\(z_n\)</span>, <span class="math inline">\(P_e &gt; P_i\)</span> donc l’air rentre dans le bâtiment,
-* au dessus de l’axe neutre, $P_e &lt; P_i donc l’air sort du bâtiment.</p>
+<p>Donc dans l’exemple d’une température extérieure inférieure à la température intérieure, l’effet du tirage thermique est que:</p>
+<ul>
+<li>en dessous de l’axe neutre <span class="math inline">\(z_n\)</span>, <span class="math inline">\(P_e &gt; P_i\)</span> donc l’air rentre dans le bâtiment,</li>
+<li>au dessus de l’axe neutre, <span class="math inline">\(P_e &lt; P_i\)</span> donc l’air sort du bâtiment.</li>
+</ul>
 <p>Cette variation de l’écart de pression entraîne un déplacement d’air de haut en bas dans le bâtiment, d’où le nom de tirage thermique.</p>
 <div class="figure"><span style="display:block;" id="fig:stackeffect2"></span>
 <img src="figures/stackeffect2.png" alt="Débit induit par le tirage thermique à travers deux ouvertures" width="50%" />
@@ -521,8 +523,23 @@ Figure 6.8: Cheminée solaire
 <p>Pour résoudre le problème, on a besoin de trois équations :</p>
 <ol style="list-style-type: decimal">
 <li>Ecrire le bilan thermique de la maison en fonction de son coefficient global de déperditions <span class="math inline">\(D=100\)</span> W/K et du débit d’air <span class="math inline">\(\dot{m}\)</span>.</li>
-<li>Formuler le débit d’air <span class="math inline">\(\dot{m}\)</span> en fonction de la température de l’air en entrée <span class="math inline">\(T_\mathrm{in}=13\)</span>°C et à la sortie de la cheminée <span class="math inline">\(T_\mathrm{out}\)</span>, et de la différence d’élévation <span class="math inline">\(z\)</span> entre ces deux points.</li>
+<li>Formuler le débit d’air <span class="math inline">\(\dot{m}\)</span> en fonction de la température de l’air en entrée <span class="math inline">\(T_i\)</span> et à la sortie de la cheminée <span class="math inline">\(T_\mathrm{out}\)</span>, et de la différence d’élévation <span class="math inline">\(z\)</span> entre ces deux points.</li>
 <li>Ecrire un bilan thermique à l’intérieur de la cheminée pour estimer la température maximale de l’air qui en sort.</li>
+</ol>
+<p><strong>Solution</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>En notant <span class="math inline">\(T_\mathrm{in}\)</span> la température d’entrée de l’air, <span class="math inline">\(T_i\)</span> et <span class="math inline">\(T_e\)</span> les températures intérieure et extérieure :
+<span class="math display" id="eq:airsolution1">\[\begin{equation}
+\dot{m} c_p \left(T_\mathrm{in}-T_i\right) + D \left(T_e-T_i\right) = 0
+\tag{6.14}
+\end{equation}\]</span></p></li>
+<li><p>On reprend la formule <a href="air.html#eq:air9">(6.12)</a> du tirage thermique en considérant que la température “intérieure” à la cheminée est <span class="math inline">\(T_\mathrm{out}\)</span> et la température “extérieure” est celle de l’air entrant, soit <span class="math inline">\(T_i\)</span>:
+<span class="math display" id="eq:airsolution2">\[\begin{equation}
+Q = A^* \sqrt{2 \, g \, z\frac{T_\mathrm{out}-T_i}{T_\mathrm{out}}}
+\tag{6.15}
+\end{equation}\]</span>
+où <span class="math inline">\(A^*\)</span> est la surface effective des ouvertures de la cheminée et <span class="math inline">\(Q=\dot{m}/\rho\)</span> est le débit volumique à la sortie.</p></li>
+<li><p>L’air dans la cheminée est situé entre une paroi vitrée et une paroi isolée qui absorbe une partie du rayonnement solaire. Le calcul de sa température se fait par la même méthode que dans l’exemple de la serre, exercice <a href="rayonnement.html#serre">4.4.1</a>.</p></li>
 </ol>
 
 </div>

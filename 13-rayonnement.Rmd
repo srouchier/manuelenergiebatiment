@@ -181,7 +181,7 @@ où $T_a$ est la température de l'air, $h_c$ et $h_r$ sont les coefficients d'�
 
 ## Exercices
 
-### Exercice 1 : serre
+### Exercice 1 : serre {#serre}
 
 ```{r tuto4, echo=FALSE, out.width="40%", fig.cap="Exercice 1"}
 knitr::include_graphics(rep("figures/tuto4.png"))
