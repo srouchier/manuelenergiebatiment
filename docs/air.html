@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapitre 6 Aéraulique | Manuel de performance énergétique des bâtiments</title>
+  <title>Chapitre 4 Renouvellement d’air | Manuel de performance énergétique des bâtiments</title>
   <meta name="description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapitre 6 Aéraulique | Manuel de performance énergétique des bâtiments" />
+  <meta property="og:title" content="Chapitre 4 Renouvellement d’air | Manuel de performance énergétique des bâtiments" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
   <meta name="github-repo" content="srouchier/beh" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapitre 6 Aéraulique | Manuel de performance énergétique des bâtiments" />
+  <meta name="twitter:title" content="Chapitre 4 Renouvellement d’air | Manuel de performance énergétique des bâtiments" />
   
   <meta name="twitter:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
   
@@ -23,15 +23,15 @@
 <meta name="author" content="Simon Rouchier" />
 
 
-<meta name="date" content="2023-03-21" />
+<meta name="date" content="2023-09-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="transient.html"/>
-<link rel="next" href="humidite.html"/>
+<link rel="prev" href="steady.html"/>
+<link rel="next" href="rayonnement.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -92,7 +92,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -105,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -119,6 +119,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -148,87 +152,91 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#re2020"><i class="fa fa-check"></i><b>1.2.1</b> Bâtiments neufs : la RE 2020</a></li>
 <li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#bâtiments-existants"><i class="fa fa-check"></i><b>1.2.2</b> Bâtiments existants</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction.html"><a href="introduction.html#règles-de-calcul-des-besoins"><i class="fa fa-check"></i><b>1.2.3</b> Règles de calcul des besoins</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#plan-du-livre"><i class="fa fa-check"></i><b>1.3</b> Plan du livre</a></li>
 </ul></li>
-<li class="part"><span><b>I Transferts de chaleur et de masse</b></span></li>
-<li class="chapter" data-level="2" data-path="apercu.html"><a href="apercu.html"><i class="fa fa-check"></i><b>2</b> Aperçu</a>
+<li class="part"><span><b>I Performance énergétique du bâtiment</b></span></li>
+<li class="chapter" data-level="2" data-path="apercu.html"><a href="apercu.html"><i class="fa fa-check"></i><b>2</b> Bilan de chaleur et besoins</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="apercu.html"><a href="apercu.html#apercu1"><i class="fa fa-check"></i><b>2.1</b> Bilan thermique global</a></li>
-<li class="chapter" data-level="2.2" data-path="apercu.html"><a href="apercu.html#apercu2"><i class="fa fa-check"></i><b>2.2</b> Calcul réglementaire</a>
+<li class="chapter" data-level="2.1" data-path="apercu.html"><a href="apercu.html#hypothèses-et-définitions"><i class="fa fa-check"></i><b>2.1</b> Hypothèses et définitions</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="apercu.html"><a href="apercu.html#hypothèses"><i class="fa fa-check"></i><b>2.2.1</b> Hypothèses</a></li>
-<li class="chapter" data-level="2.2.2" data-path="apercu.html"><a href="apercu.html#besoins-de-chauffage-et-refroidissement"><i class="fa fa-check"></i><b>2.2.2</b> Besoins de chauffage et refroidissement</a></li>
-<li class="chapter" data-level="2.2.3" data-path="apercu.html"><a href="apercu.html#les-règles-th-bat"><i class="fa fa-check"></i><b>2.2.3</b> Les règles Th-bat</a></li>
+<li class="chapter" data-level="2.1.1" data-path="apercu.html"><a href="apercu.html#locaux-et-parois"><i class="fa fa-check"></i><b>2.1.1</b> Locaux et parois</a></li>
+<li class="chapter" data-level="2.1.2" data-path="apercu.html"><a href="apercu.html#données-dentrée"><i class="fa fa-check"></i><b>2.1.2</b> Données d’entrée</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="apercu.html"><a href="apercu.html#apercu3"><i class="fa fa-check"></i><b>2.3</b> Détail des transferts thermiques</a></li>
-<li class="chapter" data-level="2.4" data-path="apercu.html"><a href="apercu.html#exercice"><i class="fa fa-check"></i><b>2.4</b> Exercice</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="steady.html"><a href="steady.html"><i class="fa fa-check"></i><b>3</b> Conduction et convection stationnaire</a>
+<li class="chapter" data-level="2.2" data-path="apercu.html"><a href="apercu.html#apercu1"><i class="fa fa-check"></i><b>2.2</b> Bilan thermique global</a></li>
+<li class="chapter" data-level="2.3" data-path="apercu.html"><a href="apercu.html#calcul-des-besoins"><i class="fa fa-check"></i><b>2.3</b> Calcul des besoins</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="steady.html"><a href="steady.html#conduction"><i class="fa fa-check"></i><b>3.1</b> Conduction dans un mur</a>
+<li class="chapter" data-level="2.3.1" data-path="apercu.html"><a href="apercu.html#les-dju"><i class="fa fa-check"></i><b>2.3.1</b> Les DJU</a></li>
+<li class="chapter" data-level="2.3.2" data-path="apercu.html"><a href="apercu.html#apercu3"><i class="fa fa-check"></i><b>2.3.2</b> Détail des transferts thermiques</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="apercu.html"><a href="apercu.html#exercices"><i class="fa fa-check"></i><b>2.4</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="apercu.html"><a href="apercu.html#exercice-1-calcul-des-dju-et-des-besoins"><i class="fa fa-check"></i><b>2.4.1</b> Exercice 1 : calcul des DJU et des besoins</a></li>
+<li class="chapter" data-level="2.4.2" data-path="apercu.html"><a href="apercu.html#exercice-2-apports-et-besoins"><i class="fa fa-check"></i><b>2.4.2</b> Exercice 2 : apports et besoins</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="steady.html"><a href="steady.html"><i class="fa fa-check"></i><b>3</b> Calcul des déperditions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="steady.html"><a href="steady.html#conduction"><i class="fa fa-check"></i><b>3.1</b> Transmission dans une paroi plane</a>
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="steady.html"><a href="steady.html#conduction-1d-et-analogie-électrique"><i class="fa fa-check"></i><b>3.1.1</b> Conduction 1D et analogie électrique</a></li>
 <li class="chapter" data-level="3.1.2" data-path="steady.html"><a href="steady.html#assemblage-de-résistances"><i class="fa fa-check"></i><b>3.1.2</b> Assemblage de résistances</a></li>
-<li class="chapter" data-level="3.1.3" data-path="steady.html"><a href="steady.html#surfacique"><i class="fa fa-check"></i><b>3.1.3</b> Transferts surfaciques</a></li>
+<li class="chapter" data-level="3.1.3" data-path="steady.html"><a href="steady.html#surfacique"><i class="fa fa-check"></i><b>3.1.3</b> Résistances superficielles</a></li>
+<li class="chapter" data-level="3.1.4" data-path="steady.html"><a href="steady.html#menuiseries"><i class="fa fa-check"></i><b>3.1.4</b> Menuiseries</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="steady.html"><a href="steady.html#ponts-thermiques"><i class="fa fa-check"></i><b>3.2</b> Ponts thermiques</a></li>
 <li class="chapter" data-level="3.3" data-path="steady.html"><a href="steady.html#convection"><i class="fa fa-check"></i><b>3.3</b> Echanges convectifs</a></li>
-<li class="chapter" data-level="3.4" data-path="steady.html"><a href="steady.html#bilan-des-déperditions"><i class="fa fa-check"></i><b>3.4</b> Bilan des déperditions</a>
+<li class="chapter" data-level="3.4" data-path="steady.html"><a href="steady.html#locaux-non-chauffés"><i class="fa fa-check"></i><b>3.4</b> Locaux non chauffés</a></li>
+<li class="chapter" data-level="3.5" data-path="steady.html"><a href="steady.html#bilandeperditions"><i class="fa fa-check"></i><b>3.5</b> Bilan des déperditions</a></li>
+<li class="chapter" data-level="3.6" data-path="steady.html"><a href="steady.html#exercices-1"><i class="fa fa-check"></i><b>3.6</b> Exercices</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="steady.html"><a href="steady.html#locaux-non-chauffés"><i class="fa fa-check"></i><b>3.4.1</b> Locaux non chauffés</a></li>
-<li class="chapter" data-level="3.4.2" data-path="steady.html"><a href="steady.html#bilan-dune-zone"><i class="fa fa-check"></i><b>3.4.2</b> Bilan d’une zone</a></li>
-</ul></li>
-<li class="chapter" data-level="3.5" data-path="steady.html"><a href="steady.html#exercices"><i class="fa fa-check"></i><b>3.5</b> Exercices</a>
-<ul>
-<li class="chapter" data-level="3.5.1" data-path="steady.html"><a href="steady.html#ex-1-déperditions-dune-pièce"><i class="fa fa-check"></i><b>3.5.1</b> Ex 1 : déperditions d’une pièce</a></li>
-<li class="chapter" data-level="3.5.2" data-path="steady.html"><a href="steady.html#ex-2-bilan-thermique-de-deux-pièces"><i class="fa fa-check"></i><b>3.5.2</b> Ex 2: bilan thermique de deux pièces</a></li>
+<li class="chapter" data-level="3.6.1" data-path="steady.html"><a href="steady.html#ex-1-déperditions-dune-pièce"><i class="fa fa-check"></i><b>3.6.1</b> Ex 1 : déperditions d’une pièce</a></li>
+<li class="chapter" data-level="3.6.2" data-path="steady.html"><a href="steady.html#ex-2-bilan-thermique-de-deux-pièces"><i class="fa fa-check"></i><b>3.6.2</b> Ex 2: bilan thermique de deux pièces</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="rayonnement.html"><a href="rayonnement.html"><i class="fa fa-check"></i><b>4</b> Rayonnement</a>
+<li class="chapter" data-level="4" data-path="air.html"><a href="air.html"><i class="fa fa-check"></i><b>4</b> Renouvellement d’air</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="rayonnement.html"><a href="rayonnement.html#principes-de-rayonnement"><i class="fa fa-check"></i><b>4.1</b> Principes de rayonnement</a></li>
-<li class="chapter" data-level="4.2" data-path="rayonnement.html"><a href="rayonnement.html#apports-solaires"><i class="fa fa-check"></i><b>4.2</b> Apports solaires</a></li>
-<li class="chapter" data-level="4.3" data-path="rayonnement.html"><a href="rayonnement.html#echanges-radiatifs-glo"><i class="fa fa-check"></i><b>4.3</b> Echanges radiatifs GLO</a>
+<li class="chapter" data-level="4.1" data-path="air.html"><a href="air.html#débits-dair-neuf-entrant"><i class="fa fa-check"></i><b>4.1</b> Débits d’air neuf entrant</a></li>
+<li class="chapter" data-level="4.2" data-path="air.html"><a href="air.html#perméabilité-à-lair-des-bâtiments"><i class="fa fa-check"></i><b>4.2</b> Perméabilité à l’air des bâtiments</a></li>
+<li class="chapter" data-level="4.3" data-path="air.html"><a href="air.html#ventilation-naturelle"><i class="fa fa-check"></i><b>4.3</b> Ventilation naturelle</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="rayonnement.html"><a href="rayonnement.html#définitions"><i class="fa fa-check"></i><b>4.3.1</b> Définitions</a></li>
-<li class="chapter" data-level="4.3.2" data-path="rayonnement.html"><a href="rayonnement.html#résolution-des-bilans-radiatifs"><i class="fa fa-check"></i><b>4.3.2</b> Résolution des bilans radiatifs</a></li>
-<li class="chapter" data-level="4.3.3" data-path="rayonnement.html"><a href="rayonnement.html#facteurs-de-forme"><i class="fa fa-check"></i><b>4.3.3</b> Facteurs de forme</a></li>
-<li class="chapter" data-level="4.3.4" data-path="rayonnement.html"><a href="rayonnement.html#température-radiative-et-opérative"><i class="fa fa-check"></i><b>4.3.4</b> Température radiative et opérative</a></li>
+<li class="chapter" data-level="4.3.1" data-path="air.html"><a href="air.html#méthode-nodale"><i class="fa fa-check"></i><b>4.3.1</b> Méthode nodale</a></li>
+<li class="chapter" data-level="4.3.2" data-path="air.html"><a href="air.html#vent"><i class="fa fa-check"></i><b>4.3.2</b> Vent</a></li>
+<li class="chapter" data-level="4.3.3" data-path="air.html"><a href="air.html#tirage-thermique"><i class="fa fa-check"></i><b>4.3.3</b> Tirage thermique</a></li>
+<li class="chapter" data-level="4.3.4" data-path="air.html"><a href="air.html#bilan"><i class="fa fa-check"></i><b>4.3.4</b> Bilan</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="rayonnement.html"><a href="rayonnement.html#exercices-1"><i class="fa fa-check"></i><b>4.4</b> Exercices</a>
+<li class="chapter" data-level="4.4" data-path="air.html"><a href="air.html#exercices-2"><i class="fa fa-check"></i><b>4.4</b> Exercices</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="rayonnement.html"><a href="rayonnement.html#serre"><i class="fa fa-check"></i><b>4.4.1</b> Exercice 1 : serre</a></li>
-<li class="chapter" data-level="4.4.2" data-path="rayonnement.html"><a href="rayonnement.html#tutorial-2-radiateur"><i class="fa fa-check"></i><b>4.4.2</b> Tutorial 2: radiateur</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="transient.html"><a href="transient.html"><i class="fa fa-check"></i><b>5</b> Régime transitoire</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="transient.html"><a href="transient.html#conduction-dans-un-mur"><i class="fa fa-check"></i><b>5.1</b> Conduction dans un mur</a></li>
-<li class="chapter" data-level="5.2" data-path="transient.html"><a href="transient.html#modèles-rc"><i class="fa fa-check"></i><b>5.2</b> Modèles RC</a></li>
-<li class="chapter" data-level="5.3" data-path="transient.html"><a href="transient.html#exercices-inertie-thermique"><i class="fa fa-check"></i><b>5.3</b> Exercices : inertie thermique</a>
-<ul>
-<li class="chapter" data-level="5.3.1" data-path="transient.html"><a href="transient.html#exercice-1-bâtiment-lourd-ou-léger"><i class="fa fa-check"></i><b>5.3.1</b> Exercice 1 : bâtiment lourd ou léger</a></li>
-<li class="chapter" data-level="5.3.2" data-path="transient.html"><a href="transient.html#exercice-2-isolation-intérieure-ou-extérieure"><i class="fa fa-check"></i><b>5.3.2</b> Exercice 2 : isolation intérieure ou extérieure</a></li>
+<li class="chapter" data-level="4.4.1" data-path="air.html"><a href="air.html#exercice-1-vent-et-tirage-thermique"><i class="fa fa-check"></i><b>4.4.1</b> Exercice 1 : vent et tirage thermique</a></li>
+<li class="chapter" data-level="4.4.2" data-path="air.html"><a href="air.html#excheminee"><i class="fa fa-check"></i><b>4.4.2</b> Exercice 2 : cheminée solaire</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="air.html"><a href="air.html"><i class="fa fa-check"></i><b>6</b> Aéraulique</a>
+<li class="chapter" data-level="5" data-path="rayonnement.html"><a href="rayonnement.html"><i class="fa fa-check"></i><b>5</b> Rayonnement</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="air.html"><a href="air.html#méthode-nodale"><i class="fa fa-check"></i><b>6.1</b> Méthode nodale</a>
+<li class="chapter" data-level="5.1" data-path="rayonnement.html"><a href="rayonnement.html#principes-de-rayonnement"><i class="fa fa-check"></i><b>5.1</b> Principes de rayonnement</a></li>
+<li class="chapter" data-level="5.2" data-path="rayonnement.html"><a href="rayonnement.html#apports-solaires"><i class="fa fa-check"></i><b>5.2</b> Apports solaires</a></li>
+<li class="chapter" data-level="5.3" data-path="rayonnement.html"><a href="rayonnement.html#echanges-radiatifs-glo"><i class="fa fa-check"></i><b>5.3</b> Echanges radiatifs GLO</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="air.html"><a href="air.html#rappels-de-mécanique-des-fluides"><i class="fa fa-check"></i><b>6.1.1</b> Rappels de mécanique des fluides</a></li>
-<li class="chapter" data-level="6.1.2" data-path="air.html"><a href="air.html#débit-dans-les-ouvertures"><i class="fa fa-check"></i><b>6.1.2</b> Débit dans les ouvertures</a></li>
+<li class="chapter" data-level="5.3.1" data-path="rayonnement.html"><a href="rayonnement.html#définitions"><i class="fa fa-check"></i><b>5.3.1</b> Définitions</a></li>
+<li class="chapter" data-level="5.3.2" data-path="rayonnement.html"><a href="rayonnement.html#résolution-des-bilans-radiatifs"><i class="fa fa-check"></i><b>5.3.2</b> Résolution des bilans radiatifs</a></li>
+<li class="chapter" data-level="5.3.3" data-path="rayonnement.html"><a href="rayonnement.html#facteurs-de-forme"><i class="fa fa-check"></i><b>5.3.3</b> Facteurs de forme</a></li>
+<li class="chapter" data-level="5.3.4" data-path="rayonnement.html"><a href="rayonnement.html#température-radiative-et-opérative"><i class="fa fa-check"></i><b>5.3.4</b> Température radiative et opérative</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="air.html"><a href="air.html#ventilationnaturelle"><i class="fa fa-check"></i><b>6.2</b> Ventilation naturelle</a>
+<li class="chapter" data-level="5.4" data-path="rayonnement.html"><a href="rayonnement.html#exercices-3"><i class="fa fa-check"></i><b>5.4</b> Exercices</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="air.html"><a href="air.html#vent"><i class="fa fa-check"></i><b>6.2.1</b> Vent</a></li>
-<li class="chapter" data-level="6.2.2" data-path="air.html"><a href="air.html#tirage-thermique"><i class="fa fa-check"></i><b>6.2.2</b> Tirage thermique</a></li>
-<li class="chapter" data-level="6.2.3" data-path="air.html"><a href="air.html#bilan"><i class="fa fa-check"></i><b>6.2.3</b> Bilan</a></li>
+<li class="chapter" data-level="5.4.1" data-path="rayonnement.html"><a href="rayonnement.html#serre"><i class="fa fa-check"></i><b>5.4.1</b> Exercice 1 : serre</a></li>
+<li class="chapter" data-level="5.4.2" data-path="rayonnement.html"><a href="rayonnement.html#tutorial-2-radiateur"><i class="fa fa-check"></i><b>5.4.2</b> Tutorial 2: radiateur</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="air.html"><a href="air.html#exercices-2"><i class="fa fa-check"></i><b>6.3</b> Exercices</a>
+</ul></li>
+<li class="chapter" data-level="6" data-path="transient.html"><a href="transient.html"><i class="fa fa-check"></i><b>6</b> Régime transitoire</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="air.html"><a href="air.html#exercice-1-vent-et-tirage-thermique"><i class="fa fa-check"></i><b>6.3.1</b> Exercice 1 : vent et tirage thermique</a></li>
-<li class="chapter" data-level="6.3.2" data-path="air.html"><a href="air.html#excheminee"><i class="fa fa-check"></i><b>6.3.2</b> Exercice 2 : cheminée solaire</a></li>
+<li class="chapter" data-level="6.1" data-path="transient.html"><a href="transient.html#conduction-dans-un-mur"><i class="fa fa-check"></i><b>6.1</b> Conduction dans un mur</a></li>
+<li class="chapter" data-level="6.2" data-path="transient.html"><a href="transient.html#modèles-rc"><i class="fa fa-check"></i><b>6.2</b> Modèles RC</a></li>
+<li class="chapter" data-level="6.3" data-path="transient.html"><a href="transient.html#exercices-inertie-thermique"><i class="fa fa-check"></i><b>6.3</b> Exercices : inertie thermique</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="transient.html"><a href="transient.html#exercice-1-bâtiment-lourd-ou-léger"><i class="fa fa-check"></i><b>6.3.1</b> Exercice 1 : bâtiment lourd ou léger</a></li>
+<li class="chapter" data-level="6.3.2" data-path="transient.html"><a href="transient.html#exercice-2-isolation-intérieure-ou-extérieure"><i class="fa fa-check"></i><b>6.3.2</b> Exercice 2 : isolation intérieure ou extérieure</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="humidite.html"><a href="humidite.html"><i class="fa fa-check"></i><b>7</b> Humidité</a>
@@ -236,7 +244,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="humidite.html"><a href="humidite.html#air-humide"><i class="fa fa-check"></i><b>7.1</b> Air humide</a></li>
 <li class="chapter" data-level="7.2" data-path="humidite.html"><a href="humidite.html#humidité-dans-les-matériaux"><i class="fa fa-check"></i><b>7.2</b> Humidité dans les matériaux</a></li>
 <li class="chapter" data-level="7.3" data-path="humidite.html"><a href="humidite.html#bilans-dhumidité"><i class="fa fa-check"></i><b>7.3</b> Bilans d’humidité</a></li>
-<li class="chapter" data-level="7.4" data-path="humidite.html"><a href="humidite.html#exercices-3"><i class="fa fa-check"></i><b>7.4</b> Exercices</a>
+<li class="chapter" data-level="7.4" data-path="humidite.html"><a href="humidite.html#exercices-4"><i class="fa fa-check"></i><b>7.4</b> Exercices</a>
 <ul>
 <li class="chapter" data-level="7.4.1" data-path="humidite.html"><a href="humidite.html#exercice-1-condensation"><i class="fa fa-check"></i><b>7.4.1</b> Exercice 1 : condensation</a></li>
 <li class="chapter" data-level="7.4.2" data-path="humidite.html"><a href="humidite.html#exercice-2-point-de-rosée"><i class="fa fa-check"></i><b>7.4.2</b> Exercice 2 : point de rosée</a></li>
@@ -336,14 +344,105 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="air" class="section level1 hasAnchor" number="6">
-<h1><span class="header-section-number">Chapitre 6</span> Aéraulique<a href="air.html#air" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>La première partie du livre ne porte pas seulement sur les transferts de chaleur, mais aussi les transferts de masse. Parmi ceux-ci, on décrit ici l’aéraulique des bâtiments, et on verra les transferts d’humidité dans le chapitre <a href="humidite.html#humidite">7</a>.</p>
-<p>Les transferts d’air dans un bâtiment sont l’effet combiné de la ventilation mécanique et de la ventilation naturelle. Cette dernière désigne les écoulements non contrôlés sous l’effet du vent et du tirage thermique, qui peuvent traverser de petites ouvertures (infiltrations dans les défauts d’étanchéité de l’enveloppe et les entrées d’air) ou de grandes ouvertures (portes et fenêtres ouvertes).</p>
+<div id="air" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapitre 4</span> Renouvellement d’air<a href="air.html#air" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Les transferts de chaleur par renouvellement d’air ont été évoqués <a href="steady.html#convection">au chapitre précédent</a> en raison du flux de chaleur <span class="math inline">\(\Phi_v\)</span> (W) dans le bilan thermique d’un local sous l’effet d’un débit de renouvellement d’air <span class="math inline">\(Q_v\)</span> (m<span class="math inline">\(^3\)</span>/h):
+<span class="math display" id="eq:air0">\[\begin{align}
+\Phi_v = 0.34 \, Q_v \,  (T_e-T_i) \tag{4.1}
+\end{align}\]</span></p>
+<p>Tout débit d’air entrant représente donc une déperdition thermique en hiver (<span class="math inline">\(T_e &lt; T_i\)</span>) ou un apport de chaleur supplémentaire en été (<span class="math inline">\(T_e &gt; T_i\)</span>). Un moyen de réduire les déperditions thermiques liées au renouvellement d’air est l’usage d’une VMC double flux ou d’une centrale de traitement d’air qui fournit aux locaux un air neuf préchauffé (ou refroidi, selon la saison), plutôt qu’à la température extérieure <span class="math inline">\(T_e\)</span>.</p>
+<p>Les débits de renouvellement d’air dans les locaux peuvent résulter de trois composantes :</p>
+<ul>
+<li>La ventilation mécanique contrôlée (VMC) qui peut imposer un débit d’air neuf réglementaire,</li>
+<li>Les infiltrations à travers les défauts d’étanchéité de l’enveloppe,</li>
+<li>La ventilation naturelle sous l’effet du vent et du tirage thermique.</li>
+</ul>
+<p>Les calculs détaillés de la norme EN 12831-1 prennent en compte les trois composantes du renouvellement d’air pour estimer les déperditions dus à la ventilation. Un même local peut recevoir plusieurs débits d’air entrant à des températures différentes.</p>
+<div class="figure"><span style="display:block;" id="fig:ventilation"></span>
+<img src="figures/ventilation.png" alt="Bilan de masse d'air dans un local" width="50%" />
+<p class="caption">
+Figure 4.1: Bilan de masse d’air dans un local
+</p>
+</div>
+<p>Le bilan de masse d’air dans un local est très simple en principe : la somme des débits entrants est égale à la somme des débits sortants.</p>
+<p><span class="math display" id="eq:air01">\[\begin{equation}
+\sum_i Q_{V,\mathit{in},i} = \sum_j Q_{V,\mathit{out},j} \tag{4.2}
+\end{equation}\]</span></p>
+<div id="débits-dair-neuf-entrant" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Débits d’air neuf entrant<a href="air.html#débits-dair-neuf-entrant" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Une zone ventilée est un ensemble de pièces dont le renouvellement d’air est assuré par un unique système de ventilation. Généralement, un logement correspond à une zone ventilée. Dans une zone ventilée, le débit total d’apport d’air neuf <span class="math inline">\(Q_{Van}\)</span> et le débit total d’air extrait <span class="math inline">\(Q_{Vext}\)</span> sont calculés en sommant les débits correspondant dans les différents locaux :</p>
+<p><span class="math display" id="eq:air03" id="eq:air02">\[\begin{align}
+Q_{Van} &amp; = \sum_i Q_{Van,i} \tag{4.3} \\
+Q_{Vext} &amp; = \sum_i Q_{Vext,i}  \tag{4.4}
+\end{align}\]</span></p>
+<p>Les débits d’air neuf <span class="math inline">\(Q_{Van,i}\)</span> ou extrait <span class="math inline">\(Q_{Vext,i}\)</span> de chaque pièce sont imposés par la réglementation selon le type de bâtiment et son occupation. Lorsqu’un débit total d’air neuf <span class="math inline">\(Q_{Van}\)</span> à l’échelle de toute la zone ventilée est imposé, on peut le répartir au prorata des volumes des locaux <span class="math inline">\(V_i\)</span> :</p>
+<p><span class="math display" id="eq:air04">\[\begin{equation}
+Q_{Van,i} = \frac{V_i}{\sum_i V_i} Q_{Van} \tag{4.5}
+\end{equation}\]</span></p>
+<div class="figure"><span style="display:block;" id="fig:vmc"></span>
+<img src="figures/vmc.png" alt="Débits d’extraction minimums imposés dans les bâtiments d'habitation neufs" width="70%" />
+<p class="caption">
+Figure 4.2: Débits d’extraction minimums imposés dans les bâtiments d’habitation neufs
+</p>
+</div>
+<p>Dans les bâtiments d’habitation, la réglementation fixe deux niveaux de débits pour les systèmes autoréglables : le débit de base <span class="math inline">\(\left(Q_{Vext}\right)_B\)</span>, et le débit de pointe <span class="math inline">\(\left(Q_{Vext}\right)_P\)</span>. Le débit de pointe est censé assurer un renouvellement d’air suffisant lorsque les activités des occupants génèrent beaucoup de polluants (douches, cuisine, etc.). Le débit de base assure un renouvellement d’air suffisant le reste du temps. Les débits de ventilation dans les bâtiments autres que les bâtiments d’habitation sont fixés par le Code du Travail.</p>
+</div>
+<div id="perméabilité-à-lair-des-bâtiments" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Perméabilité à l’air des bâtiments<a href="air.html#perméabilité-à-lair-des-bâtiments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La mesure de la perméabilité à l’air des bâtiments neufs a été rendue obligatoire avec la RT2012. Elle est réalisée une fois le bâtiment terminé. Elle vise essentiellement à vérifier la qualité de la mise en oeuvre du bâtiment (joints autour des fenêtres, continuité du pare-vapeur, absences de fissures dans les maçonneries, etc.).</p>
+<p>La mesure de perméabilité se fait avec un test de la porte soufflante. L’intérieur du bâtiment (ou du logement si immeuble de logement collectif) est mis en dépression (ou en surpression, le test peut se faire dans les deux sens), pour induire un écoulement au travers des éventuels défauts d’étanchéité de l’enveloppe (flèches vertes dans le schéma ci-dessous). Le test se fait après avoir colmaté toutes les ouvertures volontaires vers l’extérieur (bouches de soufflage et d’extraction, entrée d’air situées dans les menuiseries).</p>
+<div class="figure"><span style="display:block;" id="fig:portesoufflante"></span>
+<img src="figures/portesoufflante.png" alt="Porte soufflante" width="70%" />
+<p class="caption">
+Figure 4.3: Porte soufflante
+</p>
+</div>
+<p>La porte soufflante est constituée d’une bâche étanche maintenue par un cadre qui s’adapte au cadre de la porte d’entrée du bâtiment testé, et d’un ventilateur. Lorsque le ventilateur est en route, le dispositif mesure simultanément le débit volumique <span class="math inline">\(Q_v\)</span> qui passe au travers du ventilateur (et donc au travers des défauts d’étanchéité), et la différence de pression entre l’intérieur et l’extérieur du bâtiment <span class="math inline">\(\Delta p = \left| p_\mathit{in} - p_\mathit{ext} \right|\)</span>.</p>
+<p>A l’issue d’un test et de plusieurs points de mesure, le graphique <span class="math inline">\(Q_v(\Delta p)\)</span> est tracé, et permet de trouver les coefficients <span class="math inline">\(K\)</span> et <span class="math inline">\(n\)</span> d’une relation entre les deux grandeurs de la forme :
+<span class="math display" id="eq:air05">\[\begin{equation}
+Q_v = K \, \Delta p^n \tag{4.6}
+\end{equation}\]</span></p>
+<p>Avec <span class="math inline">\(n\)</span> un exposant donc la valeur se siture entre 0.5 et 1.</p>
+<p>Sur la base de cette équation, on peut calculer deux indicateurs :</p>
+<ul>
+<li><span class="math inline">\(Q_{4Pa,surf}\)</span> en m<span class="math inline">\(^3\)</span>/h/m<span class="math inline">\(^2\)</span> est le débit obtenu pour <span class="math inline">\(\Delta p=4\)</span> Pa, divisé par la surface déperditive du bâtiment;</li>
+<li><span class="math inline">\(n50\)</span> en vol/h est le taux de renouvellement obtenu pour <span class="math inline">\(\Delta p=50\)</span> Pa.</li>
+</ul>
+<p>La RE2020 impose les valeurs maximales suivantes pour <span class="math inline">\(Q_{4Pa,surf}\)</span> selon l’usage du bâtiment</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Usage</th>
+<th align="left">Valeur max <span class="math inline">\(Q_{4Pa,surf}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Maison individuelle</td>
+<td align="left">0.6</td>
+</tr>
+<tr class="even">
+<td align="left">Logements collectifs</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">Bâtimetns tertiaires</td>
+<td align="left">1.6</td>
+</tr>
+<tr class="even">
+<td align="left">Autres usages</td>
+<td align="left">3.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="ventilation-naturelle" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Ventilation naturelle<a href="air.html#ventilation-naturelle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La ventilation naturelle est le déplacement d’air qui n’est pas dû à une ventilation mécanique contrôlée. Elle provient de deux forces principales qui génèrent des variations locales de pression, qui ensuite résultent en un déplacement d’air des zones de pression élevée vers les pressions faibles : le vent et le tirage thermique.</p>
 <div class="figure"><span style="display:block;" id="fig:airflow1"></span>
 <img src="figures/airflow1.png" alt="Trois modes de modélisation aéraulique" width="100%" />
 <p class="caption">
-Figure 6.1: Trois modes de modélisation aéraulique
+Figure 4.4: Trois modes de modélisation aéraulique
 </p>
 </div>
 <ul>
@@ -351,112 +450,103 @@ Figure 6.1: Trois modes de modélisation aéraulique
 <li>La méthode zonale, où une zone peut être divisée en sous-volumes pour représenter l’hétérogénéité de ces variables dans une même pièce.</li>
 <li>La mécanique des fluides numérique qui modélise les écoulements par les équations de Navier-Stokes sur un maillage fin des volumes.</li>
 </ul>
-<div id="méthode-nodale" class="section level2 hasAnchor" number="6.1">
-<h2><span class="header-section-number">6.1</span> Méthode nodale<a href="air.html#méthode-nodale" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="méthode-nodale" class="section level3 hasAnchor" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Méthode nodale<a href="air.html#méthode-nodale" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>La méthode nodale peut être comparée à l’analogie électrique utilisée pour les transferts thermiques : chaque zone est représentée par un noeud de pression. Ceux-ci sont reliés par des résistances représentant les chemins que peuvent prendre les écoulements d’air : entrées d’air, fenêtres, fissures… Un ventilateur crée une différence de pression qui mettra l’air en mouvement dans le reste du réseau.</p>
 <div class="figure"><span style="display:block;" id="fig:airflow2"></span>
 <img src="figures/airflow2.png" alt="Principe de la méthode nodale : les chemins de l'air sont des résistances qui relient les noeuds de pression" width="70%" />
 <p class="caption">
-Figure 6.2: Principe de la méthode nodale : les chemins de l’air sont des résistances qui relient les noeuds de pression
+Figure 4.5: Principe de la méthode nodale : les chemins de l’air sont des résistances qui relient les noeuds de pression
 </p>
 </div>
-<div id="rappels-de-mécanique-des-fluides" class="section level3 hasAnchor" number="6.1.1">
-<h3><span class="header-section-number">6.1.1</span> Rappels de mécanique des fluides<a href="air.html#rappels-de-mécanique-des-fluides" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Le plus souvent, le calcul des transferts aérauliques dans un bâtiment se fait sous les hypothèses qui permettent d’utiliser le <strong>théorème de Bernoulli</strong> : fluide parfait incompressible en régime stationnaire et isotherme. Ce théorème énonce la conservation de la quantité suivante en tous points le long d’une ligne de courant :
 <span class="math display" id="eq:air1">\[\begin{equation}
 \frac{1}{2}\, \rho \, v^2+P+\rho \, g \, z = \mathrm{constant}
-\tag{6.1}
+\tag{4.7}
 \end{equation}\]</span>
 où <span class="math inline">\(P\)</span> est la pression, <span class="math inline">\(\rho\)</span> la masse volumique, <span class="math inline">\(v\)</span> la vitesse de l’air et <span class="math inline">\(z\)</span> la hauteur.</p>
 <p>Le deuxième théorème principal est la <strong>loi des gaz parfaits</strong> qui relie la pression, la masse volumique et la température :
 <span class="math display" id="eq:air2">\[\begin{equation}
 P = \rho \, R_a \, T
-\tag{6.2}
+\tag{4.8}
 \end{equation}\]</span>
 où <span class="math inline">\(R_a \approx 287\)</span> J.kg<span class="math inline">\(^{-1}\)</span>.K<span class="math inline">\(^{-1}\)</span> est la constante spécifique de l’air, soit le rapport entre la constante universelle des gaz parfaits et la masse molaire de l’air.</p>
-</div>
-<div id="débit-dans-les-ouvertures" class="section level3 hasAnchor" number="6.1.2">
-<h3><span class="header-section-number">6.1.2</span> Débit dans les ouvertures<a href="air.html#débit-dans-les-ouvertures" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Le premier type d’équations nécessaires pour appliquer la méthode nodale est la relation entre la pression de part et d’autre d’une ouverture et le débit d’air qui la traverse. Sur un schéma comme la figure <a href="air.html#fig:airflow2">6.2</a>, ce serait le rapport entre les intensités (débit d’air) et les potentiels (pressions).</p>
+<p>Le premier type d’équations nécessaires pour appliquer la méthode nodale est la relation entre la pression de part et d’autre d’une ouverture et le débit d’air qui la traverse. Sur un schéma comme la figure <a href="air.html#fig:airflow2">4.5</a>, ce serait le rapport entre les intensités (débit d’air) et les potentiels (pressions).</p>
 <p>L’écoulement à travers une très petite ouverture (infiltrations dans des fissures) peut être décrit par :
 <span class="math display" id="eq:flowrate4">\[\begin{equation}
 Q = K \cdot \left|\Delta P\right|^n
-\tag{6.3}
+\tag{4.9}
 \end{equation}\]</span>
 où <span class="math inline">\(Q\)</span> est le débit volumique, le coefficient <span class="math inline">\(K\)</span> caractérise l’ouverture, <span class="math inline">\(n\)</span> est un exposant proche de <span class="math inline">\(1/2\)</span>, et <span class="math inline">\(\Delta P\)</span> est l’écart de pression de part et d’autre de l’ouverture.</p>
 <p>L’écoulement <span class="math inline">\(Q\)</span> à travers une ouverture un peu plus importante (entrées d’air, détalonnage d’une porte) se décrit par :
 <span class="math display" id="eq:flowrate1">\[\begin{equation}
 Q = A^* \sqrt{\frac{2\cdot|\Delta P|}{\rho}}
-\tag{6.4}
+\tag{4.10}
 \end{equation}\]</span>
 où <span class="math inline">\(A^*\)</span> est la surface effective de l’ouverture, qui dépend de son ouverture <span class="math inline">\(A\)</span> et d’un coefficient de décharge <span class="math inline">\(C_d\)</span> :
 <span class="math display" id="eq:flowrate2">\[\begin{equation}
 A^*=A\cdot C_d
-\tag{6.5}
+\tag{4.11}
 \end{equation}\]</span></p>
 <p>Le coefficient de décharge <span class="math inline">\(C_d\)</span> peut être proche de 1 pour une ouverture importante et un écoulement laminaire, mais est inférieur à 1 la plupart du temps. Lorsque l’air circule de part et d’autre d’une pièce à travers deux ouvertures, alors la surface effective de ce “parcours” de l’air peut s’exprimer en fonction des propriétés de chacune des deux ouvertures :
 <span class="math display" id="eq:flowrate3">\[\begin{equation}
 A^* = \frac{1}{\sqrt{ \left(\frac{1}{C_{d1}\cdot A_1}\right)^2 +\left(\frac{1}{C_{d2}\cdot A_2}\right)^2   }}
-\tag{6.6}
+\tag{4.12}
 \end{equation}\]</span></p>
 </div>
-</div>
-<div id="ventilationnaturelle" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> Ventilation naturelle<a href="air.html#ventilationnaturelle" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>La ventilation naturelle est le déplacement d’air qui n’est pas dû à une ventilation mécanique contrôlée. Elle provient de deux forces principales qui génèrent des variations locales de pression, qui ensuite résultent en un déplacement d’air des zones de pression élevée vers les pressions faibles : le vent et le tirage thermique.</p>
-<div id="vent" class="section level3 hasAnchor" number="6.2.1">
-<h3><span class="header-section-number">6.2.1</span> Vent<a href="air.html#vent" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="vent" class="section level3 hasAnchor" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Vent<a href="air.html#vent" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Le vent entraîne une hausse ou une baisse de la pression en façade d’un bâtiment. Cette variation <span class="math inline">\(\Delta P\)</span> dépend d’un coefficient de pression <span class="math inline">\(C_p\)</span> et de la vitesse du vent <span class="math inline">\(V_\mathit{vent}\)</span> :</p>
 <p><span class="math display" id="eq:air4">\[\begin{equation}
 \Delta P = \frac{1}{2} \, \rho \, C_p \, V_\mathit{vent}^2
-\tag{6.7}
+\tag{4.13}
 \end{equation}\]</span></p>
 <p>Le coefficient de pression est une valeur empirique déterminée par la géométrie du bâtiment et son orientation par rapport à la direction du vent. Sa valeur sera positive sur une façade exposée au vent : la pression de l’air au contact du mur est plus élevée que la pression atmosphérique. Au contraire, <span class="math inline">\(C_p\)</span> est négatif sur une façade sous le vent, en dépression.</p>
 <div class="figure"><span style="display:block;" id="fig:vent"></span>
 <img src="figures/vent.png" alt="Coefficients de pression pour l'expression de l'influence du vent" width="65%" />
 <p class="caption">
-Figure 6.3: Coefficients de pression pour l’expression de l’influence du vent
+Figure 4.6: Coefficients de pression pour l’expression de l’influence du vent
 </p>
 </div>
-<p>On peut appliquer la méthode nodale pour calculer le débit d’air induit par le vent dans un bâtiment, à partir des équations <a href="air.html#eq:flowrate4">(6.3)</a> et <a href="air.html#eq:air4">(6.7)</a>. Si on suppose un local doté de deux ouvertures, chacune avec un coefficient de pression <span class="math inline">\(C_{p1}\)</span> et <span class="math inline">\(C_{p2}\)</span> respectivement :</p>
+<p>On peut appliquer la méthode nodale pour calculer le débit d’air induit par le vent dans un bâtiment, à partir des équations <a href="air.html#eq:flowrate4">(4.9)</a> et <a href="air.html#eq:air4">(4.13)</a>. Si on suppose un local doté de deux ouvertures, chacune avec un coefficient de pression <span class="math inline">\(C_{p1}\)</span> et <span class="math inline">\(C_{p2}\)</span> respectivement :</p>
 <div class="figure"><span style="display:block;" id="fig:vent2"></span>
 <img src="figures/vent2.png" alt="Débit d'air induit par le vent, calculé par la méthode nodale" width="50%" />
 <p class="caption">
-Figure 6.4: Débit d’air induit par le vent, calculé par la méthode nodale
+Figure 4.7: Débit d’air induit par le vent, calculé par la méthode nodale
 </p>
 </div>
 <p>On peut alors démontrer (une démonstration complète est donnée dans la vidéo plus bas) que le débit d’air traversant le bâtiment sous l’effet d’un vent de vitesse <span class="math inline">\(V_\mathit{vent}\)</span> (m/s) est :</p>
 <p><span class="math display" id="eq:air5">\[\begin{equation}
 Q = A^* V_\mathit{vent} \sqrt{\Delta C_p}
-\tag{6.8}
+\tag{4.14}
 \end{equation}\]</span></p>
-<p>où <span class="math inline">\(A^*\)</span> est la surface effective des ouvertures définie par l’équation <a href="air.html#eq:flowrate3">(6.6)</a>. Le débit d’air est d’autant plus fort que la différence entre les deux coefficients de pression est importante : c’est le cas par exemple d’une ventilation traversante dans l’axe du vent. Au contraire, deux ouvertures situées sur la même façade auront des <span class="math inline">\(C_p\)</span> très proches donc une ventilation naturelle par le vent plus faible.</p>
+<p>où <span class="math inline">\(A^*\)</span> est la surface effective des ouvertures définie par l’équation <a href="air.html#eq:flowrate3">(4.12)</a>. Le débit d’air est d’autant plus fort que la différence entre les deux coefficients de pression est importante : c’est le cas par exemple d’une ventilation traversante dans l’axe du vent. Au contraire, deux ouvertures situées sur la même façade auront des <span class="math inline">\(C_p\)</span> très proches donc une ventilation naturelle par le vent plus faible.</p>
 </div>
-<div id="tirage-thermique" class="section level3 hasAnchor" number="6.2.2">
-<h3><span class="header-section-number">6.2.2</span> Tirage thermique<a href="air.html#tirage-thermique" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Le tirage thermique est la conséquence d’une différence de température entre l’air intérieur et extérieur. Celle-ci entraîne un écart de leur masse volumique du fait de la loi des gaz parfaits (équation <a href="air.html#eq:air2">(6.2)</a>) : <span class="math inline">\(\rho \propto 1/T\)</span></p>
-<p>Le théorème de Bernoulli (équation <a href="air.html#eq:air1">(6.1)</a>) indique que la pression de l’air décroît avec l’altitude, proportionnellement à la masse volumique. La pression à une hauteur <span class="math inline">\(z\)</span> est inférieure à celle au niveau 0 (on suppose ici l’absence de vent) :</p>
+<div id="tirage-thermique" class="section level3 hasAnchor" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Tirage thermique<a href="air.html#tirage-thermique" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Le tirage thermique est la conséquence d’une différence de température entre l’air intérieur et extérieur. Celle-ci entraîne un écart de leur masse volumique du fait de la loi des gaz parfaits (équation <a href="air.html#eq:air2">(4.8)</a>) : <span class="math inline">\(\rho \propto 1/T\)</span></p>
+<p>Le théorème de Bernoulli (équation <a href="air.html#eq:air1">(4.7)</a>) indique que la pression de l’air décroît avec l’altitude, proportionnellement à la masse volumique. La pression à une hauteur <span class="math inline">\(z\)</span> est inférieure à celle au niveau 0 (on suppose ici l’absence de vent) :</p>
 <p><span class="math display" id="eq:air6">\[\begin{equation}
 P(z) = P(0) - \rho g z
-\tag{6.9}
+\tag{4.15}
 \end{equation}\]</span></p>
 <p>La décroissance de pression <span class="math inline">\(\rho g z\)</span> est proportionnelle à <span class="math inline">\(\rho\)</span>, donc inversement proportionnelle à la température : dans un milieu froid, la pression décroît plus vite avec l’altitude que dans un milieu chaud.</p>
 <div class="figure"><span style="display:block;" id="fig:stackeffect"></span>
 <img src="figures/stackeffect.png" alt="Tirage thermique" width="75%" />
 <p class="caption">
-Figure 6.5: Tirage thermique
+Figure 4.8: Tirage thermique
 </p>
 </div>
-<p>On se place dans l’exemple montré sur la figure <a href="air.html#fig:stackeffect">6.5</a> de deux milieux séparés, aux températures <span class="math inline">\(T_e\)</span> et <span class="math inline">\(T_i\)</span>, avec par exemple <span class="math inline">\(T_e &lt; T_i\)</span>. A une altitude fixée <span class="math inline">\(z\)</span>, la différence de pression entre l’extérieur et l’intérieur est :</p>
+<p>On se place dans l’exemple montré sur la figure <a href="air.html#fig:stackeffect">4.8</a> de deux milieux séparés, aux températures <span class="math inline">\(T_e\)</span> et <span class="math inline">\(T_i\)</span>, avec par exemple <span class="math inline">\(T_e &lt; T_i\)</span>. A une altitude fixée <span class="math inline">\(z\)</span>, la différence de pression entre l’extérieur et l’intérieur est :</p>
 <p><span class="math display" id="eq:air7">\[\begin{align}
 P_e(z) - P_i(z) &amp; = \left( P_e(0)-\rho_e \, g \, z\right) - \left( P_i(0)-\rho_i \, g \, z \right) \\
 &amp; = \left[ P_e(0)-P_i(0) \right] -\rho_e \, g \, z \, \frac{T_i-T_e}{T_i}
-\tag{6.10}
+\tag{4.16}
 \end{align}\]</span></p>
 <p>Si <span class="math inline">\(P_e(0)&gt;P_i(0)\)</span> il existe donc une coordonnée à laquelle le rapport des pressions s’inverse. On appelle axe neutre <span class="math inline">\(z_n\)</span> cette hauteur où les pressions intérieure et extérieure sont égales :
 <span class="math display" id="eq:air8">\[\begin{equation}
 z_n = \frac{P_e(0)-P_i(0)}{g(\rho_i-\rho_e)}
-\tag{6.11}
+\tag{4.17}
 \end{equation}\]</span></p>
 <p>Donc dans l’exemple d’une température extérieure inférieure à la température intérieure, l’effet du tirage thermique est que:</p>
 <ul>
@@ -467,17 +557,17 @@ z_n = \frac{P_e(0)-P_i(0)}{g(\rho_i-\rho_e)}
 <div class="figure"><span style="display:block;" id="fig:stackeffect2"></span>
 <img src="figures/stackeffect2.png" alt="Débit induit par le tirage thermique à travers deux ouvertures" width="50%" />
 <p class="caption">
-Figure 6.6: Débit induit par le tirage thermique à travers deux ouvertures
+Figure 4.9: Débit induit par le tirage thermique à travers deux ouvertures
 </p>
 </div>
 <p>Lorsqu’un bâtiment possède deux ouvertures séparées par une hauteur <span class="math inline">\(H\)</span>, on peut démontrer (une démonstration complète est donnée dans la vidéo plus bas) que le débit d’air traversant le bâtiment sous l’effet du tirage thermique est :</p>
 <p><span class="math display" id="eq:air9">\[\begin{equation}
 Q = A^* \sqrt{2 \, g \, H\frac{T_i-T_e}{T_i}}
-\tag{6.12}
+\tag{4.18}
 \end{equation}\]</span></p>
 </div>
-<div id="bilan" class="section level3 hasAnchor" number="6.2.3">
-<h3><span class="header-section-number">6.2.3</span> Bilan<a href="air.html#bilan" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="bilan" class="section level3 hasAnchor" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Bilan<a href="air.html#bilan" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Si on inclut l’effet du vent et du tirage thermique dans les équations du modèle aéraulique nodal, on peut exprimer le débit d’air traversant un bâtiment sous l’effet de la ventilation naturelle. Deux exemples sont donnés dans cette vidéo :</p>
 <!DOCTYPE html>
 <html>
@@ -485,38 +575,38 @@ Q = A^* \sqrt{2 \, g \, H\frac{T_i-T_e}{T_i}}
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Rp4JT8ItIVo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </body>
 </html>
-<p>Dans les deux paragraphes ci-dessus, on a donné les formules des débits d’air traversant un bâtiment possédant deux ouvertures, sous l’effet soit du vent, soit du tirage thermique. Ces deux effets peuvent cependant se cumuler ou s’opposer. La somme des équations <a href="air.html#eq:air5">(6.8)</a> et <a href="air.html#eq:air9">(6.12)</a> est alors :
+<p>Dans les deux paragraphes ci-dessus, on a donné les formules des débits d’air traversant un bâtiment possédant deux ouvertures, sous l’effet soit du vent, soit du tirage thermique. Ces deux effets peuvent cependant se cumuler ou s’opposer. La somme des équations <a href="air.html#eq:air5">(4.14)</a> et <a href="air.html#eq:air9">(4.18)</a> est alors :
 <span class="math display" id="eq:flowrate5">\[\begin{equation}
 Q=A^* \left( \sqrt{\left|\Delta C_p\right|\cdot V_\mathit{vent}^2  } \pm \sqrt{2\cdot g\cdot H \left(\frac{|\Delta T|}{\bar{T}}\right) } \right)
-\tag{6.13}
+\tag{4.19}
 \end{equation}\]</span>
 où <span class="math inline">\(\bar{T}\)</span> est la moyenne de température entre intérieur et extérieur en Kelvin. Le signe <span class="math inline">\(\pm\)</span> de cette formule vient du faire que l’effet du vent et du tirage thermique sont soit dans le même sens et s’additionnent, soit de sens opposés.</p>
 </div>
 </div>
-<div id="exercices-2" class="section level2 hasAnchor" number="6.3">
-<h2><span class="header-section-number">6.3</span> Exercices<a href="air.html#exercices-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="exercice-1-vent-et-tirage-thermique" class="section level3 hasAnchor" number="6.3.1">
-<h3><span class="header-section-number">6.3.1</span> Exercice 1 : vent et tirage thermique<a href="air.html#exercice-1-vent-et-tirage-thermique" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Le bâtiment montré sur la figure <a href="air.html#fig:exowind">6.7</a> a deux ouvertures opposées, en partie basse et en partie haute, séparées par une différence d’altitude <span class="math inline">\(\Delta z\)</span>. Le vent souffle dans la direction montrée sur la figure. La température intérieure est 20°C, température extérieure 0°C. Les coefficients de pression des deux ouvertures sont 0,6 et -0,4 respectivement.</p>
+<div id="exercices-2" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Exercices<a href="air.html#exercices-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exercice-1-vent-et-tirage-thermique" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Exercice 1 : vent et tirage thermique<a href="air.html#exercice-1-vent-et-tirage-thermique" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Le bâtiment montré sur la figure <a href="air.html#fig:exowind">4.10</a> a deux ouvertures opposées, en partie basse et en partie haute, séparées par une différence d’altitude <span class="math inline">\(\Delta z\)</span>. Le vent souffle dans la direction montrée sur la figure. La température intérieure est 20°C, température extérieure 0°C. Les coefficients de pression des deux ouvertures sont 0,6 et -0,4 respectivement.</p>
 <div class="figure"><span style="display:block;" id="fig:exowind"></span>
 <img src="figures/exowind.png" alt="Vent et tirage thermique dans un bâtiment" width="30%" />
 <p class="caption">
-Figure 6.7: Vent et tirage thermique dans un bâtiment
+Figure 4.10: Vent et tirage thermique dans un bâtiment
 </p>
 </div>
 <ol style="list-style-type: decimal">
 <li>Quelle est la direction du débit d’air induit par le tirage thermique ? Cette force est-elle opposée au vent ?</li>
-<li>La vitesse du vent est 5 m/s et la hauteur <span class="math inline">\(\Delta z\)</span> est 10 m. En utilisant l’équation <a href="air.html#eq:flowrate5">(6.13)</a>, trouver quelle force l’emporte sur l’autre et dans quel sens l’air circule dans le bâtiment.</li>
+<li>La vitesse du vent est 5 m/s et la hauteur <span class="math inline">\(\Delta z\)</span> est 10 m. En utilisant l’équation <a href="air.html#eq:flowrate5">(4.19)</a>, trouver quelle force l’emporte sur l’autre et dans quel sens l’air circule dans le bâtiment.</li>
 <li>Pour quelle valeur de la vitesse du vent les deux forces s’annulent-elles ?</li>
 </ol>
 </div>
-<div id="excheminee" class="section level3 hasAnchor" number="6.3.2">
-<h3><span class="header-section-number">6.3.2</span> Exercice 2 : cheminée solaire<a href="air.html#excheminee" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>On étudie la cheminée solaire montrée sur la figure <a href="air.html#fig:chimney">6.8</a>. L’air est chauffé dans la cheminée, créant un effet de tirage thermique vers le haut. L’air est mis en dépression dans le bâtiment, ce qui attire l’air extérieur à travers un puits canadien. On cherche à calculer la température intérieure du bâtiment sous l’effet de cet apport d’air frais.</p>
+<div id="excheminee" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Exercice 2 : cheminée solaire<a href="air.html#excheminee" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>On étudie la cheminée solaire montrée sur la figure <a href="air.html#fig:chimney">4.11</a>. L’air est chauffé dans la cheminée, créant un effet de tirage thermique vers le haut. L’air est mis en dépression dans le bâtiment, ce qui attire l’air extérieur à travers un puits canadien. On cherche à calculer la température intérieure du bâtiment sous l’effet de cet apport d’air frais.</p>
 <div class="figure"><span style="display:block;" id="fig:chimney"></span>
 <img src="figures/chimney.png" alt="Cheminée solaire" width="40%" />
 <p class="caption">
-Figure 6.8: Cheminée solaire
+Figure 4.11: Cheminée solaire
 </p>
 </div>
 <p>Dans la cheminée, l’air circule entre une paroi de verre et un mur de béton. On ne donne pas ici de valeur numérique pour chaque variable, mais elles pourront être prises de manière réaliste pour voir la conséquence sur les résultats du calcul.</p>
@@ -531,15 +621,15 @@ Figure 6.8: Cheminée solaire
 <li><p>En notant <span class="math inline">\(T_\mathrm{in}\)</span> la température d’entrée de l’air, <span class="math inline">\(T_i\)</span> et <span class="math inline">\(T_e\)</span> les températures intérieure et extérieure :
 <span class="math display" id="eq:airsolution1">\[\begin{equation}
 \dot{m} c_p \left(T_\mathrm{in}-T_i\right) + D \left(T_e-T_i\right) = 0
-\tag{6.14}
+\tag{4.20}
 \end{equation}\]</span></p></li>
-<li><p>On reprend la formule <a href="air.html#eq:air9">(6.12)</a> du tirage thermique en considérant que la température “intérieure” à la cheminée est <span class="math inline">\(T_\mathrm{out}\)</span> et la température “extérieure” est celle de l’air entrant, soit <span class="math inline">\(T_i\)</span>:
+<li><p>On reprend la formule <a href="air.html#eq:air9">(4.18)</a> du tirage thermique en considérant que la température “intérieure” à la cheminée est <span class="math inline">\(T_\mathrm{out}\)</span> et la température “extérieure” est celle de l’air entrant, soit <span class="math inline">\(T_i\)</span>:
 <span class="math display" id="eq:airsolution2">\[\begin{equation}
 Q = A^* \sqrt{2 \, g \, z\frac{T_\mathrm{out}-T_i}{T_\mathrm{out}}}
-\tag{6.15}
+\tag{4.21}
 \end{equation}\]</span>
 où <span class="math inline">\(A^*\)</span> est la surface effective des ouvertures de la cheminée et <span class="math inline">\(Q=\dot{m}/\rho\)</span> est le débit volumique à la sortie.</p></li>
-<li><p>L’air dans la cheminée est situé entre une paroi vitrée et une paroi isolée qui absorbe une partie du rayonnement solaire. Le calcul de sa température se fait par la même méthode que dans l’exemple de la serre, exercice <a href="rayonnement.html#serre">4.4.1</a>.</p></li>
+<li><p>L’air dans la cheminée est situé entre une paroi vitrée et une paroi isolée qui absorbe une partie du rayonnement solaire. Le calcul de sa température se fait par la même méthode que dans l’exemple de la serre, exercice <a href="rayonnement.html#serre">5.4.1</a>.</p></li>
 </ol>
 
 </div>
@@ -550,8 +640,8 @@ où <span class="math inline">\(A^*\)</span> est la surface effective des ouvert
           </div>
         </div>
       </div>
-<a href="transient.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="humidite.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="steady.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="rayonnement.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -582,7 +672,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/srouchier/beh15-air.Rmd",
+"link": "https://github.com/srouchier/beh13-air.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -611,7 +701,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

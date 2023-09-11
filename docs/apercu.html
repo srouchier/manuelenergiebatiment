@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapitre 2 Aperçu | Manuel de performance énergétique des bâtiments</title>
+  <title>Chapitre 2 Bilan de chaleur et besoins | Manuel de performance énergétique des bâtiments</title>
   <meta name="description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapitre 2 Aperçu | Manuel de performance énergétique des bâtiments" />
+  <meta property="og:title" content="Chapitre 2 Bilan de chaleur et besoins | Manuel de performance énergétique des bâtiments" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
   <meta name="github-repo" content="srouchier/beh" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapitre 2 Aperçu | Manuel de performance énergétique des bâtiments" />
+  <meta name="twitter:title" content="Chapitre 2 Bilan de chaleur et besoins | Manuel de performance énergétique des bâtiments" />
   
   <meta name="twitter:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Rouchier" />
 
 
-<meta name="date" content="2023-03-21" />
+<meta name="date" content="2023-09-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -92,7 +92,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -105,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -119,6 +119,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -148,87 +152,91 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#re2020"><i class="fa fa-check"></i><b>1.2.1</b> Bâtiments neufs : la RE 2020</a></li>
 <li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#bâtiments-existants"><i class="fa fa-check"></i><b>1.2.2</b> Bâtiments existants</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction.html"><a href="introduction.html#règles-de-calcul-des-besoins"><i class="fa fa-check"></i><b>1.2.3</b> Règles de calcul des besoins</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#plan-du-livre"><i class="fa fa-check"></i><b>1.3</b> Plan du livre</a></li>
 </ul></li>
-<li class="part"><span><b>I Transferts de chaleur et de masse</b></span></li>
-<li class="chapter" data-level="2" data-path="apercu.html"><a href="apercu.html"><i class="fa fa-check"></i><b>2</b> Aperçu</a>
+<li class="part"><span><b>I Performance énergétique du bâtiment</b></span></li>
+<li class="chapter" data-level="2" data-path="apercu.html"><a href="apercu.html"><i class="fa fa-check"></i><b>2</b> Bilan de chaleur et besoins</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="apercu.html"><a href="apercu.html#apercu1"><i class="fa fa-check"></i><b>2.1</b> Bilan thermique global</a></li>
-<li class="chapter" data-level="2.2" data-path="apercu.html"><a href="apercu.html#apercu2"><i class="fa fa-check"></i><b>2.2</b> Calcul réglementaire</a>
+<li class="chapter" data-level="2.1" data-path="apercu.html"><a href="apercu.html#hypothèses-et-définitions"><i class="fa fa-check"></i><b>2.1</b> Hypothèses et définitions</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="apercu.html"><a href="apercu.html#hypothèses"><i class="fa fa-check"></i><b>2.2.1</b> Hypothèses</a></li>
-<li class="chapter" data-level="2.2.2" data-path="apercu.html"><a href="apercu.html#besoins-de-chauffage-et-refroidissement"><i class="fa fa-check"></i><b>2.2.2</b> Besoins de chauffage et refroidissement</a></li>
-<li class="chapter" data-level="2.2.3" data-path="apercu.html"><a href="apercu.html#les-règles-th-bat"><i class="fa fa-check"></i><b>2.2.3</b> Les règles Th-bat</a></li>
+<li class="chapter" data-level="2.1.1" data-path="apercu.html"><a href="apercu.html#locaux-et-parois"><i class="fa fa-check"></i><b>2.1.1</b> Locaux et parois</a></li>
+<li class="chapter" data-level="2.1.2" data-path="apercu.html"><a href="apercu.html#données-dentrée"><i class="fa fa-check"></i><b>2.1.2</b> Données d’entrée</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="apercu.html"><a href="apercu.html#apercu3"><i class="fa fa-check"></i><b>2.3</b> Détail des transferts thermiques</a></li>
-<li class="chapter" data-level="2.4" data-path="apercu.html"><a href="apercu.html#exercice"><i class="fa fa-check"></i><b>2.4</b> Exercice</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="steady.html"><a href="steady.html"><i class="fa fa-check"></i><b>3</b> Conduction et convection stationnaire</a>
+<li class="chapter" data-level="2.2" data-path="apercu.html"><a href="apercu.html#apercu1"><i class="fa fa-check"></i><b>2.2</b> Bilan thermique global</a></li>
+<li class="chapter" data-level="2.3" data-path="apercu.html"><a href="apercu.html#calcul-des-besoins"><i class="fa fa-check"></i><b>2.3</b> Calcul des besoins</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="steady.html"><a href="steady.html#conduction"><i class="fa fa-check"></i><b>3.1</b> Conduction dans un mur</a>
+<li class="chapter" data-level="2.3.1" data-path="apercu.html"><a href="apercu.html#les-dju"><i class="fa fa-check"></i><b>2.3.1</b> Les DJU</a></li>
+<li class="chapter" data-level="2.3.2" data-path="apercu.html"><a href="apercu.html#apercu3"><i class="fa fa-check"></i><b>2.3.2</b> Détail des transferts thermiques</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="apercu.html"><a href="apercu.html#exercices"><i class="fa fa-check"></i><b>2.4</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="apercu.html"><a href="apercu.html#exercice-1-calcul-des-dju-et-des-besoins"><i class="fa fa-check"></i><b>2.4.1</b> Exercice 1 : calcul des DJU et des besoins</a></li>
+<li class="chapter" data-level="2.4.2" data-path="apercu.html"><a href="apercu.html#exercice-2-apports-et-besoins"><i class="fa fa-check"></i><b>2.4.2</b> Exercice 2 : apports et besoins</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="steady.html"><a href="steady.html"><i class="fa fa-check"></i><b>3</b> Calcul des déperditions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="steady.html"><a href="steady.html#conduction"><i class="fa fa-check"></i><b>3.1</b> Transmission dans une paroi plane</a>
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="steady.html"><a href="steady.html#conduction-1d-et-analogie-électrique"><i class="fa fa-check"></i><b>3.1.1</b> Conduction 1D et analogie électrique</a></li>
 <li class="chapter" data-level="3.1.2" data-path="steady.html"><a href="steady.html#assemblage-de-résistances"><i class="fa fa-check"></i><b>3.1.2</b> Assemblage de résistances</a></li>
-<li class="chapter" data-level="3.1.3" data-path="steady.html"><a href="steady.html#surfacique"><i class="fa fa-check"></i><b>3.1.3</b> Transferts surfaciques</a></li>
+<li class="chapter" data-level="3.1.3" data-path="steady.html"><a href="steady.html#surfacique"><i class="fa fa-check"></i><b>3.1.3</b> Résistances superficielles</a></li>
+<li class="chapter" data-level="3.1.4" data-path="steady.html"><a href="steady.html#menuiseries"><i class="fa fa-check"></i><b>3.1.4</b> Menuiseries</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="steady.html"><a href="steady.html#ponts-thermiques"><i class="fa fa-check"></i><b>3.2</b> Ponts thermiques</a></li>
 <li class="chapter" data-level="3.3" data-path="steady.html"><a href="steady.html#convection"><i class="fa fa-check"></i><b>3.3</b> Echanges convectifs</a></li>
-<li class="chapter" data-level="3.4" data-path="steady.html"><a href="steady.html#bilan-des-déperditions"><i class="fa fa-check"></i><b>3.4</b> Bilan des déperditions</a>
+<li class="chapter" data-level="3.4" data-path="steady.html"><a href="steady.html#locaux-non-chauffés"><i class="fa fa-check"></i><b>3.4</b> Locaux non chauffés</a></li>
+<li class="chapter" data-level="3.5" data-path="steady.html"><a href="steady.html#bilandeperditions"><i class="fa fa-check"></i><b>3.5</b> Bilan des déperditions</a></li>
+<li class="chapter" data-level="3.6" data-path="steady.html"><a href="steady.html#exercices-1"><i class="fa fa-check"></i><b>3.6</b> Exercices</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="steady.html"><a href="steady.html#locaux-non-chauffés"><i class="fa fa-check"></i><b>3.4.1</b> Locaux non chauffés</a></li>
-<li class="chapter" data-level="3.4.2" data-path="steady.html"><a href="steady.html#bilan-dune-zone"><i class="fa fa-check"></i><b>3.4.2</b> Bilan d’une zone</a></li>
-</ul></li>
-<li class="chapter" data-level="3.5" data-path="steady.html"><a href="steady.html#exercices"><i class="fa fa-check"></i><b>3.5</b> Exercices</a>
-<ul>
-<li class="chapter" data-level="3.5.1" data-path="steady.html"><a href="steady.html#ex-1-déperditions-dune-pièce"><i class="fa fa-check"></i><b>3.5.1</b> Ex 1 : déperditions d’une pièce</a></li>
-<li class="chapter" data-level="3.5.2" data-path="steady.html"><a href="steady.html#ex-2-bilan-thermique-de-deux-pièces"><i class="fa fa-check"></i><b>3.5.2</b> Ex 2: bilan thermique de deux pièces</a></li>
+<li class="chapter" data-level="3.6.1" data-path="steady.html"><a href="steady.html#ex-1-déperditions-dune-pièce"><i class="fa fa-check"></i><b>3.6.1</b> Ex 1 : déperditions d’une pièce</a></li>
+<li class="chapter" data-level="3.6.2" data-path="steady.html"><a href="steady.html#ex-2-bilan-thermique-de-deux-pièces"><i class="fa fa-check"></i><b>3.6.2</b> Ex 2: bilan thermique de deux pièces</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="rayonnement.html"><a href="rayonnement.html"><i class="fa fa-check"></i><b>4</b> Rayonnement</a>
+<li class="chapter" data-level="4" data-path="air.html"><a href="air.html"><i class="fa fa-check"></i><b>4</b> Renouvellement d’air</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="rayonnement.html"><a href="rayonnement.html#principes-de-rayonnement"><i class="fa fa-check"></i><b>4.1</b> Principes de rayonnement</a></li>
-<li class="chapter" data-level="4.2" data-path="rayonnement.html"><a href="rayonnement.html#apports-solaires"><i class="fa fa-check"></i><b>4.2</b> Apports solaires</a></li>
-<li class="chapter" data-level="4.3" data-path="rayonnement.html"><a href="rayonnement.html#echanges-radiatifs-glo"><i class="fa fa-check"></i><b>4.3</b> Echanges radiatifs GLO</a>
+<li class="chapter" data-level="4.1" data-path="air.html"><a href="air.html#débits-dair-neuf-entrant"><i class="fa fa-check"></i><b>4.1</b> Débits d’air neuf entrant</a></li>
+<li class="chapter" data-level="4.2" data-path="air.html"><a href="air.html#perméabilité-à-lair-des-bâtiments"><i class="fa fa-check"></i><b>4.2</b> Perméabilité à l’air des bâtiments</a></li>
+<li class="chapter" data-level="4.3" data-path="air.html"><a href="air.html#ventilation-naturelle"><i class="fa fa-check"></i><b>4.3</b> Ventilation naturelle</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="rayonnement.html"><a href="rayonnement.html#définitions"><i class="fa fa-check"></i><b>4.3.1</b> Définitions</a></li>
-<li class="chapter" data-level="4.3.2" data-path="rayonnement.html"><a href="rayonnement.html#résolution-des-bilans-radiatifs"><i class="fa fa-check"></i><b>4.3.2</b> Résolution des bilans radiatifs</a></li>
-<li class="chapter" data-level="4.3.3" data-path="rayonnement.html"><a href="rayonnement.html#facteurs-de-forme"><i class="fa fa-check"></i><b>4.3.3</b> Facteurs de forme</a></li>
-<li class="chapter" data-level="4.3.4" data-path="rayonnement.html"><a href="rayonnement.html#température-radiative-et-opérative"><i class="fa fa-check"></i><b>4.3.4</b> Température radiative et opérative</a></li>
+<li class="chapter" data-level="4.3.1" data-path="air.html"><a href="air.html#méthode-nodale"><i class="fa fa-check"></i><b>4.3.1</b> Méthode nodale</a></li>
+<li class="chapter" data-level="4.3.2" data-path="air.html"><a href="air.html#vent"><i class="fa fa-check"></i><b>4.3.2</b> Vent</a></li>
+<li class="chapter" data-level="4.3.3" data-path="air.html"><a href="air.html#tirage-thermique"><i class="fa fa-check"></i><b>4.3.3</b> Tirage thermique</a></li>
+<li class="chapter" data-level="4.3.4" data-path="air.html"><a href="air.html#bilan"><i class="fa fa-check"></i><b>4.3.4</b> Bilan</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="rayonnement.html"><a href="rayonnement.html#exercices-1"><i class="fa fa-check"></i><b>4.4</b> Exercices</a>
+<li class="chapter" data-level="4.4" data-path="air.html"><a href="air.html#exercices-2"><i class="fa fa-check"></i><b>4.4</b> Exercices</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="rayonnement.html"><a href="rayonnement.html#serre"><i class="fa fa-check"></i><b>4.4.1</b> Exercice 1 : serre</a></li>
-<li class="chapter" data-level="4.4.2" data-path="rayonnement.html"><a href="rayonnement.html#tutorial-2-radiateur"><i class="fa fa-check"></i><b>4.4.2</b> Tutorial 2: radiateur</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="transient.html"><a href="transient.html"><i class="fa fa-check"></i><b>5</b> Régime transitoire</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="transient.html"><a href="transient.html#conduction-dans-un-mur"><i class="fa fa-check"></i><b>5.1</b> Conduction dans un mur</a></li>
-<li class="chapter" data-level="5.2" data-path="transient.html"><a href="transient.html#modèles-rc"><i class="fa fa-check"></i><b>5.2</b> Modèles RC</a></li>
-<li class="chapter" data-level="5.3" data-path="transient.html"><a href="transient.html#exercices-inertie-thermique"><i class="fa fa-check"></i><b>5.3</b> Exercices : inertie thermique</a>
-<ul>
-<li class="chapter" data-level="5.3.1" data-path="transient.html"><a href="transient.html#exercice-1-bâtiment-lourd-ou-léger"><i class="fa fa-check"></i><b>5.3.1</b> Exercice 1 : bâtiment lourd ou léger</a></li>
-<li class="chapter" data-level="5.3.2" data-path="transient.html"><a href="transient.html#exercice-2-isolation-intérieure-ou-extérieure"><i class="fa fa-check"></i><b>5.3.2</b> Exercice 2 : isolation intérieure ou extérieure</a></li>
+<li class="chapter" data-level="4.4.1" data-path="air.html"><a href="air.html#exercice-1-vent-et-tirage-thermique"><i class="fa fa-check"></i><b>4.4.1</b> Exercice 1 : vent et tirage thermique</a></li>
+<li class="chapter" data-level="4.4.2" data-path="air.html"><a href="air.html#excheminee"><i class="fa fa-check"></i><b>4.4.2</b> Exercice 2 : cheminée solaire</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="air.html"><a href="air.html"><i class="fa fa-check"></i><b>6</b> Aéraulique</a>
+<li class="chapter" data-level="5" data-path="rayonnement.html"><a href="rayonnement.html"><i class="fa fa-check"></i><b>5</b> Rayonnement</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="air.html"><a href="air.html#méthode-nodale"><i class="fa fa-check"></i><b>6.1</b> Méthode nodale</a>
+<li class="chapter" data-level="5.1" data-path="rayonnement.html"><a href="rayonnement.html#principes-de-rayonnement"><i class="fa fa-check"></i><b>5.1</b> Principes de rayonnement</a></li>
+<li class="chapter" data-level="5.2" data-path="rayonnement.html"><a href="rayonnement.html#apports-solaires"><i class="fa fa-check"></i><b>5.2</b> Apports solaires</a></li>
+<li class="chapter" data-level="5.3" data-path="rayonnement.html"><a href="rayonnement.html#echanges-radiatifs-glo"><i class="fa fa-check"></i><b>5.3</b> Echanges radiatifs GLO</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="air.html"><a href="air.html#rappels-de-mécanique-des-fluides"><i class="fa fa-check"></i><b>6.1.1</b> Rappels de mécanique des fluides</a></li>
-<li class="chapter" data-level="6.1.2" data-path="air.html"><a href="air.html#débit-dans-les-ouvertures"><i class="fa fa-check"></i><b>6.1.2</b> Débit dans les ouvertures</a></li>
+<li class="chapter" data-level="5.3.1" data-path="rayonnement.html"><a href="rayonnement.html#définitions"><i class="fa fa-check"></i><b>5.3.1</b> Définitions</a></li>
+<li class="chapter" data-level="5.3.2" data-path="rayonnement.html"><a href="rayonnement.html#résolution-des-bilans-radiatifs"><i class="fa fa-check"></i><b>5.3.2</b> Résolution des bilans radiatifs</a></li>
+<li class="chapter" data-level="5.3.3" data-path="rayonnement.html"><a href="rayonnement.html#facteurs-de-forme"><i class="fa fa-check"></i><b>5.3.3</b> Facteurs de forme</a></li>
+<li class="chapter" data-level="5.3.4" data-path="rayonnement.html"><a href="rayonnement.html#température-radiative-et-opérative"><i class="fa fa-check"></i><b>5.3.4</b> Température radiative et opérative</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="air.html"><a href="air.html#ventilationnaturelle"><i class="fa fa-check"></i><b>6.2</b> Ventilation naturelle</a>
+<li class="chapter" data-level="5.4" data-path="rayonnement.html"><a href="rayonnement.html#exercices-3"><i class="fa fa-check"></i><b>5.4</b> Exercices</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="air.html"><a href="air.html#vent"><i class="fa fa-check"></i><b>6.2.1</b> Vent</a></li>
-<li class="chapter" data-level="6.2.2" data-path="air.html"><a href="air.html#tirage-thermique"><i class="fa fa-check"></i><b>6.2.2</b> Tirage thermique</a></li>
-<li class="chapter" data-level="6.2.3" data-path="air.html"><a href="air.html#bilan"><i class="fa fa-check"></i><b>6.2.3</b> Bilan</a></li>
+<li class="chapter" data-level="5.4.1" data-path="rayonnement.html"><a href="rayonnement.html#serre"><i class="fa fa-check"></i><b>5.4.1</b> Exercice 1 : serre</a></li>
+<li class="chapter" data-level="5.4.2" data-path="rayonnement.html"><a href="rayonnement.html#tutorial-2-radiateur"><i class="fa fa-check"></i><b>5.4.2</b> Tutorial 2: radiateur</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="air.html"><a href="air.html#exercices-2"><i class="fa fa-check"></i><b>6.3</b> Exercices</a>
+</ul></li>
+<li class="chapter" data-level="6" data-path="transient.html"><a href="transient.html"><i class="fa fa-check"></i><b>6</b> Régime transitoire</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="air.html"><a href="air.html#exercice-1-vent-et-tirage-thermique"><i class="fa fa-check"></i><b>6.3.1</b> Exercice 1 : vent et tirage thermique</a></li>
-<li class="chapter" data-level="6.3.2" data-path="air.html"><a href="air.html#excheminee"><i class="fa fa-check"></i><b>6.3.2</b> Exercice 2 : cheminée solaire</a></li>
+<li class="chapter" data-level="6.1" data-path="transient.html"><a href="transient.html#conduction-dans-un-mur"><i class="fa fa-check"></i><b>6.1</b> Conduction dans un mur</a></li>
+<li class="chapter" data-level="6.2" data-path="transient.html"><a href="transient.html#modèles-rc"><i class="fa fa-check"></i><b>6.2</b> Modèles RC</a></li>
+<li class="chapter" data-level="6.3" data-path="transient.html"><a href="transient.html#exercices-inertie-thermique"><i class="fa fa-check"></i><b>6.3</b> Exercices : inertie thermique</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="transient.html"><a href="transient.html#exercice-1-bâtiment-lourd-ou-léger"><i class="fa fa-check"></i><b>6.3.1</b> Exercice 1 : bâtiment lourd ou léger</a></li>
+<li class="chapter" data-level="6.3.2" data-path="transient.html"><a href="transient.html#exercice-2-isolation-intérieure-ou-extérieure"><i class="fa fa-check"></i><b>6.3.2</b> Exercice 2 : isolation intérieure ou extérieure</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="humidite.html"><a href="humidite.html"><i class="fa fa-check"></i><b>7</b> Humidité</a>
@@ -236,7 +244,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="humidite.html"><a href="humidite.html#air-humide"><i class="fa fa-check"></i><b>7.1</b> Air humide</a></li>
 <li class="chapter" data-level="7.2" data-path="humidite.html"><a href="humidite.html#humidité-dans-les-matériaux"><i class="fa fa-check"></i><b>7.2</b> Humidité dans les matériaux</a></li>
 <li class="chapter" data-level="7.3" data-path="humidite.html"><a href="humidite.html#bilans-dhumidité"><i class="fa fa-check"></i><b>7.3</b> Bilans d’humidité</a></li>
-<li class="chapter" data-level="7.4" data-path="humidite.html"><a href="humidite.html#exercices-3"><i class="fa fa-check"></i><b>7.4</b> Exercices</a>
+<li class="chapter" data-level="7.4" data-path="humidite.html"><a href="humidite.html#exercices-4"><i class="fa fa-check"></i><b>7.4</b> Exercices</a>
 <ul>
 <li class="chapter" data-level="7.4.1" data-path="humidite.html"><a href="humidite.html#exercice-1-condensation"><i class="fa fa-check"></i><b>7.4.1</b> Exercice 1 : condensation</a></li>
 <li class="chapter" data-level="7.4.2" data-path="humidite.html"><a href="humidite.html#exercice-2-point-de-rosée"><i class="fa fa-check"></i><b>7.4.2</b> Exercice 2 : point de rosée</a></li>
@@ -337,17 +345,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="apercu" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Chapitre 2</span> Aperçu<a href="apercu.html#apercu" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Ce chapitre sert d’introduction aux transferts thermiques et massiques qui seront approfondis dans les chapitres suivants de la partie I.</p>
+<h1><span class="header-section-number">Chapitre 2</span> Bilan de chaleur et besoins<a href="apercu.html#apercu" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Ce chapitre sert d’introduction aux transferts thermiques et massiques qui seront approfondis dans les chapitres suivants de la partie I. Le but est de comprendre les phénomènes principaux de transferts, afin non seulement de comprendre le calcul réglementaire mais surtout de réaliser des calculs indépendamment de celui-ci.</p>
+<div id="hypothèses-et-définitions" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Hypothèses et définitions<a href="apercu.html#hypothèses-et-définitions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="locaux-et-parois" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Locaux et parois<a href="apercu.html#locaux-et-parois" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Pour le calcul énergétique réglementaire ou pour la simulation thermique, un bâtiment est découpé en <em>zones</em>, elles-mêmes découpées en <em>groupes</em> puis en <em>locaux</em>.</p>
 <ul>
-<li>On commence par donner en section <a href="apercu.html#apercu1">2.1</a> un aperçu des principales sources de chaleur et de déperditions thermiques en présentant l’exemple de bilan thermique d’un bâtiment.</li>
-<li>Ensuite, on présente en section <a href="apercu.html#apercu2">2.2</a> les hypothèses principales prises par le calcul réglementaire RE 2020 pour formuler ce bilan thermique et calculer les besoins de chauffage et de refroidissement.</li>
-<li>Enfin, la section <a href="apercu.html#apercu3">2.3</a> annonce la description plus détaillée qui sera faite des transferts thermiques dans les chapitres suivants.</li>
+<li>Le niveau zone correspond à un regroupement des parties de bâtiment pour lesquelles les scénarios d’utilisation sont identiques.</li>
+<li>Le niveau groupe est l’échelle à laquelle sont calculées les températures intérieures, les degrés-heures d’inconfort et les besoins. Une zone peut être séparée en différents groupes si on doit en calculer séparément les températures ou les besoins.</li>
+<li>Le niveau local permet d’affiner les apports internes de chaleur et d’humidité dûs à l’occupation, dans plusieurs pièces au sein d’un même groupe.</li>
 </ul>
-<p>Le but de la partie I est de comprendre les phénomènes principaux de transferts, afin non seulement de comprendre le calcul réglementaire mais surtout de réaliser des calculcs indépendamment de celui-ci.</p>
-<div id="apercu1" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Bilan thermique global<a href="apercu.html#apercu1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Pour le calcul réglementaire ou pour la simulation thermique, un bâtiment est divisé en zones et locaux qui permettent de détailler plus ou moins le calcul et ses hypothèses. Ce découpage sera expliqué en section <a href="apercu.html#apercu2">2.2</a>. On s’intéresse pour l’instant à une seule zone thermique où la température est uniforme: un appartement, un groupe de bureaux, une maison individuelle…</p>
+<p>Au contraire, le terme de zone est utilisé dans certains logiciels de simulation thermique pour désigner un espace où la température intérieure est supposée uniforme.</p>
+<div class="figure"><span style="display:block;" id="fig:locaux"></span>
+<img src="figures/locaux.png" alt="Quelques définitions" width="50%" />
+<p class="caption">
+Figure 2.1: Quelques définitions
+</p>
+</div>
+<p>Le calcul des besoins de chauffage se basera sur un bilan de chaleur réalisé sur un <strong>volume chauffé</strong> (voir figure <a href="apercu.html#fig:locaux">2.1</a>), composé d’un ou plusieurs locaux équipés d’un émetteur de chaleur. Un <strong>local non chauffé</strong> (LNC) est un local qui se situe entre le volume chauffé et le milieu extérieur, et qui n’est pas équipé d’un émetteur de chaleur (garage, comble perdu, véranda, vide sanitaire, etc.). Sa température résulte d’un équilibre entre la température des locaux chauffés et la température extérieure.</p>
+<p>La <strong>surface déperditive</strong> est la surface qui sépare le volume chauffé du milieu extérieur et des LNC. Elle est composée des <strong>parois déperditives</strong> : murs, fenêtres, ponts thermiques.</p>
+</div>
+<div id="données-dentrée" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Données d’entrée<a href="apercu.html#données-dentrée" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La méthode de calcul repose sur des <strong>données d’entrée</strong> (affichées sur la figure <a href="introduction.html#fig:etapes">1.4</a>. Certaines sont conventionnelles, fixées par la réglementation et non modifiables :</p>
+<ul>
+<li>Les données météorologiques (température et humidité, données solaires et d’éclairement, rayonnement froid vers la voûte céleste, précipitations, vitesse et direction du vent, température de base, température d’eau froide du réseau) sont définies par la zone climatique ;</li>
+<li>L’occupation : un scénario indique si chaque zone est occupée ou non, selon l’heure et le jour ;</li>
+<li>Les températures de consigne en chauffage et en refroidissement ;</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:consignes"></span>
+<img src="figures/consignes.png" alt="Exemple de températures de consigne en mode chauffage et refroidissement, pour une zone occupée ou non" width="60%" />
+<p class="caption">
+Figure 2.2: Exemple de températures de consigne en mode chauffage et refroidissement, pour une zone occupée ou non
+</p>
+</div>
+<ul>
+<li>Les besoins de ventilation et d’éclairage ;</li>
+<li>Les besoins d’ECS ;</li>
+<li>Les scénarios de mobilité et d’usages spécifiques de l’énergie ;</li>
+<li>Les apports internes de chaleur et d’humidité liés à la présence humaine ou aux équipements. Ils sont définis au niveau des locaux.</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:apports"></span>
+<img src="figures/apports.png" alt="Exemple d'apports internes dûs aux occupants" width="60%" />
+<p class="caption">
+Figure 2.3: Exemple d’apports internes dûs aux occupants
+</p>
+</div>
+<p>Toutes ces données doivent être prises en compte pour le calcul des besoins du bâtiment en chauffage, refroidissement, éclairage et ECS.</p>
+</div>
+</div>
+<div id="apercu1" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Bilan thermique global<a href="apercu.html#apercu1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Le bilan de chaleur simplifié à l’échelle d’une zone thermique peut être résumé par l’équation suivante : la variation de l’énergie interne d’une zone est la différence entre le flux de chaleur entrant et le flux de chaleur sortant.
 <span class="math display" id="eq:thermique1">\[\begin{equation}
 C \frac{\partial T_i}{\partial t} = \Phi_\mathit{CVC} + \Phi_\mathit{apports} - \Phi_\mathit{déperditions}
@@ -360,55 +410,18 @@ C \frac{\partial T_i}{\partial t} = \Phi_\mathit{CVC} + \Phi_\mathit{apports} - 
     \tag{2.2}
 \end{equation}\]</span></p>
 <p>Cette formule simplifiée servira de base au calcul des besoins de chauffage et de refroidissement présentée plus bas.</p>
-<p>Le terme <span class="math inline">\(\Phi_\mathit{apports}\)</span> contient les apports de chaleur “gratuits” qui ne sont pas fournis par les systèmes CVC : apports solaires et apports internes divers (occupants, équipements, éclairage…). Pour le calcul des besoins, ceux-ci sont en général estimés à partir de scénarios conventionnels.</p>
-<p>Le terme <span class="math inline">\(\Phi_\mathit{déperditions}\)</span> désigne les déperditions à travers les limites de la zone: enveloppe du bâtiment ou séparation avec les zones adjacentes.</p>
+<p>Le terme <span class="math inline">\(\Phi_\mathit{apports}\)</span> contient les apports de chaleur “gratuits” qui ne sont pas fournis par les systèmes CVC : apports solaires et apports internes divers (occupants, équipements, éclairage…). Pour le calcul des besoins, ceux-ci sont en général estimés à partir de scénarios conventionnels. L’exercice en fin de ce chapitre montre un exemple de calcul de ces apports gratuits.</p>
+<p>Le terme <span class="math inline">\(\Phi_\mathit{déperditions}\)</span> désigne les déperditions à travers les limites de la zone: enveloppe du bâtiment ou séparation avec les locaux non chauffés adjacents.</p>
 <p><span class="math display" id="eq:bilan3">\[\begin{equation}
   \Phi_\mathit{déperditions} = D \left(T_i-T_e\right)
-          + \sum_j D_\mathit{adj,j} \left(T-T_\mathit{adj,j}\right)
 \tag{2.3}
 \end{equation}\]</span></p>
 <p>L’équation est écrite dans le sens de la chaleur quittant la zone, mais ses termes peuvent être négatifs par exemple si la température extérieure <span class="math inline">\(T_e\)</span> est supérieure à celle de la zone <span class="math inline">\(T_i\)</span> (déperditions “négatives”).</p>
-<p>Le coefficient <span class="math inline">\(D\)</span> de cette équation, en [W/K], est le coefficient global de déperditions thermiques de l’enveloppe de la zone. Il représente la quantité de chaleur à y fournir pour maintenir une différence de température de 1 K en conditions stationnaires. Il englobe les déperditions thermiques surfaciques à travers les parois, linéiques et ponctuelles au niveau des ponts thermiques, et celles dues aux infiltrations d’air. De même, le deuxième terme désigne les échanges de chaleur entre la zone et un certain nombre de zones adjacentes aux températures <span class="math inline">\(T_\mathit{adj,j}\)</span>, avec des coefficients d’échange <span class="math inline">\(D_\mathit{adj,j}\)</span>.</p>
+<p>Le coefficient <span class="math inline">\(D\)</span> de cette équation, en [W/K], est le coefficient global de déperditions thermiques de la surface déperditive de la zone. Il représente la quantité de chaleur à y fournir pour maintenir une différence de température de 1 K en conditions stationnaires. Il englobe les déperditions thermiques surfaciques à travers les parois, linéiques et ponctuelles au niveau des ponts thermiques, et celles dues aux infiltrations d’air.</p>
+<p>Le calcul du coefficient de déperditions <span class="math inline">\(D\)</span> d’un local est à lui seul l’objet du chapitre <a href="steady.html#steady">3</a> car il agrège de nombreux termes de déperditions thermiques. Pour l’instant on le suppose connu pour le calcul des besoins.</p>
 </div>
-<div id="apercu2" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Calcul réglementaire<a href="apercu.html#apercu2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="hypothèses" class="section level3 hasAnchor" number="2.2.1">
-<h3><span class="header-section-number">2.2.1</span> Hypothèses<a href="apercu.html#hypothèses" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Pour le calcul énergétique, un bâtiment est découpé en <em>zones</em>, elles-mêmes découpées en <em>groupes</em> puis en <em>locaux</em>.</p>
-<ul>
-<li>Le niveau zone correspond à un regroupement des parties de bâtiment pour lesquelles les scénarios d’utilisation sont identiques.</li>
-<li>Le niveau groupe est l’échelle à laquelle sont calculées les températures intérieures, les degrés-heures d’inconfort et les besoins. Une zone peut être séparée en différents groupes si on doit en calculer séparément les températures ou les besoins.</li>
-<li>Le niveau local permet d’affiner les apports internes de chaleur et d’humidité dûs à l’occupation, dans plusieurs pièces au sein d’un même groupe.</li>
-</ul>
-<p>Au contraire, le terme de zone est utilisé dans certains logiciel de simulation thermique pour désigner un espace où la température intérieure est supposée uniforme.</p>
-<p>La méthode de calcul repose sur des <strong>données d’entrée</strong> (affichées sur la figure <a href="introduction.html#fig:etapes">1.4</a> qui peuvent être définies à une de ces quatres échelles. Parmi ces données, certaines sont conventionnelles, fixées par la réglementation et non modifiables :</p>
-<ul>
-<li>Les données météorologiques (température et humidité, données solaires et d’éclairement, rayonnement froid vers la voûte céleste, précipitations, vitesse et direction du vent, température de base, température d’eau froide du réseau) sont définies par la zone climatique ;</li>
-<li>L’occupation : un scénario indique si chaque zone est occupée ou non, selon l’heure et le jour ;</li>
-<li>Les températures de consigne en chauffage et en refroidissement ;</li>
-</ul>
-<div class="figure"><span style="display:block;" id="fig:consignes"></span>
-<img src="figures/consignes.png" alt="Exemple de températures de consigne en mode chauffage et refroidissement, pour une zone occupée ou non" width="60%" />
-<p class="caption">
-Figure 2.1: Exemple de températures de consigne en mode chauffage et refroidissement, pour une zone occupée ou non
-</p>
-</div>
-<ul>
-<li>Les besoins de ventilation et d’éclairage ;</li>
-<li>Les besoins d’ECS ;</li>
-<li>Les scénarios de mobilité et d’usages spécifiques de l’énergie ;</li>
-<li>Les apports internes de chaleur et d’humidité liés à la présence humaine ou aux équipements. Ils sont définis au niveau des locaux.</li>
-</ul>
-<div class="figure"><span style="display:block;" id="fig:apports"></span>
-<img src="figures/apports.png" alt="Exemple d'apports internes dûs aux occupants" width="60%" />
-<p class="caption">
-Figure 2.2: Exemple d’apports internes dûs aux occupants
-</p>
-</div>
-<p>Toutes ces données doivent être prises en compte pour le calcul des besoins du bâtiment en chauffage, refroidissement, éclairage et ECS.</p>
-</div>
-<div id="besoins-de-chauffage-et-refroidissement" class="section level3 hasAnchor" number="2.2.2">
-<h3><span class="header-section-number">2.2.2</span> Besoins de chauffage et refroidissement<a href="apercu.html#besoins-de-chauffage-et-refroidissement" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="calcul-des-besoins" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Calcul des besoins<a href="apercu.html#calcul-des-besoins" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Le coefficient Bbio (voir <a href="introduction.html#re2020">1.2.1</a>) est basé sur les besoins de chauffage, refroidissement et d’éclairage artificiel à l’échelle d’un bâtiment entier. Ils sont déterminés en kWh/m<span class="math inline">\(^2\)</span> et convertis en points selon cette formule :
 <span class="math display" id="eq:bbio">\[\begin{equation}
 \mathrm{Bbio} = 2 \cdot \mathrm{Bes}_\mathrm{chauffage} + 2 \cdot \mathrm{Bes}_\mathrm{froid} + 5 \cdot \mathrm{Bes}_\mathrm{eclairage}
@@ -430,40 +443,112 @@ Figure 2.2: Exemple d’apports internes dûs aux occupants
 <p>Les DJ sont une donnée géographique : ils ne dépendent pas du bâtiment. C’est le coefficient de déperditions <span class="math inline">\(D\)</span> qui caractérise l’isolation de chaque bâtiment, et donc ses besoins de chauffage et ses consommations.</p>
 <p>Comme on peut le voir sur les équations <a href="apercu.html#eq:dju1">(2.6)</a> et <a href="apercu.html#eq:dju2">(2.7)</a>, les besoins de chauffage en hiver sont réduits par la présence d’apports gratuits de chaleur dans le bâtiment : apports solaires et apports internes dûs aux occupants et tous leurs équipements. En été, ces apports augmentent le besoin de refroidissement.</p>
 <p>Pour citer la réglementation concernant les logements : “conventionnellement, la puissance de chaleur dégagée par l’ensemble des équipements en occupation est prise égale à 5,7 W/m<span class="math inline">\(^2\)</span>, et en inoccupation égale à 1,1 W/m<span class="math inline">\(^2\)</span>.” Les autres catégories de bâtiments possèdent leurs propres scénarios d’apports internes de chaleur.</p>
+<div id="les-dju" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Les DJU<a href="apercu.html#les-dju" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>L’équation <a href="apercu.html#eq:dju2">(2.7)</a> montre que le besoin de chauffage moyen quotidien est la différence entre un terme proportionnel à l’écart de température intérieur-extérieur, et les apports. On peut la réécrire pour exprimer uniquement les besoins proportionnellement à un écart entre une température de référence <span class="math inline">\(T_\mathit{ref}\)</span> et la température extérieure :</p>
+<p><span class="math display" id="eq:dju4" id="eq:dju3">\[\begin{align}
+    \mathrm{Bes}_\mathit{chauffage} &amp; = D \times 24 \times \left(T_i-T_e\right)  - \mathrm{Apports}  \tag{2.8} \\
+    &amp; = D \times 24 \times \left(T_\mathit{ref}-T_e\right) \tag{2.9}
+\end{align}\]</span></p>
+<p>Où la température de référence est donc :</p>
+<p><span class="math display" id="eq:dju5">\[\begin{equation}
+T_\mathit{ref} = T_i - \frac{\mathrm{Apports}}{D \times 24} \tag{2.10}
+\end{equation}\]</span></p>
+<p>Il s’agit de la température extérieure pour laquelle les besoins de chauffage sont nuls, c’est-à-dire où les apports de chaleur suffisent pour amener le local à la température <span class="math inline">\(T_i\)</span> voulue. La différence <span class="math inline">\(\left(T_\mathit{ref}-T_e\right)\)</span> est nommée <strong>degré jour unifié</strong> (DJU). Les DJU peuvent être utilisés pour un calcul très simplifiés en supposant une valeur connue de la température de référence. Cette hypothèse est cependant erronée car, comme on voit sur l’équation <a href="apercu.html#eq:dju5">(2.10)</a>, <span class="math inline">\(T_\mathit{ref}\)</span> dépend des apports (variables chaque jour et dans chaque bâtiment) et de la performance de chaque bâtiment <span class="math inline">\(D\)</span> : un bâtiment bien isolé peut se passer de chauffage lorsque la température extérieure est de 10°C, alors qu’une passoire thermique aura besoin de chauffage à partir de 16 ou 17°C.</p>
+<div class="figure"><span style="display:block;" id="fig:dju"></span>
+<img src="figures/dju.png" alt="Besoins et apports en fonction des températures" width="75%" />
+<p class="caption">
+Figure 2.4: Besoins et apports en fonction des températures
+</p>
 </div>
-<div id="les-règles-th-bat" class="section level3 hasAnchor" number="2.2.3">
-<h3><span class="header-section-number">2.2.3</span> Les règles Th-bat<a href="apercu.html#les-règles-th-bat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Le calcul des besoins de chauffage et de refroidissement nécessite donc de connaître le coefficient <span class="math inline">\(D\)</span>, qui décrit la performance thermique du bâtiment indépendamment de ses systèmes CVC. Pour le déterminer, ou déterminer sa grandeur équivalente <span class="math inline">\(U_\mathit{bat}\)</span>, les bureaux d’étude thermiques se réfèrent aux <a href="http://www.rt-batiment.fr/IMG/pdf/1-fascicule_generalites.pdf">règles Th-bat</a>.</p>
-<p>Les règles Th-bat sont énoncées sous deux types de documents:</p>
-<ul>
-<li>Les <strong>méthodes</strong> constituent l’ensemble des formules, principes et moyens de détermination de la
-performance thermique des composants d’enveloppe ;</li>
-<li><a href="http://www.rt-batiment.fr/documents-d-application-a618.html">Les applications</a> fournissent des valeurs par défaut ou des valeurs tabulées obtenues par application directe des méthodes pour des composants de parois spécifiques ou des liaisons de parois.</li>
-</ul>
-<p>Les chapitres suivants sont en quelque sorte un résumé des <em>méthodes</em>, et les exercices proposés abordent les <em>applications</em>.</p>
+<p>La figure <a href="apercu.html#fig:dju">2.4</a> illustre les différents termes de l’équation <a href="apercu.html#eq:dju3">(2.8)</a> sur une semaine. Les besoins bruts, ou totaux, de chauffage, sont les déperditions <span class="math inline">\(D \times 24 \times \left(T_i-T_e\right)\)</span> proportionnelles à l’écart de température intérieur-extérieur. Ils sont satisfaits en partie par les apports gratuits, et en partie par la dépense réelle de chauffage <span class="math inline">\(\mathrm{Bes}_\mathit{chauffage} = D \times 24 \times \left(T_\mathit{ref}-T_e\right)\)</span>. La température de référence peut varier chaque jour, selon les conditions d’ensoleillement ou d’occupation.</p>
 </div>
-</div>
-<div id="apercu3" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Détail des transferts thermiques<a href="apercu.html#apercu3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>La suite de la partie I du livre s’affranchit des notations du calcul réglementaire, et va présenter les phénomènes de transfert plus en détail. Un des objectifs principaux est de comprendre les règles Th-Bat qui déterminent le coefficient <span class="math inline">\(D\)</span>.</p>
+<div id="apercu3" class="section level3 hasAnchor" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Détail des transferts thermiques<a href="apercu.html#apercu3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La suite de la partie I du livre reste centrée sur les notations du calcul réglementaire, mais va aussi présenter les phénomènes de transfert plus en détail. Un des objectifs principaux est de comprendre les règles Th-Bat qui déterminent le coefficient <span class="math inline">\(D\)</span>.</p>
 <p>Pour formuler les transferts thermiques (et massiques), on discrétise le bâtiment en un nombre fini de points dont on peut calculer la température.</p>
 <div class="figure"><span style="display:block;" id="fig:discretisation"></span>
 <img src="figures/discretisation.png" alt="Discrétisation des températures dans un bâtiment: températures de surface ou interne aux parois (orange), et températures des zones d'air (bleu)" width="40%" />
 <p class="caption">
-Figure 2.3: Discrétisation des températures dans un bâtiment: températures de surface ou interne aux parois (orange), et températures des zones d’air (bleu)
+Figure 2.5: Discrétisation des températures dans un bâtiment: températures de surface ou interne aux parois (orange), et températures des zones d’air (bleu)
 </p>
 </div>
-<p>Les chapitres suivants vont détailler les trois types d’échange représentés sur la figure <a href="apercu.html#fig:discretisation">2.3</a>:</p>
+<p>Les chapitres suivants vont détailler les trois types d’échange représentés sur la figure <a href="apercu.html#fig:discretisation">2.5</a>:</p>
 <ol style="list-style-type: decimal">
 <li>Conduction à travers les composants de l’enveloppe : chapitre <a href="steady.html#steady">3</a> ;</li>
-<li>Echanges radiatifs directs entre parois : chapitre <a href="rayonnement.html#rayonnement">4</a> ;</li>
+<li>Echanges radiatifs directs entre parois, déterminants pour estimer le confort thermique : chapitre <a href="rayonnement.html#rayonnement">5</a> ;</li>
 <li>Entre les parois et l’air de la pièce ;</li>
-<li>Par convection due au déplacement d’air entre les pièces.</li>
+<li>Par convection due au déplacement d’air entre les zones : chapitre <a href="air.html#air">4</a> ;</li>
 </ol>
-<p>Ensuite, le chapitre <a href="transient.html#transient">5</a> aborde les transferts thermiques en mode transitoire pour décrire les effets d’inertie thermique, puis les chapitres <a href="air.html#air">6</a> et <a href="humidite.html#humidite">7</a> abordent respectivement les transferts d’air et d’humidité.</p>
+<p>Par ailleurs, le chapitre <a href="transient.html#transient">6</a> aborde les transferts thermiques en mode transitoire pour décrire les effets d’inertie thermique.</p>
 </div>
-<div id="exercice" class="section level2 hasAnchor" number="2.4">
-<h2><span class="header-section-number">2.4</span> Exercice<a href="apercu.html#exercice" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
+<div id="exercices" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Exercices<a href="apercu.html#exercices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exercice-1-calcul-des-dju-et-des-besoins" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Exercice 1 : calcul des DJU et des besoins<a href="apercu.html#exercice-1-calcul-des-dju-et-des-besoins" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>On reprend les données montrées sur la figure <a href="apercu.html#fig:dju">2.4</a>, où sont affichées les trois températures (intérieure, extérieure, référence) pendant une semaine.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Jour</th>
+<th align="left">T intérieure</th>
+<th align="left">T extérieure</th>
+<th align="left">T ref</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">19</td>
+<td align="left">8</td>
+<td align="left">15</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">19</td>
+<td align="left">9</td>
+<td align="left">15,5</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">19</td>
+<td align="left">11</td>
+<td align="left">16</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">19</td>
+<td align="left">9</td>
+<td align="left">15</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">19</td>
+<td align="left">7</td>
+<td align="left">14,5</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">19</td>
+<td align="left">6</td>
+<td align="left">15,5</td>
+</tr>
+<tr class="odd">
+<td align="left">7</td>
+<td align="left">19</td>
+<td align="left">8</td>
+<td align="left">15,5</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Calculer les besoins de chauffage (kWh) sur une semaine d’une maison de coefficient <span class="math inline">\(D=100\)</span> W/K</li>
+<li>Sur une journée, les apports gratuits moyens sont de 14 kWh : quelle est la température de base ?</li>
+</ul>
+</div>
+<div id="exercice-2-apports-et-besoins" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Exercice 2 : apports et besoins<a href="apercu.html#exercice-2-apports-et-besoins" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>On s’intéresse à 4 bâtiments dont on veut calculer les besoins de chauffage.</p>
 <table>
 <thead>
@@ -520,24 +605,25 @@ Figure 2.3: Discrétisation des températures dans un bâtiment: températures d
 <p>En déduire le total des apports pendant les 5 mois de chauffage, et le besoin de chauffage en fonction des DJU (formule <a href="apercu.html#eq:dju2">(2.7)</a>).</p>
 <p>Toutes les données nécessaires au calcul sont fournies ci-dessous.</p>
 <div class="figure"><span style="display:block;" id="fig:apercuexo1"></span>
-<img src="figures/apercu_ex1.PNG" alt="Températures de base pour le dimensionnement, et degrés-jours annuels, pour chaque zone climatique de France métropolitaine" width="100%" />
+<img src="figures/apercu_ex1.png" alt="Températures de base pour le dimensionnement, et degrés-jours annuels, pour chaque zone climatique de France métropolitaine" width="100%" />
 <p class="caption">
-Figure 2.4: Températures de base pour le dimensionnement, et degrés-jours annuels, pour chaque zone climatique de France métropolitaine
+Figure 2.6: Températures de base pour le dimensionnement, et degrés-jours annuels, pour chaque zone climatique de France métropolitaine
 </p>
 </div>
 <div class="figure"><span style="display:block;" id="fig:apercuexo2"></span>
-<img src="figures/apercu_ex2.PNG" alt="Apports solaires journaliers en kWh/jour à travers 1 m2 de vitrage vertical" width="100%" />
+<img src="figures/apercu_ex2.png" alt="Apports solaires journaliers en kWh/jour à travers 1 m2 de vitrage vertical" width="100%" />
 <p class="caption">
-Figure 2.5: Apports solaires journaliers en kWh/jour à travers 1 m2 de vitrage vertical
+Figure 2.7: Apports solaires journaliers en kWh/jour à travers 1 m2 de vitrage vertical
 </p>
 </div>
 <div class="figure"><span style="display:block;" id="fig:apercuexo3"></span>
-<img src="figures/apercu_ex3.PNG" alt="Scénarios d’occupation et d’apports internes liés aux équipements" width="100%" />
+<img src="figures/apercu_ex3.png" alt="Scénarios d’occupation et d’apports internes liés aux équipements" width="100%" />
 <p class="caption">
-Figure 2.6: Scénarios d’occupation et d’apports internes liés aux équipements
+Figure 2.8: Scénarios d’occupation et d’apports internes liés aux équipements
 </p>
 </div>
 
+</div>
 </div>
 </div>
             </section>
@@ -577,7 +663,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/srouchier/beh11-overlook.Rmd",
+"link": "https://github.com/srouchier/beh11-bilan.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -606,7 +692,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

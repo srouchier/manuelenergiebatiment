@@ -1,12 +1,6 @@
-# Conduction et convection stationnaire {#steady}
+# Calcul des déperditions {#steady}
 
-```{r discretisation2, echo=FALSE, out.width="40%", fig.cap="Discrétisation des températures dans un bâtiment"}
-knitr::include_graphics(rep("figures/discretisation.png"))
-```
-
-Ce chapitre aborde les transferts thermiques par conduction à travers les composants de l'enveloppe (notés 1 sur la figure \@ref(fig:discretisation2)), entre les parois et l'air de la pièce (3), et par convection due au déplacement d'air entre les pièces.
-
-Pour une zone thermique, ou pour un bâtiment monozone (c'est-à-dire dont on suppose la température intérieure uniforme), on définit un coefficient de déperdition $D$ (W.K$^{-1}$) comme le rapport entre la puissance de chauffage ou de refroidissement $\Phi$ et l'écart de température intérieur-extérieur en conditions stationnaires :
+Pour une zone thermique, ou pour un bâtiment monozone (c'est-à-dire dont on suppose la température intérieure uniforme), on définit un coefficient de déperdition $D$ (W.K$^{-1}$) comme le rapport entre la puissance de chauffage ou de refroidissement $\Phi$ (qui inclut les apports de chaleur solaires ou internes), et l'écart de température intérieur-extérieur en conditions stationnaires :
 
 \begin{equation}
 \Phi = D \left(T_i - T_e\right)
@@ -15,9 +9,37 @@ Pour une zone thermique, ou pour un bâtiment monozone (c'est-à-dire dont on su
 
 (note: en été, si $T_i < T_e$, la puissance $\Phi$ est négative)
 
-Le coefficient $D$ est équivalent au $U_\mathit{bat}$ (W.K$^{-1}$.m$^{-2}$) qui est simplement rapporté par unité de surface de l'enveloppe.
+Le but de ce chapitre est d'exprimer $D$ en fonction des caractéristiques du bâtiment.
 
-## Conduction dans un mur {#conduction}
+```{r maison2, echo=FALSE, out.width="60%", fig.cap="Echanges thermiques entre zones à des températures différentes: local chauffé $T_i$, extérieur $T_e$, local adjacent $T_a$, local non chauffé $T_u$, sol $T_g$"}
+knitr::include_graphics(rep("figures/maison2.png"))
+```
+
+Les déperditions thermiques sont la conséquence d'une différence de température entre la zone chauffée et les milieux qui l'entourent : ambiance extérieure, zones adjacentes chauffées ou non, sol.
+
+
+```{r deperditions, echo=FALSE, out.width="60%", fig.cap="Illustration de flux déperditifs"}
+knitr::include_graphics(rep("figures/deperditions.png"))
+```
+
+Le flux total $\Phi$ est la somme des flux à travers chaque composant de la surface déperditive.
+
+* Flux par transmission (conduction et convection) à travers les parois planes et fenêtres,
+* Flux convectif dû au renouvellement d'air (ventilation, infiltrations),
+* Ponts thermiques,
+* Echanges avec les locaux adjacents, chauffés ou non, et le sol.
+
+Chacun de ces flux est proportionnel à l'écart de température entre les deux milieux. Dans l'exemple de la figure \@ref(fig:deperditions), un des flux par transmission entre l'intérieur et l'extérieur est dénoté ainsi :
+
+\begin{equation}
+\Phi_{ie1} = H_1 \left(T_i - T_e\right)
+\end{equation}
+
+où $H_1$ est le coefficient de déperdition par transmission d'un des composants de la paroi (par exemple la fenêtre sur cette figure).
+
+Chacune des sections suivantes détaille le calcul des différents flux, et on fait le bilan de ces déperditions en section \@ref(bilandeperditions) pour le calcul du coefficient global $D$ ou de son équivalent $U_\mathit{bat}$.
+
+## Transmission dans une paroi plane {#conduction}
 
 Résumé en vidéo :
 
@@ -91,7 +113,7 @@ Le flux de chaleur surfacique $\varphi$ a pour dimension (W.m$^{-2}$) : il est r
 \Phi = S . \varphi = S . U . \Delta T (\#eq:steady11)
 \end{equation}
 
-où on peut noter $D = S . U$ (W.K$^{-1}$) le coefficient de déperdition total.
+où on peut noter $H = S . U$ (W.K$^{-1}$) le coefficient de déperdition total de cet élément.
 
 ### Assemblage de résistances
 
@@ -123,10 +145,10 @@ U = \frac{1}{R} = \frac{1}{\sum_i \dfrac{e_i}{\lambda_i} + R_{se} + R_{si}}
 knitr::include_graphics(rep("figures/paroi2.png"))
 ```
 
-A l'inverse, lorsqu'un mur est composé de plusieurs éléments séparés (paroi opaque, vitrage...), le flux de chaleur traverse plusieurs résistance en parallèle (figure \@ref(fig:paroi2)). La conductance totale $D$ de ce mur est alors la somme des conductances de chaque élément.
+A l'inverse, lorsqu'un mur est composé de plusieurs éléments séparés (paroi opaque, vitrage...), le flux de chaleur traverse plusieurs résistance en parallèle (figure \@ref(fig:paroi2)). La conductance totale $H$ (W/K) de ce mur est alors la somme des conductances de chaque élément.
 
 \begin{equation}
-D = U_\mathit{total} \, S_\mathit{total} = \sum_i U_i \, S_i
+H = U_\mathit{total} \, S_\mathit{total} = \sum_i U_i \, S_i
 (\#eq:steady14)
 \end{equation}
 
@@ -143,9 +165,9 @@ Variable    Nom                           Unité
 ---------   -----                         ------
 $R$         Résistance thermique          m$^2$.K.W$^{-1}$ 
 $U$         Coefficient de transfert      W.m$^{-2}.$K$^{-1}$  
-$D$         Conductance                   W.K$^{-1}$ 
+$H$         Coefficient de déperdition    W.K$^{-1}$ 
 
-### Transferts surfaciques {#surfacique}
+### Résistances superficielles {#surfacique}
 
 On a vu que sur la figure \@ref(fig:paroi1) qu'une résistance thermique était placée entre la surface de la paroi et la température de l'air. Elle est égale à l'inverse du coefficient de convection $h$ (même dimension W.m$^{-2}.$K$^{-1}$ qu'un coefficient $U$) qui quantifie la convection à l'interface.
 
@@ -155,73 +177,76 @@ knitr::include_graphics(rep("figures/surfacique1.png"))
 
 La valeur de $h$ est surtout fonction de la vitesse d'air le long de la paroi. Sur la façade extérieure, le vent augmente les échanges convectifs entre l'air et la surface : le coefficient $h$ sera plus élevé donc la résistance surfacique plus faible, et donc l'écart entre les températures de l'air et de la surface est plus faible également.
 
-```{r surfacique2, echo=FALSE, out.width="100%", fig.cap="Quelques valeurs réglementaires de résistances surfaciques"}
+```{r surfacique2, echo=FALSE, out.width="100%", fig.cap="Quelques valeurs réglementaires de résistances surfaciques issues des règles Th-Bat 2020"}
 knitr::include_graphics(rep("figures/surfacique2.png"))
 ```
 
+### Menuiseries
+
+```{r menuiseries, echo=FALSE, out.width="60%", fig.cap="Conductance des fenêtres"}
+knitr::include_graphics(rep("figures/menuiseries.png"))
+```
+
+Pour les fenêtres, trois conductances sont définies (selon les normes ISO 10077-1 et ISO 10077-2) :
+
+* Coefficient $U_g$ : conductance du vitrage (glass)
+* Coefficient $U_f$ : conductance du cadre (frame)
+* Coefficient $U_w$ : conductance de la fenêtre entière (window)
+
+Généralement, les valeurs des coefficients $U_g$, $U_f$, $U_w$ sont calculées par les fabricants et renseignées dans les spécifications techniques des produits. La base de données [EDIBATEC](https://www.edibatec.org/), qui est très utilisée lors des calculs réglementaires, contient un grand nombre de données fabriquant.
+
 ## Ponts thermiques
 
-Les ponts thermiques sont les points de l'enveloppe du bâtiment présentant une faiblesse d'isolation, donc où les pertes de chaleur sont plus élevées : liaisons entre une menuiserie et une paroi opaque, planchers intermédiaires, murs de refend, seuil de porte... Le calcul précis des transferts au niveau d'un pont thermique nécessiterait leur modélisation en 2D ou en 3D. Cependant, dans la très grande majorité des cas, on simplifie ce calcul en les représentant par des coefficients issus de catalogues.
+Un pont thermique est une zone ponctuelle ou linéaire qui, dans l'enveloppe d'un bâtiment, présente une variation de résistance thermique : liaisons entre une menuiserie et une paroi opaque, planchers intermédiaires, murs de refend, seuil de porte...
 
 ```{r pontthermique, echo=FALSE, out.width="80%", fig.cap="Exemple de règle Th-bat donnant le coefficient de transmission d'un pont thermique"}
 knitr::include_graphics(rep("figures/pontthermique.png"))
 ```
 
-Les [documents d'application](http://www.rt-batiment.fr/documents-d-application-a618.html) de la réglementation fournissent des valeurs tabulées des coefficients de transmission linéiques $\psi$ de nombreux procédés constructifs. Ce coefficient en (W.m$^{-1}.$K$^{-1}$), multiplié par la longueur d'un pont thermique, donne sa conductance :
+Les règles Th-Bat 2020 traitent de manière différente les ponts thermiques structurels et les ponts thermiques intégrés.
 
+* Les ponts thermiques structurels sont les ponts thermiques situés à la jonction entre des éléments de parois.
+* Les ponts thermiques intégrés sont des ponts thermiques répartis de manière régulière sur toute la surface des parois : montants des ossatures bois, rails de maintien des parements, etc.
+
+```{r pontthermique2, echo=FALSE, out.width="30%", fig.cap="Pont thermique linéique"}
+knitr::include_graphics(rep("figures/pontthermique2.png"))
+```
+
+Le flux au travers d'un pont thermique linéique séparant deux zones aux températures $T_i$ et $T_e$ s'exprime :
 \begin{equation}
-D_{pt} = l . \psi
-(\#eq:steady16)
+\Phi_{pt} = l \cdot \psi \cdot (T_i-T_e) (\#eq:steady15)
 \end{equation}
 
-En plus des ponts thermiques linéiques, on peut également compter les ponts thermiques ponctuels caractérisés par un coefficient de transmission $\chi$ en (W.$K$^{-1}$).
+où $l$ est la longueur du pont thermique et $\psi$ son coefficient en (W.m$^{-1}$.K$^{-1}$) qui dépend de sa nature.
+
+Les valeurs de coefficient $\psi$ ont été obtenues à l’aide de simulations numériques dans un grand nombre de configurations courantes, afin de constituer des catalogues de valeurs. Ceux-ci sont disponibles dans [les règles Th-Bat](https://rt-re-batiment.developpement-durable.gouv.fr/documents-d-application-a618.html).
 
 ## Echanges convectifs {#convection}
 
-Les transferts d'air entre l'intérieur et l'extérieur, ou entre différentes zones, entraînent un transfert de chaleur par convection. 
-
-```{r paroi4, echo=FALSE, out.width="50%", fig.cap="Apport de chaleur par convection"}
-knitr::include_graphics(rep("figures/paroi4.png"))
-```
-
-* Un débit d'air $\dot{m}$ (kg.s$^{-1}$) depuis l'extérieur à température $T_e$, vers l'intérieur à température $T_i$, apporte un flux de chaleur égal à :
-\begin{equation}
-\Phi = \dot{m} \, c_a \, (T_e-T_i)
-(\#eq:steady17)
-\end{equation}
-où $c_a$ est la chaleur spécifique de l'air.
-* De même, un flux de chaleur entre deux pièces de températures $T_1$ et $T_2$ revient à :
-\begin{equation}
-\Phi = \dot{m} \, c_a \, (T_1-T_2)
-(\#eq:steady18)
-\end{equation}
-
-**Attention**: l'air entrant dans une pièce doit être inclus dans son bilan thermique, mais pas l'air qui en sort. Sur l'exemple de la figure \@ref(fig:paroi4), le bilan thermique de chacune des deux pièces doit inclure cet apport de chaleur une fois.
-
-Les transferts d'air dans un bâtiment peuvent être dûs à : la ventilation naturelle par les ouvrants ; la ventilation mécanique ; les infiltrations d'air dans les défauts d'étanchéité de l'enveloppe.
-
-Comme nous avons jusqu'ici écrit les déperditions thermiques dans le sens de la chaleur quittant la pièce, nous pouvons faire de même ici (ce qui revient à inverser l'équation \@ref(eq:steady17)). Si le débit de ventilation $Q_v$ est donné en m$^3$/h à la place d'un débit massique $\dot{m}$, on peut exprimer les déperditions par renouvellement d'air :
+Les transferts d'air entre l'intérieur et l'extérieur, ou entre différentes zones, entraînent un transfert de chaleur par convection. L'air entrant dans une pièce doit être inclus dans son bilan thermique sous la forme d'un flux thermique **sortant** $\Phi_v$:
 
 \begin{equation}
-\Phi_v = \dot{m} \, c_a \, (T_i-T_e) = \frac{\rho_a \, c_a}{3600} Q_v (T_i-T_e)
-(\#eq:steady19)
+\Phi_v = \dot{m} \, c_a \, (T_e-T_i) (\#eq:steady17)
 \end{equation}
 
-où le coefficient $\dot{m} \, c_a = 0,34 Q_v$ est homogène à une conductance thermique et pourra donc être ajouté aux conductances des parois dans le bilan global des déperditions.
+où $\dot{m}$ est le débit entrant à la température $T_e$ dans la pièce $T_i$, et $c_a$ est la chaleur massique de l'air. Le terme $\dot{m} \, c_a$ a pour dimension (W/K) et peut être assimilé à un coefficient de déperditions.
 
-```{r blowerdoor, echo=FALSE, out.width="50%", fig.cap="Porte soufflante pour mesurer l'étanchéité à l'air"}
-knitr::include_graphics(rep("figures/blowerdoor.png"))
-```
+Le débit d'air $Q_v$ est souvent exprimé en m$^3$/h. Quand c'est le cas, l'équation \@ref(eq:steady17) peut se réécrire :
 
-En plus du renouvellement d'air par ventilation contrôlée, il faut tenir compte des infiltrations. L'étanchéité de l'enveloppe se mesure avec un essai de porte soufflante, et se quantifie avec le coefficient $n_{50}$ (h$^{-1}$) qui représente le taux de renouvellement d'air sous l'effet d'une différence de pression de 50 Pa entre l'intérieur et l'extérieur.
+\begin{align}
+\Phi_v & = \rho \, c_a \, \frac{Q_v}{3600} \, (T_e-T_i) (\#eq:steady18) \\
+& = 0.34 \, Q_v \,  (T_e-T_i) (\#eq:steady185)
+\end{align}
 
-Les transferts aérauliques seront abordés plus en détail au chapitre \@ref(air).
+Les débits de renouvellement d’air dans les locaux peuvent résulter de trois composantes :
 
-## Bilan des déperditions
+* La ventilation mécanique contrôlée (VMC) qui peut imposer un débit d'air neuf réglementaire,
+* Les infiltrations à travers les défauts d'étanchéité de l'enveloppe,
+* La ventilation naturelle sous l'effet du vent et du tirage thermique
 
-On a surtout parlé dans ce chapitre de *déperditions* thermiques, ce qui sous-entend que la chaleur sort du bâtiment donc que celui-ci est chauffé par rapport à l'extérieur. Tous ces calculs sont cependant toujours valables en été, lorsque la chaleur rentre dans le bâtiment car le rapport des températures s'inverse. On peut alors utiliser les mêmes formules, qui donneront un résultat négatif (apports de chaleur = déperditions négatives).
+Le calcul des débits d'air est l'objet du chapitre \@ref(air).
 
-### Locaux non chauffés
+## Locaux non chauffés
 
 Souvent, une pièce chauffée (ou climatisée) est adjacente à un local non chauffé (ou non climatisé) à la température $T_u$ : garage, combles, hall...
 
@@ -250,11 +275,8 @@ b = \frac{D_{ue}}{D_{ue}+D_{iu}}
 (\#eq:steady22)
 \end{equation}
 
-### Bilan d'une zone
 
-```{r video2, echo=FALSE}
-shiny::includeHTML("figures/video2.html")
-```
+## Bilan des déperditions {#bilandeperditions}
 
 On peut agréger toutes les déperditions décrites dans ce chapitre pour exprimer le coefficient global $D$ de la formule \@ref(eq:steady0), qui représente la puissance thermique à dépenser par degré d'écart entre l'intérieur et l'extérieur, en conditions stationnaires.
 
@@ -262,28 +284,40 @@ On peut agréger toutes les déperditions décrites dans ce chapitre pour exprim
 knitr::include_graphics(rep("figures/bilandeperditions.png"))
 ```
 
-Le bilan thermique d'un local chauffé (ou climatisé) dépend de ses principales sources de déperditions. Comme tous les calculs qu'on a présentés ici sont très simplifiés par rapport à la réalité, il revient à la personne qui réalise le calcul de choisir les points les plus importants à faire figurer dans le bilan. Dans l'exemple de la figure \@ref(fig:bilandeperditions), on a affiché :
+Le bilan des déperditions d'un local est l'inventaire des composants de sa surface déperditive. Il inclut :
 
-* Les pertes $\Phi_1$ et $\Phi_2$ par deux parois différentes avec les propriétés $U_1 \, S_1$ et $U_2 \, S_2$ ;
-* Les déperditions $\Phi_\mathrm{inf}$ dues à un débit d'infiltration d'air $\dot{m}_\mathrm{inf}$ ;
-* Des ponts thermiques de longueur totale $l$ et coefficient $\psi$ ;
-* Les pertes vers le toit via des combles non chauffés à la température $T_u$.
+* Les déperditions par transmission à travers plusieurs parois planes ou fenêtres
+$\Phi_{tr} = \sum_j \, U_j \, S_j \, b_j \,(T_i - T_e)$
+* Les ponts thermiques
+$\Phi_{pt} = \sum_k \, l_k \, \psi_k \, b_k \, (T_i-T_e)$
+* Des déperditions dues au renouvellement d'air
+$\Phi_v = 0.34 \, Q_v \, (T_i - T_e)$
 
-Dans cet exemple, le coefficient global de déperditions est alors la somme des conductances individuelles (toujours en W.K$^{-1}$, on n'additionne jamais directement les coefficients surfaciques en W.m$^{-2}$.K$^{-1}$). On peut les additionner car tous les flux de chaleur $\Phi$ sont écrits ici proportionnellement au même écart de température $T_i-T_e$ :
+où les coefficients $b$ indiquent que chaque terme est susceptible de désigner des déperditions vers un local non chauffé, à une température différente de la température extérieure. Pour une paroi séparant directement la zone chauffée de l'air extérieur, $b=1$. Ces coefficients permettent d'écrire tous les termes du bilan proportionnellement au même écart de température intérieur-extérieur.
+
+La somme des déperditions est donc dans cet exemple:
+
+\begin{align}
+\Phi & = \sum_j \, U_j \, S_j \, b_j \, (T_i - T_e) + \sum_k \, l_k \, \psi_k \, b_k \, (T_i-T_e) + 0.34 \, Q_v \, (T_i - T_e)  (\#eq:steady23) \\
+& = D \, (T_i - T_e) (\#eq:steady24) 
+\end{align}
+
+Et le coefficient global de déperditions $D$ est donc, en (W/K):
 
 \begin{equation}
-D = U_1 \, S_1 + U_2 S_2 + \dot{m}_\mathrm{inf} \, c_a + U\,S\,b + \psi \, l
-(\#eq:steady23)
+D = \sum_j \, U_j \, S_j \, b_j + \sum_k \, l_k \, \psi_k \, b_k + 0.34 \, Q_v (\#eq:steady25) 
 \end{equation}
 
-On utilise également le coefficient global de transmission surfacique $U_\mathit{bat}$ (W.m$^{-2}$.K$^{-1}$), qui est la conductance $D$ rapportée à la surface totale de l'enveloppe :
+On utilise également le coefficient global de transmission surfacique $U_\mathit{bat}$ (W.m$^{-2}$.K$^{-1}$), qui est la conductance $D$ rapportée à la surface déperditive totale de l'enveloppe :
 
 \begin{equation}
-U_\mathit{bat} = \frac{D}{\sum S} = \frac{U_1 \, S_1 + U_2 S_2 + \dot{m}_\mathrm{inf} \, c_a + U\,S\,b + \psi \, l}{\sum S}
-(\#eq:steady24)
+U_\mathit{bat} = \frac{D}{\sum S} = \frac{\sum_j \, U_j \, S_j \, b_j + \sum_k \, l_k \, \psi_k \, b_k + 0.34 \, Q_v}{\sum_j S_j}
+(\#eq:steady26)
 \end{equation}
 
 *J'insiste une dernière fois sur un point : on n'obtient pas le $U_\mathit{bat}$ en additionnant les coefficients $U$ directement, mais avec une somme pondérée par les surfaces déperditives.*
+
+On a surtout parlé dans ce chapitre de *déperditions* thermiques, ce qui sous-entend que la chaleur sort du bâtiment donc que celui-ci est chauffé par rapport à l'extérieur. Tous ces calculs sont cependant toujours valables en été, lorsque la chaleur rentre dans le bâtiment car le rapport des températures s'inverse. On peut alors utiliser les mêmes formules, qui donneront un résultat négatif (apports de chaleur = déperditions négatives).
 
 ## Exercices
 

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapitre 5 Régime transitoire | Manuel de performance énergétique des bâtiments</title>
+  <title>Chapitre 6 Régime transitoire | Manuel de performance énergétique des bâtiments</title>
   <meta name="description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapitre 5 Régime transitoire | Manuel de performance énergétique des bâtiments" />
+  <meta property="og:title" content="Chapitre 6 Régime transitoire | Manuel de performance énergétique des bâtiments" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
   <meta name="github-repo" content="srouchier/beh" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapitre 5 Régime transitoire | Manuel de performance énergétique des bâtiments" />
+  <meta name="twitter:title" content="Chapitre 6 Régime transitoire | Manuel de performance énergétique des bâtiments" />
   
   <meta name="twitter:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Rouchier" />
 
 
-<meta name="date" content="2023-03-21" />
+<meta name="date" content="2023-09-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="rayonnement.html"/>
-<link rel="next" href="air.html"/>
+<link rel="next" href="humidite.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -92,7 +92,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -105,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -119,6 +119,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -148,87 +152,91 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#re2020"><i class="fa fa-check"></i><b>1.2.1</b> Bâtiments neufs : la RE 2020</a></li>
 <li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#bâtiments-existants"><i class="fa fa-check"></i><b>1.2.2</b> Bâtiments existants</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction.html"><a href="introduction.html#règles-de-calcul-des-besoins"><i class="fa fa-check"></i><b>1.2.3</b> Règles de calcul des besoins</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#plan-du-livre"><i class="fa fa-check"></i><b>1.3</b> Plan du livre</a></li>
 </ul></li>
-<li class="part"><span><b>I Transferts de chaleur et de masse</b></span></li>
-<li class="chapter" data-level="2" data-path="apercu.html"><a href="apercu.html"><i class="fa fa-check"></i><b>2</b> Aperçu</a>
+<li class="part"><span><b>I Performance énergétique du bâtiment</b></span></li>
+<li class="chapter" data-level="2" data-path="apercu.html"><a href="apercu.html"><i class="fa fa-check"></i><b>2</b> Bilan de chaleur et besoins</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="apercu.html"><a href="apercu.html#apercu1"><i class="fa fa-check"></i><b>2.1</b> Bilan thermique global</a></li>
-<li class="chapter" data-level="2.2" data-path="apercu.html"><a href="apercu.html#apercu2"><i class="fa fa-check"></i><b>2.2</b> Calcul réglementaire</a>
+<li class="chapter" data-level="2.1" data-path="apercu.html"><a href="apercu.html#hypothèses-et-définitions"><i class="fa fa-check"></i><b>2.1</b> Hypothèses et définitions</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="apercu.html"><a href="apercu.html#hypothèses"><i class="fa fa-check"></i><b>2.2.1</b> Hypothèses</a></li>
-<li class="chapter" data-level="2.2.2" data-path="apercu.html"><a href="apercu.html#besoins-de-chauffage-et-refroidissement"><i class="fa fa-check"></i><b>2.2.2</b> Besoins de chauffage et refroidissement</a></li>
-<li class="chapter" data-level="2.2.3" data-path="apercu.html"><a href="apercu.html#les-règles-th-bat"><i class="fa fa-check"></i><b>2.2.3</b> Les règles Th-bat</a></li>
+<li class="chapter" data-level="2.1.1" data-path="apercu.html"><a href="apercu.html#locaux-et-parois"><i class="fa fa-check"></i><b>2.1.1</b> Locaux et parois</a></li>
+<li class="chapter" data-level="2.1.2" data-path="apercu.html"><a href="apercu.html#données-dentrée"><i class="fa fa-check"></i><b>2.1.2</b> Données d’entrée</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="apercu.html"><a href="apercu.html#apercu3"><i class="fa fa-check"></i><b>2.3</b> Détail des transferts thermiques</a></li>
-<li class="chapter" data-level="2.4" data-path="apercu.html"><a href="apercu.html#exercice"><i class="fa fa-check"></i><b>2.4</b> Exercice</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="steady.html"><a href="steady.html"><i class="fa fa-check"></i><b>3</b> Conduction et convection stationnaire</a>
+<li class="chapter" data-level="2.2" data-path="apercu.html"><a href="apercu.html#apercu1"><i class="fa fa-check"></i><b>2.2</b> Bilan thermique global</a></li>
+<li class="chapter" data-level="2.3" data-path="apercu.html"><a href="apercu.html#calcul-des-besoins"><i class="fa fa-check"></i><b>2.3</b> Calcul des besoins</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="steady.html"><a href="steady.html#conduction"><i class="fa fa-check"></i><b>3.1</b> Conduction dans un mur</a>
+<li class="chapter" data-level="2.3.1" data-path="apercu.html"><a href="apercu.html#les-dju"><i class="fa fa-check"></i><b>2.3.1</b> Les DJU</a></li>
+<li class="chapter" data-level="2.3.2" data-path="apercu.html"><a href="apercu.html#apercu3"><i class="fa fa-check"></i><b>2.3.2</b> Détail des transferts thermiques</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="apercu.html"><a href="apercu.html#exercices"><i class="fa fa-check"></i><b>2.4</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="apercu.html"><a href="apercu.html#exercice-1-calcul-des-dju-et-des-besoins"><i class="fa fa-check"></i><b>2.4.1</b> Exercice 1 : calcul des DJU et des besoins</a></li>
+<li class="chapter" data-level="2.4.2" data-path="apercu.html"><a href="apercu.html#exercice-2-apports-et-besoins"><i class="fa fa-check"></i><b>2.4.2</b> Exercice 2 : apports et besoins</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="steady.html"><a href="steady.html"><i class="fa fa-check"></i><b>3</b> Calcul des déperditions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="steady.html"><a href="steady.html#conduction"><i class="fa fa-check"></i><b>3.1</b> Transmission dans une paroi plane</a>
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="steady.html"><a href="steady.html#conduction-1d-et-analogie-électrique"><i class="fa fa-check"></i><b>3.1.1</b> Conduction 1D et analogie électrique</a></li>
 <li class="chapter" data-level="3.1.2" data-path="steady.html"><a href="steady.html#assemblage-de-résistances"><i class="fa fa-check"></i><b>3.1.2</b> Assemblage de résistances</a></li>
-<li class="chapter" data-level="3.1.3" data-path="steady.html"><a href="steady.html#surfacique"><i class="fa fa-check"></i><b>3.1.3</b> Transferts surfaciques</a></li>
+<li class="chapter" data-level="3.1.3" data-path="steady.html"><a href="steady.html#surfacique"><i class="fa fa-check"></i><b>3.1.3</b> Résistances superficielles</a></li>
+<li class="chapter" data-level="3.1.4" data-path="steady.html"><a href="steady.html#menuiseries"><i class="fa fa-check"></i><b>3.1.4</b> Menuiseries</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="steady.html"><a href="steady.html#ponts-thermiques"><i class="fa fa-check"></i><b>3.2</b> Ponts thermiques</a></li>
 <li class="chapter" data-level="3.3" data-path="steady.html"><a href="steady.html#convection"><i class="fa fa-check"></i><b>3.3</b> Echanges convectifs</a></li>
-<li class="chapter" data-level="3.4" data-path="steady.html"><a href="steady.html#bilan-des-déperditions"><i class="fa fa-check"></i><b>3.4</b> Bilan des déperditions</a>
+<li class="chapter" data-level="3.4" data-path="steady.html"><a href="steady.html#locaux-non-chauffés"><i class="fa fa-check"></i><b>3.4</b> Locaux non chauffés</a></li>
+<li class="chapter" data-level="3.5" data-path="steady.html"><a href="steady.html#bilandeperditions"><i class="fa fa-check"></i><b>3.5</b> Bilan des déperditions</a></li>
+<li class="chapter" data-level="3.6" data-path="steady.html"><a href="steady.html#exercices-1"><i class="fa fa-check"></i><b>3.6</b> Exercices</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="steady.html"><a href="steady.html#locaux-non-chauffés"><i class="fa fa-check"></i><b>3.4.1</b> Locaux non chauffés</a></li>
-<li class="chapter" data-level="3.4.2" data-path="steady.html"><a href="steady.html#bilan-dune-zone"><i class="fa fa-check"></i><b>3.4.2</b> Bilan d’une zone</a></li>
-</ul></li>
-<li class="chapter" data-level="3.5" data-path="steady.html"><a href="steady.html#exercices"><i class="fa fa-check"></i><b>3.5</b> Exercices</a>
-<ul>
-<li class="chapter" data-level="3.5.1" data-path="steady.html"><a href="steady.html#ex-1-déperditions-dune-pièce"><i class="fa fa-check"></i><b>3.5.1</b> Ex 1 : déperditions d’une pièce</a></li>
-<li class="chapter" data-level="3.5.2" data-path="steady.html"><a href="steady.html#ex-2-bilan-thermique-de-deux-pièces"><i class="fa fa-check"></i><b>3.5.2</b> Ex 2: bilan thermique de deux pièces</a></li>
+<li class="chapter" data-level="3.6.1" data-path="steady.html"><a href="steady.html#ex-1-déperditions-dune-pièce"><i class="fa fa-check"></i><b>3.6.1</b> Ex 1 : déperditions d’une pièce</a></li>
+<li class="chapter" data-level="3.6.2" data-path="steady.html"><a href="steady.html#ex-2-bilan-thermique-de-deux-pièces"><i class="fa fa-check"></i><b>3.6.2</b> Ex 2: bilan thermique de deux pièces</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="rayonnement.html"><a href="rayonnement.html"><i class="fa fa-check"></i><b>4</b> Rayonnement</a>
+<li class="chapter" data-level="4" data-path="air.html"><a href="air.html"><i class="fa fa-check"></i><b>4</b> Renouvellement d’air</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="rayonnement.html"><a href="rayonnement.html#principes-de-rayonnement"><i class="fa fa-check"></i><b>4.1</b> Principes de rayonnement</a></li>
-<li class="chapter" data-level="4.2" data-path="rayonnement.html"><a href="rayonnement.html#apports-solaires"><i class="fa fa-check"></i><b>4.2</b> Apports solaires</a></li>
-<li class="chapter" data-level="4.3" data-path="rayonnement.html"><a href="rayonnement.html#echanges-radiatifs-glo"><i class="fa fa-check"></i><b>4.3</b> Echanges radiatifs GLO</a>
+<li class="chapter" data-level="4.1" data-path="air.html"><a href="air.html#débits-dair-neuf-entrant"><i class="fa fa-check"></i><b>4.1</b> Débits d’air neuf entrant</a></li>
+<li class="chapter" data-level="4.2" data-path="air.html"><a href="air.html#perméabilité-à-lair-des-bâtiments"><i class="fa fa-check"></i><b>4.2</b> Perméabilité à l’air des bâtiments</a></li>
+<li class="chapter" data-level="4.3" data-path="air.html"><a href="air.html#ventilation-naturelle"><i class="fa fa-check"></i><b>4.3</b> Ventilation naturelle</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="rayonnement.html"><a href="rayonnement.html#définitions"><i class="fa fa-check"></i><b>4.3.1</b> Définitions</a></li>
-<li class="chapter" data-level="4.3.2" data-path="rayonnement.html"><a href="rayonnement.html#résolution-des-bilans-radiatifs"><i class="fa fa-check"></i><b>4.3.2</b> Résolution des bilans radiatifs</a></li>
-<li class="chapter" data-level="4.3.3" data-path="rayonnement.html"><a href="rayonnement.html#facteurs-de-forme"><i class="fa fa-check"></i><b>4.3.3</b> Facteurs de forme</a></li>
-<li class="chapter" data-level="4.3.4" data-path="rayonnement.html"><a href="rayonnement.html#température-radiative-et-opérative"><i class="fa fa-check"></i><b>4.3.4</b> Température radiative et opérative</a></li>
+<li class="chapter" data-level="4.3.1" data-path="air.html"><a href="air.html#méthode-nodale"><i class="fa fa-check"></i><b>4.3.1</b> Méthode nodale</a></li>
+<li class="chapter" data-level="4.3.2" data-path="air.html"><a href="air.html#vent"><i class="fa fa-check"></i><b>4.3.2</b> Vent</a></li>
+<li class="chapter" data-level="4.3.3" data-path="air.html"><a href="air.html#tirage-thermique"><i class="fa fa-check"></i><b>4.3.3</b> Tirage thermique</a></li>
+<li class="chapter" data-level="4.3.4" data-path="air.html"><a href="air.html#bilan"><i class="fa fa-check"></i><b>4.3.4</b> Bilan</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="rayonnement.html"><a href="rayonnement.html#exercices-1"><i class="fa fa-check"></i><b>4.4</b> Exercices</a>
+<li class="chapter" data-level="4.4" data-path="air.html"><a href="air.html#exercices-2"><i class="fa fa-check"></i><b>4.4</b> Exercices</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="rayonnement.html"><a href="rayonnement.html#serre"><i class="fa fa-check"></i><b>4.4.1</b> Exercice 1 : serre</a></li>
-<li class="chapter" data-level="4.4.2" data-path="rayonnement.html"><a href="rayonnement.html#tutorial-2-radiateur"><i class="fa fa-check"></i><b>4.4.2</b> Tutorial 2: radiateur</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="transient.html"><a href="transient.html"><i class="fa fa-check"></i><b>5</b> Régime transitoire</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="transient.html"><a href="transient.html#conduction-dans-un-mur"><i class="fa fa-check"></i><b>5.1</b> Conduction dans un mur</a></li>
-<li class="chapter" data-level="5.2" data-path="transient.html"><a href="transient.html#modèles-rc"><i class="fa fa-check"></i><b>5.2</b> Modèles RC</a></li>
-<li class="chapter" data-level="5.3" data-path="transient.html"><a href="transient.html#exercices-inertie-thermique"><i class="fa fa-check"></i><b>5.3</b> Exercices : inertie thermique</a>
-<ul>
-<li class="chapter" data-level="5.3.1" data-path="transient.html"><a href="transient.html#exercice-1-bâtiment-lourd-ou-léger"><i class="fa fa-check"></i><b>5.3.1</b> Exercice 1 : bâtiment lourd ou léger</a></li>
-<li class="chapter" data-level="5.3.2" data-path="transient.html"><a href="transient.html#exercice-2-isolation-intérieure-ou-extérieure"><i class="fa fa-check"></i><b>5.3.2</b> Exercice 2 : isolation intérieure ou extérieure</a></li>
+<li class="chapter" data-level="4.4.1" data-path="air.html"><a href="air.html#exercice-1-vent-et-tirage-thermique"><i class="fa fa-check"></i><b>4.4.1</b> Exercice 1 : vent et tirage thermique</a></li>
+<li class="chapter" data-level="4.4.2" data-path="air.html"><a href="air.html#excheminee"><i class="fa fa-check"></i><b>4.4.2</b> Exercice 2 : cheminée solaire</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="air.html"><a href="air.html"><i class="fa fa-check"></i><b>6</b> Aéraulique</a>
+<li class="chapter" data-level="5" data-path="rayonnement.html"><a href="rayonnement.html"><i class="fa fa-check"></i><b>5</b> Rayonnement</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="air.html"><a href="air.html#méthode-nodale"><i class="fa fa-check"></i><b>6.1</b> Méthode nodale</a>
+<li class="chapter" data-level="5.1" data-path="rayonnement.html"><a href="rayonnement.html#principes-de-rayonnement"><i class="fa fa-check"></i><b>5.1</b> Principes de rayonnement</a></li>
+<li class="chapter" data-level="5.2" data-path="rayonnement.html"><a href="rayonnement.html#apports-solaires"><i class="fa fa-check"></i><b>5.2</b> Apports solaires</a></li>
+<li class="chapter" data-level="5.3" data-path="rayonnement.html"><a href="rayonnement.html#echanges-radiatifs-glo"><i class="fa fa-check"></i><b>5.3</b> Echanges radiatifs GLO</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="air.html"><a href="air.html#rappels-de-mécanique-des-fluides"><i class="fa fa-check"></i><b>6.1.1</b> Rappels de mécanique des fluides</a></li>
-<li class="chapter" data-level="6.1.2" data-path="air.html"><a href="air.html#débit-dans-les-ouvertures"><i class="fa fa-check"></i><b>6.1.2</b> Débit dans les ouvertures</a></li>
+<li class="chapter" data-level="5.3.1" data-path="rayonnement.html"><a href="rayonnement.html#définitions"><i class="fa fa-check"></i><b>5.3.1</b> Définitions</a></li>
+<li class="chapter" data-level="5.3.2" data-path="rayonnement.html"><a href="rayonnement.html#résolution-des-bilans-radiatifs"><i class="fa fa-check"></i><b>5.3.2</b> Résolution des bilans radiatifs</a></li>
+<li class="chapter" data-level="5.3.3" data-path="rayonnement.html"><a href="rayonnement.html#facteurs-de-forme"><i class="fa fa-check"></i><b>5.3.3</b> Facteurs de forme</a></li>
+<li class="chapter" data-level="5.3.4" data-path="rayonnement.html"><a href="rayonnement.html#température-radiative-et-opérative"><i class="fa fa-check"></i><b>5.3.4</b> Température radiative et opérative</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="air.html"><a href="air.html#ventilationnaturelle"><i class="fa fa-check"></i><b>6.2</b> Ventilation naturelle</a>
+<li class="chapter" data-level="5.4" data-path="rayonnement.html"><a href="rayonnement.html#exercices-3"><i class="fa fa-check"></i><b>5.4</b> Exercices</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="air.html"><a href="air.html#vent"><i class="fa fa-check"></i><b>6.2.1</b> Vent</a></li>
-<li class="chapter" data-level="6.2.2" data-path="air.html"><a href="air.html#tirage-thermique"><i class="fa fa-check"></i><b>6.2.2</b> Tirage thermique</a></li>
-<li class="chapter" data-level="6.2.3" data-path="air.html"><a href="air.html#bilan"><i class="fa fa-check"></i><b>6.2.3</b> Bilan</a></li>
+<li class="chapter" data-level="5.4.1" data-path="rayonnement.html"><a href="rayonnement.html#serre"><i class="fa fa-check"></i><b>5.4.1</b> Exercice 1 : serre</a></li>
+<li class="chapter" data-level="5.4.2" data-path="rayonnement.html"><a href="rayonnement.html#tutorial-2-radiateur"><i class="fa fa-check"></i><b>5.4.2</b> Tutorial 2: radiateur</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="air.html"><a href="air.html#exercices-2"><i class="fa fa-check"></i><b>6.3</b> Exercices</a>
+</ul></li>
+<li class="chapter" data-level="6" data-path="transient.html"><a href="transient.html"><i class="fa fa-check"></i><b>6</b> Régime transitoire</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="air.html"><a href="air.html#exercice-1-vent-et-tirage-thermique"><i class="fa fa-check"></i><b>6.3.1</b> Exercice 1 : vent et tirage thermique</a></li>
-<li class="chapter" data-level="6.3.2" data-path="air.html"><a href="air.html#excheminee"><i class="fa fa-check"></i><b>6.3.2</b> Exercice 2 : cheminée solaire</a></li>
+<li class="chapter" data-level="6.1" data-path="transient.html"><a href="transient.html#conduction-dans-un-mur"><i class="fa fa-check"></i><b>6.1</b> Conduction dans un mur</a></li>
+<li class="chapter" data-level="6.2" data-path="transient.html"><a href="transient.html#modèles-rc"><i class="fa fa-check"></i><b>6.2</b> Modèles RC</a></li>
+<li class="chapter" data-level="6.3" data-path="transient.html"><a href="transient.html#exercices-inertie-thermique"><i class="fa fa-check"></i><b>6.3</b> Exercices : inertie thermique</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="transient.html"><a href="transient.html#exercice-1-bâtiment-lourd-ou-léger"><i class="fa fa-check"></i><b>6.3.1</b> Exercice 1 : bâtiment lourd ou léger</a></li>
+<li class="chapter" data-level="6.3.2" data-path="transient.html"><a href="transient.html#exercice-2-isolation-intérieure-ou-extérieure"><i class="fa fa-check"></i><b>6.3.2</b> Exercice 2 : isolation intérieure ou extérieure</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="humidite.html"><a href="humidite.html"><i class="fa fa-check"></i><b>7</b> Humidité</a>
@@ -236,7 +244,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="humidite.html"><a href="humidite.html#air-humide"><i class="fa fa-check"></i><b>7.1</b> Air humide</a></li>
 <li class="chapter" data-level="7.2" data-path="humidite.html"><a href="humidite.html#humidité-dans-les-matériaux"><i class="fa fa-check"></i><b>7.2</b> Humidité dans les matériaux</a></li>
 <li class="chapter" data-level="7.3" data-path="humidite.html"><a href="humidite.html#bilans-dhumidité"><i class="fa fa-check"></i><b>7.3</b> Bilans d’humidité</a></li>
-<li class="chapter" data-level="7.4" data-path="humidite.html"><a href="humidite.html#exercices-3"><i class="fa fa-check"></i><b>7.4</b> Exercices</a>
+<li class="chapter" data-level="7.4" data-path="humidite.html"><a href="humidite.html#exercices-4"><i class="fa fa-check"></i><b>7.4</b> Exercices</a>
 <ul>
 <li class="chapter" data-level="7.4.1" data-path="humidite.html"><a href="humidite.html#exercice-1-condensation"><i class="fa fa-check"></i><b>7.4.1</b> Exercice 1 : condensation</a></li>
 <li class="chapter" data-level="7.4.2" data-path="humidite.html"><a href="humidite.html#exercice-2-point-de-rosée"><i class="fa fa-check"></i><b>7.4.2</b> Exercice 2 : point de rosée</a></li>
@@ -336,61 +344,61 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="transient" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Chapitre 5</span> Régime transitoire<a href="transient.html#transient" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="transient" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapitre 6</span> Régime transitoire<a href="transient.html#transient" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>On commence par rappeler l’équation <a href="apercu.html#eq:thermique1">(2.1)</a> du bilan de chaleur global à l’échelle d’une zone thermique : la variation de l’énergie interne d’une zone est la différence entre le flux de chaleur entrant et le flux de chaleur sortant.
 <span class="math display" id="eq:transient1">\[\begin{equation}
 C \frac{\partial T_i}{\partial t} = \Phi_\mathit{CVC} + \Phi_\mathit{apports} - \Phi_\mathit{déperditions}
-    \tag{5.1}
+    \tag{6.1}
 \end{equation}\]</span></p>
 <p>Pour le dimensionnement des systèmes CVC, on peut faire un bilan global des apports et des déperditions en conditions stationnaires. La température est supposée constante (<span class="math inline">\(\frac{\partial T_i}{\partial t}=0\)</span>) en tout point du bâtiment et à l’extérieur, égale à une certaine température de dimensionnement, ou bien une température annuelle moyenne si on veut calculer une consommation totale.</p>
-<p>Dans la réalité, l’hypothèse stationnaire est toujours fausse : les conditions météo et l’occupation du bâtiment varient dans le temps. Un vrai calcul thermique ne peut pas s’affranchir du terme de gauche de l’équation <a href="transient.html#eq:transient1">(5.1)</a>.</p>
-<div id="conduction-dans-un-mur" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Conduction dans un mur<a href="transient.html#conduction-dans-un-mur" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Dans la réalité, l’hypothèse stationnaire est toujours fausse : les conditions météo et l’occupation du bâtiment varient dans le temps. Un vrai calcul thermique ne peut pas s’affranchir du terme de gauche de l’équation <a href="transient.html#eq:transient1">(6.1)</a>.</p>
+<div id="conduction-dans-un-mur" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Conduction dans un mur<a href="transient.html#conduction-dans-un-mur" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Revenons sur l’équation <a href="steady.html#eq:steady3">(3.4)</a> qui décrit la conduction 1D dans une paroi, le long d’une direction <span class="math inline">\(x\)</span> :</p>
 <p><span class="math display" id="eq:transient2">\[\begin{align}
   \rho c_p \frac{\partial T}{\partial t} &amp; = \lambda \frac{\partial^2 T}{\partial x^2}
-      \tag{5.2}
+      \tag{6.2}
 \end{align}\]</span></p>
 <p>On a montré dans le chapitre <a href="steady.html#steady">3</a> qu’en régime stationnaire, le profil de température de part et d’autre d’un composant de paroi de conductivité thermique uniforme était linéaire. En régime transitoire, un des moyens de calculer les transferts est de discrétiser le mur en plusieurs noeuds de température</p>
 <div class="figure"><span style="display:block;" id="fig:transient0"></span>
 <img src="figures/transient0.png" alt="Discrétisation d'un mur pour le transfert thermique transitoire" width="40%" />
 <p class="caption">
-Figure 5.1: Discrétisation d’un mur pour le transfert thermique transitoire
+Figure 6.1: Discrétisation d’un mur pour le transfert thermique transitoire
 </p>
 </div>
-<p>On suppose comme montré sur la figure <a href="transient.html#fig:transient0">5.1</a> qu’un mur d’épaisseur <span class="math inline">\(e\)</span> est discrétisé en <span class="math inline">\(n\)</span> noeuds de température <span class="math inline">\(T_i\)</span> séparés d’une distance <span class="math inline">\(\Delta x\)</span>. L’équation <a href="transient.html#eq:transient2">(5.2)</a> discrétisée devient pour chaque point <span class="math inline">\(i\)</span>:</p>
+<p>On suppose comme montré sur la figure <a href="transient.html#fig:transient0">6.1</a> qu’un mur d’épaisseur <span class="math inline">\(e\)</span> est discrétisé en <span class="math inline">\(n\)</span> noeuds de température <span class="math inline">\(T_i\)</span> séparés d’une distance <span class="math inline">\(\Delta x\)</span>. L’équation <a href="transient.html#eq:transient2">(6.2)</a> discrétisée devient pour chaque point <span class="math inline">\(i\)</span>:</p>
 <p><span class="math display" id="eq:transient3">\[\begin{equation}
   \rho c_p \frac{\partial T_i}{\partial t} = \frac{\lambda}{2 \, \Delta x^2} \left(T_{i-1}-2T_i+T_{i+1}\right)
-      \tag{5.3}
+      \tag{6.3}
 \end{equation}\]</span></p>
 <p>On va discrétiser à nouveau, cette fois sur l’échelle du temps : pour un point <span class="math inline">\(i\)</span> donné dans la paroi, l’évolution de la température s’exprime en fonction de la différence entre sa valeur <span class="math inline">\(T_i^{(t)}\)</span> à l’instant <span class="math inline">\(t\)</span>, et sa valeur <span class="math inline">\(T_i^{(t+1)}\)</span> au pas de temps suivant <span class="math inline">\(t+\Delta t\)</span>.</p>
 <p><span class="math display" id="eq:transient4">\[\begin{equation}
    \frac{\rho c_p}{\Delta t} \left( T_i^{(t+1)} - T_i^{(t)} \right)= \frac{\lambda}{2 \, \Delta x^2} \left(T_{i-1}^{(t+1)}-2T_i^{(t+1)}+T_{i+1}^{(t+1)}\right)
-      \tag{5.4}
+      \tag{6.4}
 \end{equation}\]</span></p>
 <p>Ceux qui connaissent la méthode des différences finies auront remarqué qu’on a choisi ici un schéma implicite : les températures à droite de l’équation sont prises au pas de temps <span class="math inline">\(t+1\)</span>. Calculer la conduction thermique transitoire dans une paroi 1D mène donc à résoudre un système matriciel de <span class="math inline">\(n\)</span> équations à <span class="math inline">\(n\)</span> inconnues, à chaque pas de temps, car toutes les valeurs des températures sont liées entre elles. Ca n’est pas très compliqué si on sait écrire deux lignes de code, mais ce serait un peu long à détailler ici.</p>
 <p>Pour simplifier, on peut présenter l’exemple d’un mur discrétisé très grossièrement : une seule température centrale en plus des deux conditions aux limites <span class="math inline">\(T_1\)</span> et <span class="math inline">\(T_2\)</span>.</p>
 <div class="figure"><span style="display:block;" id="fig:transient1"></span>
 <img src="figures/transient1.png" alt="Capacité thermique d'un mur" width="40%" />
 <p class="caption">
-Figure 5.2: Capacité thermique d’un mur
+Figure 6.2: Capacité thermique d’un mur
 </p>
 </div>
-<p>L’équation <a href="transient.html#eq:transient3">(5.3)</a> peut se réécrire pour exprimer l’évolution de la température moyenne du mur <span class="math inline">\(T\)</span> en fonction de ses deux températures de surface :</p>
+<p>L’équation <a href="transient.html#eq:transient3">(6.3)</a> peut se réécrire pour exprimer l’évolution de la température moyenne du mur <span class="math inline">\(T\)</span> en fonction de ses deux températures de surface :</p>
 <p><span class="math display" id="eq:transient6" id="eq:transient5">\[\begin{align}
-\left(\rho \, e \, c_p \right) \frac{\partial T}{\partial t} &amp; = \frac{T_1 - T}{e / 2\lambda} +  \frac{T_2 - T}{e / 2\lambda} \tag{5.5} \\
-C \frac{\partial T}{\partial t} &amp; = \frac{T_1 - T}{R} +  \frac{T_2 - T}{R} \tag{5.6}
+\left(\rho \, e \, c_p \right) \frac{\partial T}{\partial t} &amp; = \frac{T_1 - T}{e / 2\lambda} +  \frac{T_2 - T}{e / 2\lambda} \tag{6.5} \\
+C \frac{\partial T}{\partial t} &amp; = \frac{T_1 - T}{R} +  \frac{T_2 - T}{R} \tag{6.6}
 \end{align}\]</span></p>
 <p>Comme on a défini la notion de résistance thermique dans le chapitre <a href="steady.html#steady">3</a>, on voit donc qu’on peut aussi définir la <strong>capacité thermique</strong> d’un composant en suivant la même analogie électrique : <span class="math inline">\(C=\rho \, e \, c_p\)</span>, ici en (J.m<span class="math inline">\(^2\)</span>.K<span class="math inline">\(^{-1}\)</span>). Il s’agit d’un indicateur de la capacité d’un composant à stocker la chaleur lors de variations de conditions aux limites. Cette capacité est importante pour les transferts en régime transitoire, et détermine le phénomène d’inertie thermique qu’on va illustrer avec les exercices ci-dessous.</p>
 </div>
-<div id="modèles-rc" class="section level2 hasAnchor" number="5.2">
-<h2><span class="header-section-number">5.2</span> Modèles RC<a href="transient.html#modèles-rc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="modèles-rc" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Modèles RC<a href="transient.html#modèles-rc" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>On peut généraliser ce qu’on vient de faire sur une paroi à l’ensemble du bâtiment. Celui-ci est alors représenté par un schéma RC où les noeuds de température sont reliés par des résistances représentant les différents types de transfert, et certains noeuds se voient assigner une capacité.</p>
 <div class="figure"><span style="display:block;" id="fig:transient2"></span>
 <img src="figures/transient2.png" alt="Modèle RC pour un local" width="50%" />
 <p class="caption">
-Figure 5.3: Modèle RC pour un local
+Figure 6.3: Modèle RC pour un local
 </p>
 </div>
 <ul>
@@ -400,55 +408,55 @@ Figure 5.3: Modèle RC pour un local
 </ul>
 <p>C’est ce que font les logiciels de simulation thermique dynamique, mais avec un niveau de détail plus élevé : les parois y sont discrétisées assez finement pour que les profils de températures, linéaires par morceaux, s’approchent d’un profil réaliste.</p>
 </div>
-<div id="exercices-inertie-thermique" class="section level2 hasAnchor" number="5.3">
-<h2><span class="header-section-number">5.3</span> Exercices : inertie thermique<a href="transient.html#exercices-inertie-thermique" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="exercice-1-bâtiment-lourd-ou-léger" class="section level3 hasAnchor" number="5.3.1">
-<h3><span class="header-section-number">5.3.1</span> Exercice 1 : bâtiment lourd ou léger<a href="transient.html#exercice-1-bâtiment-lourd-ou-léger" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="exercices-inertie-thermique" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Exercices : inertie thermique<a href="transient.html#exercices-inertie-thermique" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exercice-1-bâtiment-lourd-ou-léger" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Exercice 1 : bâtiment lourd ou léger<a href="transient.html#exercice-1-bâtiment-lourd-ou-léger" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="figure"><span style="display:block;" id="fig:inertia1"></span>
 <img src="figures/inertia1.png" alt="Exercice: inertie thermique" width="40%" />
 <p class="caption">
-Figure 5.4: Exercice: inertie thermique
+Figure 6.4: Exercice: inertie thermique
 </p>
 </div>
 <p>On représente un bâtiment par une seule résistance thermique <span class="math inline">\(R\)</span> et une capacité thermique <span class="math inline">\(C\)</span>. Une puissance de chauffage <span class="math inline">\(\Phi\)</span> (W) est imposée à l’intérieur, et la température extérieure est notée <span class="math inline">\(T_e\)</span>. L’évolution de la température intérieure <span class="math inline">\(T\)</span> suit donc l’équation différentielle :</p>
 <p><span class="math display" id="eq:inertia1">\[\begin{equation}
 C \frac{\partial T}{\partial t} = \frac{1}{R} \left(T_e-T\right) + \Phi
-\tag{5.7}
+\tag{6.7}
 \end{equation}\]</span></p>
 <p>Pour résumer, <span class="math inline">\(R\)</span> représente le niveau d’isolation global du bâtiment et <span class="math inline">\(C\)</span> sa masse thermique totale. On va voir dans cet exercice comment ces deux grandeurs influent sur l’inertie du bâtiment en hiver et en été.</p>
 <p><strong>Partie 1: hiver</strong></p>
 <p>On suppose que le bâtiment est initialement à la température extérieure <span class="math inline">\(T_e\)</span>. A l’instant <span class="math inline">\(t=0\)</span>, on allume le chauffage <span class="math inline">\(\Phi\)</span>.</p>
 <ol style="list-style-type: decimal">
-<li>Résoudre l’équation <a href="transient.html#eq:inertia1">(5.7)</a> pour démontrer que l’évolution de la température intérieure suit :
+<li>Résoudre l’équation <a href="transient.html#eq:inertia1">(6.7)</a> pour démontrer que l’évolution de la température intérieure suit :
 <span class="math display" id="eq:inertia2">\[\begin{equation}
 T = T_e + R \, \Phi \left(1-\mathrm{exp}\left(-\frac{t}{RC}\right)\right)
-\tag{5.8}
+\tag{6.8}
 \end{equation}\]</span></li>
 <li>Tracer l’allure de <span class="math inline">\(T\)</span>. Comment cette allure varie-t-elle avec différentes valeurs de <span class="math inline">\(R\)</span> et <span class="math inline">\(C\)</span> ?</li>
 </ol>
 <p><strong>Solution</strong></p>
 <p>Voici un petit programme python pour tracer l’allure de <span class="math inline">\(T\)</span> pour différentes valeurs de <span class="math inline">\(R\)</span> et <span class="math inline">\(C\)</span>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="transient.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-2"><a href="transient.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-3"><a href="transient.html#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="transient.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># On suppose une température extérieure de 0 et un chauffage de 1000 W</span></span>
-<span id="cb1-5"><a href="transient.html#cb1-5" aria-hidden="true" tabindex="-1"></a>Te <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb1-6"><a href="transient.html#cb1-6" aria-hidden="true" tabindex="-1"></a>Phi <span class="op">=</span> <span class="dv">1000</span></span>
-<span id="cb1-7"><a href="transient.html#cb1-7" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">86400</span>) <span class="co"># 24 heures</span></span>
-<span id="cb1-8"><a href="transient.html#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="transient.html#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># L&#39;équation de la température intérieure</span></span>
-<span id="cb1-10"><a href="transient.html#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> T(R, C):</span>
-<span id="cb1-11"><a href="transient.html#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Te <span class="op">+</span> R<span class="op">*</span>Phi<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>np.exp(<span class="op">-</span>t<span class="op">/</span>R<span class="op">/</span>C))</span>
-<span id="cb1-12"><a href="transient.html#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="transient.html#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Tracer un graphe</span></span>
-<span id="cb1-14"><a href="transient.html#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
-<span id="cb1-15"><a href="transient.html#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, T(<span class="fl">0.01</span>, <span class="fl">1e6</span>), label<span class="op">=</span><span class="st">&quot;R faible, C faible&quot;</span>)</span>
-<span id="cb1-16"><a href="transient.html#cb1-16" aria-hidden="true" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, T(<span class="fl">0.02</span>, <span class="fl">1e6</span>), label<span class="op">=</span><span class="st">&quot;R élevé, C faible&quot;</span>)</span>
-<span id="cb1-17"><a href="transient.html#cb1-17" aria-hidden="true" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, T(<span class="fl">0.01</span>, <span class="fl">2e6</span>), label<span class="op">=</span><span class="st">&quot;R faible, C élevé&quot;</span>)</span>
-<span id="cb1-18"><a href="transient.html#cb1-18" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Temps (h)&quot;</span>)</span>
-<span id="cb1-19"><a href="transient.html#cb1-19" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Température interieure&quot;</span>)</span>
-<span id="cb1-20"><a href="transient.html#cb1-20" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code></pre></div>
-<p><img src="manuel_files/figure-html/ch01-1.png" width="672" /></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="transient.html#cb1-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="transient.html#cb1-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="transient.html#cb1-3" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="transient.html#cb1-4" tabindex="-1"></a><span class="co"># On suppose une température extérieure de 0 et un chauffage de 1000 W</span></span>
+<span id="cb1-5"><a href="transient.html#cb1-5" tabindex="-1"></a>Te <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-6"><a href="transient.html#cb1-6" tabindex="-1"></a>Phi <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb1-7"><a href="transient.html#cb1-7" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">86400</span>) <span class="co"># 24 heures</span></span>
+<span id="cb1-8"><a href="transient.html#cb1-8" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="transient.html#cb1-9" tabindex="-1"></a><span class="co"># L&#39;équation de la température intérieure</span></span>
+<span id="cb1-10"><a href="transient.html#cb1-10" tabindex="-1"></a><span class="kw">def</span> T(R, C):</span>
+<span id="cb1-11"><a href="transient.html#cb1-11" tabindex="-1"></a>  <span class="cf">return</span> Te <span class="op">+</span> R<span class="op">*</span>Phi<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>np.exp(<span class="op">-</span>t<span class="op">/</span>R<span class="op">/</span>C))</span>
+<span id="cb1-12"><a href="transient.html#cb1-12" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="transient.html#cb1-13" tabindex="-1"></a><span class="co"># Tracer un graphe</span></span>
+<span id="cb1-14"><a href="transient.html#cb1-14" tabindex="-1"></a>plt.figure()</span>
+<span id="cb1-15"><a href="transient.html#cb1-15" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, T(<span class="fl">0.01</span>, <span class="fl">1e6</span>), label<span class="op">=</span><span class="st">&quot;R faible, C faible&quot;</span>)</span>
+<span id="cb1-16"><a href="transient.html#cb1-16" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, T(<span class="fl">0.02</span>, <span class="fl">1e6</span>), label<span class="op">=</span><span class="st">&quot;R élevé, C faible&quot;</span>)</span>
+<span id="cb1-17"><a href="transient.html#cb1-17" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, T(<span class="fl">0.01</span>, <span class="fl">2e6</span>), label<span class="op">=</span><span class="st">&quot;R faible, C élevé&quot;</span>)</span>
+<span id="cb1-18"><a href="transient.html#cb1-18" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Temps (h)&quot;</span>)</span>
+<span id="cb1-19"><a href="transient.html#cb1-19" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Température interieure&quot;</span>)</span>
+<span id="cb1-20"><a href="transient.html#cb1-20" tabindex="-1"></a>plt.legend()</span></code></pre></div>
+<p><img src="manuel_files/figure-html/ch01-1.png" width="614" /></p>
 <p>On est partis ici d’une valeur donnée pour <span class="math inline">\(R\)</span> et <span class="math inline">\(C\)</span> (courbe bleue), et on montre l’effet d’une augmentation soit de <span class="math inline">\(R\)</span> (en orange), soit de <span class="math inline">\(C\)</span> (en vert).</p>
 <ul>
 <li>La température est initialement égale à <span class="math inline">\(T_e\)</span> et atteint une valeur à l’équilibre avec un profil exponentiel amorti.</li>
@@ -459,72 +467,72 @@ T = T_e + R \, \Phi \left(1-\mathrm{exp}\left(-\frac{t}{RC}\right)\right)
 <div class="figure"><span style="display:block;" id="fig:inertia2"></span>
 <img src="figures/inertia2.png" alt="Allure de la température extérieure en été" width="50%" />
 <p class="caption">
-Figure 5.5: Allure de la température extérieure en été
+Figure 6.5: Allure de la température extérieure en été
 </p>
 </div>
 <p>On se place maintenant en été, et on suppose que la température extérieure suit une sinusoïde de fréquence 24h, entre des valeurs extrêmes de 10°C et 30°C :</p>
 <p><span class="math display" id="eq:inertia4" id="eq:inertia3">\[\begin{align}
-T_e &amp; = 20 + 10 \, \mathrm{sin}(\omega \, t) \tag{5.9} \\
-\omega &amp; = \frac{2 \pi}{24 \times 3600} \tag{5.10}
+T_e &amp; = 20 + 10 \, \mathrm{sin}(\omega \, t) \tag{6.9} \\
+\omega &amp; = \frac{2 \pi}{24 \times 3600} \tag{6.10}
 \end{align}\]</span></p>
 <p>De plus, la puissance de chauffage est nulle: <span class="math inline">\(\Phi=0\)</span>.</p>
 <ol style="list-style-type: decimal">
-<li>Résoudre l’équation différentielle <a href="transient.html#eq:inertia1">(5.7)</a> avec la méthode de votre choix.</li>
+<li>Résoudre l’équation différentielle <a href="transient.html#eq:inertia1">(6.7)</a> avec la méthode de votre choix.</li>
 <li>Tracer l’allure de <span class="math inline">\(T\)</span>. Comment cette allure varie-t-elle avec différentes valeurs de <span class="math inline">\(R\)</span> et <span class="math inline">\(C\)</span> ?</li>
 </ol>
 <p><strong>Solution</strong></p>
 <p>On utilise la méthode des impédances complexes puisque le bâtiment est représenté par un filtre passe-bas RC. On peut montrer que l’impédance complexe du bâtiment est :
 <span class="math display" id="eq:inertia5">\[\begin{equation}
 Z(j\omega) = \frac{T_i}{T_e} = \frac{1}{1+jRC\omega}
-\tag{5.11}
+\tag{6.11}
 \end{equation}\]</span></p>
 <p>On en déduit que <span class="math inline">\(T\)</span> suit une sinusoïde de même fréquence et valeur moyenne que <span class="math inline">\(T_e\)</span>, avec une amplitude <span class="math inline">\(A\)</span> et un déphasage <span class="math inline">\(\psi\)</span> donnés par :</p>
 <p><span class="math display" id="eq:inertia8" id="eq:inertia7" id="eq:inertia6">\[\begin{align}
-T &amp; = 20 + A \, \mathrm{sin}(\omega \, t + \psi) \tag{5.12} \\
-A &amp; = \frac{10}{\sqrt{1+(RC\omega)^2}} \tag{5.13} \\
-\psi &amp; = -\mathrm{arctan} (RC\omega) \tag{5.14}
+T &amp; = 20 + A \, \mathrm{sin}(\omega \, t + \psi) \tag{6.12} \\
+A &amp; = \frac{10}{\sqrt{1+(RC\omega)^2}} \tag{6.13} \\
+\psi &amp; = -\mathrm{arctan} (RC\omega) \tag{6.14}
 \end{align}\]</span></p>
 <p>Refaisons un peu de python pour voir ce que ça donne.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="transient.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb2-2"><a href="transient.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb2-3"><a href="transient.html#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="transient.html#cb2-4" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">86400</span>) <span class="co"># 24 heures</span></span>
-<span id="cb2-5"><a href="transient.html#cb2-5" aria-hidden="true" tabindex="-1"></a>omega <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi <span class="op">/</span> <span class="dv">24</span> <span class="op">/</span> <span class="dv">3600</span></span>
-<span id="cb2-6"><a href="transient.html#cb2-6" aria-hidden="true" tabindex="-1"></a>Te <span class="op">=</span> <span class="dv">20</span> <span class="op">+</span> <span class="dv">10</span> <span class="op">*</span> np.sin(omega<span class="op">*</span>t)</span>
-<span id="cb2-7"><a href="transient.html#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="transient.html#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># L&#39;équation de la température intérieure</span></span>
-<span id="cb2-9"><a href="transient.html#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> T(R, C):</span>
-<span id="cb2-10"><a href="transient.html#cb2-10" aria-hidden="true" tabindex="-1"></a>  A <span class="op">=</span> <span class="dv">10</span> <span class="op">/</span> np.sqrt(<span class="dv">1</span><span class="op">+</span>(R<span class="op">*</span>C<span class="op">*</span>omega)<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb2-11"><a href="transient.html#cb2-11" aria-hidden="true" tabindex="-1"></a>  psi <span class="op">=</span> <span class="op">-</span>np.arctan(R<span class="op">*</span>C<span class="op">*</span>omega)</span>
-<span id="cb2-12"><a href="transient.html#cb2-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">20</span> <span class="op">+</span> A <span class="op">*</span> np.sin(omega<span class="op">*</span>t <span class="op">+</span> psi)</span>
-<span id="cb2-13"><a href="transient.html#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-14"><a href="transient.html#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Tracer un graphe</span></span>
-<span id="cb2-15"><a href="transient.html#cb2-15" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
-<span id="cb2-16"><a href="transient.html#cb2-16" aria-hidden="true" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, Te, <span class="st">&#39;-k&#39;</span>, label<span class="op">=</span><span class="st">&quot;T extérieure&quot;</span>)</span>
-<span id="cb2-17"><a href="transient.html#cb2-17" aria-hidden="true" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, T(<span class="fl">0.01</span>, <span class="fl">1e6</span>), label<span class="op">=</span><span class="st">&quot;R faible, C faible&quot;</span>)</span>
-<span id="cb2-18"><a href="transient.html#cb2-18" aria-hidden="true" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, T(<span class="fl">0.02</span>, <span class="fl">1e6</span>), label<span class="op">=</span><span class="st">&quot;R élevé, C faible&quot;</span>)</span>
-<span id="cb2-19"><a href="transient.html#cb2-19" aria-hidden="true" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, T(<span class="fl">0.01</span>, <span class="fl">2e6</span>), label<span class="op">=</span><span class="st">&quot;R faible, C élevé&quot;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>)</span>
-<span id="cb2-20"><a href="transient.html#cb2-20" aria-hidden="true" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, T(<span class="fl">0.02</span>, <span class="fl">2e6</span>), label<span class="op">=</span><span class="st">&quot;R élevé, C élevé&quot;</span>)</span>
-<span id="cb2-21"><a href="transient.html#cb2-21" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Temps (h)&quot;</span>)</span>
-<span id="cb2-22"><a href="transient.html#cb2-22" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Température interieure&quot;</span>)</span>
-<span id="cb2-23"><a href="transient.html#cb2-23" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="transient.html#cb2-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="transient.html#cb2-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="transient.html#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="transient.html#cb2-4" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">86400</span>) <span class="co"># 24 heures</span></span>
+<span id="cb2-5"><a href="transient.html#cb2-5" tabindex="-1"></a>omega <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi <span class="op">/</span> <span class="dv">24</span> <span class="op">/</span> <span class="dv">3600</span></span>
+<span id="cb2-6"><a href="transient.html#cb2-6" tabindex="-1"></a>Te <span class="op">=</span> <span class="dv">20</span> <span class="op">+</span> <span class="dv">10</span> <span class="op">*</span> np.sin(omega<span class="op">*</span>t)</span>
+<span id="cb2-7"><a href="transient.html#cb2-7" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="transient.html#cb2-8" tabindex="-1"></a><span class="co"># L&#39;équation de la température intérieure</span></span>
+<span id="cb2-9"><a href="transient.html#cb2-9" tabindex="-1"></a><span class="kw">def</span> T(R, C):</span>
+<span id="cb2-10"><a href="transient.html#cb2-10" tabindex="-1"></a>  A <span class="op">=</span> <span class="dv">10</span> <span class="op">/</span> np.sqrt(<span class="dv">1</span><span class="op">+</span>(R<span class="op">*</span>C<span class="op">*</span>omega)<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb2-11"><a href="transient.html#cb2-11" tabindex="-1"></a>  psi <span class="op">=</span> <span class="op">-</span>np.arctan(R<span class="op">*</span>C<span class="op">*</span>omega)</span>
+<span id="cb2-12"><a href="transient.html#cb2-12" tabindex="-1"></a>  <span class="cf">return</span> <span class="dv">20</span> <span class="op">+</span> A <span class="op">*</span> np.sin(omega<span class="op">*</span>t <span class="op">+</span> psi)</span>
+<span id="cb2-13"><a href="transient.html#cb2-13" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="transient.html#cb2-14" tabindex="-1"></a><span class="co"># Tracer un graphe</span></span>
+<span id="cb2-15"><a href="transient.html#cb2-15" tabindex="-1"></a>plt.figure()</span>
+<span id="cb2-16"><a href="transient.html#cb2-16" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, Te, <span class="st">&#39;-k&#39;</span>, label<span class="op">=</span><span class="st">&quot;T extérieure&quot;</span>)</span>
+<span id="cb2-17"><a href="transient.html#cb2-17" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, T(<span class="fl">0.01</span>, <span class="fl">1e6</span>), label<span class="op">=</span><span class="st">&quot;R faible, C faible&quot;</span>)</span>
+<span id="cb2-18"><a href="transient.html#cb2-18" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, T(<span class="fl">0.02</span>, <span class="fl">1e6</span>), label<span class="op">=</span><span class="st">&quot;R élevé, C faible&quot;</span>)</span>
+<span id="cb2-19"><a href="transient.html#cb2-19" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, T(<span class="fl">0.01</span>, <span class="fl">2e6</span>), label<span class="op">=</span><span class="st">&quot;R faible, C élevé&quot;</span>, linestyle<span class="op">=</span><span class="st">&#39;--&#39;</span>)</span>
+<span id="cb2-20"><a href="transient.html#cb2-20" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, T(<span class="fl">0.02</span>, <span class="fl">2e6</span>), label<span class="op">=</span><span class="st">&quot;R élevé, C élevé&quot;</span>)</span>
+<span id="cb2-21"><a href="transient.html#cb2-21" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Temps (h)&quot;</span>)</span>
+<span id="cb2-22"><a href="transient.html#cb2-22" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Température interieure&quot;</span>)</span>
+<span id="cb2-23"><a href="transient.html#cb2-23" tabindex="-1"></a>plt.legend()</span></code></pre></div>
 <p><img src="manuel_files/figure-html/ch02-1.png" width="672" /></p>
 <ul>
 <li>Dans tous les cas, la température intérieure suit une sinusoïde avec qui suit la température extérieure, mais avec un déphasage et une réduction d’amplitude.</li>
 <li>Augmenter <span class="math inline">\(R\)</span> ou <span class="math inline">\(C\)</span> augmente le déphasage et l’amortissement. Un bâtiment à forte inertie, ou bien isolé, permet d’être mieux protégé contre les pics de chaleur : ils sont plus amortis, et peuvent être assez déphasés pour être effacés par une surventilation nocturne.</li>
-<li>Comme le montrent les équations <a href="transient.html#eq:inertia6">(5.12)</a> à <a href="transient.html#eq:inertia8">(5.14)</a>, il n’y a pas de différence mathématique entre une augmentation de <span class="math inline">\(R\)</span> ou de <span class="math inline">\(C\)</span>. L’idéal contre la surchauffe estivale est un bâtiment à la fois bien isolé et inertiel.</li>
+<li>Comme le montrent les équations <a href="transient.html#eq:inertia6">(6.12)</a> à <a href="transient.html#eq:inertia8">(6.14)</a>, il n’y a pas de différence mathématique entre une augmentation de <span class="math inline">\(R\)</span> ou de <span class="math inline">\(C\)</span>. L’idéal contre la surchauffe estivale est un bâtiment à la fois bien isolé et inertiel.</li>
 </ul>
 </div>
-<div id="exercice-2-isolation-intérieure-ou-extérieure" class="section level3 hasAnchor" number="5.3.2">
-<h3><span class="header-section-number">5.3.2</span> Exercice 2 : isolation intérieure ou extérieure<a href="transient.html#exercice-2-isolation-intérieure-ou-extérieure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="exercice-2-isolation-intérieure-ou-extérieure" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Exercice 2 : isolation intérieure ou extérieure<a href="transient.html#exercice-2-isolation-intérieure-ou-extérieure" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Cet exercice est plus une démonstration qu’un vrai exercice. On cherche à montrer la différence entre l’isolation par l’intérieur et l’isolation par l’extérieur, en termes de déperditions et d’inertie thermique. Pour cela on utilise un modèle RC un peu plus compliqué que dans l’exercice précédent.</p>
 <div class="figure"><span style="display:block;" id="fig:inertia3"></span>
 <img src="figures/inertia3.png" alt="Modèle à 2 résistances et 2 capacités pour comparer les isolations par l'intérieur et par l'extérieur" width="40%" />
 <p class="caption">
-Figure 5.6: Modèle à 2 résistances et 2 capacités pour comparer les isolations par l’intérieur et par l’extérieur
+Figure 6.6: Modèle à 2 résistances et 2 capacités pour comparer les isolations par l’intérieur et par l’extérieur
 </p>
 </div>
-<p>Le modèle de la figure <a href="transient.html#fig:inertia3">5.6</a> possède 2 résistances et 2 capacités, qui peuvent représenter grossièrement deux faces d’une paroi. Il permet de calculer l’évolution de la température intérieure <span class="math inline">\(T_i\)</span> et la température de l’enveloppe <span class="math inline">\(T_e\)</span>, en fonction du chauffage <span class="math inline">\(\Phi\)</span> et de la température extérieure <span class="math inline">\(T_o\)</span>.</p>
+<p>Le modèle de la figure <a href="transient.html#fig:inertia3">6.6</a> possède 2 résistances et 2 capacités, qui peuvent représenter grossièrement deux faces d’une paroi. Il permet de calculer l’évolution de la température intérieure <span class="math inline">\(T_i\)</span> et la température de l’enveloppe <span class="math inline">\(T_e\)</span>, en fonction du chauffage <span class="math inline">\(\Phi\)</span> et de la température extérieure <span class="math inline">\(T_o\)</span>.</p>
 <p>Pour modéliser un mur isolé par l’intérieur, on choisira :</p>
 <ul>
 <li>Une forte résistance <span class="math inline">\(R_1\)</span> et faible capacité <span class="math inline">\(C_i\)</span> qui représentent l’isolant ;</li>
@@ -532,37 +540,37 @@ Figure 5.6: Modèle à 2 résistances et 2 capacités pour comparer les isolatio
 </ul>
 <p>Ces valeurs seront inversées pour un mur isolé par l’extérieur.</p>
 <p>Dans le bloc de code ci-dessous, on résoud le système avec un schéma numérique explicite très simple. On impose les mêmes conditions que dans l’exercice 1 en été : pas de chauffage, température extérieure sinusoïdale.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="transient.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-2"><a href="transient.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb3-3"><a href="transient.html#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="transient.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Conditions : température extérieure To et puissance de chauffage Phi</span></span>
-<span id="cb3-5"><a href="transient.html#cb3-5" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">4</span><span class="op">*</span><span class="dv">86400</span>, num<span class="op">=</span><span class="dv">400</span>) <span class="co"># 4 jours de simulation</span></span>
-<span id="cb3-6"><a href="transient.html#cb3-6" aria-hidden="true" tabindex="-1"></a>omega <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi <span class="op">/</span> <span class="dv">24</span> <span class="op">/</span> <span class="dv">3600</span></span>
-<span id="cb3-7"><a href="transient.html#cb3-7" aria-hidden="true" tabindex="-1"></a>To <span class="op">=</span> <span class="dv">20</span> <span class="op">+</span> <span class="dv">10</span> <span class="op">*</span> np.sin(omega<span class="op">*</span>t)</span>
-<span id="cb3-8"><a href="transient.html#cb3-8" aria-hidden="true" tabindex="-1"></a>Phi <span class="op">=</span> np.zeros(<span class="bu">len</span>(t))</span>
-<span id="cb3-9"><a href="transient.html#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="transient.html#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># L&#39;équation de la température intérieure</span></span>
-<span id="cb3-11"><a href="transient.html#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> RC(R1, R2, Ci, Ce):</span>
-<span id="cb3-12"><a href="transient.html#cb3-12" aria-hidden="true" tabindex="-1"></a>    Ti <span class="op">=</span> np.zeros(<span class="bu">len</span>(t))</span>
-<span id="cb3-13"><a href="transient.html#cb3-13" aria-hidden="true" tabindex="-1"></a>    Te <span class="op">=</span> np.zeros(<span class="bu">len</span>(t))</span>
-<span id="cb3-14"><a href="transient.html#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Températures initiales</span></span>
-<span id="cb3-15"><a href="transient.html#cb3-15" aria-hidden="true" tabindex="-1"></a>    Ti[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb3-16"><a href="transient.html#cb3-16" aria-hidden="true" tabindex="-1"></a>    Te[<span class="dv">0</span>] <span class="op">=</span> ( R1<span class="op">*</span>To[<span class="dv">0</span>] <span class="op">+</span> R2<span class="op">*</span>Ti[<span class="dv">0</span>] ) <span class="op">/</span> (R1 <span class="op">+</span> R2)</span>
-<span id="cb3-17"><a href="transient.html#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Boucle pour calculer toutes les températures</span></span>
-<span id="cb3-18"><a href="transient.html#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(t)):</span>
-<span id="cb3-19"><a href="transient.html#cb3-19" aria-hidden="true" tabindex="-1"></a>      dt <span class="op">=</span> t[i] <span class="op">-</span> t[i<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb3-20"><a href="transient.html#cb3-20" aria-hidden="true" tabindex="-1"></a>      Ti[i] <span class="op">=</span> Ti[i<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> dt <span class="op">/</span> Ci <span class="op">*</span> ( (Te[i<span class="op">-</span><span class="dv">1</span>]<span class="op">-</span>Ti[i<span class="op">-</span><span class="dv">1</span>])<span class="op">/</span>R1 <span class="op">+</span> Phi[i<span class="op">-</span><span class="dv">1</span>] )</span>
-<span id="cb3-21"><a href="transient.html#cb3-21" aria-hidden="true" tabindex="-1"></a>      Te[i] <span class="op">=</span> Te[i<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> dt <span class="op">/</span> Ce <span class="op">*</span> ( (Ti[i<span class="op">-</span><span class="dv">1</span>]<span class="op">-</span>Te[i<span class="op">-</span><span class="dv">1</span>])<span class="op">/</span>R1 <span class="op">+</span> (To[i<span class="op">-</span><span class="dv">1</span>]<span class="op">-</span>Te[i<span class="op">-</span><span class="dv">1</span>])<span class="op">/</span>R2 )</span>
-<span id="cb3-22"><a href="transient.html#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> Ti</span>
-<span id="cb3-23"><a href="transient.html#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-24"><a href="transient.html#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Tracer un graphe</span></span>
-<span id="cb3-25"><a href="transient.html#cb3-25" aria-hidden="true" tabindex="-1"></a>plt.figure()</span>
-<span id="cb3-26"><a href="transient.html#cb3-26" aria-hidden="true" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, To, <span class="st">&#39;-k&#39;</span>, label<span class="op">=</span><span class="st">&quot;T extérieure&quot;</span>)</span>
-<span id="cb3-27"><a href="transient.html#cb3-27" aria-hidden="true" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, RC(<span class="fl">0.1</span>, <span class="fl">0.01</span>, <span class="fl">1e5</span>, <span class="fl">1e6</span>), label<span class="op">=</span><span class="st">&quot;Isolation intérieure&quot;</span>)</span>
-<span id="cb3-28"><a href="transient.html#cb3-28" aria-hidden="true" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, RC(<span class="fl">0.01</span>, <span class="fl">0.1</span>, <span class="fl">1e6</span>, <span class="fl">1e5</span>), label<span class="op">=</span><span class="st">&quot;Isolation extérieure&quot;</span>)</span>
-<span id="cb3-29"><a href="transient.html#cb3-29" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Temps (h)&quot;</span>)</span>
-<span id="cb3-30"><a href="transient.html#cb3-30" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Température interieure&quot;</span>)</span>
-<span id="cb3-31"><a href="transient.html#cb3-31" aria-hidden="true" tabindex="-1"></a>plt.legend()</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="transient.html#cb3-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="transient.html#cb3-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-3"><a href="transient.html#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="transient.html#cb3-4" tabindex="-1"></a><span class="co"># Conditions : température extérieure To et puissance de chauffage Phi</span></span>
+<span id="cb3-5"><a href="transient.html#cb3-5" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">4</span><span class="op">*</span><span class="dv">86400</span>, num<span class="op">=</span><span class="dv">400</span>) <span class="co"># 4 jours de simulation</span></span>
+<span id="cb3-6"><a href="transient.html#cb3-6" tabindex="-1"></a>omega <span class="op">=</span> <span class="dv">2</span><span class="op">*</span>np.pi <span class="op">/</span> <span class="dv">24</span> <span class="op">/</span> <span class="dv">3600</span></span>
+<span id="cb3-7"><a href="transient.html#cb3-7" tabindex="-1"></a>To <span class="op">=</span> <span class="dv">20</span> <span class="op">+</span> <span class="dv">10</span> <span class="op">*</span> np.sin(omega<span class="op">*</span>t)</span>
+<span id="cb3-8"><a href="transient.html#cb3-8" tabindex="-1"></a>Phi <span class="op">=</span> np.zeros(<span class="bu">len</span>(t))</span>
+<span id="cb3-9"><a href="transient.html#cb3-9" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="transient.html#cb3-10" tabindex="-1"></a><span class="co"># L&#39;équation de la température intérieure</span></span>
+<span id="cb3-11"><a href="transient.html#cb3-11" tabindex="-1"></a><span class="kw">def</span> RC(R1, R2, Ci, Ce):</span>
+<span id="cb3-12"><a href="transient.html#cb3-12" tabindex="-1"></a>    Ti <span class="op">=</span> np.zeros(<span class="bu">len</span>(t))</span>
+<span id="cb3-13"><a href="transient.html#cb3-13" tabindex="-1"></a>    Te <span class="op">=</span> np.zeros(<span class="bu">len</span>(t))</span>
+<span id="cb3-14"><a href="transient.html#cb3-14" tabindex="-1"></a>    <span class="co"># Températures initiales</span></span>
+<span id="cb3-15"><a href="transient.html#cb3-15" tabindex="-1"></a>    Ti[<span class="dv">0</span>] <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb3-16"><a href="transient.html#cb3-16" tabindex="-1"></a>    Te[<span class="dv">0</span>] <span class="op">=</span> ( R1<span class="op">*</span>To[<span class="dv">0</span>] <span class="op">+</span> R2<span class="op">*</span>Ti[<span class="dv">0</span>] ) <span class="op">/</span> (R1 <span class="op">+</span> R2)</span>
+<span id="cb3-17"><a href="transient.html#cb3-17" tabindex="-1"></a>    <span class="co"># Boucle pour calculer toutes les températures</span></span>
+<span id="cb3-18"><a href="transient.html#cb3-18" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(t)):</span>
+<span id="cb3-19"><a href="transient.html#cb3-19" tabindex="-1"></a>      dt <span class="op">=</span> t[i] <span class="op">-</span> t[i<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb3-20"><a href="transient.html#cb3-20" tabindex="-1"></a>      Ti[i] <span class="op">=</span> Ti[i<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> dt <span class="op">/</span> Ci <span class="op">*</span> ( (Te[i<span class="op">-</span><span class="dv">1</span>]<span class="op">-</span>Ti[i<span class="op">-</span><span class="dv">1</span>])<span class="op">/</span>R1 <span class="op">+</span> Phi[i<span class="op">-</span><span class="dv">1</span>] )</span>
+<span id="cb3-21"><a href="transient.html#cb3-21" tabindex="-1"></a>      Te[i] <span class="op">=</span> Te[i<span class="op">-</span><span class="dv">1</span>] <span class="op">+</span> dt <span class="op">/</span> Ce <span class="op">*</span> ( (Ti[i<span class="op">-</span><span class="dv">1</span>]<span class="op">-</span>Te[i<span class="op">-</span><span class="dv">1</span>])<span class="op">/</span>R1 <span class="op">+</span> (To[i<span class="op">-</span><span class="dv">1</span>]<span class="op">-</span>Te[i<span class="op">-</span><span class="dv">1</span>])<span class="op">/</span>R2 )</span>
+<span id="cb3-22"><a href="transient.html#cb3-22" tabindex="-1"></a>    <span class="cf">return</span> Ti</span>
+<span id="cb3-23"><a href="transient.html#cb3-23" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="transient.html#cb3-24" tabindex="-1"></a><span class="co"># Tracer un graphe</span></span>
+<span id="cb3-25"><a href="transient.html#cb3-25" tabindex="-1"></a>plt.figure()</span>
+<span id="cb3-26"><a href="transient.html#cb3-26" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, To, <span class="st">&#39;-k&#39;</span>, label<span class="op">=</span><span class="st">&quot;T extérieure&quot;</span>)</span>
+<span id="cb3-27"><a href="transient.html#cb3-27" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, RC(<span class="fl">0.1</span>, <span class="fl">0.01</span>, <span class="fl">1e5</span>, <span class="fl">1e6</span>), label<span class="op">=</span><span class="st">&quot;Isolation intérieure&quot;</span>)</span>
+<span id="cb3-28"><a href="transient.html#cb3-28" tabindex="-1"></a>plt.plot(t<span class="op">/</span><span class="dv">3600</span>, RC(<span class="fl">0.01</span>, <span class="fl">0.1</span>, <span class="fl">1e6</span>, <span class="fl">1e5</span>), label<span class="op">=</span><span class="st">&quot;Isolation extérieure&quot;</span>)</span>
+<span id="cb3-29"><a href="transient.html#cb3-29" tabindex="-1"></a>plt.xlabel(<span class="st">&quot;Temps (h)&quot;</span>)</span>
+<span id="cb3-30"><a href="transient.html#cb3-30" tabindex="-1"></a>plt.ylabel(<span class="st">&quot;Température interieure&quot;</span>)</span>
+<span id="cb3-31"><a href="transient.html#cb3-31" tabindex="-1"></a>plt.legend()</span></code></pre></div>
 <p><img src="manuel_files/figure-html/ch03-1.png" width="672" /></p>
 <p>Les conditions sont évidemment très simplifiées mais permettent de comparer les solutions d’isolation par l’intérieur ou par l’extérieur.</p>
 <ul>
@@ -579,7 +587,7 @@ Figure 5.6: Modèle à 2 résistances et 2 capacités pour comparer les isolatio
         </div>
       </div>
 <a href="rayonnement.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="air.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="humidite.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -610,7 +618,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/srouchier/beh14-transient.Rmd",
+"link": "https://github.com/srouchier/beh15-transient.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -639,7 +647,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

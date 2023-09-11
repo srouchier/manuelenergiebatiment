@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapitre 3 Conduction et convection stationnaire | Manuel de performance énergétique des bâtiments</title>
+  <title>Chapitre 3 Calcul des déperditions | Manuel de performance énergétique des bâtiments</title>
   <meta name="description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
-  <meta name="generator" content="bookdown 0.26 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapitre 3 Conduction et convection stationnaire | Manuel de performance énergétique des bâtiments" />
+  <meta property="og:title" content="Chapitre 3 Calcul des déperditions | Manuel de performance énergétique des bâtiments" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
   <meta name="github-repo" content="srouchier/beh" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapitre 3 Conduction et convection stationnaire | Manuel de performance énergétique des bâtiments" />
+  <meta name="twitter:title" content="Chapitre 3 Calcul des déperditions | Manuel de performance énergétique des bâtiments" />
   
   <meta name="twitter:description" content="Eléments de calcul et de réduction de la consommation énergétique des bâtiments" />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Simon Rouchier" />
 
 
-<meta name="date" content="2023-03-21" />
+<meta name="date" content="2023-09-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="apercu.html"/>
-<link rel="next" href="rayonnement.html"/>
+<link rel="next" href="air.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -92,7 +92,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -105,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -119,6 +119,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -148,87 +152,91 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#re2020"><i class="fa fa-check"></i><b>1.2.1</b> Bâtiments neufs : la RE 2020</a></li>
 <li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#bâtiments-existants"><i class="fa fa-check"></i><b>1.2.2</b> Bâtiments existants</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction.html"><a href="introduction.html#règles-de-calcul-des-besoins"><i class="fa fa-check"></i><b>1.2.3</b> Règles de calcul des besoins</a></li>
 </ul></li>
 <li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#plan-du-livre"><i class="fa fa-check"></i><b>1.3</b> Plan du livre</a></li>
 </ul></li>
-<li class="part"><span><b>I Transferts de chaleur et de masse</b></span></li>
-<li class="chapter" data-level="2" data-path="apercu.html"><a href="apercu.html"><i class="fa fa-check"></i><b>2</b> Aperçu</a>
+<li class="part"><span><b>I Performance énergétique du bâtiment</b></span></li>
+<li class="chapter" data-level="2" data-path="apercu.html"><a href="apercu.html"><i class="fa fa-check"></i><b>2</b> Bilan de chaleur et besoins</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="apercu.html"><a href="apercu.html#apercu1"><i class="fa fa-check"></i><b>2.1</b> Bilan thermique global</a></li>
-<li class="chapter" data-level="2.2" data-path="apercu.html"><a href="apercu.html#apercu2"><i class="fa fa-check"></i><b>2.2</b> Calcul réglementaire</a>
+<li class="chapter" data-level="2.1" data-path="apercu.html"><a href="apercu.html#hypothèses-et-définitions"><i class="fa fa-check"></i><b>2.1</b> Hypothèses et définitions</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="apercu.html"><a href="apercu.html#hypothèses"><i class="fa fa-check"></i><b>2.2.1</b> Hypothèses</a></li>
-<li class="chapter" data-level="2.2.2" data-path="apercu.html"><a href="apercu.html#besoins-de-chauffage-et-refroidissement"><i class="fa fa-check"></i><b>2.2.2</b> Besoins de chauffage et refroidissement</a></li>
-<li class="chapter" data-level="2.2.3" data-path="apercu.html"><a href="apercu.html#les-règles-th-bat"><i class="fa fa-check"></i><b>2.2.3</b> Les règles Th-bat</a></li>
+<li class="chapter" data-level="2.1.1" data-path="apercu.html"><a href="apercu.html#locaux-et-parois"><i class="fa fa-check"></i><b>2.1.1</b> Locaux et parois</a></li>
+<li class="chapter" data-level="2.1.2" data-path="apercu.html"><a href="apercu.html#données-dentrée"><i class="fa fa-check"></i><b>2.1.2</b> Données d’entrée</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="apercu.html"><a href="apercu.html#apercu3"><i class="fa fa-check"></i><b>2.3</b> Détail des transferts thermiques</a></li>
-<li class="chapter" data-level="2.4" data-path="apercu.html"><a href="apercu.html#exercice"><i class="fa fa-check"></i><b>2.4</b> Exercice</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="steady.html"><a href="steady.html"><i class="fa fa-check"></i><b>3</b> Conduction et convection stationnaire</a>
+<li class="chapter" data-level="2.2" data-path="apercu.html"><a href="apercu.html#apercu1"><i class="fa fa-check"></i><b>2.2</b> Bilan thermique global</a></li>
+<li class="chapter" data-level="2.3" data-path="apercu.html"><a href="apercu.html#calcul-des-besoins"><i class="fa fa-check"></i><b>2.3</b> Calcul des besoins</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="steady.html"><a href="steady.html#conduction"><i class="fa fa-check"></i><b>3.1</b> Conduction dans un mur</a>
+<li class="chapter" data-level="2.3.1" data-path="apercu.html"><a href="apercu.html#les-dju"><i class="fa fa-check"></i><b>2.3.1</b> Les DJU</a></li>
+<li class="chapter" data-level="2.3.2" data-path="apercu.html"><a href="apercu.html#apercu3"><i class="fa fa-check"></i><b>2.3.2</b> Détail des transferts thermiques</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="apercu.html"><a href="apercu.html#exercices"><i class="fa fa-check"></i><b>2.4</b> Exercices</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="apercu.html"><a href="apercu.html#exercice-1-calcul-des-dju-et-des-besoins"><i class="fa fa-check"></i><b>2.4.1</b> Exercice 1 : calcul des DJU et des besoins</a></li>
+<li class="chapter" data-level="2.4.2" data-path="apercu.html"><a href="apercu.html#exercice-2-apports-et-besoins"><i class="fa fa-check"></i><b>2.4.2</b> Exercice 2 : apports et besoins</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="steady.html"><a href="steady.html"><i class="fa fa-check"></i><b>3</b> Calcul des déperditions</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="steady.html"><a href="steady.html#conduction"><i class="fa fa-check"></i><b>3.1</b> Transmission dans une paroi plane</a>
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="steady.html"><a href="steady.html#conduction-1d-et-analogie-électrique"><i class="fa fa-check"></i><b>3.1.1</b> Conduction 1D et analogie électrique</a></li>
 <li class="chapter" data-level="3.1.2" data-path="steady.html"><a href="steady.html#assemblage-de-résistances"><i class="fa fa-check"></i><b>3.1.2</b> Assemblage de résistances</a></li>
-<li class="chapter" data-level="3.1.3" data-path="steady.html"><a href="steady.html#surfacique"><i class="fa fa-check"></i><b>3.1.3</b> Transferts surfaciques</a></li>
+<li class="chapter" data-level="3.1.3" data-path="steady.html"><a href="steady.html#surfacique"><i class="fa fa-check"></i><b>3.1.3</b> Résistances superficielles</a></li>
+<li class="chapter" data-level="3.1.4" data-path="steady.html"><a href="steady.html#menuiseries"><i class="fa fa-check"></i><b>3.1.4</b> Menuiseries</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="steady.html"><a href="steady.html#ponts-thermiques"><i class="fa fa-check"></i><b>3.2</b> Ponts thermiques</a></li>
 <li class="chapter" data-level="3.3" data-path="steady.html"><a href="steady.html#convection"><i class="fa fa-check"></i><b>3.3</b> Echanges convectifs</a></li>
-<li class="chapter" data-level="3.4" data-path="steady.html"><a href="steady.html#bilan-des-déperditions"><i class="fa fa-check"></i><b>3.4</b> Bilan des déperditions</a>
+<li class="chapter" data-level="3.4" data-path="steady.html"><a href="steady.html#locaux-non-chauffés"><i class="fa fa-check"></i><b>3.4</b> Locaux non chauffés</a></li>
+<li class="chapter" data-level="3.5" data-path="steady.html"><a href="steady.html#bilandeperditions"><i class="fa fa-check"></i><b>3.5</b> Bilan des déperditions</a></li>
+<li class="chapter" data-level="3.6" data-path="steady.html"><a href="steady.html#exercices-1"><i class="fa fa-check"></i><b>3.6</b> Exercices</a>
 <ul>
-<li class="chapter" data-level="3.4.1" data-path="steady.html"><a href="steady.html#locaux-non-chauffés"><i class="fa fa-check"></i><b>3.4.1</b> Locaux non chauffés</a></li>
-<li class="chapter" data-level="3.4.2" data-path="steady.html"><a href="steady.html#bilan-dune-zone"><i class="fa fa-check"></i><b>3.4.2</b> Bilan d’une zone</a></li>
-</ul></li>
-<li class="chapter" data-level="3.5" data-path="steady.html"><a href="steady.html#exercices"><i class="fa fa-check"></i><b>3.5</b> Exercices</a>
-<ul>
-<li class="chapter" data-level="3.5.1" data-path="steady.html"><a href="steady.html#ex-1-déperditions-dune-pièce"><i class="fa fa-check"></i><b>3.5.1</b> Ex 1 : déperditions d’une pièce</a></li>
-<li class="chapter" data-level="3.5.2" data-path="steady.html"><a href="steady.html#ex-2-bilan-thermique-de-deux-pièces"><i class="fa fa-check"></i><b>3.5.2</b> Ex 2: bilan thermique de deux pièces</a></li>
+<li class="chapter" data-level="3.6.1" data-path="steady.html"><a href="steady.html#ex-1-déperditions-dune-pièce"><i class="fa fa-check"></i><b>3.6.1</b> Ex 1 : déperditions d’une pièce</a></li>
+<li class="chapter" data-level="3.6.2" data-path="steady.html"><a href="steady.html#ex-2-bilan-thermique-de-deux-pièces"><i class="fa fa-check"></i><b>3.6.2</b> Ex 2: bilan thermique de deux pièces</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="rayonnement.html"><a href="rayonnement.html"><i class="fa fa-check"></i><b>4</b> Rayonnement</a>
+<li class="chapter" data-level="4" data-path="air.html"><a href="air.html"><i class="fa fa-check"></i><b>4</b> Renouvellement d’air</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="rayonnement.html"><a href="rayonnement.html#principes-de-rayonnement"><i class="fa fa-check"></i><b>4.1</b> Principes de rayonnement</a></li>
-<li class="chapter" data-level="4.2" data-path="rayonnement.html"><a href="rayonnement.html#apports-solaires"><i class="fa fa-check"></i><b>4.2</b> Apports solaires</a></li>
-<li class="chapter" data-level="4.3" data-path="rayonnement.html"><a href="rayonnement.html#echanges-radiatifs-glo"><i class="fa fa-check"></i><b>4.3</b> Echanges radiatifs GLO</a>
+<li class="chapter" data-level="4.1" data-path="air.html"><a href="air.html#débits-dair-neuf-entrant"><i class="fa fa-check"></i><b>4.1</b> Débits d’air neuf entrant</a></li>
+<li class="chapter" data-level="4.2" data-path="air.html"><a href="air.html#perméabilité-à-lair-des-bâtiments"><i class="fa fa-check"></i><b>4.2</b> Perméabilité à l’air des bâtiments</a></li>
+<li class="chapter" data-level="4.3" data-path="air.html"><a href="air.html#ventilation-naturelle"><i class="fa fa-check"></i><b>4.3</b> Ventilation naturelle</a>
 <ul>
-<li class="chapter" data-level="4.3.1" data-path="rayonnement.html"><a href="rayonnement.html#définitions"><i class="fa fa-check"></i><b>4.3.1</b> Définitions</a></li>
-<li class="chapter" data-level="4.3.2" data-path="rayonnement.html"><a href="rayonnement.html#résolution-des-bilans-radiatifs"><i class="fa fa-check"></i><b>4.3.2</b> Résolution des bilans radiatifs</a></li>
-<li class="chapter" data-level="4.3.3" data-path="rayonnement.html"><a href="rayonnement.html#facteurs-de-forme"><i class="fa fa-check"></i><b>4.3.3</b> Facteurs de forme</a></li>
-<li class="chapter" data-level="4.3.4" data-path="rayonnement.html"><a href="rayonnement.html#température-radiative-et-opérative"><i class="fa fa-check"></i><b>4.3.4</b> Température radiative et opérative</a></li>
+<li class="chapter" data-level="4.3.1" data-path="air.html"><a href="air.html#méthode-nodale"><i class="fa fa-check"></i><b>4.3.1</b> Méthode nodale</a></li>
+<li class="chapter" data-level="4.3.2" data-path="air.html"><a href="air.html#vent"><i class="fa fa-check"></i><b>4.3.2</b> Vent</a></li>
+<li class="chapter" data-level="4.3.3" data-path="air.html"><a href="air.html#tirage-thermique"><i class="fa fa-check"></i><b>4.3.3</b> Tirage thermique</a></li>
+<li class="chapter" data-level="4.3.4" data-path="air.html"><a href="air.html#bilan"><i class="fa fa-check"></i><b>4.3.4</b> Bilan</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="rayonnement.html"><a href="rayonnement.html#exercices-1"><i class="fa fa-check"></i><b>4.4</b> Exercices</a>
+<li class="chapter" data-level="4.4" data-path="air.html"><a href="air.html#exercices-2"><i class="fa fa-check"></i><b>4.4</b> Exercices</a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="rayonnement.html"><a href="rayonnement.html#serre"><i class="fa fa-check"></i><b>4.4.1</b> Exercice 1 : serre</a></li>
-<li class="chapter" data-level="4.4.2" data-path="rayonnement.html"><a href="rayonnement.html#tutorial-2-radiateur"><i class="fa fa-check"></i><b>4.4.2</b> Tutorial 2: radiateur</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="transient.html"><a href="transient.html"><i class="fa fa-check"></i><b>5</b> Régime transitoire</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="transient.html"><a href="transient.html#conduction-dans-un-mur"><i class="fa fa-check"></i><b>5.1</b> Conduction dans un mur</a></li>
-<li class="chapter" data-level="5.2" data-path="transient.html"><a href="transient.html#modèles-rc"><i class="fa fa-check"></i><b>5.2</b> Modèles RC</a></li>
-<li class="chapter" data-level="5.3" data-path="transient.html"><a href="transient.html#exercices-inertie-thermique"><i class="fa fa-check"></i><b>5.3</b> Exercices : inertie thermique</a>
-<ul>
-<li class="chapter" data-level="5.3.1" data-path="transient.html"><a href="transient.html#exercice-1-bâtiment-lourd-ou-léger"><i class="fa fa-check"></i><b>5.3.1</b> Exercice 1 : bâtiment lourd ou léger</a></li>
-<li class="chapter" data-level="5.3.2" data-path="transient.html"><a href="transient.html#exercice-2-isolation-intérieure-ou-extérieure"><i class="fa fa-check"></i><b>5.3.2</b> Exercice 2 : isolation intérieure ou extérieure</a></li>
+<li class="chapter" data-level="4.4.1" data-path="air.html"><a href="air.html#exercice-1-vent-et-tirage-thermique"><i class="fa fa-check"></i><b>4.4.1</b> Exercice 1 : vent et tirage thermique</a></li>
+<li class="chapter" data-level="4.4.2" data-path="air.html"><a href="air.html#excheminee"><i class="fa fa-check"></i><b>4.4.2</b> Exercice 2 : cheminée solaire</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="air.html"><a href="air.html"><i class="fa fa-check"></i><b>6</b> Aéraulique</a>
+<li class="chapter" data-level="5" data-path="rayonnement.html"><a href="rayonnement.html"><i class="fa fa-check"></i><b>5</b> Rayonnement</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="air.html"><a href="air.html#méthode-nodale"><i class="fa fa-check"></i><b>6.1</b> Méthode nodale</a>
+<li class="chapter" data-level="5.1" data-path="rayonnement.html"><a href="rayonnement.html#principes-de-rayonnement"><i class="fa fa-check"></i><b>5.1</b> Principes de rayonnement</a></li>
+<li class="chapter" data-level="5.2" data-path="rayonnement.html"><a href="rayonnement.html#apports-solaires"><i class="fa fa-check"></i><b>5.2</b> Apports solaires</a></li>
+<li class="chapter" data-level="5.3" data-path="rayonnement.html"><a href="rayonnement.html#echanges-radiatifs-glo"><i class="fa fa-check"></i><b>5.3</b> Echanges radiatifs GLO</a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="air.html"><a href="air.html#rappels-de-mécanique-des-fluides"><i class="fa fa-check"></i><b>6.1.1</b> Rappels de mécanique des fluides</a></li>
-<li class="chapter" data-level="6.1.2" data-path="air.html"><a href="air.html#débit-dans-les-ouvertures"><i class="fa fa-check"></i><b>6.1.2</b> Débit dans les ouvertures</a></li>
+<li class="chapter" data-level="5.3.1" data-path="rayonnement.html"><a href="rayonnement.html#définitions"><i class="fa fa-check"></i><b>5.3.1</b> Définitions</a></li>
+<li class="chapter" data-level="5.3.2" data-path="rayonnement.html"><a href="rayonnement.html#résolution-des-bilans-radiatifs"><i class="fa fa-check"></i><b>5.3.2</b> Résolution des bilans radiatifs</a></li>
+<li class="chapter" data-level="5.3.3" data-path="rayonnement.html"><a href="rayonnement.html#facteurs-de-forme"><i class="fa fa-check"></i><b>5.3.3</b> Facteurs de forme</a></li>
+<li class="chapter" data-level="5.3.4" data-path="rayonnement.html"><a href="rayonnement.html#température-radiative-et-opérative"><i class="fa fa-check"></i><b>5.3.4</b> Température radiative et opérative</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="air.html"><a href="air.html#ventilationnaturelle"><i class="fa fa-check"></i><b>6.2</b> Ventilation naturelle</a>
+<li class="chapter" data-level="5.4" data-path="rayonnement.html"><a href="rayonnement.html#exercices-3"><i class="fa fa-check"></i><b>5.4</b> Exercices</a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="air.html"><a href="air.html#vent"><i class="fa fa-check"></i><b>6.2.1</b> Vent</a></li>
-<li class="chapter" data-level="6.2.2" data-path="air.html"><a href="air.html#tirage-thermique"><i class="fa fa-check"></i><b>6.2.2</b> Tirage thermique</a></li>
-<li class="chapter" data-level="6.2.3" data-path="air.html"><a href="air.html#bilan"><i class="fa fa-check"></i><b>6.2.3</b> Bilan</a></li>
+<li class="chapter" data-level="5.4.1" data-path="rayonnement.html"><a href="rayonnement.html#serre"><i class="fa fa-check"></i><b>5.4.1</b> Exercice 1 : serre</a></li>
+<li class="chapter" data-level="5.4.2" data-path="rayonnement.html"><a href="rayonnement.html#tutorial-2-radiateur"><i class="fa fa-check"></i><b>5.4.2</b> Tutorial 2: radiateur</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="air.html"><a href="air.html#exercices-2"><i class="fa fa-check"></i><b>6.3</b> Exercices</a>
+</ul></li>
+<li class="chapter" data-level="6" data-path="transient.html"><a href="transient.html"><i class="fa fa-check"></i><b>6</b> Régime transitoire</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="air.html"><a href="air.html#exercice-1-vent-et-tirage-thermique"><i class="fa fa-check"></i><b>6.3.1</b> Exercice 1 : vent et tirage thermique</a></li>
-<li class="chapter" data-level="6.3.2" data-path="air.html"><a href="air.html#excheminee"><i class="fa fa-check"></i><b>6.3.2</b> Exercice 2 : cheminée solaire</a></li>
+<li class="chapter" data-level="6.1" data-path="transient.html"><a href="transient.html#conduction-dans-un-mur"><i class="fa fa-check"></i><b>6.1</b> Conduction dans un mur</a></li>
+<li class="chapter" data-level="6.2" data-path="transient.html"><a href="transient.html#modèles-rc"><i class="fa fa-check"></i><b>6.2</b> Modèles RC</a></li>
+<li class="chapter" data-level="6.3" data-path="transient.html"><a href="transient.html#exercices-inertie-thermique"><i class="fa fa-check"></i><b>6.3</b> Exercices : inertie thermique</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="transient.html"><a href="transient.html#exercice-1-bâtiment-lourd-ou-léger"><i class="fa fa-check"></i><b>6.3.1</b> Exercice 1 : bâtiment lourd ou léger</a></li>
+<li class="chapter" data-level="6.3.2" data-path="transient.html"><a href="transient.html#exercice-2-isolation-intérieure-ou-extérieure"><i class="fa fa-check"></i><b>6.3.2</b> Exercice 2 : isolation intérieure ou extérieure</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="humidite.html"><a href="humidite.html"><i class="fa fa-check"></i><b>7</b> Humidité</a>
@@ -236,7 +244,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="humidite.html"><a href="humidite.html#air-humide"><i class="fa fa-check"></i><b>7.1</b> Air humide</a></li>
 <li class="chapter" data-level="7.2" data-path="humidite.html"><a href="humidite.html#humidité-dans-les-matériaux"><i class="fa fa-check"></i><b>7.2</b> Humidité dans les matériaux</a></li>
 <li class="chapter" data-level="7.3" data-path="humidite.html"><a href="humidite.html#bilans-dhumidité"><i class="fa fa-check"></i><b>7.3</b> Bilans d’humidité</a></li>
-<li class="chapter" data-level="7.4" data-path="humidite.html"><a href="humidite.html#exercices-3"><i class="fa fa-check"></i><b>7.4</b> Exercices</a>
+<li class="chapter" data-level="7.4" data-path="humidite.html"><a href="humidite.html#exercices-4"><i class="fa fa-check"></i><b>7.4</b> Exercices</a>
 <ul>
 <li class="chapter" data-level="7.4.1" data-path="humidite.html"><a href="humidite.html#exercice-1-condensation"><i class="fa fa-check"></i><b>7.4.1</b> Exercice 1 : condensation</a></li>
 <li class="chapter" data-level="7.4.2" data-path="humidite.html"><a href="humidite.html#exercice-2-point-de-rosée"><i class="fa fa-check"></i><b>7.4.2</b> Exercice 2 : point de rosée</a></li>
@@ -337,23 +345,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="steady" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Chapitre 3</span> Conduction et convection stationnaire<a href="steady.html#steady" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="figure"><span style="display:block;" id="fig:discretisation2"></span>
-<img src="figures/discretisation.png" alt="Discrétisation des températures dans un bâtiment" width="40%" />
-<p class="caption">
-Figure 3.1: Discrétisation des températures dans un bâtiment
-</p>
-</div>
-<p>Ce chapitre aborde les transferts thermiques par conduction à travers les composants de l’enveloppe (notés 1 sur la figure <a href="steady.html#fig:discretisation2">3.1</a>), entre les parois et l’air de la pièce (3), et par convection due au déplacement d’air entre les pièces.</p>
-<p>Pour une zone thermique, ou pour un bâtiment monozone (c’est-à-dire dont on suppose la température intérieure uniforme), on définit un coefficient de déperdition <span class="math inline">\(D\)</span> (W.K<span class="math inline">\(^{-1}\)</span>) comme le rapport entre la puissance de chauffage ou de refroidissement <span class="math inline">\(\Phi\)</span> et l’écart de température intérieur-extérieur en conditions stationnaires :</p>
+<h1><span class="header-section-number">Chapitre 3</span> Calcul des déperditions<a href="steady.html#steady" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Pour une zone thermique, ou pour un bâtiment monozone (c’est-à-dire dont on suppose la température intérieure uniforme), on définit un coefficient de déperdition <span class="math inline">\(D\)</span> (W.K<span class="math inline">\(^{-1}\)</span>) comme le rapport entre la puissance de chauffage ou de refroidissement <span class="math inline">\(\Phi\)</span> (qui inclut les apports de chaleur solaires ou internes), et l’écart de température intérieur-extérieur en conditions stationnaires :</p>
 <p><span class="math display" id="eq:steady0">\[\begin{equation}
 \Phi = D \left(T_i - T_e\right)
 \tag{3.1}
 \end{equation}\]</span></p>
 <p>(note: en été, si <span class="math inline">\(T_i &lt; T_e\)</span>, la puissance <span class="math inline">\(\Phi\)</span> est négative)</p>
-<p>Le coefficient <span class="math inline">\(D\)</span> est équivalent au <span class="math inline">\(U_\mathit{bat}\)</span> (W.K<span class="math inline">\(^{-1}\)</span>.m<span class="math inline">\(^{-2}\)</span>) qui est simplement rapporté par unité de surface de l’enveloppe.</p>
+<p>Le but de ce chapitre est d’exprimer <span class="math inline">\(D\)</span> en fonction des caractéristiques du bâtiment.</p>
+<div class="figure"><span style="display:block;" id="fig:maison2"></span>
+<img src="figures/maison2.png" alt="Echanges thermiques entre zones à des températures différentes: local chauffé $T_i$, extérieur $T_e$, local adjacent $T_a$, local non chauffé $T_u$, sol $T_g$" width="60%" />
+<p class="caption">
+Figure 3.1: Echanges thermiques entre zones à des températures différentes: local chauffé <span class="math inline">\(T_i\)</span>, extérieur <span class="math inline">\(T_e\)</span>, local adjacent <span class="math inline">\(T_a\)</span>, local non chauffé <span class="math inline">\(T_u\)</span>, sol <span class="math inline">\(T_g\)</span>
+</p>
+</div>
+<p>Les déperditions thermiques sont la conséquence d’une différence de température entre la zone chauffée et les milieux qui l’entourent : ambiance extérieure, zones adjacentes chauffées ou non, sol.</p>
+<div class="figure"><span style="display:block;" id="fig:deperditions"></span>
+<img src="figures/deperditions.png" alt="Illustration de flux déperditifs" width="60%" />
+<p class="caption">
+Figure 3.2: Illustration de flux déperditifs
+</p>
+</div>
+<p>Le flux total <span class="math inline">\(\Phi\)</span> est la somme des flux à travers chaque composant de la surface déperditive.</p>
+<ul>
+<li>Flux par transmission (conduction et convection) à travers les parois planes et fenêtres,</li>
+<li>Flux convectif dû au renouvellement d’air (ventilation, infiltrations),</li>
+<li>Ponts thermiques,</li>
+<li>Echanges avec les locaux adjacents, chauffés ou non, et le sol.</li>
+</ul>
+<p>Chacun de ces flux est proportionnel à l’écart de température entre les deux milieux. Dans l’exemple de la figure <a href="steady.html#fig:deperditions">3.2</a>, un des flux par transmission entre l’intérieur et l’extérieur est dénoté ainsi :</p>
+<p><span class="math display">\[\begin{equation}
+\Phi_{ie1} = H_1 \left(T_i - T_e\right)
+\end{equation}\]</span></p>
+<p>où <span class="math inline">\(H_1\)</span> est le coefficient de déperdition par transmission d’un des composants de la paroi (par exemple la fenêtre sur cette figure).</p>
+<p>Chacune des sections suivantes détaille le calcul des différents flux, et on fait le bilan de ces déperditions en section <a href="steady.html#bilandeperditions">3.5</a> pour le calcul du coefficient global <span class="math inline">\(D\)</span> ou de son équivalent <span class="math inline">\(U_\mathit{bat}\)</span>.</p>
 <div id="conduction" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> Conduction dans un mur<a href="steady.html#conduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">3.1</span> Transmission dans une paroi plane<a href="steady.html#conduction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Résumé en vidéo :</p>
 <!DOCTYPE html>
 <html>
@@ -380,10 +407,10 @@ Figure 3.1: Discrétisation des températures dans un bâtiment
 <div class="figure"><span style="display:block;" id="fig:conduction1d"></span>
 <img src="figures/conduction1d.png" alt="Conduction 1D stationnaire dans un solide" width="40%" />
 <p class="caption">
-Figure 3.2: Conduction 1D stationnaire dans un solide
+Figure 3.3: Conduction 1D stationnaire dans un solide
 </p>
 </div>
-<p>Sous ces deux hypothèses (transfert 1D et stationnaire), la dérivée seconde de la température sur la direction <span class="math inline">\(x\)</span> est donc nulle. En intégrant deux fois l’équation <a href="steady.html#eq:steady5">(3.6)</a>, on en déduit que le profil de température à travers un solide est linéaire entre ses deux conditions aux limites, comme montré sur la figure <a href="steady.html#fig:conduction1d">3.2</a> :</p>
+<p>Sous ces deux hypothèses (transfert 1D et stationnaire), la dérivée seconde de la température sur la direction <span class="math inline">\(x\)</span> est donc nulle. En intégrant deux fois l’équation <a href="steady.html#eq:steady5">(3.6)</a>, on en déduit que le profil de température à travers un solide est linéaire entre ses deux conditions aux limites, comme montré sur la figure <a href="steady.html#fig:conduction1d">3.3</a> :</p>
 <p><span class="math display" id="eq:steady6">\[\begin{equation}
   T(x) = T_1 + \frac{x}{e} \left(T_2-T_1\right) \tag{3.7}
 \end{equation}\]</span></p>
@@ -401,7 +428,7 @@ Figure 3.2: Conduction 1D stationnaire dans un solide
 <div class="figure"><span style="display:block;" id="fig:conduction1d2"></span>
 <img src="figures/conduction1d2.png" alt="Résistance thermique" width="30%" />
 <p class="caption">
-Figure 3.3: Résistance thermique
+Figure 3.4: Résistance thermique
 </p>
 </div>
 <table>
@@ -443,7 +470,7 @@ Figure 3.3: Résistance thermique
 <p><span class="math display" id="eq:steady11">\[\begin{equation}
 \Phi = S . \varphi = S . U . \Delta T \tag{3.12}
 \end{equation}\]</span></p>
-<p>où on peut noter <span class="math inline">\(D = S . U\)</span> (W.K<span class="math inline">\(^{-1}\)</span>) le coefficient de déperdition total.</p>
+<p>où on peut noter <span class="math inline">\(H = S . U\)</span> (W.K<span class="math inline">\(^{-1}\)</span>) le coefficient de déperdition total de cet élément.</p>
 </div>
 <div id="assemblage-de-résistances" class="section level3 hasAnchor" number="3.1.2">
 <h3><span class="header-section-number">3.1.2</span> Assemblage de résistances<a href="steady.html#assemblage-de-résistances" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -451,10 +478,10 @@ Figure 3.3: Résistance thermique
 <div class="figure"><span style="display:block;" id="fig:paroi1"></span>
 <img src="figures/paroi1.png" alt="Addition des résistances thermiques en série" width="70%" />
 <p class="caption">
-Figure 3.4: Addition des résistances thermiques en série
+Figure 3.5: Addition des résistances thermiques en série
 </p>
 </div>
-<p>Les résistances s’additionnent en série : lorsqu’un mur est composé de plusieurs couches (isolant, mur porteur, enduit…) comme sur la figure <a href="steady.html#fig:paroi1">3.4</a>, sa résistance thermique totale est la somme des résistances de chaque couche.</p>
+<p>Les résistances s’additionnent en série : lorsqu’un mur est composé de plusieurs couches (isolant, mur porteur, enduit…) comme sur la figure <a href="steady.html#fig:paroi1">3.5</a>, sa résistance thermique totale est la somme des résistances de chaque couche.</p>
 <p><span class="math display" id="eq:steady12">\[\begin{equation}
 R = \sum_i R_i = \sum_i \dfrac{e_i}{\lambda_i} + R_{se} + R_{si}
 \tag{3.13}
@@ -469,12 +496,12 @@ U = \frac{1}{R} = \frac{1}{\sum_i \dfrac{e_i}{\lambda_i} + R_{se} + R_{si}}
 <div class="figure"><span style="display:block;" id="fig:paroi2"></span>
 <img src="figures/paroi2.png" alt="Addition des conductances thermiques en parallèle" width="60%" />
 <p class="caption">
-Figure 3.5: Addition des conductances thermiques en parallèle
+Figure 3.6: Addition des conductances thermiques en parallèle
 </p>
 </div>
-<p>A l’inverse, lorsqu’un mur est composé de plusieurs éléments séparés (paroi opaque, vitrage…), le flux de chaleur traverse plusieurs résistance en parallèle (figure <a href="steady.html#fig:paroi2">3.5</a>). La conductance totale <span class="math inline">\(D\)</span> de ce mur est alors la somme des conductances de chaque élément.</p>
+<p>A l’inverse, lorsqu’un mur est composé de plusieurs éléments séparés (paroi opaque, vitrage…), le flux de chaleur traverse plusieurs résistance en parallèle (figure <a href="steady.html#fig:paroi2">3.6</a>). La conductance totale <span class="math inline">\(H\)</span> (W/K) de ce mur est alors la somme des conductances de chaque élément.</p>
 <p><span class="math display" id="eq:steady14">\[\begin{equation}
-D = U_\mathit{total} \, S_\mathit{total} = \sum_i U_i \, S_i
+H = U_\mathit{total} \, S_\mathit{total} = \sum_i U_i \, S_i
 \tag{3.15}
 \end{equation}\]</span></p>
 <p><strong>Attention</strong> : ce ne sont pas les coefficients <span class="math inline">\(U\)</span> (W.m<span class="math inline">\(^{-2}\)</span>.K<span class="math inline">\(^{-1}\)</span>) qui s’additionnent en parallèle, mais les conductances, c’est-à-dire les produits des <span class="math inline">\(U\)</span> avec les surfaces <span class="math inline">\(S\)</span> de chaque composant.</p>
@@ -504,99 +531,104 @@ D = U_\mathit{total} \, S_\mathit{total} = \sum_i U_i \, S_i
 <td align="left">W.m<span class="math inline">\(^{-2}.\)</span>K<span class="math inline">\(^{-1}\)</span></td>
 </tr>
 <tr class="odd">
-<td align="left"><span class="math inline">\(D\)</span></td>
-<td align="left">Conductance</td>
+<td align="left"><span class="math inline">\(H\)</span></td>
+<td align="left">Coefficient de déperdition</td>
 <td align="left">W.K<span class="math inline">\(^{-1}\)</span></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="surfacique" class="section level3 hasAnchor" number="3.1.3">
-<h3><span class="header-section-number">3.1.3</span> Transferts surfaciques<a href="steady.html#surfacique" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>On a vu que sur la figure <a href="steady.html#fig:paroi1">3.4</a> qu’une résistance thermique était placée entre la surface de la paroi et la température de l’air. Elle est égale à l’inverse du coefficient de convection <span class="math inline">\(h\)</span> (même dimension W.m<span class="math inline">\(^{-2}.\)</span>K<span class="math inline">\(^{-1}\)</span> qu’un coefficient <span class="math inline">\(U\)</span>) qui quantifie la convection à l’interface.</p>
+<h3><span class="header-section-number">3.1.3</span> Résistances superficielles<a href="steady.html#surfacique" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>On a vu que sur la figure <a href="steady.html#fig:paroi1">3.5</a> qu’une résistance thermique était placée entre la surface de la paroi et la température de l’air. Elle est égale à l’inverse du coefficient de convection <span class="math inline">\(h\)</span> (même dimension W.m<span class="math inline">\(^{-2}.\)</span>K<span class="math inline">\(^{-1}\)</span> qu’un coefficient <span class="math inline">\(U\)</span>) qui quantifie la convection à l’interface.</p>
 <div class="figure"><span style="display:block;" id="fig:surfacique1"></span>
 <img src="figures/surfacique1.png" alt="Coefficient de transfert $h$ et résistance surfacique $R_s$" width="50%" />
 <p class="caption">
-Figure 3.6: Coefficient de transfert <span class="math inline">\(h\)</span> et résistance surfacique <span class="math inline">\(R_s\)</span>
+Figure 3.7: Coefficient de transfert <span class="math inline">\(h\)</span> et résistance surfacique <span class="math inline">\(R_s\)</span>
 </p>
 </div>
 <p>La valeur de <span class="math inline">\(h\)</span> est surtout fonction de la vitesse d’air le long de la paroi. Sur la façade extérieure, le vent augmente les échanges convectifs entre l’air et la surface : le coefficient <span class="math inline">\(h\)</span> sera plus élevé donc la résistance surfacique plus faible, et donc l’écart entre les températures de l’air et de la surface est plus faible également.</p>
 <div class="figure"><span style="display:block;" id="fig:surfacique2"></span>
-<img src="figures/surfacique2.png" alt="Quelques valeurs réglementaires de résistances surfaciques" width="100%" />
+<img src="figures/surfacique2.png" alt="Quelques valeurs réglementaires de résistances surfaciques issues des règles Th-Bat 2020" width="100%" />
 <p class="caption">
-Figure 3.7: Quelques valeurs réglementaires de résistances surfaciques
+Figure 3.8: Quelques valeurs réglementaires de résistances surfaciques issues des règles Th-Bat 2020
 </p>
 </div>
+</div>
+<div id="menuiseries" class="section level3 hasAnchor" number="3.1.4">
+<h3><span class="header-section-number">3.1.4</span> Menuiseries<a href="steady.html#menuiseries" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure"><span style="display:block;" id="fig:menuiseries"></span>
+<img src="figures/menuiseries.png" alt="Conductance des fenêtres" width="60%" />
+<p class="caption">
+Figure 3.9: Conductance des fenêtres
+</p>
+</div>
+<p>Pour les fenêtres, trois conductances sont définies (selon les normes ISO 10077-1 et ISO 10077-2) :</p>
+<ul>
+<li>Coefficient <span class="math inline">\(U_g\)</span> : conductance du vitrage (glass)</li>
+<li>Coefficient <span class="math inline">\(U_f\)</span> : conductance du cadre (frame)</li>
+<li>Coefficient <span class="math inline">\(U_w\)</span> : conductance de la fenêtre entière (window)</li>
+</ul>
+<p>Généralement, les valeurs des coefficients <span class="math inline">\(U_g\)</span>, <span class="math inline">\(U_f\)</span>, <span class="math inline">\(U_w\)</span> sont calculées par les fabricants et renseignées dans les spécifications techniques des produits. La base de données <a href="https://www.edibatec.org/">EDIBATEC</a>, qui est très utilisée lors des calculs réglementaires, contient un grand nombre de données fabriquant.</p>
 </div>
 </div>
 <div id="ponts-thermiques" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Ponts thermiques<a href="steady.html#ponts-thermiques" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Les ponts thermiques sont les points de l’enveloppe du bâtiment présentant une faiblesse d’isolation, donc où les pertes de chaleur sont plus élevées : liaisons entre une menuiserie et une paroi opaque, planchers intermédiaires, murs de refend, seuil de porte… Le calcul précis des transferts au niveau d’un pont thermique nécessiterait leur modélisation en 2D ou en 3D. Cependant, dans la très grande majorité des cas, on simplifie ce calcul en les représentant par des coefficients issus de catalogues.</p>
+<p>Un pont thermique est une zone ponctuelle ou linéaire qui, dans l’enveloppe d’un bâtiment, présente une variation de résistance thermique : liaisons entre une menuiserie et une paroi opaque, planchers intermédiaires, murs de refend, seuil de porte…</p>
 <div class="figure"><span style="display:block;" id="fig:pontthermique"></span>
 <img src="figures/pontthermique.png" alt="Exemple de règle Th-bat donnant le coefficient de transmission d'un pont thermique" width="80%" />
 <p class="caption">
-Figure 3.8: Exemple de règle Th-bat donnant le coefficient de transmission d’un pont thermique
+Figure 3.10: Exemple de règle Th-bat donnant le coefficient de transmission d’un pont thermique
 </p>
 </div>
-<p>Les <a href="http://www.rt-batiment.fr/documents-d-application-a618.html">documents d’application</a> de la réglementation fournissent des valeurs tabulées des coefficients de transmission linéiques <span class="math inline">\(\psi\)</span> de nombreux procédés constructifs. Ce coefficient en (W.m<span class="math inline">\(^{-1}.\)</span>K<span class="math inline">\(^{-1}\)</span>), multiplié par la longueur d’un pont thermique, donne sa conductance :</p>
-<p><span class="math display" id="eq:steady16">\[\begin{equation}
-D_{pt} = l . \psi
-\tag{3.16}
+<p>Les règles Th-Bat 2020 traitent de manière différente les ponts thermiques structurels et les ponts thermiques intégrés.</p>
+<ul>
+<li>Les ponts thermiques structurels sont les ponts thermiques situés à la jonction entre des éléments de parois.</li>
+<li>Les ponts thermiques intégrés sont des ponts thermiques répartis de manière régulière sur toute la surface des parois : montants des ossatures bois, rails de maintien des parements, etc.</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:pontthermique2"></span>
+<img src="figures/pontthermique2.png" alt="Pont thermique linéique" width="30%" />
+<p class="caption">
+Figure 3.11: Pont thermique linéique
+</p>
+</div>
+<p>Le flux au travers d’un pont thermique linéique séparant deux zones aux températures <span class="math inline">\(T_i\)</span> et <span class="math inline">\(T_e\)</span> s’exprime :
+<span class="math display" id="eq:steady15">\[\begin{equation}
+\Phi_{pt} = l \cdot \psi \cdot (T_i-T_e) \tag{3.16}
 \end{equation}\]</span></p>
-<p>En plus des ponts thermiques linéiques, on peut également compter les ponts thermiques ponctuels caractérisés par un coefficient de transmission <span class="math inline">\(\chi\)</span> en (W.<span class="math inline">\(K\)</span>^{-1}$).</p>
+<p>où <span class="math inline">\(l\)</span> est la longueur du pont thermique et <span class="math inline">\(\psi\)</span> son coefficient en (W.m<span class="math inline">\(^{-1}\)</span>.K<span class="math inline">\(^{-1}\)</span>) qui dépend de sa nature.</p>
+<p>Les valeurs de coefficient <span class="math inline">\(\psi\)</span> ont été obtenues à l’aide de simulations numériques dans un grand nombre de configurations courantes, afin de constituer des catalogues de valeurs. Ceux-ci sont disponibles dans <a href="https://rt-re-batiment.developpement-durable.gouv.fr/documents-d-application-a618.html">les règles Th-Bat</a>.</p>
 </div>
 <div id="convection" class="section level2 hasAnchor" number="3.3">
 <h2><span class="header-section-number">3.3</span> Echanges convectifs<a href="steady.html#convection" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Les transferts d’air entre l’intérieur et l’extérieur, ou entre différentes zones, entraînent un transfert de chaleur par convection.</p>
-<div class="figure"><span style="display:block;" id="fig:paroi4"></span>
-<img src="figures/paroi4.png" alt="Apport de chaleur par convection" width="50%" />
-<p class="caption">
-Figure 3.9: Apport de chaleur par convection
-</p>
-</div>
-<ul>
-<li>Un débit d’air <span class="math inline">\(\dot{m}\)</span> (kg.s<span class="math inline">\(^{-1}\)</span>) depuis l’extérieur à température <span class="math inline">\(T_e\)</span>, vers l’intérieur à température <span class="math inline">\(T_i\)</span>, apporte un flux de chaleur égal à :
-<span class="math display" id="eq:steady17">\[\begin{equation}
-\Phi = \dot{m} \, c_a \, (T_e-T_i)
-\tag{3.17}
-\end{equation}\]</span>
-où <span class="math inline">\(c_a\)</span> est la chaleur spécifique de l’air.</li>
-<li>De même, un flux de chaleur entre deux pièces de températures <span class="math inline">\(T_1\)</span> et <span class="math inline">\(T_2\)</span> revient à :
-<span class="math display" id="eq:steady18">\[\begin{equation}
-\Phi = \dot{m} \, c_a \, (T_1-T_2)
-\tag{3.18}
-\end{equation}\]</span></li>
-</ul>
-<p><strong>Attention</strong>: l’air entrant dans une pièce doit être inclus dans son bilan thermique, mais pas l’air qui en sort. Sur l’exemple de la figure <a href="steady.html#fig:paroi4">3.9</a>, le bilan thermique de chacune des deux pièces doit inclure cet apport de chaleur une fois.</p>
-<p>Les transferts d’air dans un bâtiment peuvent être dûs à : la ventilation naturelle par les ouvrants ; la ventilation mécanique ; les infiltrations d’air dans les défauts d’étanchéité de l’enveloppe.</p>
-<p>Comme nous avons jusqu’ici écrit les déperditions thermiques dans le sens de la chaleur quittant la pièce, nous pouvons faire de même ici (ce qui revient à inverser l’équation <a href="steady.html#eq:steady17">(3.17)</a>). Si le débit de ventilation <span class="math inline">\(Q_v\)</span> est donné en m<span class="math inline">\(^3\)</span>/h à la place d’un débit massique <span class="math inline">\(\dot{m}\)</span>, on peut exprimer les déperditions par renouvellement d’air :</p>
-<p><span class="math display" id="eq:steady19">\[\begin{equation}
-\Phi_v = \dot{m} \, c_a \, (T_i-T_e) = \frac{\rho_a \, c_a}{3600} Q_v (T_i-T_e)
-\tag{3.19}
+<p>Les transferts d’air entre l’intérieur et l’extérieur, ou entre différentes zones, entraînent un transfert de chaleur par convection. L’air entrant dans une pièce doit être inclus dans son bilan thermique sous la forme d’un flux thermique <strong>sortant</strong> <span class="math inline">\(\Phi_v\)</span>:</p>
+<p><span class="math display" id="eq:steady17">\[\begin{equation}
+\Phi_v = \dot{m} \, c_a \, (T_e-T_i) \tag{3.17}
 \end{equation}\]</span></p>
-<p>où le coefficient <span class="math inline">\(\dot{m} \, c_a = 0,34 Q_v\)</span> est homogène à une conductance thermique et pourra donc être ajouté aux conductances des parois dans le bilan global des déperditions.</p>
-<div class="figure"><span style="display:block;" id="fig:blowerdoor"></span>
-<img src="figures/blowerdoor.png" alt="Porte soufflante pour mesurer l'étanchéité à l'air" width="50%" />
-<p class="caption">
-Figure 3.10: Porte soufflante pour mesurer l’étanchéité à l’air
-</p>
+<p>où <span class="math inline">\(\dot{m}\)</span> est le débit entrant à la température <span class="math inline">\(T_e\)</span> dans la pièce <span class="math inline">\(T_i\)</span>, et <span class="math inline">\(c_a\)</span> est la chaleur massique de l’air. Le terme <span class="math inline">\(\dot{m} \, c_a\)</span> a pour dimension (W/K) et peut être assimilé à un coefficient de déperditions.</p>
+<p>Le débit d’air <span class="math inline">\(Q_v\)</span> est souvent exprimé en m<span class="math inline">\(^3\)</span>/h. Quand c’est le cas, l’équation <a href="steady.html#eq:steady17">(3.17)</a> peut se réécrire :</p>
+<p><span class="math display" id="eq:steady185" id="eq:steady18">\[\begin{align}
+\Phi_v &amp; = \rho \, c_a \, \frac{Q_v}{3600} \, (T_e-T_i) \tag{3.18} \\
+&amp; = 0.34 \, Q_v \,  (T_e-T_i) \tag{3.19}
+\end{align}\]</span></p>
+<p>Les débits de renouvellement d’air dans les locaux peuvent résulter de trois composantes :</p>
+<ul>
+<li>La ventilation mécanique contrôlée (VMC) qui peut imposer un débit d’air neuf réglementaire,</li>
+<li>Les infiltrations à travers les défauts d’étanchéité de l’enveloppe,</li>
+<li>La ventilation naturelle sous l’effet du vent et du tirage thermique</li>
+</ul>
+<p>Le calcul des débits d’air est l’objet du chapitre <a href="air.html#air">4</a>.</p>
 </div>
-<p>En plus du renouvellement d’air par ventilation contrôlée, il faut tenir compte des infiltrations. L’étanchéité de l’enveloppe se mesure avec un essai de porte soufflante, et se quantifie avec le coefficient <span class="math inline">\(n_{50}\)</span> (h<span class="math inline">\(^{-1}\)</span>) qui représente le taux de renouvellement d’air sous l’effet d’une différence de pression de 50 Pa entre l’intérieur et l’extérieur.</p>
-<p>Les transferts aérauliques seront abordés plus en détail au chapitre <a href="air.html#air">6</a>.</p>
-</div>
-<div id="bilan-des-déperditions" class="section level2 hasAnchor" number="3.4">
-<h2><span class="header-section-number">3.4</span> Bilan des déperditions<a href="steady.html#bilan-des-déperditions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>On a surtout parlé dans ce chapitre de <em>déperditions</em> thermiques, ce qui sous-entend que la chaleur sort du bâtiment donc que celui-ci est chauffé par rapport à l’extérieur. Tous ces calculs sont cependant toujours valables en été, lorsque la chaleur rentre dans le bâtiment car le rapport des températures s’inverse. On peut alors utiliser les mêmes formules, qui donneront un résultat négatif (apports de chaleur = déperditions négatives).</p>
-<div id="locaux-non-chauffés" class="section level3 hasAnchor" number="3.4.1">
-<h3><span class="header-section-number">3.4.1</span> Locaux non chauffés<a href="steady.html#locaux-non-chauffés" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="locaux-non-chauffés" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Locaux non chauffés<a href="steady.html#locaux-non-chauffés" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Souvent, une pièce chauffée (ou climatisée) est adjacente à un local non chauffé (ou non climatisé) à la température <span class="math inline">\(T_u\)</span> : garage, combles, hall…</p>
 <div class="figure"><span style="display:block;" id="fig:paroi3"></span>
 <img src="figures/paroi3.png" alt="Déperditions entre un local dont la température est contrôlée et un où elle ne l'est pas" width="50%" />
 <p class="caption">
-Figure 3.11: Déperditions entre un local dont la température est contrôlée et un où elle ne l’est pas
+Figure 3.12: Déperditions entre un local dont la température est contrôlée et un où elle ne l’est pas
 </p>
 </div>
-<p>Afin de toujours formuler les déperditions thermiques de la pièce chauffée comme proportionnelles à l’écart de température intérieur-extérieur, on définit un <em>coefficient de réduction de température</em> <span class="math inline">\(b\)</span> comme indiqué sur la figure <a href="steady.html#fig:paroi3">3.11</a> :</p>
+<p>Afin de toujours formuler les déperditions thermiques de la pièce chauffée comme proportionnelles à l’écart de température intérieur-extérieur, on définit un <em>coefficient de réduction de température</em> <span class="math inline">\(b\)</span> comme indiqué sur la figure <a href="steady.html#fig:paroi3">3.12</a> :</p>
 <p><span class="math display" id="eq:steady20">\[\begin{equation}
 b = \frac{T_i-T_u}{T_i-T_e}
 \tag{3.20}
@@ -612,45 +644,46 @@ b = \frac{D_{ue}}{D_{ue}+D_{iu}}
 \tag{3.22}
 \end{equation}\]</span></p>
 </div>
-<div id="bilan-dune-zone" class="section level3 hasAnchor" number="3.4.2">
-<h3><span class="header-section-number">3.4.2</span> Bilan d’une zone<a href="steady.html#bilan-dune-zone" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<!DOCTYPE html>
-<html>
-<body>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/dZ78A6i3GUI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</body>
-</html>
+<div id="bilandeperditions" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Bilan des déperditions<a href="steady.html#bilandeperditions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>On peut agréger toutes les déperditions décrites dans ce chapitre pour exprimer le coefficient global <span class="math inline">\(D\)</span> de la formule <a href="steady.html#eq:steady0">(3.1)</a>, qui représente la puissance thermique à dépenser par degré d’écart entre l’intérieur et l’extérieur, en conditions stationnaires.</p>
 <div class="figure"><span style="display:block;" id="fig:bilandeperditions"></span>
 <img src="figures/bilandeperditions.png" alt="Exemple d'un bilan de déperditions" width="80%" />
 <p class="caption">
-Figure 3.12: Exemple d’un bilan de déperditions
+Figure 3.13: Exemple d’un bilan de déperditions
 </p>
 </div>
-<p>Le bilan thermique d’un local chauffé (ou climatisé) dépend de ses principales sources de déperditions. Comme tous les calculs qu’on a présentés ici sont très simplifiés par rapport à la réalité, il revient à la personne qui réalise le calcul de choisir les points les plus importants à faire figurer dans le bilan. Dans l’exemple de la figure <a href="steady.html#fig:bilandeperditions">3.12</a>, on a affiché :</p>
+<p>Le bilan des déperditions d’un local est l’inventaire des composants de sa surface déperditive. Il inclut :</p>
 <ul>
-<li>Les pertes <span class="math inline">\(\Phi_1\)</span> et <span class="math inline">\(\Phi_2\)</span> par deux parois différentes avec les propriétés <span class="math inline">\(U_1 \, S_1\)</span> et <span class="math inline">\(U_2 \, S_2\)</span> ;</li>
-<li>Les déperditions <span class="math inline">\(\Phi_\mathrm{inf}\)</span> dues à un débit d’infiltration d’air <span class="math inline">\(\dot{m}_\mathrm{inf}\)</span> ;</li>
-<li>Des ponts thermiques de longueur totale <span class="math inline">\(l\)</span> et coefficient <span class="math inline">\(\psi\)</span> ;</li>
-<li>Les pertes vers le toit via des combles non chauffés à la température <span class="math inline">\(T_u\)</span>.</li>
+<li>Les déperditions par transmission à travers plusieurs parois planes ou fenêtres
+<span class="math inline">\(\Phi_{tr} = \sum_j \, U_j \, S_j \, b_j \,(T_i - T_e)\)</span></li>
+<li>Les ponts thermiques
+<span class="math inline">\(\Phi_{pt} = \sum_k \, l_k \, \psi_k \, b_k \, (T_i-T_e)\)</span></li>
+<li>Des déperditions dues au renouvellement d’air
+<span class="math inline">\(\Phi_v = 0.34 \, Q_v \, (T_i - T_e)\)</span></li>
 </ul>
-<p>Dans cet exemple, le coefficient global de déperditions est alors la somme des conductances individuelles (toujours en W.K<span class="math inline">\(^{-1}\)</span>, on n’additionne jamais directement les coefficients surfaciques en W.m<span class="math inline">\(^{-2}\)</span>.K<span class="math inline">\(^{-1}\)</span>). On peut les additionner car tous les flux de chaleur <span class="math inline">\(\Phi\)</span> sont écrits ici proportionnellement au même écart de température <span class="math inline">\(T_i-T_e\)</span> :</p>
-<p><span class="math display" id="eq:steady23">\[\begin{equation}
-D = U_1 \, S_1 + U_2 S_2 + \dot{m}_\mathrm{inf} \, c_a + U\,S\,b + \psi \, l
-\tag{3.23}
+<p>où les coefficients <span class="math inline">\(b\)</span> indiquent que chaque terme est susceptible de désigner des déperditions vers un local non chauffé, à une température différente de la température extérieure. Pour une paroi séparant directement la zone chauffée de l’air extérieur, <span class="math inline">\(b=1\)</span>. Ces coefficients permettent d’écrire tous les termes du bilan proportionnellement au même écart de température intérieur-extérieur.</p>
+<p>La somme des déperditions est donc dans cet exemple:</p>
+<p><span class="math display" id="eq:steady24" id="eq:steady23">\[\begin{align}
+\Phi &amp; = \sum_j \, U_j \, S_j \, b_j \, (T_i - T_e) + \sum_k \, l_k \, \psi_k \, b_k \, (T_i-T_e) + 0.34 \, Q_v \, (T_i - T_e)  \tag{3.23} \\
+&amp; = D \, (T_i - T_e) \tag{3.24}
+\end{align}\]</span></p>
+<p>Et le coefficient global de déperditions <span class="math inline">\(D\)</span> est donc, en (W/K):</p>
+<p><span class="math display" id="eq:steady25">\[\begin{equation}
+D = \sum_j \, U_j \, S_j \, b_j + \sum_k \, l_k \, \psi_k \, b_k + 0.34 \, Q_v \tag{3.25}
 \end{equation}\]</span></p>
-<p>On utilise également le coefficient global de transmission surfacique <span class="math inline">\(U_\mathit{bat}\)</span> (W.m<span class="math inline">\(^{-2}\)</span>.K<span class="math inline">\(^{-1}\)</span>), qui est la conductance <span class="math inline">\(D\)</span> rapportée à la surface totale de l’enveloppe :</p>
-<p><span class="math display" id="eq:steady24">\[\begin{equation}
-U_\mathit{bat} = \frac{D}{\sum S} = \frac{U_1 \, S_1 + U_2 S_2 + \dot{m}_\mathrm{inf} \, c_a + U\,S\,b + \psi \, l}{\sum S}
-\tag{3.24}
+<p>On utilise également le coefficient global de transmission surfacique <span class="math inline">\(U_\mathit{bat}\)</span> (W.m<span class="math inline">\(^{-2}\)</span>.K<span class="math inline">\(^{-1}\)</span>), qui est la conductance <span class="math inline">\(D\)</span> rapportée à la surface déperditive totale de l’enveloppe :</p>
+<p><span class="math display" id="eq:steady26">\[\begin{equation}
+U_\mathit{bat} = \frac{D}{\sum S} = \frac{\sum_j \, U_j \, S_j \, b_j + \sum_k \, l_k \, \psi_k \, b_k + 0.34 \, Q_v}{\sum_j S_j}
+\tag{3.26}
 \end{equation}\]</span></p>
 <p><em>J’insiste une dernière fois sur un point : on n’obtient pas le <span class="math inline">\(U_\mathit{bat}\)</span> en additionnant les coefficients <span class="math inline">\(U\)</span> directement, mais avec une somme pondérée par les surfaces déperditives.</em></p>
+<p>On a surtout parlé dans ce chapitre de <em>déperditions</em> thermiques, ce qui sous-entend que la chaleur sort du bâtiment donc que celui-ci est chauffé par rapport à l’extérieur. Tous ces calculs sont cependant toujours valables en été, lorsque la chaleur rentre dans le bâtiment car le rapport des températures s’inverse. On peut alors utiliser les mêmes formules, qui donneront un résultat négatif (apports de chaleur = déperditions négatives).</p>
 </div>
-</div>
-<div id="exercices" class="section level2 hasAnchor" number="3.5">
-<h2><span class="header-section-number">3.5</span> Exercices<a href="steady.html#exercices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="ex-1-déperditions-dune-pièce" class="section level3 hasAnchor" number="3.5.1">
-<h3><span class="header-section-number">3.5.1</span> Ex 1 : déperditions d’une pièce<a href="steady.html#ex-1-déperditions-dune-pièce" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="exercices-1" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Exercices<a href="steady.html#exercices-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="ex-1-déperditions-dune-pièce" class="section level3 hasAnchor" number="3.6.1">
+<h3><span class="header-section-number">3.6.1</span> Ex 1 : déperditions d’une pièce<a href="steady.html#ex-1-déperditions-dune-pièce" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="enoncé" class="section level4 unnumbered hasAnchor">
 <h4>Enoncé<a href="steady.html#enoncé" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>Les parois d’u’un local sont composées de :</p>
@@ -681,13 +714,13 @@ U_\mathit{bat} = \frac{D}{\sum S} = \frac{U_1 \, S_1 + U_2 S_2 + \dot{m}_\mathrm
 <p><span class="math inline">\(\Phi = \underbrace{(D_1+D_2+D_3)}_{W/K}.\underbrace{\Delta T}_{K} = (16,03 + 16,56 + 3,06 ). (19-2) = 606\)</span> W</p>
 </div>
 </div>
-<div id="ex-2-bilan-thermique-de-deux-pièces" class="section level3 hasAnchor" number="3.5.2">
-<h3><span class="header-section-number">3.5.2</span> Ex 2: bilan thermique de deux pièces<a href="steady.html#ex-2-bilan-thermique-de-deux-pièces" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="ex-2-bilan-thermique-de-deux-pièces" class="section level3 hasAnchor" number="3.6.2">
+<h3><span class="header-section-number">3.6.2</span> Ex 2: bilan thermique de deux pièces<a href="steady.html#ex-2-bilan-thermique-de-deux-pièces" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>On considère un bâtiment composé de deux zones thermiques : la zone 1 est chauffée, la zone 2 est non chauffée. Un débit d’air passe de l’extérieur vers la zone 1 puis vers la zone 2. Les données du problèmes sont résumées ici :</p>
 <div class="figure"><span style="display:block;" id="fig:tuto1"></span>
 <img src="figures/tuto1.png" alt="Exercice 2" width="70%" />
 <p class="caption">
-Figure 3.13: Exercice 2
+Figure 3.14: Exercice 2
 </p>
 </div>
 <ul>
@@ -705,7 +738,7 @@ Figure 3.13: Exercice 2
         </div>
       </div>
 <a href="apercu.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="rayonnement.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="air.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -765,7 +798,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

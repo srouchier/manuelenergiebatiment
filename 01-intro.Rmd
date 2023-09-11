@@ -30,7 +30,7 @@ L'EPBD inclut également une méthodologie commune de calcul de la performance �
 
 ### Bâtiments neufs : la RE 2020 {#re2020}
 
-La RE 2020 est la réglementation énergétique et environnementale des bâtiments, entrée en vigueur à partir du 1$^\mathrm{er}$ janvier 2022, et qui s'appliquera progressivement à l'ensemble de la construction neuve. Elle poursuit trois objectifs majeurs pour les bâtiments:
+La RE 2020 est la réglementation énergétique et environnementale des bâtiments, entrée en vigueur le 1$^\mathrm{er}$ janvier 2022 pour les bâtiments de logement, et le 1$^\mathrm{er}$ Juillet 2022 pour les bâtiments de bureau et d’enseignement. Elle poursuit trois objectifs majeurs pour les bâtiments:
 
 * la sobriété énergétique: baisse des besoins énergétiques, en améliorant la conception bioclimatique des bâtiments ;
 * la diminution de l'impact carbone en favorisant le recours aux énergies renouvelables et peu carbonées et aux matériaux à faible emprunte carbone ;
@@ -79,8 +79,23 @@ Les bâtiments existants constituent 99% du parc immobilier français et la gran
 * Obligation d'isolation thermique en cas de travaux de ravalement importants;
 * Obligation de rénovation énergétique avant 2025 pour les bâtiments privés résidentiels dont la consommation en énergie primaire est supérieure à 330 kWh/m$^2$/an...
 
+La RT Globale s’applique lors d’opérations de rénovation lourde (surface au sol rénovée supérieure à 1000 mètres carrés, et montant minimum de l’opération). Elle reprend certains principes de la RT2012, (ancienne réglementation thermique pour les bâtiments neufs) : elle impose une réduction minimale de la consommation d’énergie du bâtiment (indicateur Cep), et un niveau minimum de confort (indicateur Tic).
+
 Les bâtiments non résidentiels sont concernés par le [décret tertiaire](http://www.rt-batiment.fr/eco-energie-tertiaire-r328.html) qui fixe des obligations de réduction de leur consommation d'énergie de 40% d'ici 2030 (50% d'ici 2040, etc.) par rapport à une année de référence définie comme la plus consommatrice sur la période 2010-2019.
 Par ce dispositif, les entreprises sont incitées à réaliser un audit énergétique pour identifier les postes de surconsommation et les actions d'économies d'énergie les plus efficaces.
+
+### Règles de calcul des besoins
+
+La **norme EN 12831-1** est une norme dédiée à l’évaluation des besoins en chauffage des bâtiments. Elle fait partie de « l’ensemble de normes PEB » (PEB pour Performances Energétiques des Bâtiments), dans lequel on retrouve par exemple la norme EN ISO 6946 pour le calcul du coefficient de transmission thermique ($U$) des parois, ou les normes EN 15316-4-1 à 8 pour le calcul des caractéristiques des systèmes de chauffage, ventilation, et climatisation (CVC). Les calculs décrits dans la norme EN 12831-1 nécessitent des données d’entrée qui doivent être définies au niveau national (température de base extérieure, taux de ventilations minimums, etc.). Pour la France, ces données d’entrée sont définies dans le complément national NF P52-612/CN.
+
+Pour le neuf, des règles précises ont été définies pour calculer les indicateurs énergétiques (Bbio, Cep, Cepnr, et Icénergie) : 
+
+* Les [**règles Th-Bat 2020**](https://rt-re-batiment.developpement-durable.gouv.fr/IMG/pdf/1-fascicule_generalites.pdf) définissent la manière de calculer les données d’entrée du moteur de calcul : conductance des parois (anciennement règles Th-U), inertie du bâtiment (anciennement règles Th-I), caractéristiques des vitrages (Th-S). Les [documents d'application](https://rt-re-batiment.developpement-durable.gouv.fr/documents-d-application-a618.html) fournissent des valeurs par défaut ou des valeurs tabulées obtenues par application directe des méthodes pour des composants de parois spécifiques ou des liaisons de parois.
+* Les règles Th-BCE 2020 constituent le moteur de calcul de la simulation thermique des bâtiments.
+
+Le calcul des indicateurs pour la rénovation de l'existant se fait avec le moteur de calcul Th-C-E ex, basé sur les anciennes règles Th-Bat et Th-U qui apportent des compléments spécifiques aux bâtiments existants.
+
+Dans la pratique, l’évaluation des besoins de chauffage peut se faire à l’aide d’une feuille Excel sur laquelle les équations de la norme EN 12831-1 sont implémentées, ou à l’aide d’un outil de calcul de la réglementation (ClimaWin 2020, Pléiades, CYPETHERM, etc.), qui intègre aussi un module d’évaluation des besoins. L’avantage d’utiliser un outil de calcul réglementaire est de n’avoir à renseigner qu’une seule fois les caractéristiques des bâtiments pour le calcul des déperditions et le calcul réglementaire
 
 ## Plan du livre
 

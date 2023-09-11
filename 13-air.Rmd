@@ -1,8 +1,89 @@
-# Aéraulique {#air}
+# Renouvellement d'air {#air}
 
-La première partie du livre ne porte pas seulement sur les transferts de chaleur, mais aussi les transferts de masse. Parmi ceux-ci, on décrit ici l'aéraulique des bâtiments, et on verra les transferts d'humidité dans le chapitre \@ref(humidite).
+Les transferts de chaleur par renouvellement d'air ont été évoqués [au chapitre précédent](#convection) en raison du flux de chaleur $\Phi_v$ (W) dans le bilan thermique d'un local sous l'effet d'un débit de renouvellement d'air $Q_v$ (m$^3$/h):
+\begin{align}
+\Phi_v = 0.34 \, Q_v \,  (T_e-T_i) (\#eq:air0)
+\end{align}
 
-Les transferts d'air dans un bâtiment sont l'effet combiné de la ventilation mécanique et de la ventilation naturelle. Cette dernière désigne les écoulements non contrôlés sous l'effet du vent et du tirage thermique, qui peuvent traverser de petites ouvertures (infiltrations dans les défauts d'étanchéité de l'enveloppe et les entrées d'air) ou de grandes ouvertures (portes et fenêtres ouvertes).
+Tout débit d'air entrant représente donc une déperdition thermique en hiver ($T_e < T_i$) ou un apport de chaleur supplémentaire en été ($T_e > T_i$). Un moyen de réduire les déperditions thermiques liées au renouvellement d'air est l'usage d'une VMC double flux ou d'une centrale de traitement d'air qui fournit aux locaux un air neuf préchauffé (ou refroidi, selon la saison), plutôt qu'à la température extérieure $T_e$.
+
+Les débits de renouvellement d’air dans les locaux peuvent résulter de trois composantes :
+
+* La ventilation mécanique contrôlée (VMC) qui peut imposer un débit d'air neuf réglementaire,
+* Les infiltrations à travers les défauts d'étanchéité de l'enveloppe,
+* La ventilation naturelle sous l'effet du vent et du tirage thermique.
+
+Les calculs détaillés de la norme EN 12831-1 prennent en compte les trois composantes du renouvellement d’air pour estimer les déperditions dus à la ventilation. Un même local peut recevoir plusieurs débits d'air entrant à des températures différentes.
+
+```{r ventilation, echo=FALSE, out.width="50%", fig.cap="Bilan de masse d'air dans un local"}
+knitr::include_graphics(rep("figures/ventilation.png"))
+```
+
+Le bilan de masse d'air dans un local est très simple en principe : la somme des débits entrants est égale à la somme des débits sortants.
+
+\begin{equation}
+\sum_i Q_{V,\mathit{in},i} = \sum_j Q_{V,\mathit{out},j} (\#eq:air01)
+\end{equation}
+
+## Débits d'air neuf entrant
+
+Une zone ventilée est un ensemble de pièces dont le renouvellement d’air est assuré par un unique système de ventilation. Généralement, un logement correspond à une zone ventilée. Dans une zone ventilée, le débit total d’apport d’air neuf $Q_{Van}$ et le débit total d’air extrait $Q_{Vext}$ sont calculés en sommant les débits correspondant dans les différents locaux :
+
+\begin{align}
+Q_{Van} & = \sum_i Q_{Van,i} (\#eq:air02) \\
+Q_{Vext} & = \sum_i Q_{Vext,i}  (\#eq:air03)
+\end{align}
+
+Les débits d’air neuf $Q_{Van,i}$ ou extrait  $Q_{Vext,i}$ de chaque pièce sont imposés par la réglementation selon le type de bâtiment et son occupation. Lorsqu'un débit total d'air neuf $Q_{Van}$ à l'échelle de toute la zone ventilée est imposé, on peut le répartir au prorata des volumes des locaux $V_i$ :
+
+\begin{equation}
+Q_{Van,i} = \frac{V_i}{\sum_i V_i} Q_{Van} (\#eq:air04)
+\end{equation}
+
+```{r vmc, echo=FALSE, out.width="70%", fig.cap="Débits d’extraction minimums imposés dans les bâtiments d'habitation neufs"}
+knitr::include_graphics(rep("figures/vmc.png"))
+```
+
+Dans les bâtiments d'habitation, la réglementation fixe deux niveaux de débits pour les systèmes autoréglables : le débit de base $\left(Q_{Vext}\right)_B$, et le débit de pointe $\left(Q_{Vext}\right)_P$. Le débit de pointe est censé assurer un renouvellement d’air suffisant lorsque les activités des occupants génèrent beaucoup de polluants (douches, cuisine, etc.). Le débit de base assure un renouvellement d’air suffisant le reste du temps. Les débits de ventilation dans les bâtiments autres que les bâtiments d’habitation sont fixés par le Code du Travail.
+
+
+## Perméabilité à l'air des bâtiments
+
+La mesure de la perméabilité à l’air des bâtiments neufs a été rendue obligatoire avec la RT2012. Elle est réalisée une fois le bâtiment terminé. Elle vise essentiellement à vérifier la qualité de la mise en oeuvre du bâtiment (joints autour des fenêtres, continuité du pare-vapeur, absences de fissures dans les maçonneries, etc.).
+
+La mesure de perméabilité se fait avec un test de la porte soufflante. L’intérieur du bâtiment (ou du logement si immeuble de logement collectif) est mis en dépression (ou en surpression, le test peut se faire dans les deux sens), pour induire un écoulement au travers des éventuels défauts d’étanchéité de l’enveloppe (flèches vertes dans le schéma ci-dessous). Le test se fait après avoir colmaté toutes les ouvertures volontaires vers l’extérieur (bouches de soufflage et d’extraction, entrée d’air situées dans les menuiseries).
+
+```{r portesoufflante, echo=FALSE, out.width="70%", fig.cap="Porte soufflante"}
+knitr::include_graphics(rep("figures/portesoufflante.png"))
+```
+
+La porte soufflante est constituée d’une bâche étanche maintenue par un cadre qui s’adapte au cadre de la porte d’entrée du bâtiment testé, et d’un ventilateur. Lorsque le ventilateur est en route, le dispositif mesure simultanément le débit volumique $Q_v$ qui passe au travers du ventilateur (et donc au travers des défauts d’étanchéité), et la différence de pression entre l’intérieur et l’extérieur du bâtiment $\Delta p = \left| p_\mathit{in} - p_\mathit{ext} \right|$.
+
+A l’issue d'un test et de plusieurs points de mesure, le graphique $Q_v(\Delta p)$ est tracé, et permet de trouver les coefficients $K$ et $n$ d'une relation entre les deux grandeurs de la forme :
+\begin{equation}
+Q_v = K \, \Delta p^n (\#eq:air05)
+\end{equation}
+
+Avec $n$ un exposant donc la valeur se siture entre 0.5 et 1.
+
+Sur la base de cette équation, on peut calculer deux indicateurs :
+
+* $Q_{4Pa,surf}$ en m$^3$/h/m$^2$ est le débit obtenu pour $\Delta p=4$ Pa, divisé par la surface déperditive du bâtiment;
+* $n50$ en vol/h est le taux de renouvellement obtenu pour $\Delta p=50$ Pa.
+
+La RE2020 impose les valeurs maximales suivantes pour $Q_{4Pa,surf}$ selon l'usage du bâtiment
+
+Usage                       Valeur max $Q_{4Pa,surf}$
+-------                     ---------------------------
+Maison individuelle           0.6
+Logements collectifs          1
+Bâtimetns tertiaires          1.6
+Autres usages                 3.0
+
+
+## Ventilation naturelle
+
+La ventilation naturelle est le déplacement d'air qui n'est pas dû à une ventilation mécanique contrôlée. Elle provient de deux forces principales qui génèrent des variations locales de pression, qui ensuite résultent en un déplacement d'air des zones de pression élevée vers les pressions faibles : le vent et le tirage thermique.
 
 ```{r airflow1, echo=FALSE, out.width="100%", fig.cap="Trois modes de modélisation aéraulique"}
 knitr::include_graphics(rep("figures/airflow1.png"))
@@ -12,15 +93,13 @@ knitr::include_graphics(rep("figures/airflow1.png"))
 * La méthode zonale, où une zone peut être divisée en sous-volumes pour représenter l'hétérogénéité de ces variables dans une même pièce.
 * La mécanique des fluides numérique qui modélise les écoulements par les équations de Navier-Stokes sur un maillage fin des volumes.
 
-## Méthode nodale
+### Méthode nodale
 
 La méthode nodale peut être comparée à l'analogie électrique utilisée pour les transferts thermiques : chaque zone est représentée par un noeud de pression. Ceux-ci sont reliés par des résistances représentant les chemins que peuvent prendre les écoulements d'air : entrées d'air, fenêtres, fissures... Un ventilateur crée une différence de pression qui mettra l'air en mouvement dans le reste du réseau.
 
 ```{r airflow2, echo=FALSE, out.width="70%", fig.cap="Principe de la méthode nodale : les chemins de l'air sont des résistances qui relient les noeuds de pression"}
 knitr::include_graphics(rep("figures/airflow2.png"))
 ```
-
-### Rappels de mécanique des fluides
 
 Le plus souvent, le calcul des transferts aérauliques dans un bâtiment se fait sous les hypothèses qui permettent d'utiliser le **théorème de Bernoulli** : fluide parfait incompressible en régime stationnaire et isotherme. Ce théorème énonce la conservation de la quantité suivante en tous points le long d'une ligne de courant :
 \begin{equation}
@@ -35,8 +114,6 @@ P = \rho \, R_a \, T
 (\#eq:air2)
 \end{equation}
 où $R_a \approx 287$ J.kg$^{-1}$.K$^{-1}$ est la constante spécifique de l'air, soit le rapport entre la constante universelle des gaz parfaits et la masse molaire de l'air.
-
-### Débit dans les ouvertures
 
 Le premier type d'équations nécessaires pour appliquer la méthode nodale est la relation entre la pression de part et d'autre d'une ouverture et le débit d'air qui la traverse. Sur un schéma comme la figure \@ref(fig:airflow2), ce serait le rapport entre les intensités (débit d'air) et les potentiels (pressions).
 
@@ -63,10 +140,6 @@ Le coefficient de décharge $C_d$ peut être proche de 1 pour une ouverture impo
 A^* = \frac{1}{\sqrt{ \left(\frac{1}{C_{d1}\cdot A_1}\right)^2 +\left(\frac{1}{C_{d2}\cdot A_2}\right)^2   }}
 (\#eq:flowrate3)
 \end{equation}
-
-## Ventilation naturelle {#ventilationnaturelle}
-
-La ventilation naturelle est le déplacement d'air qui n'est pas dû à une ventilation mécanique contrôlée. Elle provient de deux forces principales qui génèrent des variations locales de pression, qui ensuite résultent en un déplacement d'air des zones de pression élevée vers les pressions faibles : le vent et le tirage thermique.
 
 ### Vent
 
